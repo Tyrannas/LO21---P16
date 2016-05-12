@@ -82,10 +82,10 @@ public:
 
 class Controleur {
 	LitteraleManager& litMng;
-	Pile& litAff;
+	Pile& Stack;
 public:
 	Controleur(LitteraleManager& l, Pile& v) :
-		litMng(l), litAff(v) {}
+		litMng(l), Stack(v) {}
 	void commande(const string& c);
 	void executer();
 };

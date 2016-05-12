@@ -185,12 +185,12 @@ bool estUnReel(const string& s) {
 void Controleur::commande(const string& c) {
 	if (estUnEntier(c)) {
 		Entiere* e = new Entiere(atoi(c.c_str()));
-		litAff.push(*e);
+		Stack.push(*e);
 	}
 	else {
 
 		if (estUnOperateur(c)) {
-			if (litAff.taille() >= 2) {
+			if (Stack.taille() >= 2) {
 				/*
 				Litterale v2 = litAff.top();
 				litMng.removeLitterale(litAff.top());
@@ -218,17 +218,17 @@ void Controleur::commande(const string& c) {
 				*/
 			}
 			else {
-				litAff.setMessage("Erreur : pas assez d'arguments");
+				Stack.setMessage("Erreur : pas assez d'arguments");
 			}
 		}
-		else litAff.setMessage("Erreur : commande inconnue");
+		else Stack.setMessage("Erreur : commande inconnue");
 	}
 }
 
 void Controleur::executer() {
 	string c;
 	do {
-		litAff.affiche();
+		Stack.affiche();
 		cout << "?- ";
 		cin >> c;
 		if (c != "Exit") commande(c);
