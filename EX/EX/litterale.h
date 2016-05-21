@@ -5,9 +5,13 @@
 using namespace std;
 
 class Litterale {
+protected:
+	string type;
 public:
 	//virtual Litterale getValue();
 	virtual void affiche() const = 0;
+	string getType() { return type; }
+	Litterale() : type("Undefined") {};
 };
 
 class Numerique : public Litterale {
@@ -20,7 +24,7 @@ class Entiere : public Numerique {
 private:
 	int val;
 public:
-	Entiere(int v) : val(v) {};
+	Entiere(int v) : val(v) { this->type = "Entiere"; }
 	int getVal() const { return val; }
 	void affiche() const { cout << val; }
 	void neg() { val = -val; }
@@ -31,7 +35,7 @@ class Reelle : public Numerique {
 private:
 	double val;
 public:
-	Reelle(double v) : val(v) {};
+	Reelle(double v) : val(v) { this->type = "Reelle"; };
 	Entiere toEntiere() {
 		if (val - floor(val) == 0)
 			return Entiere(floor(val));
@@ -45,7 +49,7 @@ private:
 	Entiere num;
 	Entiere den;
 public:
-	Rationnelle(Entiere e1, Entiere e2) :num(e1), den(e2) {};
+	Rationnelle(Entiere e1, Entiere e2) :num(e1), den(e2) { this->type = "Rationnelle"; };
 	void simplification();
 	Entiere toEntiere() {
 		if (den.getVal() == 1)
@@ -62,7 +66,7 @@ private:
 	Numerique* re;
 	Numerique* im;
 public:
-	Complexe(Numerique* r, Numerique* i) : re(r), im(i) {};
+	Complexe(Numerique* r, Numerique* i) : re(r), im(i) { this->type = "Complexe"; };
 	Numerique* getRe() const { return re; }
 	Numerique* getIm() const { return im; }
 	void affiche() const { 
@@ -71,6 +75,7 @@ public:
 		(*im).affiche(); 
 	}
 };
+
 
 Entiere operator+(Entiere e1, Entiere e2);
 Reelle operator+(Entiere e, Reelle r);
@@ -83,3 +88,8 @@ Rationnelle operator+(Rationnelle r, Entiere e);
 Reelle operator+(Reelle r1, Reelle r2);
 Reelle operator+(Reelle r, Entiere e);
 Reelle operator+(Reelle re, Rationnelle ra);
+
+Complexe operator+(Complexe& c, Entiere e);
+
+
+Litterale* operator+(Litterale& l1, Litterale& l2);
