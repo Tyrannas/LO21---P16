@@ -183,6 +183,7 @@ bool estUnReel(const string& s) {
 ///******Controleur******/
 
 void Controleur::commande(const string& c) {
+	/*
 	if (estUnEntier(c)) {
 		Entiere* e = new Entiere(atoi(c.c_str()));
 		litAff.push(*e);
@@ -191,18 +192,18 @@ void Controleur::commande(const string& c) {
 
 		if (estUnOperateur(c)) {
 			if (litAff.taille() >= 2) {
-				/*
-				Litterale v2 = litAff.top();
+				Litterale& v2 = litAff.top();
 				litMng.removeLitterale(litAff.top());
 				litAff.pop();
-				Litterale v1 = litAff.top();
+				Litterale& v1 = litAff.top();
 				litMng.removeLitterale(litAff.top());
 				litAff.pop();
 				
-				int res;
-				if (c == "+") res = v1 + v2;
+				//int res;
+				//if (c == "+") res = v1 + v2;
+				/*
 				if (c == "-") res = v1 - v2;
-				if (c == "*") res = v1*v2;
+				if (c == "*") res = v1 * v2;
 				if (c == "/") {
 					if (v2 != 0) 	res = v1 / v2;
 					else {
@@ -211,11 +212,11 @@ void Controleur::commande(const string& c) {
 						litAff.push(litMng.addLitterale(v1));
 						res = v2;
 					}
+				
 					
 				}
 				Litterale& l = litMng.addLitterale(res);
 				litAff.push(l);
-				*/
 			}
 			else {
 				litAff.setMessage("Erreur : pas assez d'arguments");
@@ -223,7 +224,9 @@ void Controleur::commande(const string& c) {
 		}
 		else litAff.setMessage("Erreur : commande inconnue");
 	}
-}
+	*/
+	}
+
 
 void Controleur::executer() {
 	string c;

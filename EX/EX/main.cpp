@@ -8,42 +8,45 @@
 #endif
 
 int main() {
+	// Création des valeurs
+
 	Entiere e1(3);
 	Entiere e2(4);
 	Rationnelle r1(e1, e2);
 	r1.affiche();
+	cout << "\n";
 	r1.simplification();
 	r1.affiche();
-	Reelle r2(3);
-	r2 = r1.toReelle();
+	cout << "\n";
+	Reelle r2(3.4);
+	//r2 = r1.toReelle();
 	r2.affiche();
-	Rationnelle r3 = e1 + r1;
-	Rationnelle r4 = r1 + e1;
 	cout << "\n";
-	r3.affiche();
-	cout << "\n";
-	r4.affiche();
-	cout << "\n";
-	Complexe c1(&r1, &e1);
-	c1.affiche();
-	cout << "\n ************************ \n";
-	Item i1;
-	i1.setLitterale(e1);
-	Item i2;
-	i2.setLitterale(r1);
-	Pile pile2;
-	pile2.push(e1);
-	pile2.push(r1);
-	pile2.affiche();
-	//i1.getLitterale().affiche();
-	//pile1.push(e1);
-	//pile1.push(r1);
-	
+	Complexe c1(&e1, &e2);
 
-	regex pattern{ "[[:digit:]]*\.[[:digit:]]*" }; // on recherche le motif "abc"
-	string target{ "3.27" };
-	bool result = regex_match(target, pattern);
-	cout << boolalpha << result << endl;
+	//Calculs
+
+	Litterale *l1 = &e1;
+	Litterale *l2 = &e2;
+	Litterale *l3 = *l1 + *l2;
+	l3->affiche();
+	cout << "\n";
+	Litterale *l4 = &r1;
+	Litterale *l5 = *l1 + *l4;
+	l5->affiche();
+	cout << "\n";
+	Litterale *l6 = &r2;
+	Litterale *l7 = *l1 + *l6;
+	l7->affiche();
+	cout << "\n";
+	Litterale *l8 = &c1;
+	//Litterale *l9 = *l1 + *l8;
+	//l9->affiche();
+	//cout << "\n";
+
+
+
+
 
 	/*
 	cout << "\n\n ATTENTION LANCEMENT DU CONTROLEUR \n\n";
