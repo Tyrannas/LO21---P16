@@ -1,6 +1,7 @@
 #ifndef _COMPUTER_H
 #define _COMPUTER_H
 #include "litterale.h"
+#include "Controleur.h"
 #endif
 #include <string>
 #include <iostream>
@@ -80,12 +81,3 @@ public:
 	void setNbItemsToAffiche(unsigned int n);
 };
 
-class Controleur {
-	LitteraleManager& litMng;
-	Pile& Stack;
-public:
-	Controleur(LitteraleManager& l, Pile& v) :
-		litMng(l), Stack(v) {}
-	void commande(const string& c);
-	void executer();
-};
