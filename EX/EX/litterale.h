@@ -1,17 +1,29 @@
+#ifndef _LITTERALE_H
+#define _LITTERALE_H
+
 #include <string>
 #include <iostream>
 #include <sstream>
 
 using namespace std;
 
+typedef enum
+{
+	tUndefined,
+	tEntiere,
+	tReelle,
+	tRationnelle,
+	tComplexe
+}TypeLitterale;
+
 class Litterale {
 protected:
-	string type;
+	TypeLitterale type;
 public:
 	//virtual Litterale getValue();
 	virtual void affiche() const = 0;
-	string getType() { return type; }
-	Litterale() : type("Undefined") {};
+	TypeLitterale getType() { return type; }
+	Litterale() : type(TypeLitterale::tUndefined) {};
 };
 
 class Numerique : public Litterale {
@@ -24,7 +36,7 @@ class Entiere : public Numerique {
 private:
 	int val;
 public:
-	Entiere(int v) : val(v) { this->type = "Entiere"; }
+	Entiere(int v) : val(v) { this->type = TypeLitterale::tEntiere; }
 	int getVal() const { return val; }
 	void affiche() const { cout << val; }
 	void neg() { val = -val; }
@@ -35,7 +47,7 @@ class Reelle : public Numerique {
 private:
 	double val;
 public:
-	Reelle(double v) : val(v) { this->type = "Reelle"; };
+	Reelle(double v) : val(v) { this->type = TypeLitterale::tReelle; };
 	Entiere toEntiere() {
 		if (val - floor(val) == 0)
 			return Entiere(floor(val));
@@ -49,7 +61,7 @@ private:
 	Entiere num;
 	Entiere den;
 public:
-	Rationnelle(Entiere e1, Entiere e2) :num(e1), den(e2) { this->type = "Rationnelle"; };
+	Rationnelle(Entiere e1, Entiere e2) :num(e1), den(e2) { this->type = TypeLitterale::tRationnelle; };
 	void simplification();
 	Entiere toEntiere() {
 		if (den.getVal() == 1)
@@ -66,7 +78,7 @@ private:
 	Numerique* re;
 	Numerique* im;
 public:
-	Complexe(Numerique* r, Numerique* i) : re(r), im(i) { this->type = "Complexe"; };
+	Complexe(Numerique* r, Numerique* i) : re(r), im(i) { this->type = TypeLitterale::tComplexe; };
 	Numerique* getRe() const { return re; }
 	Numerique* getIm() const { return im; }
 	void affiche() const { 
@@ -93,3 +105,5 @@ Complexe operator+(Complexe& c, Entiere e);
 
 
 Litterale* operator+(Litterale& l1, Litterale& l2);
+
+#endif

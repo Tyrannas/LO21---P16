@@ -1,8 +1,10 @@
 #ifndef _CONTROLEUR_H
 #define _CONTROLEUR_H
 
+#include "LitteraleManager.h"
+#include "Controleur.h"
 #include "litterale.h"
-#include "computer.h"
+#include"Pile.h"
 
 
 #include <regex>

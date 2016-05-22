@@ -3,6 +3,7 @@
 #include <sstream>
 #include <algorithm>
 #include "computer.h"
+#include "litterale.h"
 
 
 
@@ -97,62 +98,62 @@ Complexe operator+(Complexe& c, Entiere e) {
 
 Litterale* operator+(Litterale& l1, Litterale& l2) {
 	// Recherche du type de la première litterale
-	string type1 = l1.getType();
+	TypeLitterale type1 = l1.getType();
 	// Si c'est un entier
-	if (type1 == "Entiere")
+	if (type1 == tEntiere)
 		Entiere* pt1 = dynamic_cast<Entiere*>(&l1);
 	// Si c'est un reel
-	else if (type1 == "Reelle")
+	else if (type1 == tReelle)
 		Reelle* pt1 = dynamic_cast<Reelle*>(&l1);
 	// Si c'est un rationnel
-	else if (type1 == "Rationnelle")
+	else if (type1 == tRationnelle)
 		Rationnelle* pt1 = dynamic_cast<Rationnelle*>(&l1);
 	// Si c'est un complexe
-	else if (type1 == "Complexe"){
+	else if (type1 == tComplexe){
 		// On cherche le type de la partie réelle
 		Complexe* pt1 = dynamic_cast<Complexe*>(pt1->getRe);
-		if (pt1->getRe.getType() == "Entiere")
+		if (pt1->getRe.getType() == tEntiere)
 			Entiere* pRe = dynamic_cast<Entiere*>(pt1->getRe);
-		else if (pt1->getRe.getType() == "Reelle")
+		else if (pt1->getRe.getType() == tReelle)
 			Reelle* pRe = dynamic_cast<Reelle*>(pt1->getRe);
-		else if (pt1->getRe.getType() == "Rationnelle")
+		else if (pt1->getRe.getType() == tRationnelle)
 			Rationnelle* pRe = dynamic_cast<Rationnelle*>(pt1->getRe);
 		// Puis on cherche le type de la partie imaginaire
-		if (pt1->getIm.getType() == "Entiere")
+		if (pt1->getIm.getType() == tEntiere)
 			Entiere* pIm = dynamic_cast<Entiere*>(pt1->getIm);
-		else if (pt1->getIm.getType() == "Reelle")
+		else if (pt1->getIm.getType() == tReelle)
 			Reelle* pIm = dynamic_cast<Reelle*>(pt1->getIm);
-		else if (pt1->getIm.getType() == "Rationnelle")
+		else if (pt1->getIm.getType() == tRationnelle)
 			Rationnelle* pIm = dynamic_cast<Rationnelle*>(pt1->getIm);
 
 
 		// Recherche du type de la deuxieme litterale
-		string type2 = l2.getType();
+		TypeLitterale type2 = l2.getType();
 		// Si c'est un entier
-		if (type2 == "Entiere")
+		if (type2 == tEntiere)
 			Entiere* pt2 = dynamic_cast<Entiere*>(&l2);
 		// Si c'est un reel
-		else if (type2 == "Reelle")
+		else if (type2 == tReelle)
 			Reelle* pt2 = dynamic_cast<Reelle*>(&l2);
 		// Si c'est un rationnel
-		else if (type2 == "Rationnelle")
+		else if (type2 == tRationnelle)
 			Rationnelle* pt2 = dynamic_cast<Rationnelle*>(&l2);
 		// Si c'est un complexe
-		else if (type2 == "Complexe") {
+		else if (type2 == tComplexe) {
 			// On cherche le type de la partie réelle
 			Complexe* pt2 = dynamic_cast<Complexe*>(pt2->getRe);
-			if (pt2->getRe.getType() == "Entiere")
+			if (pt2->getRe.getType() == tEntiere)
 				Entiere* pRe = dynamic_cast<Entiere*>(pt2->getRe);
-			else if (pt2->getRe.getType() == "Reelle")
+			else if (pt2->getRe.getType() == tReelle)
 				Reelle* pRe = dynamic_cast<Reelle*>(pt2->getRe);
-			else if (pt2->getRe.getType() == "Rationnelle")
+			else if (pt2->getRe.getType() == tRationnelle)
 				Rationnelle* pRe = dynamic_cast<Rationnelle*>(pt2->getRe);
 			// Puis on cherche le type de la partie imaginaire
-			if (pt2->getIm.getType() == "Entiere")
+			if (pt2->getIm.getType() == tEntiere)
 				Entiere* pIm = dynamic_cast<Entiere*>(pt2->getIm);
-			else if (pt2->getIm.getType() == "Reelle")
+			else if (pt2->getIm.getType() == tReelle)
 				Reelle* pIm = dynamic_cast<Reelle*>(pt2->getIm);
-			else if (pt2->getIm.getType() == "Rationnelle")
+			else if (pt2->getIm.getType() == tRationnelle)
 				Rationnelle* pIm = dynamic_cast<Rationnelle*>(pt2->getIm);
 
 	}

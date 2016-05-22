@@ -1,5 +1,6 @@
 #include "Controleur.h"
 
+
 ///******* Fonctions de Service *****/
 
 int estUnOperateur(const string& s) {
@@ -11,7 +12,7 @@ int estUnOperateur(const string& s) {
 }
 
 bool estUnEntier(const string& s) {
-	regex reg(R"(\b\d+\b)"); 
+	regex reg(R"(\b\d+\b)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
@@ -45,68 +46,69 @@ void Controleur::parse(const string& c) {
 	//puis on créé l'objet à l'aide de la factory
 	else {
 		if (estUnEntier(c)) {
-			Entiere* e = litMng.createLitt("Entiere",stoi(c));
+			Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(c)));
 			Stack.push(e);
 		}
 		else if (estUnRationnel(c)) {
 			cmatch res;
-			regex rx("\d+");
+			regex rx("\\d+");
 			regex_search(c.c_str(), res, rx);
-			Rationnelle* r = litMng.createLitt("Rationnelle", stoi(res[1]),stoi(res[2]));
+			Rationnelle* const r = dynamic_cast<Rationnelle* const>(litMng.littFactory(tRationnelle, stoi(res[1]), stoi(res[2])));
 			Stack.push(r);
 
 		}
 		else if (estUnReel(c)) {
 			cmatch res;
-			Reelle* r = litMng.createLitt("Reelle", NULL, NULL, stod(c));
+			Reelle* const r = dynamic_cast<Reelle* const>(litMng.littFactory(tReelle, NULL, NULL, stod(c)));
 			Stack.push(r);
 		}
 		else if (estUnComplexe(c)) {
-			Litterale* l1;
-			Litterale* l2;
+			Numerique* l1;
+			Numerique* l2;
 
 			cmatch res;
-			regex rx("[\d,]+");
+			regex rx("[\\d,]+");
 			regex_search(c.c_str(), res, rx);
 			if (estUnEntier(res[1])) {
-				Entiere* e = litMng.createLitt("Entiere", stoi(res[1]));
+				Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(res[1])));
 				l1 = e;
 			}
 			else if (estUnRationnel(res[1])) {
 				cmatch res2;
-				regex rx("\d+");
+				regex rx("\\d+");
 				regex_search(c.c_str(), res2, rx);
-				Rationnelle* r = litMng.createLitt("Rationnelle", stoi(res2[1]), stoi(res2[2]));
+				Rationnelle* const r = dynamic_cast<Rationnelle* const>(litMng.littFactory(tRationnelle, stoi(res2[1]), stoi(res2[2])));
 				l1 = r;
 			}
 			else if (estUnReel(res[1])) {
-				Reelle* r = litMng.createLitt("Reelle", NULL, NULL, stod(res[1]));
+				Reelle* const r = dynamic_cast<Reelle* const>(litMng.littFactory(tReelle, NULL, NULL, stod(res[1])));
 				l1 = r;
 			}
 
 			if (estUnEntier(res[2])) {
-				Entiere* e = litMng.createLitt("Entiere", stoi(res[2]));
+				Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(res[2])));
 				l2 = e;
 			}
 			else if (estUnRationnel(res[2])) {
 				cmatch res2;
-				regex rx("\d+");
+				regex rx("\\d+");
 				regex_search(c.c_str(), res2, rx);
-				Rationnelle* r = litMng.createLitt("Rationnelle", stoi(res2[1]), stoi(res2[2]));
+				Rationnelle* const r = dynamic_cast<Rationnelle* const>(litMng.littFactory(tRationnelle, stoi(res2[1]), stoi(res2[2])));
 				l2 = r;
 			}
 			else if (estUnReel(res[2])) {
-				Reelle* r = litMng.createLitt("Reelle", NULL, NULL, stod(res[2]));
+				Reelle* const r = dynamic_cast<Reelle* const>(litMng.littFactory(tReelle, NULL, NULL, stod(res[2])));
 				l2 = r;
 			}
 
-			
-			Complexe* c = litMng.createLitt("Complexe", NULL, NULL, l1, l2);
+
+			Complexe* const c = dynamic_cast<Complexe* const>(litMng.littFactory(tComplexe, NULL, NULL, NULL, l1, l2));
+			Stack.push(c);
 		}
 
 		else throw ComputerException("Erreur, commande inconnue");
 	}
-	
+
 }
 
 void Controleur::executer() {
@@ -153,3 +155,4 @@ void Controleur::executer() {
 //	Stack.push(v3);
 //}
 //
+

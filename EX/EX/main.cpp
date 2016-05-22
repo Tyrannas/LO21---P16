@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <regex>
+#include"litterale.h"
 #ifndef _FICHIERS_H
 #define _FICHIERS_H
 #include "computer.h"
