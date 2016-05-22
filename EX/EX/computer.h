@@ -47,11 +47,11 @@ public:
 
 class Item {
 private:
-	Litterale* lit;
+	const Litterale* lit;
 public:
 	Item() { lit = nullptr; };
-	inline void setLitterale(Litterale& l) { lit = &l; };
-	inline Litterale& getLitterale() const {
+	inline void setLitterale( Litterale* const l) { lit = l; };
+	inline const Litterale& getLitterale() const {
 		if (lit == 0)
 			throw ComputerException("erreur");
 		return *lit; 
@@ -71,7 +71,7 @@ public:
 	Pile();
 	~Pile();
 	void affiche() const;
-	void push(Litterale& l);
+	void push( Litterale* const l);
 	void pop();
 	bool estVide() const;
 	int taille() const;

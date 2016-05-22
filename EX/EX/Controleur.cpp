@@ -62,34 +62,49 @@ void Controleur::parse(const string& c) {
 			Stack.push(r);
 		}
 		else if (estUnComplexe(c)) {
+			Litterale* l1;
+			Litterale* l2;
+
 			cmatch res;
 			regex rx("[\d,]+");
 			regex_search(c.c_str(), res, rx);
-			if(estUnEntier(res[1]))
-				Entiere* l1 = litMng.createLitt("Entiere", stoi(res[1]));
+			if (estUnEntier(res[1])) {
+				Entiere* e = litMng.createLitt("Entiere", stoi(res[1]));
+				l1 = e;
+			}
 			else if (estUnRationnel(res[1])) {
 				cmatch res2;
 				regex rx("\d+");
 				regex_search(c.c_str(), res2, rx);
-				Rationnelle* l1 = litMng.createLitt("Rationnelle", stoi(res2[1]), stoi(res2[2]));
+				Rationnelle* r = litMng.createLitt("Rationnelle", stoi(res2[1]), stoi(res2[2]));
+				l1 = r;
 			}
-			else if (estUnReel(res[1]))
+			else if (estUnReel(res[1])) {
 				Reelle* r = litMng.createLitt("Reelle", NULL, NULL, stod(res[1]));
+				l1 = r;
+			}
 
-			if (estUnEntier(res[2]))
-				Entiere* l1 = litMng.createLitt("Entiere", stoi(res[2]));
+			if (estUnEntier(res[2])) {
+				Entiere* e = litMng.createLitt("Entiere", stoi(res[2]));
+				l2 = e;
+			}
 			else if (estUnRationnel(res[2])) {
 				cmatch res2;
 				regex rx("\d+");
 				regex_search(c.c_str(), res2, rx);
-				Rationnelle* l1 = litMng.createLitt("Rationnelle", stoi(res2[1]), stoi(res2[2]));
+				Rationnelle* r = litMng.createLitt("Rationnelle", stoi(res2[1]), stoi(res2[2]));
+				l2 = r;
 			}
-			else if (estUnReel(res[2]))
+			else if (estUnReel(res[2])) {
 				Reelle* r = litMng.createLitt("Reelle", NULL, NULL, stod(res[2]));
+				l2 = r;
+			}
 
 			
 			Complexe* c = litMng.createLitt("Complexe", NULL, NULL, l1, l2);
 		}
+
+		else throw ComputerException("Erreur, commande inconnue");
 	}
 	
 }
