@@ -1,8 +1,8 @@
 #ifndef _COMPUTER_H
 #define _COMPUTER_H
 #include "litterale.h"
-#include "Controleur.h"
-#endif
+
+
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -81,3 +81,4 @@ public:
 	void setNbItemsToAffiche(unsigned int n);
 };
 
+#endif

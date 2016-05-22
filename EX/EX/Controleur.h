@@ -1,6 +1,11 @@
-#pragma once
+#ifndef _CONTROLEUR_H
+#define _CONTROLEUR_H
+
 #include "litterale.h"
 #include "computer.h"
+
+
+#include <regex>
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -8,24 +13,12 @@
 class Controleur {
 	LitteraleManager& litMng;
 	Pile& Stack;
-	LitteraleFactory& litFact;
 public:
-	Controleur(LitteraleManager& l, Pile& v, LitteraleFactory& f) :
-		litMng(l), Stack(v), litFact(f){}
+	Controleur(LitteraleManager& l, Pile& v) :
+		litMng(l), Stack(v){}
 	void parse(const string& c);
 	void executer();
 	void operation(int i);
 };
 
-class LitteraleFactory
-{
-public:
-	LitteraleFactory();
-
-private:
-
-};
-
-LitteraleFactory::LitteraleFactory()
-{
-}
+#endif
