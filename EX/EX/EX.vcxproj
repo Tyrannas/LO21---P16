@@ -146,15 +146,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="computer.cpp" />
     <ClCompile Include="litterale.cpp" />
+    <ClCompile Include="LitteraleManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Controleur.cpp" />
+    <ClCompile Include="Pile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="computer.h" />
     <ClInclude Include="litterale.h" />
     <ClInclude Include="Controleur.h" />
+    <ClInclude Include="LitteraleManager.h" />
+    <ClInclude Include="Pile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
