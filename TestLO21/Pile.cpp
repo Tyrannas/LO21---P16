@@ -53,6 +53,7 @@ void Pile::push(Litterale* const l) {
 	nb = nb + 1;
 }
 
+/*
 void Pile::pop() {
 	if (estVide())
 		throw ComputerException("La pile est vide, impossible de depiler");
@@ -62,6 +63,7 @@ void Pile::pop() {
 		items[nb].raz();
 	}
 }
+*/
 
 bool Pile::estVide() const {
 	if (nb == 0)
@@ -82,7 +84,7 @@ Litterale* const Pile::top() const {
 		return items[nb - 1].getLitterale();
 }
 
-
+/*
 void Pile::setMessage(const string& m) {
 	message = m;
 }
@@ -90,8 +92,51 @@ void Pile::setMessage(const string& m) {
 string Pile::getMessage() const {
 	return message;
 }
+*/
 
 void Pile::setNbItemsToAffiche(unsigned int n) {
 	nbAffiche = n;
 }
 
+void Pile::dup()
+{
+	this->push(top());
+}
+
+void Pile::drop()
+{
+	if (estVide())
+		throw ComputerException("La pile est vide, impossible de depiler");
+	else {
+		nb--;
+		items[nb].raz();
+	}
+}
+
+void Pile::swap()
+{
+	Litterale* l1 = top();
+	this->drop();
+	Litterale* l2 = top();
+	this->drop();
+	this->push(l1);
+	this->push(l2);
+}
+
+void Pile::clear()
+{
+	while(!estVide())
+		drop();	
+}
+
+
+
+/*
+• DUP, opérateur unaire : empile une nouvelle littérale identique à celle du sommet de la pile.
+• DROP, opérateur unaire : dépile la littérale au sommet de la pile.
+• SWAP, opérateur binaire : intervertit les deux derniers éléments empilés dans la pile.
+• LASTOP : applique le dernier opérateur utilisé.
+• LASTARGS : empile les littérales utilisées pour la dernière opération.
+• UNDO : rétablit l’état du calculateur avant la dernière opération.
+• REDO : rétablit l’état du calculateur avant l’application de la dernière opération UNDO.
+• CLEAR : vide tous les éléments de la pile.*/
