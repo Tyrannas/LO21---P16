@@ -17,12 +17,13 @@ bool estUnEntier(const string& s) {
 }
 
 bool estUnReel(const string& s) {
-	regex reg(R"(\b\d+,\d+\b)");
+	regex reg(R"(\b\d+\.\d+\b)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUnRationnel(const string& s) {
 	regex reg(R"(\b\d+\/\d+\b)");
+	//cout << "Sa grande soeur c'est un rationnel";
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
@@ -39,7 +40,7 @@ void Controleur::parse(const string& c) {
 	//si c'est un opérateur
 	if (operateur != -1) {
 		if (Stack.taille() >= 2)
-			cout << "yolo"; //Controleur::operation(operateur);
+			Controleur::operation(operateur);
 	}
 	//si c'est un littérale
 	//on créé détermine le type
@@ -51,8 +52,10 @@ void Controleur::parse(const string& c) {
 		}
 		else if (estUnRationnel(c)) {
 			cmatch res;
-			regex rx("\\d+");
+			regex rx(R"(\b(\d+)\/(\d+)\b)");
 			regex_search(c.c_str(), res, rx);
+			//cout << res[0];
+			//cout << res[0] << " YOLO " << res[1]  << " YOLO " << res[2]  << " YOLO " << res[3] << " YOLO " << res[4];
 			Rationnelle* const r = dynamic_cast<Rationnelle* const>(litMng.littFactory(tRationnelle, stoi(res[1]), stoi(res[2])));
 			Stack.push(r);
 

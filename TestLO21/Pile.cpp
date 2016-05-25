@@ -57,7 +57,7 @@ void Pile::pop() {
 	if (estVide())
 		throw ComputerException("La pile est vide, impossible de depiler");
 	else {
-		cout << "suppression du dernier item";
+		//cout << "suppression du dernier item";
 		nb--;
 		items[nb].raz();
 	}

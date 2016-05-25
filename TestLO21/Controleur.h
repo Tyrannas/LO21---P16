@@ -12,8 +12,7 @@ class Controleur {
 	LitteraleManager& litMng;
 	Pile& Stack;
 public:
-	Controleur(LitteraleManager& l, Pile& v) :
-		litMng(l), Stack(v) {}
+	Controleur(LitteraleManager& l, Pile& v) :	litMng(l), Stack(v) {}
 	void parse(const string& c);
 	void executer();
 	void operation(int i);
