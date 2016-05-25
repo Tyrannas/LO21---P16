@@ -16,5 +16,5 @@ public:
 		litMng(l), Stack(v) {}
 	void parse(const string& c);
 	void executer();
-	//void operation(int i);
+	void operation(int i);
 };

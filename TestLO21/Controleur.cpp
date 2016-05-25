@@ -121,38 +121,44 @@ void Controleur::executer() {
 	} while (c != "Exit");
 }
 
-//void Controleur::operation(int i)
-//{
-//	
-//	Litterale& v1 = Stack.top();
-//	Stack.pop();
-//	Litterale& v2 = Stack.top();
-//	if (1 <= i <= 4) { //opérateur binaires.
-//		Stack.pop();
-//	}
-//
-//	switch (i)
-//	{
-//	//addition
-//	case 1:
-//		Litterale& v3 = v1 + v2;
-//		break;
-//	//soustraction
-//	case 2:
-//		Litterale& v3 = v1 - v2;
-//		break;
-//	//multiplication
-//	case 3:
-//		Litterale& v3 = v1 * v2;
-//		break;
-//	//division
-//	case 4:
-//		Litterale& v3 = v1 / v2;
-//		break;
-//	default:
-//		break;
-//	}
-//	Stack.push(v3);
-//}
-//
+void Controleur::operation(int i)
+{
+	const int nbOpBinaires = 4;
+	Litterale* const v1 = Stack.top();
+	Litterale* v2 = nullptr;
+	Litterale* v3 = nullptr;
+	Stack.pop();
+	
+	if (i <= nbOpBinaires) { //opérateur binaires.
+		v2 = Stack.top();
+		Stack.pop();
+	}
+	
+	switch (i)
+	{
+	//addition
+	case 1:
+		v3 = *v1 + *v2;
+		break;
+	//soustraction
+	//case 2:
+	//	v3 = *v1 - *v2;
+	//	break;
+	////multiplication
+	//case 3:
+	//	v3 = *v1 * *v2;
+	//	break;
+	////division
+	//case 4:
+	//	Litterale& v3 = v1 / v2;
+	//	break;
+	default:
+		break;
+	}
+	litMng.removeLitterale(v1);
+	if(i <= nbOpBinaires) litMng.removeLitterale(v2);
+	litMng.addLitterale(v3);
+	Stack.push(v3);
+}
+
 

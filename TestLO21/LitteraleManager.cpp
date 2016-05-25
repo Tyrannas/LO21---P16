@@ -54,13 +54,13 @@ Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int 
 }
 
 
-void LitteraleManager::removeLitterale(Litterale& l) {
+void LitteraleManager::removeLitterale(Litterale* const l) {
 	int i = 0;
-	while (i < (nb - 1) && lits[i] != &l) {
+	while (i < (nb - 1) && lits[i] != l) {
 		i++;
 	}
 
-	if (lits[i] != &l) {
+	if (lits[i] != l) {
 		throw ComputerException("erreur");
 	}
 	delete lits[i];

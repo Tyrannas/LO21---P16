@@ -4,13 +4,14 @@
 #include "LitteraleManager.h"
 #include "ComputerException.h"
 #include <iostream>
+#include <typeinfo>
+
 using namespace std;
 
 int main() {
-	LitteraleManager lmng();
-	Pile stack();
-	LitteraleManager* l = new LitteraleManager;
-	l->littFactory(tEntiere, 5)->affiche();
+	Pile& stack();
+	LitteraleManager& litMng();
+
 	system("pause");
 	return 0;
 }
