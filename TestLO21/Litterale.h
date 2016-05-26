@@ -13,7 +13,8 @@ typedef enum
 	tEntiere,
 	tReelle,
 	tRationnelle,
-	tComplexe
+	tComplexe, 
+	tAtome
 }TypeLitterale;
 
 class Litterale {
@@ -22,9 +23,19 @@ protected:
 public:
 	//virtual Litterale getValue();
 	virtual void affiche() const = 0;
-	TypeLitterale getType() { return type; }
+	TypeLitterale getType() const { return type; }
 	Litterale() : type(TypeLitterale::tUndefined) {};
 };
+
+
+class Atome : public Litterale {
+private:
+	string id;
+public:
+	const string getId() const { return id; }
+	Atome() { this->type = TypeLitterale::tAtome; };
+};
+
 
 class Numerique : public Litterale {
 public:
@@ -106,3 +117,20 @@ Complexe operator+(Complexe& c, Entiere e);
 
 Litterale* operator+(Litterale& l1, Litterale& l2);
 
+// Operations
+
+
+Entiere* div(Litterale& l1, Litterale& l2);
+Entiere* mod(Litterale& l1, Litterale& l2);
+
+Entiere* num(Litterale& l);
+Entiere* den(Litterale& l);
+
+Complexe* dollar(Litterale& l1, Litterale& l2);
+
+Numerique* re(Litterale& l);
+Numerique* im(Litterale& l);
+
+bool boolOr(bool b1, bool b2);
+bool boolAnd(bool b1, bool b2);
+bool boolNot(bool b);

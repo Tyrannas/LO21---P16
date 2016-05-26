@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClInclude Include="ComputerException.h" />
     <ClInclude Include="Controleur.h" />
+    <ClInclude Include="HashMap.h" />
     <ClInclude Include="Litterale.h" />
     <ClInclude Include="LitteraleManager.h" />
     <ClInclude Include="Pile.h" />

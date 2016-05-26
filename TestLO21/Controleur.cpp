@@ -8,6 +8,15 @@ int estUnOperateur(const string& s) {
 	if (s == "-") return 2;
 	if (s == "*") return 3;
 	if (s == "/") return 4;
+	if (s == "DIV") return 5;
+	if (s == "MOD") return 6;
+	if (s == "$") return 7;
+
+	if (s == "NEG") return 10;
+	if (s == "NUM") return 11;
+	if (s == "DEN") return 12;
+	if (s == "RE") return 13;
+	if (s == "IM") return 14;
 	return -1;
 }
 
@@ -32,6 +41,11 @@ bool estUnComplexe(const string& s) {
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
+bool estUnIdentifiant(const string& s) {
+	regex reg(R"(\b\w(\d|\w)*\b)");
+	return regex_match(s.cbegin(), s.cend(), reg);
+}
+
 ///******Controleur******/
 
 
@@ -39,16 +53,19 @@ void Controleur::parse(const string& c) {
 	int operateur = estUnOperateur(c);
 	//si c'est un opérateur
 	if (operateur != -1) {
-		if (Stack.taille() >= 2)
+		if ((operateur < 10 && stack.taille() >= 2) || (operateur >= 10 && stack.taille() >= 1))
 			Controleur::operation(operateur);
 	}
 	//si c'est un littérale
 	//on créé détermine le type
 	//puis on créé l'objet à l'aide de la factory
 	else {
-		if (estUnEntier(c)) {
+		if (estUnIdentifiant(c)) {
+			cout << "C'est un identifiant mais je sais pas faire";
+		}
+		else if (estUnEntier(c)) {
 			Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(c)));
-			Stack.push(e);
+			stack.push(e);
 		}
 		else if (estUnRationnel(c)) {
 			cmatch res;
@@ -57,13 +74,13 @@ void Controleur::parse(const string& c) {
 			//cout << res[0];
 			//cout << res[0] << " YOLO " << res[1]  << " YOLO " << res[2]  << " YOLO " << res[3] << " YOLO " << res[4];
 			Rationnelle* const r = dynamic_cast<Rationnelle* const>(litMng.littFactory(tRationnelle, stoi(res[1]), stoi(res[2])));
-			Stack.push(r);
+			stack.push(r);
 
 		}
 		else if (estUnReel(c)) {
 			cmatch res;
 			Reelle* const r = dynamic_cast<Reelle* const>(litMng.littFactory(tReelle, NULL, NULL, stod(c)));
-			Stack.push(r);
+			stack.push(r);
 		}
 		else if (estUnComplexe(c)) {
 			Numerique* l1 = nullptr;
@@ -106,7 +123,7 @@ void Controleur::parse(const string& c) {
 
 
 			Complexe* const c = dynamic_cast<Complexe* const>(litMng.littFactory(tComplexe, NULL, NULL, NULL, l1, l2));
-			Stack.push(c);
+			stack.push(c);
 		}
 
 		else throw ComputerException("Erreur, commande inconnue");
@@ -117,7 +134,7 @@ void Controleur::parse(const string& c) {
 void Controleur::executer() {
 	string c;
 	do {
-		Stack.affiche();
+		stack.affiche();
 		cout << "?- ";
 		cin >> c;
 		if (c != "Exit") parse(c);
@@ -126,15 +143,15 @@ void Controleur::executer() {
 
 void Controleur::operation(int i)
 {
-	const int nbOpBinaires = 4;
-	Litterale* const v1 = Stack.top();
+	const int nbOpBinaires = 7;
+	Litterale* v1 = stack.top();
 	Litterale* v2 = nullptr;
 	Litterale* v3 = nullptr;
-	Stack.pop();
+	stack.drop();
 	
 	if (i <= nbOpBinaires) { //opérateur binaires.
-		v2 = Stack.top();
-		Stack.pop();
+		v2 = stack.top();
+		stack.drop();
 	}
 	
 	switch (i)
@@ -155,13 +172,37 @@ void Controleur::operation(int i)
 	//case 4:
 	//	Litterale& v3 = v1 / v2;
 	//	break;
+	case 5:
+		v3 = div(*v1, *v2);
+		break;
+	case 6:
+		v3 = mod(*v1, *v2);
+		break;
+	case 7:
+		v3 = dollar(*v1, *v2);
+		break;
+	case 10:
+		//v3 = neg(*v1);
+		break;
+	case 11:
+		v3 = num(*v1);
+		break;
+	case 12:
+		v3 = den(*v1);
+		break;
+	case 13:
+		v3 = re(*v1);
+		break;
+	case 14:
+		v3 = im(*v1);
+		break;
 	default:
 		break;
 	}
 	litMng.removeLitterale(v1);
 	if(i <= nbOpBinaires) litMng.removeLitterale(v2);
 	litMng.addLitterale(v3);
-	Stack.push(v3);
+	stack.push(v3);
 }
 
 

@@ -338,7 +338,7 @@ Numerique* re(Litterale& l) {
 	}
 }
 
-Numerique* re(Litterale& l) {
+Numerique* im(Litterale& l) {
 	if (l.getType() != tComplexe) {
 		Complexe* pt1 = dynamic_cast<Complexe*>(&l);
 		return pt1->getIm();
