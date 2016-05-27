@@ -14,10 +14,11 @@ using namespace std;
 class Controleur {
 	LitteraleManager& litMng;
 	Pile& stack;
-	HashMap table;
+	HashMap& table;
 public:
 	Controleur(LitteraleManager& l, Pile& v) :	litMng(l), stack(v) {}
 	void parse(const string& c);
 	void executer();
 	void operation(int i);
+	const int nbOpBin = 7;
 };
