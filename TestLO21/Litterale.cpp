@@ -1,4 +1,5 @@
 #include "Litterale.h"
+#include "ComputerException.h"
 
 
 
@@ -268,3 +269,102 @@ Litterale* operator+(Litterale& l1, Litterale& l2) {
 	}
 
 }
+
+Entiere* div(Litterale& l1, Litterale& l2) {
+	if (l1.getType() == tEntiere && l2.getType() == tEntiere) {
+		Entiere* pt1 = dynamic_cast<Entiere*>(&l1);
+		Entiere* pt2 = dynamic_cast<Entiere*>(&l2);
+		return (new Entiere(pt1->getVal() / pt2->getVal()));
+	}
+	else
+		throw ComputerException("Impossible d'effectuer DIV sur des litterales non entieres.\n");
+}
+
+
+Entiere* mod(Litterale& l1, Litterale& l2) {
+	if (l1.getType() == tEntiere && l2.getType() == tEntiere) {
+		Entiere* pt1 = dynamic_cast<Entiere*>(&l1);
+		Entiere* pt2 = dynamic_cast<Entiere*>(&l2);
+		return (new Entiere(pt1->getVal() - ((pt1->getVal() / pt1->getVal()) * pt1->getVal())));
+	}
+	else
+		throw ComputerException("Impossible d'effectuer MOD sur des litterales non entieres.\n");
+}
+
+Entiere* num(Litterale& l) {
+	if (l.getType() == tRationnelle) {
+		Rationnelle* pt1 = dynamic_cast<Rationnelle*>(&l);
+		return (new Entiere(pt1->getNum()));
+	}
+	else if (l.getType() == tEntiere) {
+		Entiere* pt1 = dynamic_cast<Entiere*>(&l);
+		return pt1;
+	}
+	else {
+		throw ComputerException("Impossible d'effectuer NUM sur une litterale reelle ou complexe.\n");
+	}
+}
+
+Entiere* den(Litterale& l) {
+	if (l.getType() == tRationnelle) {
+		Rationnelle* pt1 = dynamic_cast<Rationnelle*>(&l);
+		return (new Entiere(pt1->getDen()));
+	}
+	else if (l.getType() == tEntiere) {
+		return (new Entiere(1));
+	}
+	else
+		throw ComputerException("Impossible d'effectuer DEN sur une litterale reelle ou complexe.\n");
+}
+
+Complexe* dollar(Litterale& l1, Litterale& l2) {
+	if (l1.getType() != tComplexe && l2.getType() != tComplexe) {
+		Numerique* pt1 = dynamic_cast<Numerique*>(&l1);
+		Numerique* pt2 = dynamic_cast<Numerique*>(&l2);
+		return (new Complexe(pt1, pt2));
+	}
+	else
+		throw ComputerException("Impossible d'effectuer $ sur une litterale complexe.\n");
+}
+
+Numerique* re(Litterale& l) {
+	if (l.getType() != tComplexe) {
+		Complexe* pt1 = dynamic_cast<Complexe*>(&l);
+		return pt1->getRe();
+	}
+	else {
+		Numerique* pt1 = dynamic_cast<Numerique*>(&l);
+		return pt1;
+	}
+}
+
+Numerique* im(Litterale& l) {
+	if (l.getType() != tComplexe) {
+		Complexe* pt1 = dynamic_cast<Complexe*>(&l);
+		return pt1->getIm();
+	}
+	else {
+		return (new Entiere(0));
+	}
+}
+
+bool boolOr(bool b1, bool b2) {
+	return (b1 || b2);
+}
+
+bool boolAnd(bool b1, bool b2) {
+	return (b1 && b2);
+}
+
+bool boolNot(bool b) {
+	return (!b);
+}
+
+
+/*
+• =, !=, =<, >=, <, > : opérateurs binaires pour les tests respectivement égal, différent, inférieur ou égal,
+supérieur ou égal, strictement inférieur, strictement supérieur.
+• AND, opérateur binaire : ET logique.
+• OR, opérateur binaire : OU logique.
+• NOT, opérateur unaire : NON logique.
+*/
