@@ -78,13 +78,13 @@ private:
 	Numerique* re;
 	Numerique* im;
 public:
-	Complexe(Numerique* r, Numerique* i) : re(r), im(i) { this->type = TypeLitterale::tComplexe; };
+	Complexe(Numerique* r, Numerique* i = nullptr) : re(r), im(i) { this->type = TypeLitterale::tComplexe; };
 	Numerique* getRe() const { return re; }
 	Numerique* getIm() const { return im; }
 	void affiche() const {
 		(*re).affiche();
 		cout << "$";
-		(*im).affiche();
+		if(im != nullptr) (*im).affiche();
 	}
 };
 

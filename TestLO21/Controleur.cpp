@@ -12,23 +12,22 @@ int estUnOperateur(const string& s) {
 }
 
 bool estUnEntier(const string& s) {
-	regex reg(R"(\b\d+\b)");
+	regex reg(R"(-?\d+)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUnReel(const string& s) {
-	regex reg(R"(\b\d+\.\d+\b)");
+	regex reg(R"(-?\d+\.\d+)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUnRationnel(const string& s) {
-	regex reg(R"(\b\d+\/\d+\b)");
-	//cout << "Sa grande soeur c'est un rationnel";
+	regex reg(R"(-?\d+\/-?\d+)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUnComplexe(const string& s) {
-	regex reg(R"(\b\d+\+\d+\b)");
+	regex reg(R"((-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))\$(-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))?)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
@@ -52,10 +51,8 @@ void Controleur::parse(const string& c) {
 		}
 		else if (estUnRationnel(c)) {
 			cmatch res;
-			regex rx(R"(\b(\d+)\/(\d+)\b)");
+			regex rx(R"((-?\d+)\/(-?\d+))");
 			regex_search(c.c_str(), res, rx);
-			//cout << res[0];
-			//cout << res[0] << " YOLO " << res[1]  << " YOLO " << res[2]  << " YOLO " << res[3] << " YOLO " << res[4];
 			Rationnelle* const r = dynamic_cast<Rationnelle* const>(litMng.littFactory(tRationnelle, stoi(res[1]), stoi(res[2])));
 			Stack.push(r);
 
@@ -70,7 +67,7 @@ void Controleur::parse(const string& c) {
 			Numerique* l2 = nullptr;
 
 			cmatch res;
-			regex rx("[\\d,]+");
+			regex rx(R"((-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))\$(-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))?)");
 			regex_search(c.c_str(), res, rx);
 			if (estUnEntier(res[1])) {
 				Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(res[1])));
@@ -78,7 +75,7 @@ void Controleur::parse(const string& c) {
 			}
 			else if (estUnRationnel(res[1])) {
 				cmatch res2;
-				regex rx("\\d+");
+				regex rx(R"((-?\d+)\/(-?\d+))");
 				regex_search(c.c_str(), res2, rx);
 				Rationnelle* const r = dynamic_cast<Rationnelle* const>(litMng.littFactory(tRationnelle, stoi(res2[1]), stoi(res2[2])));
 				l1 = r;
@@ -94,7 +91,7 @@ void Controleur::parse(const string& c) {
 			}
 			else if (estUnRationnel(res[2])) {
 				cmatch res2;
-				regex rx("\\d+");
+				regex rx(R"((-?\d+)\/(-?\d+))");
 				regex_search(c.c_str(), res2, rx);
 				Rationnelle* const r = dynamic_cast<Rationnelle* const>(litMng.littFactory(tRationnelle, stoi(res2[1]), stoi(res2[2])));
 				l2 = r;
@@ -116,12 +113,21 @@ void Controleur::parse(const string& c) {
 
 void Controleur::executer() {
 	string c;
-	do {
-		Stack.affiche();
-		cout << "?- ";
-		cin >> c;
-		if (c != "Exit") parse(c);
-	} while (c != "Exit");
+	try {
+		do {
+			Stack.affiche();
+			cout << "?- ";
+			cin >> c;
+			stringstream ss(c);
+			string item;
+			while (getline(ss, item, ' ')) {
+				if (item != "Exit") parse(item);
+			}
+		} while (c != "Exit");
+	}
+	catch(ComputerException& c) {
+		cout << c.getInfo();
+	}
 }
 
 void Controleur::operation(int i)
@@ -153,7 +159,7 @@ void Controleur::operation(int i)
 	//	break;
 	////division
 	//case 4:
-	//	Litterale& v3 = v1 / v2;
+	//	Litterale& v3 = *v1 / *v2;
 	//	break;
 	default:
 		break;

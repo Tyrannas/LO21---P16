@@ -12,9 +12,6 @@ int main() {
 	Pile stack = Pile();
 	LitteraleManager litMng = LitteraleManager();
 	Controleur myCtrl(litMng, stack);
-	Reelle r1(3.5);
-	Litterale* l1(&r1);
-	l1->affiche();
 	myCtrl.executer();
 	system("pause");
 	return 0;
