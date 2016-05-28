@@ -17,41 +17,53 @@ int estUnOperateur(const string& s) {
 	if (s == "DEN") return 12;
 	if (s == "RE") return 13;
 	if (s == "IM") return 14;
+	//regex reg("^STO\\s\\d+\\s\\w+$");
+	//if (regex_match(s.cbegin(), s.cend(), reg)) return 15;
 	return -1;
 }
 
 bool estUnIdentifiant(const string& s) {
-	regex reg(R"(\b[A-Za-z]+\d*\b)");
+	regex reg("^[A-Za-z]+\\d*$");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUnEntier(const string& s) {
-	regex reg(R"(-?\d+)");
+	regex reg(R"(^-?\d+$)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUnReel(const string& s) {
-	regex reg(R"(-?\d+\.\d+)");
+	regex reg(R"(^-?\d+\.\d+$)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUnRationnel(const string& s) {
-	regex reg(R"(-?\d+\/-?\d+)");
+	regex reg(R"(^-?\d+\/-?\d+$)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUnComplexe(const string& s) {
-	regex reg(R"((-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))\$(-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))?)");
+	regex reg(R"(^(-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))\$(-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))?$)");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
+bool estUneAssignation(const string& s) {
+	regex reg("^STO\\s\\d+\\s\\w+$");
+	return regex_match(s.cbegin(), s.cend(), reg);
+}
 ///******Controleur******/
 
 
 void Controleur::parse(const string& c) {
 	int operateur = estUnOperateur(c);
 	//si c'est un opérateur
-	if (operateur != -1) {
+	if (estUneAssignation(c)) {
+		cmatch res;
+		regex rx(R"(\s(\d+)\s(\w+))");
+		regex_search(c.c_str(), res, rx);
+		cout << "on veut stocker la valeur: " << res[1] << " dans " << res[2] << "\n";
+	}
+	else if (operateur != -1) {
 		if ((operateur <= nbOpBin && stack.taille() >= 2) || (operateur > nbOpBin && stack.taille() >= 1))
 			Controleur::operation(operateur);
 	}
@@ -134,11 +146,10 @@ void Controleur::executer() {
 		do {
 			stack.affiche();
 			cout << "?- ";
-			cin >> c;
-			stringstream ss(c);
-			string item;
-			while (getline(ss, item, ' ')) {
-				if (item != "Exit") parse(item);
+			getline(cin, c);
+			if (c != "Exit") {
+				cout << "string parsee: " << c <<"\n";
+				parse(c);
 			}
 		} while (c != "Exit");
 	}
