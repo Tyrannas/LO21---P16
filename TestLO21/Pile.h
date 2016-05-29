@@ -14,7 +14,7 @@ public:
 	inline void setLitterale(Litterale* const l) { lit = l; };
 	inline Litterale* const getLitterale() const {
 		if (lit == 0)
-			throw ComputerException("erreur");
+			throw ComputerException("Erreur dans la recuperation de la litterale");
 		return lit;
 	};
 	void raz() { lit = nullptr; };

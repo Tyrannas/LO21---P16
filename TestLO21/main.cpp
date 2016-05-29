@@ -11,7 +11,8 @@ using namespace std;
 int main() {
 	Pile stack = Pile();
 	LitteraleManager litMng = LitteraleManager();
-	Controleur myCtrl(litMng, stack);
+	HashMap table = HashMap();
+	Controleur myCtrl(litMng, stack, table);
 	myCtrl.executer();
 	system("pause");
 	return 0;

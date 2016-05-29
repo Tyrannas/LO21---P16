@@ -29,7 +29,7 @@ Litterale& LitteraleManager::addLitterale(Litterale * const l) {
 	return *lits[nb - 1];
 }
 
-Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int p2, double p3, Numerique * p4, Numerique * p5)
+Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int p2, double p3, Numerique * p4, Numerique * p5, string s)
 {
 	if (type == TypeLitterale::tEntiere) {
 		Entiere * const e = new Entiere(p1);
@@ -51,6 +51,16 @@ Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int 
 		addLitterale(c);
 		return c;
 	}
+	if (type == TypeLitterale::tExpression) {
+		Expression * const e = new Expression(s);
+		addLitterale(e);
+		return e;
+	}
+	if (type == TypeLitterale::tProgramme) {
+		Programme * const p = new Programme(s);
+		addLitterale(p);
+		return p;
+	}
 }
 
 
@@ -61,7 +71,7 @@ void LitteraleManager::removeLitterale(Litterale* const l) {
 	}
 
 	if (lits[i] != l) {
-		throw ComputerException("erreur");
+		throw ComputerException("Erreur, litterale a enlever non trouvee");
 	}
 	delete lits[i];
 	for (int j = i; j < nb; j++)

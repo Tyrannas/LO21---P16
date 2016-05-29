@@ -9,14 +9,15 @@
 #include <iostream>
 #include <sstream>
 
+
 using namespace std;
 
 class Controleur {
 	LitteraleManager& litMng;
 	Pile& stack;
-	//HashMap& table;
+	HashMap& table;
 public:
-	Controleur(LitteraleManager& l, Pile& v) :	litMng(l), stack(v) {}
+	Controleur(LitteraleManager& l, Pile& v, HashMap& t) :	litMng(l), stack(v), table(t) {}
 	void parse(const string& c);
 	void executer();
 	void operation(int i);

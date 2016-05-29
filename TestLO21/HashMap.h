@@ -11,15 +11,15 @@ const int TABLE_SIZE = 128;
 class HashEntry {
 private:
 	string key;
-	Litterale& value;
+	Litterale* value;
 public:
-	HashEntry(string key, Litterale& value) : key(key), value(value) {};
+	HashEntry(string key, Litterale* value) : key(key), value(value) {};
 
 	string getKey() {
 		return key;
 	}
 
-	Litterale& getValue() {
+	Litterale* getValue() {
 		return value;
 	}
 };
@@ -34,7 +34,7 @@ public:
 			table[i] = NULL;
 	}
 
-	Litterale& get(string key) {
+	Litterale* get(string key) {
 		int hash = 0;
 		while (table[hash] != NULL && table[hash]->getKey() != key)
 			hash = (hash + 1);
@@ -44,7 +44,7 @@ public:
 			return table[hash]->getValue();
 	}
 
-	void put(string key, Litterale& value) {
+	void put(string key, Litterale* value) {
 		int hash = 0;
 		while (table[hash] != NULL && table[hash]->getKey() != key)
 			hash = (hash + 1);

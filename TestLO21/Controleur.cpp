@@ -22,8 +22,18 @@ int estUnOperateur(const string& s) {
 	return -1;
 }
 
+bool estUneExpression(const string& s) {
+	regex reg("^'\.+'$");
+	return regex_match(s.cbegin(), s.cend(), reg);
+}
+
+bool estUnProgramme(const string& s) {
+	regex reg("^\\[\.+\\]$");
+	return regex_match(s.cbegin(), s.cend(), reg);
+}
+
 bool estUnIdentifiant(const string& s) {
-	regex reg("^[A-Za-z]+\\d*$");
+	regex reg("^[A-Z]+\\d*$");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 
@@ -48,7 +58,7 @@ bool estUnComplexe(const string& s) {
 }
 
 bool estUneAssignation(const string& s) {
-	regex reg("^STO\\s\\d+\\s\\w+$");
+	regex reg("^STO\\s\\d+\\s'\\w+'$");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
 ///******Controleur******/
@@ -58,10 +68,20 @@ void Controleur::parse(const string& c) {
 	int operateur = estUnOperateur(c);
 	//si c'est un opérateur
 	if (estUneAssignation(c)) {
+		cout << "assignation\n";
 		cmatch res;
-		regex rx(R"(\s(\d+)\s(\w+))");
+		regex rx(R"(\s(\d+)\s('\w+'))");
 		regex_search(c.c_str(), res, rx);
-		cout << "on veut stocker la valeur: " << res[1] << " dans " << res[2] << "\n";
+		string var = res[2];
+		string valeur = res[1];
+		var.erase(remove(var.begin(), var.end(), '\''), var.end());
+		parse(valeur);
+		Litterale* newvalue = stack.top();
+		stack.drop();
+		table.put(var, newvalue);
+		//cout << "on veut stocker la valeur: " << valeur << " dans " << var << "\n";
+		//cout << "on vient de mettre la valeur : ",
+		//table.get(var).affiche();
 	}
 	else if (operateur != -1) {
 		if ((operateur <= nbOpBin && stack.taille() >= 2) || (operateur > nbOpBin && stack.taille() >= 1))
@@ -72,7 +92,21 @@ void Controleur::parse(const string& c) {
 	//puis on créé l'objet à l'aide de la factory
 	else {
 		if (estUnIdentifiant(c)) {
-			cout << "C'est un identifiant mais je sais pas faire";
+			Litterale* valeur = table.get(c);
+			stack.push(valeur);
+			//cout << "C'est un identifiant mais je sais pas faire";
+		}
+		else if (estUneExpression(c)) {
+			cout << "C'est une expression\n";
+			Expression* const e = dynamic_cast<Expression* const>(litMng.littFactory(tExpression, NULL, NULL, NULL, NULL, NULL, c));
+			stack.push(e);
+		}
+		else if (estUnProgramme(c)) {
+			cout << "C'est un programme\n";
+			Programme* const p = dynamic_cast<Programme* const>(litMng.littFactory(tProgramme, NULL, NULL, NULL, NULL, NULL, c));
+			cout << "programme cree\n";
+			stack.push(p);
+			cout << "etu pushe\n";
 		}
 		else if (estUnEntier(c)) {
 			Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(c)));

@@ -14,7 +14,9 @@ typedef enum
 	tReelle,
 	tRationnelle,
 	tComplexe, 
-	tAtome
+	tAtome,
+	tExpression,
+	tProgramme
 }TypeLitterale;
 
 class Litterale {
@@ -27,6 +29,33 @@ public:
 	Litterale() : type(TypeLitterale::tUndefined) {};
 };
 
+class Expression : public Litterale{
+private:
+	string expr;
+public:
+	const string getExpr() const { return expr; }
+	void affiche() const { 
+		if (expr.length() > 20)
+			cout << string(expr.begin(), expr.begin() + 16) << "...'";
+		else
+			cout << expr;
+	}
+	Expression(string s) : expr(s) { this->type = TypeLitterale::tExpression; }
+};
+
+class Programme : public Litterale {
+private:
+	string prog;
+public:
+	void affiche() const {
+		if (prog.length() > 20)
+			cout << string(prog.begin(), prog.begin() + 16) << "...]";
+		else
+			cout << prog;
+	}
+	string getProg() { return prog; }
+	Programme(string s) : prog(s) { this->type = TypeLitterale::tProgramme; }
+};
 
 class Atome : public Litterale {
 private:
@@ -34,6 +63,7 @@ private:
 public:
 	const string getId() const { return id; }
 	Atome() { this->type = TypeLitterale::tAtome; };
+	void affiche() const { cout << id; }
 };
 
 
