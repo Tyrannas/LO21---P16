@@ -3,6 +3,18 @@
 
 ///******* Fonctions de Service *****/
 
+int estUnOperateurPile(const string& s) {
+	if (s == "DUP") return 1;
+	if (s == "DROP") return 2;
+	if (s == "SWAP") return 3;
+	if (s == "LASTOP") return 4;
+	if (s == "LASTARGS") return 5;
+	if (s == "UNDO") return 6;
+	if (s == "REDO") return 7;
+	if (s == "CLEAR") return 8;
+	return -1;
+}
+
 int estUnOperateur(const string& s) {
 	if (s == "+") return 1;
 	if (s == "-") return 2;
@@ -66,6 +78,7 @@ bool estUneAssignation(const string& s) {
 
 void Controleur::parse(const string& c) {
 	int operateur = estUnOperateur(c);
+	int operateurPile = estUnOperateurPile(c);
 	//si c'est un opérateur
 	if (estUneAssignation(c)) {
 		cout << "assignation\n";
@@ -87,6 +100,9 @@ void Controleur::parse(const string& c) {
 		if ((operateur <= nbOpBin && stack.taille() >= 2) || (operateur > nbOpBin && stack.taille() >= 1))
 			Controleur::operation(operateur);
 	}
+	else if (operateurPile != -1) {
+			Controleur::operationPile(operateurPile);
+	}
 	//si c'est un littérale
 	//on créé détermine le type
 	//puis on créé l'objet à l'aide de la factory
@@ -98,14 +114,14 @@ void Controleur::parse(const string& c) {
 		}
 		else if (estUneExpression(c)) {
 			cout << "C'est une expression\n";
-			Expression* const e = dynamic_cast<Expression* const>(litMng.littFactory(tExpression, NULL, NULL, NULL, NULL, NULL, c));
-			stack.push(e);
+			//Expression* const e = dynamic_cast<Expression* const>(litMng.littFactory(tExpression, NULL, NULL, NULL, NULL, NULL, c));
+			//stack.push(e);
 		}
 		else if (estUnProgramme(c)) {
 			cout << "C'est un programme\n";
-			Programme* const p = dynamic_cast<Programme* const>(litMng.littFactory(tProgramme, NULL, NULL, NULL, NULL, NULL, c));
+			//Programme* const p = dynamic_cast<Programme* const>(litMng.littFactory(tProgramme, NULL, NULL, NULL, NULL, NULL, c));
 			cout << "programme cree\n";
-			stack.push(p);
+			//stack.push(p);
 			cout << "etu pushe\n";
 		}
 		else if (estUnEntier(c)) {
@@ -243,9 +259,6 @@ void Controleur::operation(int i)
 	case 13:
 		v3 = re(*v1);
 		break;
-	case 14:
-		v3 = im(*v1);
-		break;
 	default:
 		break;
 	}
@@ -255,4 +268,35 @@ void Controleur::operation(int i)
 	stack.push(v3);
 }
 
-
+void Controleur::operationPile(int i)
+{
+	switch (i)
+	{
+	case 1:
+		stack.dup();
+		break;
+	case 2:
+		stack.drop();
+		break;
+	case 3:
+		stack.swap();
+		break;
+	case 4:
+		//stack.lastop();
+		break;
+	case 5:
+		//stack.lastargs();
+		break;
+	case 6:
+		//stack.undo();
+		break;
+	case 7:
+		//stack.redo();
+		break;
+	case 8:
+		stack.clear();
+		break;
+	default:
+		break;
+	}
+}

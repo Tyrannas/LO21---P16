@@ -19,6 +19,8 @@ Pile::Pile() {
 	nbMax = 10;
 	nbAffiche = 5;
 	items = new Item[nbMax];
+	//myMemento.items = items;
+	//myMemento.nb = nb;
 }
 
 Pile::~Pile() {
@@ -30,23 +32,23 @@ void Pile::affiche() const {
 	cout << message << "\n";
 	cout << "*********************************\n";
 	for (int i = min(nb, nbAffiche); i > 0; i--) {
-		//cout << "emplacement" << i;
 		if (i <= nb) {
 			cout << "\t";
 			items[i - 1].getLitterale()->affiche();
 			cout << "\n";
-			//cout << "yolo";
 		}
 		else
 			cout << i << "\n";
 	}
 	cout << "*********************************\n";
-	//cout << "on sort";
 }
 
 void Pile::push(Litterale* const l) {
-	if (nb == nbMax)
+	if (nb == nbMax) {
+		cout << nb << nbMax;
+		cout << "Pile trop petite, on agrandit";
 		agrandissementCapacite();
+	}
 	Item i = Item();
 	i.setLitterale(l);
 	items[nb] = i;
@@ -77,11 +79,15 @@ int Pile::taille() const {
 	return nb;
 }
 
+int Pile::tailleMax() const {
+	return nbMax;
+}
+
 Litterale* const Pile::top() const {
 	if (estVide())
 		throw ComputerException("Pile vide");
 	else
-		return items[nb - 1].getLitterale();
+		return items[nb-1].getLitterale();
 }
 
 /*

@@ -13,6 +13,7 @@ int main() {
 	LitteraleManager litMng = LitteraleManager();
 	HashMap table = HashMap();
 	Controleur myCtrl(litMng, stack, table);
+	//cout << stack.taille() << stack.tailleMax();
 	myCtrl.executer();
 	system("pause");
 	return 0;

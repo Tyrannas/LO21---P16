@@ -17,7 +17,7 @@ public:
 	//LitteraleManager(const LitteraleManager& lm);
 	~LitteraleManager();
 	Litterale& addLitterale(Litterale * const l);
-	Litterale* const littFactory(TypeLitterale type, int p1, int p2 = NULL, double p3 = NULL, Numerique* p4 = nullptr, Numerique* p5 = nullptr, string = NULL);
+	Litterale* const littFactory(TypeLitterale type, int p1, int p2 = NULL, double p3 = NULL, Numerique* p4 = nullptr, Numerique* p5 = nullptr);
 	void removeLitterale(Litterale* const l);
 	//LitteraleManager& operator=(const LitteraleManager&);
 };

@@ -5,7 +5,6 @@
 #include <iostream>
 using namespace std;
 
-
 class Item {
 private:
 	Litterale* lit;
@@ -13,21 +12,37 @@ public:
 	Item() { lit = nullptr; };
 	inline void setLitterale(Litterale* const l) { lit = l; };
 	inline Litterale* const getLitterale() const {
-		if (lit == 0)
-			throw ComputerException("Erreur dans la recuperation de la litterale");
+		//if (lit == 0)
+		//	throw ComputerException("Erreur dans la recuperation de la litterale");
 		return lit;
 	};
 	void raz() { lit = nullptr; };
 };
-
+/*
+class Memento
+{
+private:
+	friend class Pile;
+	Item* items;
+	int nb;
+public:
+	Memento(Item* i, int n) : items(i), nb(n) {};
+	void save(Pile p) {
+		items = p.items;
+		nb = p.nb;
+	}
+};
+*/
 
 class Pile {
+	friend class Memento;
 	Item* items;
 	int nb;
 	int nbMax;
 	int nbAffiche;
 	string message;
 	void agrandissementCapacite();
+	//Memento myMemento;
 public:
 	Pile();
 	~Pile();
@@ -36,6 +51,7 @@ public:
 	//void pop();
 	bool estVide() const;
 	int taille() const;
+	int tailleMax() const;
 	Litterale* const top() const;
 	//void setMessage(const string& m);
 	//string getMessage() const;
@@ -48,14 +64,10 @@ public:
 	// void undo(); necessite mémo
 	// void redo(); necessite mémo
 	void clear();
+	/*void annuler() {
+		this->items = this->myMemento.items;
+		this->nb = this->myMemento.nb;
+	}*/
 };
 
-/*
-• DUP, opérateur unaire : empile une nouvelle littérale identique à celle du sommet de la pile.
-• DROP, opérateur unaire : dépile la littérale au sommet de la pile.
-• SWAP, opérateur binaire : intervertit les deux derniers éléments empilés dans la pile.
-• LASTOP : applique le dernier opérateur utilisé.
-• LASTARGS : empile les littérales utilisées pour la dernière opération.
-• UNDO : rétablit l’état du calculateur avant la dernière opération.
-• REDO : rétablit l’état du calculateur avant l’application de la dernière opération UNDO.
-• CLEAR : vide tous les éléments de la pile.*/
+
