@@ -23,10 +23,10 @@ class Litterale {
 protected:
 	TypeLitterale type;
 public:
-	//virtual Litterale getValue();
 	virtual void affiche() const = 0;
 	TypeLitterale getType() const { return type; }
 	Litterale() : type(TypeLitterale::tUndefined) {};
+	virtual Litterale* clone() const = 0;
 };
 
 class Expression : public Litterale{
@@ -41,6 +41,7 @@ public:
 			cout << expr;
 	}
 	Expression(string s) : expr(s) { this->type = TypeLitterale::tExpression; }
+	Expression* clone() const {	return new Expression(*this);}
 };
 
 class Programme : public Litterale {
@@ -55,6 +56,7 @@ public:
 	}
 	string getProg() { return prog; }
 	Programme(string s) : prog(s) { this->type = TypeLitterale::tProgramme; }
+	Programme* clone() const { return new Programme(*this); }
 };
 
 class Atome : public Litterale {
@@ -64,6 +66,7 @@ public:
 	const string getId() const { return id; }
 	Atome() { this->type = TypeLitterale::tAtome; };
 	void affiche() const { cout << id; }
+	Atome* clone() const { return new Atome(*this); }
 };
 
 
@@ -82,6 +85,7 @@ public:
 	void affiche() const { cout << val; }
 	void neg() { val = -val; }
 	void setVal(int i) { val = i; }
+	Entiere* clone() const { return new Entiere(*this); }
 };
 
 class Reelle : public Numerique {
@@ -95,6 +99,7 @@ public:
 	};
 	double getVal() const { return val; }
 	void affiche() const { cout << val; }
+	Reelle* clone() const { return new Reelle(*this); }
 };
 
 class Rationnelle : public Numerique {
@@ -112,6 +117,7 @@ public:
 	Entiere getNum() const { return num; }
 	Entiere getDen() const { return den; }
 	void affiche() const { cout << num.getVal() << "/" << den.getVal(); }
+	Rationnelle* clone() const { return new Rationnelle(*this); }
 };
 
 class Complexe : public Litterale {
@@ -127,6 +133,7 @@ public:
 		cout << "$";
 		if(im != nullptr) (*im).affiche();
 	}
+	Complexe* clone() const { return new Complexe(*this); }
 };
 
 

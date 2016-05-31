@@ -77,6 +77,45 @@ bool estUneAssignation(const string& s) {
 
 
 void Controleur::parse(const string& c) {
+	//cout << "Vraie pile :" << stack.taille();
+	//cout << "Nombre : " << stack.getMem().getnb() << "\n";
+	if (c == "UNDO") {
+		if (stack.getEtat() != 0)
+			throw ComputerException("Impossible de UNDO");
+		litMng.annuler();
+		stack.annuler();
+		stack.setEtat(1);
+		return;
+	}
+	stack.setEtat(0);
+	if (c == "REDO") {
+		if (stack.getEtat() != 1)
+			throw ComputerException("Impossible de REDO");
+		stack.annuler();
+		return;
+	}
+	/*
+	if (c == "LASTOP") {
+		if (stack.getMem().getLastOp() == "")
+			throw ComputerException("Pas de dernier operateur sauvegarde");
+		parse(stack.getMem().getLastOp());
+		return;
+	}
+	
+	if (c == "LASTARGS") {
+		if (stack.getMem().getLastArg1() == nullptr && stack.getMem().getLastArg2() == nullptr)
+			throw ComputerException("Aucun argument sauvegarde");
+		stack.push(stack.getMem().getLastArg1());
+		if (stack.getMem().getLastArg2() != nullptr)
+			stack.push(stack.getMem().getLastArg2());
+		return;
+	}
+	*/
+	litMng.getMem().save(litMng.getLits(), litMng.taille());
+	stack.getMem().save(stack.getItems(), stack.taille());
+	
+	
+	//cout << "on a sauvegarde";
 	int operateur = estUnOperateur(c);
 	int operateurPile = estUnOperateurPile(c);
 	//si c'est un opérateur
@@ -194,6 +233,17 @@ void Controleur::executer() {
 	string c;
 	try {
 		do {
+			cout << "LitMng :";
+			litMng.affiche();
+			cout << "  /////  ";
+			cout << "LitMngMem :";
+			litMng.getMem().affiche();
+			cout << "\nPile :";
+			stack.debug();
+			cout << "  /////  ";
+			cout << "PileMem :";
+			stack.getMem().debug();
+			cout << "\n";
 			stack.affiche();
 			cout << "?- ";
 			getline(cin, c);
@@ -225,6 +275,7 @@ void Controleur::operation(int i)
 		//addition
 	case 1:
 		v3 = *v1 + *v2;
+		//stack.getMem().setLastOp(v1, v2, "+");
 		break;
 		//soustraction
 		//case 2:
@@ -240,24 +291,30 @@ void Controleur::operation(int i)
 		//	break;
 	case 5:
 		v3 = div(*v1, *v2);
+		//stack.getMem().setLastOp(v1, v2, "DIV");
 		break;
 	case 6:
 		v3 = mod(*v1, *v2);
+		//stack.getMem().setLastOp(v1, v2, "MOD");
 		break;
 	case 7:
 		v3 = dollar(*v1, *v2);
+		//stack.getMem().setLastOp(v1, v2, "$");
 		break;
 	case 10:
 		//v3 = neg(*v1);
 		break;
 	case 11:
 		v3 = num(*v1);
+		//stack.getMem().setLastOp(v1, nullptr, "NUM");
 		break;
 	case 12:
 		v3 = den(*v1);
+		stack.getMem().setLastOp(v1, nullptr, "DEN");
 		break;
 	case 13:
 		v3 = re(*v1);
+		//stack.getMem().setLastOp(v1, nullptr, "RE");
 		break;
 	default:
 		break;
@@ -270,10 +327,13 @@ void Controleur::operation(int i)
 
 void Controleur::operationPile(int i)
 {
+	Litterale* newl = nullptr;
 	switch (i)
 	{
 	case 1:
-		stack.dup();
+		newl = stack.top()->clone();
+		stack.push(newl);
+		litMng.addLitterale(newl);
 		break;
 	case 2:
 		stack.drop();

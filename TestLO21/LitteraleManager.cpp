@@ -19,6 +19,7 @@ LitteraleManager::LitteraleManager() {
 	nbMax = 10;
 	lits = new Litterale*[nbMax];
 	nb = 0;
+	MementoLit myMemento = MementoLit();
 }
 
 
@@ -73,9 +74,13 @@ void LitteraleManager::removeLitterale(Litterale* const l) {
 	}
 
 	if (lits[i] != l) {
-		throw ComputerException("Erreur, litterale a enlever non trouvee");
+		l->affiche();
+		throw ComputerException("Erreur, litterale a enlever non trouvee\n");
 	}
-	cout << "litterale supprimee";
+	cout << "litterale supprimee : ";
+
+	lits[i]->affiche();
+	cout << "\n";
 	delete lits[i];
 	for (int j = i; j < nb; j++)
 		lits[j] = lits[j + 1];

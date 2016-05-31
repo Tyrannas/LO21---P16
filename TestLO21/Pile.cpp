@@ -19,8 +19,7 @@ Pile::Pile() {
 	nbMax = 10;
 	nbAffiche = 5;
 	items = new Item[nbMax];
-	//myMemento.items = items;
-	//myMemento.nb = nb;
+	Memento myMemento = Memento();
 }
 
 Pile::~Pile() {
@@ -35,6 +34,8 @@ void Pile::affiche() const {
 		if (i <= nb) {
 			cout << "\t";
 			items[i - 1].getLitterale()->affiche();
+			cout << " ==> ";
+			cout << items[i - 1].getLitterale();
 			cout << "\n";
 		}
 		else
@@ -104,11 +105,6 @@ void Pile::setNbItemsToAffiche(unsigned int n) {
 	nbAffiche = n;
 }
 
-void Pile::dup()
-{
-	this->push(top());
-}
-
 void Pile::drop()
 {
 	if (estVide())
@@ -129,12 +125,12 @@ void Pile::swap()
 	this->push(l2);
 }
 
+
 void Pile::clear()
 {
 	while(!estVide())
-		drop();	
+		drop();
 }
-
 
 
 /*

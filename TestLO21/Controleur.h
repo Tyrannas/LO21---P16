@@ -20,6 +20,7 @@ public:
 	Controleur(LitteraleManager& l, Pile& v, HashMap& t) :	litMng(l), stack(v), table(t) {}
 	void parse(const string& c);
 	void executer();
+	void reset() { stack.clear(); litMng.clear(); }
 	void operation(int i);
 	void operationPile(int i);
 	const int nbOpBin = 7;
