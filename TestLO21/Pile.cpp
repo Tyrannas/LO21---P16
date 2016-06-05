@@ -19,8 +19,6 @@ Pile::Pile() {
 	nbMax = 10;
 	nbAffiche = 5;
 	items = new Item[nbMax];
-	//myMemento.items = items;
-	//myMemento.nb = nb;
 }
 
 Pile::~Pile() {
@@ -54,18 +52,6 @@ void Pile::push(Litterale* const l) {
 	items[nb] = i;
 	nb = nb + 1;
 }
-
-/*
-void Pile::pop() {
-	if (estVide())
-		throw ComputerException("La pile est vide, impossible de depiler");
-	else {
-		//cout << "suppression du dernier item";
-		nb--;
-		items[nb].raz();
-	}
-}
-*/
 
 bool Pile::estVide() const {
 	if (nb == 0)
@@ -104,11 +90,6 @@ void Pile::setNbItemsToAffiche(unsigned int n) {
 	nbAffiche = n;
 }
 
-void Pile::dup()
-{
-	this->push(top());
-}
-
 void Pile::drop()
 {
 	if (estVide())
@@ -135,14 +116,3 @@ void Pile::clear()
 		drop();	
 }
 
-
-
-/*
-• DUP, opérateur unaire : empile une nouvelle littérale identique à celle du sommet de la pile.
-• DROP, opérateur unaire : dépile la littérale au sommet de la pile.
-• SWAP, opérateur binaire : intervertit les deux derniers éléments empilés dans la pile.
-• LASTOP : applique le dernier opérateur utilisé.
-• LASTARGS : empile les littérales utilisées pour la dernière opération.
-• UNDO : rétablit l’état du calculateur avant la dernière opération.
-• REDO : rétablit l’état du calculateur avant l’application de la dernière opération UNDO.
-• CLEAR : vide tous les éléments de la pile.*/

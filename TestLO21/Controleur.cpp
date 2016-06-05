@@ -23,14 +23,14 @@ int estUnOperateur(const string& s) {
 	if (s == "DIV") return 5;
 	if (s == "MOD") return 6;
 	if (s == "$") return 7;
+	if (s == "IFT") return 8;
+
 
 	if (s == "NEG") return 10;
 	if (s == "NUM") return 11;
 	if (s == "DEN") return 12;
 	if (s == "RE") return 13;
 	if (s == "IM") return 14;
-	//regex reg("^STO\\s\\d+\\s\\w+$");
-	//if (regex_match(s.cbegin(), s.cend(), reg)) return 15;
 	return -1;
 }
 
@@ -73,6 +73,16 @@ bool estUneAssignation(const string& s) {
 	regex reg("^STO\\s\\d+\\s'\\w+'$");
 	return regex_match(s.cbegin(), s.cend(), reg);
 }
+
+bool estUneAssignationProg(const string& s) {
+	regex reg("^STO\\s\\[\.+\\]\\s'\\w+'$");
+	return regex_match(s.cbegin(), s.cend(), reg);
+}
+
+bool estUneSuppression(const string& s) {
+	regex reg("^FORGET\\s'\\w+'$");
+	return regex_match(s.cbegin(), s.cend(), reg);
+}
 ///******Controleur******/
 
 
@@ -96,6 +106,21 @@ void Controleur::parse(const string& c) {
 		//cout << "on vient de mettre la valeur : ",
 		//table.get(var).affiche();
 	}
+	else if (estUneAssignationProg(c)) {
+		cout << "assignationProg\n";
+		cmatch res;
+		regex rx(R"(\s(\[(\w|\s|\+)+\])\s('\w+'))");
+		regex_search(c.c_str(), res, rx);
+		string var = res[3];
+		string valeur = res[1];
+		//cout << res[1] << " et " << res[3];
+		var.erase(remove(var.begin(), var.end(), '\''), var.end());
+		parse(valeur);
+		Litterale* newProg = stack.top();
+		stack.drop();
+		table.put(var, newProg);
+		//cout << "Programme " << var << "enregistre";
+	}
 	else if (operateur != -1) {
 		if ((operateur <= nbOpBin && stack.taille() >= 2) || (operateur > nbOpBin && stack.taille() >= 1))
 			Controleur::operation(operateur);
@@ -108,9 +133,37 @@ void Controleur::parse(const string& c) {
 	//puis on créé l'objet à l'aide de la factory
 	else {
 		if (estUnIdentifiant(c)) {
+			//cout << "C'est un identifiant ";
 			Litterale* valeur = table.get(c);
-			stack.push(valeur);
-			//cout << "C'est un identifiant mais je sais pas faire";
+			if (valeur->getType() != tProgramme) {
+				//cout << "de valeur\n";
+				stack.push(valeur);
+			}
+			else {
+				//cout << "de programme\n";
+				Programme* pt1 = dynamic_cast<Programme*>(valeur);
+				string exec = pt1->getProg();
+				exec.erase(remove(exec.begin(), exec.end(), '\]'), exec.end());
+				exec.erase(remove(exec.begin(), exec.end(), '\['), exec.end());
+				stringstream ss(exec);
+				istream_iterator<std::string> begin(ss);
+				istream_iterator<std::string> end;
+				vector<std::string> vstrings(begin, end);
+				copy(vstrings.begin(), vstrings.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
+				for (int i = 0; i < vstrings.size();i++) {
+					parse(vstrings[i]);
+				}
+			}
+		}
+		else if (estUneSuppression(c)) {
+			cout << "Suppression de la variable ";
+			cmatch res;
+			regex rx(R"(\s('\w+'))");
+			regex_search(c.c_str(), res, rx);
+			string var = res[1];
+			var.erase(remove(var.begin(), var.end(), '\''), var.end());
+			cout << var << "\n";
+			table.forget(var);
 		}
 		else if (estUneExpression(c)) {
 			cout << "C'est une expression\n";
@@ -118,11 +171,12 @@ void Controleur::parse(const string& c) {
 			//stack.push(e);
 		}
 		else if (estUnProgramme(c)) {
-			cout << "C'est un programme\n";
+			//cout << "C'est un programme\n";
 			//Programme* const p = dynamic_cast<Programme* const>(litMng.littFactory(tProgramme, NULL, NULL, NULL, NULL, NULL, c));
-			cout << "programme cree\n";
 			//stack.push(p);
-			cout << "etu pushe\n";
+			Programme* const p = new Programme(c);
+			litMng.addLitterale(p);
+			stack.push(p);
 		}
 		else if (estUnEntier(c)) {
 			Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(c)));
@@ -194,6 +248,7 @@ void Controleur::executer() {
 	string c;
 	try {
 		do {
+			//table.affiche();
 			stack.affiche();
 			cout << "?- ";
 			getline(cin, c);
@@ -247,8 +302,24 @@ void Controleur::operation(int i)
 	case 7:
 		v3 = dollar(*v1, *v2);
 		break;
+	case 8:
+		//if (v1)
+			//v2.eval();
+		break;
 	case 10:
-		//v3 = neg(*v1);
+		if (v1->getType() == tEntiere || v1->getType() == tRationnelle || v1->getType() == tReelle) {
+			Numerique* pt1 = dynamic_cast<Numerique*>(v1);
+			pt1->neg();
+			v3 = pt1->clone();
+		}
+		else if (v1->getType() == tComplexe) {
+			Complexe* pt1 = dynamic_cast<Complexe*>(v1);
+			pt1->neg();
+			v3 = pt1->clone();
+		}
+		else {
+			throw ComputerException("Impossible d'effectuer NEG sur cet operateur");
+		}
 		break;
 	case 11:
 		v3 = num(*v1);
@@ -259,21 +330,28 @@ void Controleur::operation(int i)
 	case 13:
 		v3 = re(*v1);
 		break;
+	case 14:
+		v3 = im(*v1);
+		break;
 	default:
 		break;
 	}
 	litMng.removeLitterale(v1);
-	if (i <= nbOpBin) litMng.removeLitterale(v2);
+	if (i <= nbOpBin) 
+		litMng.removeLitterale(v2);
 	litMng.addLitterale(v3);
 	stack.push(v3);
 }
 
 void Controleur::operationPile(int i)
 {
+	Litterale* newl = nullptr;
 	switch (i)
 	{
 	case 1:
-		stack.dup();
+		newl = stack.top()->clone();
+		stack.push(newl);
+		litMng.addLitterale(newl);
 		break;
 	case 2:
 		stack.drop();

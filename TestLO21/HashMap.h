@@ -39,9 +39,10 @@ public:
 		while (table[hash] != NULL && table[hash]->getKey() != key)
 			hash = (hash + 1);
 		if (table[hash] == NULL)
-			throw ComputerException("Aucune valeur trouvé pour cet identifiant\n");
-		else
+			throw ComputerException("Aucune valeur trouvee pour cet identifiant\n");
+		else {
 			return table[hash]->getValue();
+		}
 	}
 
 	void put(string key, Litterale* value) {
@@ -52,11 +53,34 @@ public:
 			delete table[hash];
 		table[hash] = new HashEntry(key, value);
 	}
+	
+	void forget(string key) {
+		int hash = 0;
+		while (table[hash] != NULL && table[hash]->getKey() != key)
+			hash = (hash + 1);
+		if (table[hash] != NULL) {
+			delete table[hash];
+			table[hash] = nullptr;
+		}
+		else
+			throw ComputerException("Aucune variable stockee avec ce nom. Suppression impossible\n");
+	}
 
 	~HashMap() {
 		for (int i = 0; i < TABLE_SIZE; i++)
 			if (table[i] != NULL)
 				delete table[i];
 		delete[] table;
+	}
+
+	void affiche() {
+		int hash = 0;
+		cout << "|||||||||||||||||||||||||||||||||||\n";
+		while (table[hash] != NULL){
+			cout << table[hash]->getKey() << " ==> ";
+			table[hash]->getValue()->affiche();
+			cout << "\n";
+			hash = (hash + 1);
+		}
 	}
 };

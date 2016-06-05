@@ -27,6 +27,13 @@ public:
 	virtual void affiche() const = 0;
 	TypeLitterale getType() const { return type; }
 	Litterale() : type(TypeLitterale::tUndefined) {};
+	virtual Litterale* clone() = 0;
+	bool operator==(Litterale* l);
+	bool operator!=(Litterale* l);
+	bool operator<(Litterale* l);
+	bool operator>(Litterale* l);
+	bool operator<=(Litterale* l);
+	bool operator>=(Litterale* l);
 };
 
 class Expression : public Litterale{
@@ -41,6 +48,7 @@ public:
 			cout << expr;
 	}
 	Expression(string s) : expr(s) { this->type = TypeLitterale::tExpression; }
+	Expression* clone() { return new Expression(*this); }
 };
 
 class Programme : public Litterale {
@@ -55,6 +63,8 @@ public:
 	}
 	string getProg() { return prog; }
 	Programme(string s) : prog(s) { this->type = TypeLitterale::tProgramme; }
+	void edit(string s) {prog = s;}
+	Programme* clone() { return new Programme(*this); }
 };
 
 class Atome : public Litterale {
@@ -64,6 +74,7 @@ public:
 	const string getId() const { return id; }
 	Atome() { this->type = TypeLitterale::tAtome; };
 	void affiche() const { cout << id; }
+	Atome* clone() { return new Atome(*this); }
 };
 
 
@@ -71,6 +82,9 @@ class Numerique : public Litterale {
 public:
 	//virtual void neg();
 	virtual void affiche() const = 0;
+	virtual void neg() = 0;
+	virtual Numerique* clone() = 0;
+	virtual double getComp() = 0;
 };
 
 class Entiere : public Numerique {
@@ -82,6 +96,8 @@ public:
 	void affiche() const { cout << val; }
 	void neg() { val = -val; }
 	void setVal(int i) { val = i; }
+	Entiere* clone() { return new Entiere(*this); }
+	double getComp() { return (double)val; }
 };
 
 class Reelle : public Numerique {
@@ -95,6 +111,9 @@ public:
 	};
 	double getVal() const { return val; }
 	void affiche() const { cout << val; }
+	Reelle* clone() { return new Reelle(*this); }
+	void neg() { val = -val; }
+	double getComp() { return val; }
 };
 
 class Rationnelle : public Numerique {
@@ -112,6 +131,9 @@ public:
 	Entiere getNum() const { return num; }
 	Entiere getDen() const { return den; }
 	void affiche() const { cout << num.getVal() << "/" << den.getVal(); }
+	Rationnelle* clone() { return new Rationnelle(*this); }
+	void neg() { num.neg(); this->simplification(); }
+	double getComp() { return this->toReelle().getComp(); }
 };
 
 class Complexe : public Litterale {
@@ -127,6 +149,8 @@ public:
 		cout << "$";
 		if(im != nullptr) (*im).affiche();
 	}
+	Complexe* clone() { return new Complexe(*this); }
+	void neg() { re->neg(); im->neg(); }
 };
 
 
@@ -158,8 +182,8 @@ Entiere* den(Litterale& l);
 
 Complexe* dollar(Litterale& l1, Litterale& l2);
 
-Numerique* re(Litterale& l);
-Numerique* im(Litterale& l);
+Litterale* re(Litterale& l);
+Litterale* im(Litterale& l);
 
 bool boolOr(bool b1, bool b2);
 bool boolAnd(bool b1, bool b2);

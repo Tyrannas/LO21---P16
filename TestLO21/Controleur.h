@@ -22,5 +22,5 @@ public:
 	void executer();
 	void operation(int i);
 	void operationPile(int i);
-	const int nbOpBin = 7;
+	const int nbOpBin = 8;
 };

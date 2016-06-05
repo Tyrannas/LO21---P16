@@ -18,21 +18,6 @@ public:
 	};
 	void raz() { lit = nullptr; };
 };
-/*
-class Memento
-{
-private:
-	friend class Pile;
-	Item* items;
-	int nb;
-public:
-	Memento(Item* i, int n) : items(i), nb(n) {};
-	void save(Pile p) {
-		items = p.items;
-		nb = p.nb;
-	}
-};
-*/
 
 class Pile {
 	friend class Memento;
@@ -56,7 +41,6 @@ public:
 	//void setMessage(const string& m);
 	//string getMessage() const;
 	void setNbItemsToAffiche(unsigned int n);
-	void dup();
 	void drop();
 	void swap();
 	// void lastop(); necessite mémo
@@ -64,10 +48,6 @@ public:
 	// void undo(); necessite mémo
 	// void redo(); necessite mémo
 	void clear();
-	/*void annuler() {
-		this->items = this->myMemento.items;
-		this->nb = this->myMemento.nb;
-	}*/
 };
 
 

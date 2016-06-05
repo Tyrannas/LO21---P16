@@ -285,7 +285,7 @@ Entiere* mod(Litterale& l1, Litterale& l2) {
 	if (l1.getType() == tEntiere && l2.getType() == tEntiere) {
 		Entiere* pt1 = dynamic_cast<Entiere*>(&l1);
 		Entiere* pt2 = dynamic_cast<Entiere*>(&l2);
-		return (new Entiere(pt1->getVal() - ((pt1->getVal() / pt1->getVal()) * pt1->getVal())));
+		return (new Entiere(pt1->getVal() - ((pt1->getVal() / pt2->getVal()) * pt2->getVal())));
 	}
 	else
 		throw ComputerException("Impossible d'effectuer MOD sur des litterales non entieres.\n");
@@ -298,7 +298,7 @@ Entiere* num(Litterale& l) {
 	}
 	else if (l.getType() == tEntiere) {
 		Entiere* pt1 = dynamic_cast<Entiere*>(&l);
-		return pt1;
+		return pt1->clone();
 	}
 	else {
 		throw ComputerException("Impossible d'effectuer NUM sur une litterale reelle ou complexe.\n");
@@ -321,27 +321,27 @@ Complexe* dollar(Litterale& l1, Litterale& l2) {
 	if (l1.getType() != tComplexe && l2.getType() != tComplexe) {
 		Numerique* pt1 = dynamic_cast<Numerique*>(&l1);
 		Numerique* pt2 = dynamic_cast<Numerique*>(&l2);
-		return (new Complexe(pt1, pt2));
+		return (new Complexe(pt1->clone(), pt2->clone()));
 	}
 	else
 		throw ComputerException("Impossible d'effectuer $ sur une litterale complexe.\n");
 }
 
-Numerique* re(Litterale& l) {
-	if (l.getType() != tComplexe) {
+Litterale* re(Litterale& l) {
+	if (l.getType() == tComplexe) {
 		Complexe* pt1 = dynamic_cast<Complexe*>(&l);
-		return pt1->getRe();
+		return pt1->getRe()->clone();
 	}
 	else {
 		Numerique* pt1 = dynamic_cast<Numerique*>(&l);
-		return pt1;
+		return pt1->clone();
 	}
 }
 
-Numerique* im(Litterale& l) {
-	if (l.getType() != tComplexe) {
+Litterale* im(Litterale& l) {
+	if (l.getType() == tComplexe) {
 		Complexe* pt1 = dynamic_cast<Complexe*>(&l);
-		return pt1->getIm();
+		return pt1->getIm()->clone();
 	}
 	else {
 		return (new Entiere(0));
@@ -360,11 +360,75 @@ bool boolNot(bool b) {
 	return (!b);
 }
 
-
 /*
 • =, !=, =<, >=, <, > : opérateurs binaires pour les tests respectivement égal, différent, inférieur ou égal,
 supérieur ou égal, strictement inférieur, strictement supérieur.
-• AND, opérateur binaire : ET logique.
-• OR, opérateur binaire : OU logique.
-• NOT, opérateur unaire : NON logique.
 */
+
+
+
+bool Litterale::operator==(Litterale * l)
+{
+	if ((l->getType() || this->getType()) == tExpression || (l->getType() || this->getType()) == tProgramme || (l->getType() || this->getType()) == tAtome || (l->getType() || this->getType()) == tComplexe)
+		throw ComputerException("Impossible d'effectuer une comparaison sur ce type de Litterale\n");
+	else {
+		Numerique* pt1 = dynamic_cast<Numerique*>(this);
+		Numerique* pt2 = dynamic_cast<Numerique*>(l);
+		return (pt1->getComp() == pt2->getComp());
+	}
+}
+
+bool Litterale::operator!=(Litterale * l)
+{
+	if ((l->getType() || this->getType()) == tExpression || (l->getType() || this->getType()) == tProgramme || (l->getType() || this->getType()) == tAtome || (l->getType() || this->getType()) == tComplexe)
+		throw ComputerException("Impossible d'effectuer une comparaison sur ce type de Litterale\n");
+	else {
+		Numerique* pt1 = dynamic_cast<Numerique*>(this);
+		Numerique* pt2 = dynamic_cast<Numerique*>(l);
+		return (pt1->getComp() != pt2->getComp());
+	}
+}
+
+bool Litterale::operator<(Litterale * l)
+{
+	if ((l->getType() || this->getType()) == tExpression || (l->getType() || this->getType()) == tProgramme || (l->getType() || this->getType()) == tAtome || (l->getType() || this->getType()) == tComplexe)
+		throw ComputerException("Impossible d'effectuer une comparaison sur ce type de Litterale\n");
+	else {
+		Numerique* pt1 = dynamic_cast<Numerique*>(this);
+		Numerique* pt2 = dynamic_cast<Numerique*>(l);
+		return (pt1->getComp() < pt2->getComp());
+	}
+}
+
+bool Litterale::operator>(Litterale * l)
+{
+	if ((l->getType() || this->getType()) == tExpression || (l->getType() || this->getType()) == tProgramme || (l->getType() || this->getType()) == tAtome || (l->getType() || this->getType()) == tComplexe)
+		throw ComputerException("Impossible d'effectuer une comparaison sur ce type de Litterale\n");
+	else {
+		Numerique* pt1 = dynamic_cast<Numerique*>(this);
+		Numerique* pt2 = dynamic_cast<Numerique*>(l);
+		return (pt1->getComp() > pt2->getComp());
+	}
+}
+
+bool Litterale::operator<=(Litterale * l)
+{
+	if ((l->getType() || this->getType()) == tExpression || (l->getType() || this->getType()) == tProgramme || (l->getType() || this->getType()) == tAtome || (l->getType() || this->getType()) == tComplexe)
+		throw ComputerException("Impossible d'effectuer une comparaison sur ce type de Litterale\n");
+	else {
+		Numerique* pt1 = dynamic_cast<Numerique*>(this);
+		Numerique* pt2 = dynamic_cast<Numerique*>(l);
+		return (pt1->getComp() <= pt2->getComp());
+	}
+}
+
+bool Litterale::operator>=(Litterale * l)
+{
+	if ((l->getType() || this->getType()) == tExpression || (l->getType() || this->getType()) == tProgramme || (l->getType() || this->getType()) == tAtome || (l->getType() || this->getType()) == tComplexe)
+		throw ComputerException("Impossible d'effectuer une comparaison sur ce type de Litterale\n");
+	else {
+		Numerique* pt1 = dynamic_cast<Numerique*>(this);
+		Numerique* pt2 = dynamic_cast<Numerique*>(l);
+		return (pt1->getComp() >= pt2->getComp());
+	}
+}

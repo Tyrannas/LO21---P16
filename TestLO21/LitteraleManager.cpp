@@ -75,7 +75,7 @@ void LitteraleManager::removeLitterale(Litterale* const l) {
 	if (lits[i] != l) {
 		throw ComputerException("Erreur, litterale a enlever non trouvee");
 	}
-	cout << "litterale supprimee";
+	//cout << "litterale supprimee";
 	delete lits[i];
 	for (int j = i; j < nb; j++)
 		lits[j] = lits[j + 1];
