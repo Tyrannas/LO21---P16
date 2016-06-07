@@ -14,7 +14,8 @@ void Pile::agrandissementCapacite() {
 	delete[] oldItems;
 }
 
-Pile::Pile() {
+Pile::Pile(Mediator* const _m) {
+	m = _m;
 	nb = 0;
 	nbMax = 10;
 	nbAffiche = 5;

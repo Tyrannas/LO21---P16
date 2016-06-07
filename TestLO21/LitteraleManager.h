@@ -17,7 +17,7 @@ public:
 	int getnb() { return nb; }
 	void save(Litterale** nlits, int n) {
 		for (int i = 0; i < n; i++) {
-			lits[i] = nlits[i];
+			lits[i] = nlits[i]->clone();
 		}
 		nb = n;
 	}
@@ -52,10 +52,10 @@ public:
 		Litterale** temp = new Litterale*[nb];
 		int tempnb = nb;
 		for (int i = 0; i < nb; i++) {
-			temp[i] = lits[i];
+			temp[i] = lits[i]->clone();
 		}
 		for (int i = 0; i < myMemento.nb; i++) {
-			lits[i] = myMemento.lits[i];
+			lits[i] = myMemento.lits[i]->clone();
 		}
 		nb = myMemento.nb;
 		myMemento.save(temp, tempnb);

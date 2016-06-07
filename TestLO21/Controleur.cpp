@@ -219,7 +219,6 @@ void Controleur::parse(const string& c) {
 				l2 = r;
 			}
 
-
 			Complexe* const c = dynamic_cast<Complexe* const>(litMng.littFactory(tComplexe, NULL, NULL, NULL, l1, l2));
 			stack.push(c);
 		}
@@ -234,15 +233,15 @@ void Controleur::executer() {
 	try {
 		do {
 			cout << "LitMng :";
-			litMng.affiche();
+			//litMng.affiche();
 			cout << "  /////  ";
 			cout << "LitMngMem :";
-			litMng.getMem().affiche();
+			//litMng.getMem().affiche();
 			cout << "\nPile :";
-			stack.debug();
+			//stack.debug();
 			cout << "  /////  ";
 			cout << "PileMem :";
-			stack.getMem().debug();
+			//stack.getMem().debug();
 			cout << "\n";
 			stack.affiche();
 			cout << "?- ";

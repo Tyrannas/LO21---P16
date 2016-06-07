@@ -3,6 +3,7 @@
 #include "Litterale.h"
 #include "ComputerException.h"
 #include <iostream>
+#include "Mediator.h"
 
 using namespace std;
 
@@ -43,12 +44,12 @@ public:
 	Litterale* getLastArg1() { return lastarg1; }
 	Litterale* getLastArg2() { return lastarg2; }
 	string getLastOp() { return lastop; }
-	void debug() {
-		for (int i = 0; i < nb; i++) {
-			items[i].getLitterale()->affiche();
-			cout << " ";
-		}
-	}
+	//void debug() {
+	//	for (int i = 0; i < nb; i++) {
+	//		items[i].getLitterale()->affiche();
+	//		cout << " ";
+	//	}
+	//}
 };
 
 class Pile {
@@ -62,8 +63,9 @@ private:
 	void agrandissementCapacite();
 	Memento myMemento;
 	int etat =0;
+	Mediator* const m;
 public:
-	Pile();
+	Pile(Mediator* const _m);
 	~Pile();
 	void affiche() const;
 	void push(Litterale* const l);
