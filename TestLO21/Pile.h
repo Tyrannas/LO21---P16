@@ -2,8 +2,11 @@
 #include <algorithm>
 #include "Litterale.h"
 #include "ComputerException.h"
+#include "LitteraleManager.h"
 #include <iostream>
 using namespace std;
+
+class Memento;
 
 /*!
 * \file Controleur.h
@@ -43,6 +46,7 @@ public:
 	*/
 	void raz() { lit = nullptr; };
 };
+
 
 /*! \class Pile
 * \brief Classe permettant de stocker les items sous forme de pile
@@ -116,6 +120,19 @@ public:
 	*  \brief Suppression de l'integralite des elements de la pile
 	*/
 	void clear();
+
+
+	void reconstruire(Memento m) {
+		this->clear();
+		for (int i = 0; i < m.getnb();i++) {
+			push(m.lits[i]);
+		}
+		nb = m.getnb();
+		
+	}
 };
+
+
+
 
 

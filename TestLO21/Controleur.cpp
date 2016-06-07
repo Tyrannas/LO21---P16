@@ -87,6 +87,28 @@ bool estUneSuppression(const string& s) {
 
 
 void Controleur::parse(const string& c) {
+	if (c == "UNDO") {
+		if (canRedo)
+			throw ComputerException("Impossible de faire deux Undo d'affile\n");
+		stack.reconstruire(litMng.getMem());
+		litMng.annuler();
+		canRedo = true;
+		return;
+	}
+
+	if (c == "REDO") {
+		if (!canRedo)
+			throw ComputerException("Impossible de Redo sans Undo\n");
+		else {
+			stack.reconstruire(litMng.getMem());
+			litMng.annuler();
+			canRedo = false;
+		}
+		return;
+	}
+
+	litMng.getMem().save(litMng.getLits(), litMng.taille());
+
 	int operateur = estUnOperateur(c);
 	int operateurPile = estUnOperateurPile(c);
 	//si c'est un opérateur
@@ -248,7 +270,9 @@ void Controleur::executer() {
 	string c;
 	try {
 		do {
-			//table.affiche();
+			cout << "LitMngMem :";
+			litMng.getMem().affiche();
+			cout << "\n";
 			stack.affiche();
 			cout << "?- ";
 			getline(cin, c);
@@ -280,6 +304,7 @@ void Controleur::operation(int i)
 		//addition
 	case 1:
 		v3 = *v1 + *v2;
+		litMng.getMem().updateOpe(v1->clone(), v2->clone(), "+");
 		break;
 		//soustraction
 		//case 2:
@@ -295,12 +320,15 @@ void Controleur::operation(int i)
 		//	break;
 	case 5:
 		v3 = div(*v1, *v2);
+		litMng.getMem().updateOpe(v1->clone(), v2->clone(), "DIV");
 		break;
 	case 6:
 		v3 = mod(*v1, *v2);
+		litMng.getMem().updateOpe(v1->clone(), v2->clone(), "MOD");
 		break;
 	case 7:
 		v3 = dollar(*v1, *v2);
+		litMng.getMem().updateOpe(v1->clone(), v2->clone(), "$");
 		break;
 	case 8:
 		//if (v1)
@@ -311,11 +339,13 @@ void Controleur::operation(int i)
 			Numerique* pt1 = dynamic_cast<Numerique*>(v1);
 			pt1->neg();
 			v3 = pt1->clone();
+			litMng.getMem().updateOpe(v1->clone(), nullptr, "NEG");
 		}
 		else if (v1->getType() == tComplexe) {
 			Complexe* pt1 = dynamic_cast<Complexe*>(v1);
 			pt1->neg();
 			v3 = pt1->clone();
+			litMng.getMem().updateOpe(v1->clone(), nullptr, "NEG");
 		}
 		else {
 			throw ComputerException("Impossible d'effectuer NEG sur cet operateur");
@@ -323,15 +353,19 @@ void Controleur::operation(int i)
 		break;
 	case 11:
 		v3 = num(*v1);
+		litMng.getMem().updateOpe(v1->clone(), nullptr, "NUM");
 		break;
 	case 12:
 		v3 = den(*v1);
+		litMng.getMem().updateOpe(v1->clone(), nullptr, "DEN");
 		break;
 	case 13:
 		v3 = re(*v1);
+		litMng.getMem().updateOpe(v1->clone(), nullptr, "RE");
 		break;
 	case 14:
 		v3 = im(*v1);
+		litMng.getMem().updateOpe(v1->clone(), nullptr, "IM");
 		break;
 	default:
 		break;
@@ -360,16 +394,13 @@ void Controleur::operationPile(int i)
 		stack.swap();
 		break;
 	case 4:
-		//stack.lastop();
+		parse(litMng.getMem().getLastOp());
 		break;
 	case 5:
-		//stack.lastargs();
-		break;
-	case 6:
-		//stack.undo();
-		break;
-	case 7:
-		//stack.redo();
+		stack.push(litMng.getMem().getLastArg1());
+		litMng.addLitterale(litMng.getMem().getLastArg1());
+		stack.push(litMng.getMem().getLastArg2());
+		litMng.addLitterale(litMng.getMem().getLastArg2());
 		break;
 	case 8:
 		stack.clear();

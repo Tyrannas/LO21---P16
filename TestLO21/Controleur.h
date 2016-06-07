@@ -28,6 +28,7 @@ class Controleur {
 	LitteraleManager& litMng; /*!< Gestion des litterales dans le controleur*/
 	Pile& stack; /*!< Pile des litterales actuellement stockees*/
 	HashMap& table; /*!< Table de stockage des variables et programmes*/
+	bool canRedo;
 public:
 	/*!
 	*  \brief Constructeur
@@ -35,7 +36,7 @@ public:
 	*  \param v : reference sur une pile
 	*  \param t : reference sur une hashmap
 	*/
-	Controleur(LitteraleManager& l, Pile& v, HashMap& t) :	litMng(l), stack(v), table(t) {}
+	Controleur(LitteraleManager& l, Pile& v, HashMap& t) :	litMng(l), stack(v), table(t), canRedo(false) {}
 	/*!
 	*  \brief Parseur : permet d'analyser la chaine entree par l'utilisateur
 	*  \param c : chaine de caracteres entree au clavier

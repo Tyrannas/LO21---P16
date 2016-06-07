@@ -13,6 +13,45 @@
 * \version 1
 */
 
+
+class Memento {
+	friend class LitteraleManager;
+private:
+	int nb;
+	Litterale* lastArg1;
+	Litterale* lastArg2;
+	string lastOp;
+public:
+	Litterale** lits;
+	Memento() { lits = new Litterale*[10]; nb = 0; lastArg1 = nullptr; lastArg2 = nullptr; lastOp = ""; }
+	int getnb() { return nb; }
+	void save(Litterale** nlits, int n) {
+		for (int i = 0; i < n; i++) {
+			lits[i] = nlits[i]->clone();
+		}
+		nb = n;
+	}
+	Litterale** getLits() { return lits; }
+	void updateOpe(Litterale* l1, Litterale* l2, string op) {
+		lastArg1 = l1;
+		lastArg2 = l2;
+		lastOp = op;
+	}
+	void affiche() {
+		for (int i = 0; i < nb; i++) {
+			lits[i]->affiche();
+			cout << " ";
+		}
+	}
+	Litterale* getLastArg1() { return lastArg1; }
+	Litterale* getLastArg2() { return lastArg2; }
+	string getLastOp() { return lastOp; }
+};
+
+
+
+
+
 /*! \class LitteraleManager
 * \brief Classe permettant de gerer toutes les litterales ajoutees une a une
 */
@@ -25,6 +64,9 @@ private:
 	*  \brief Agrandissement du tableau de pointeurs si la taille maximale est atteinte
 	*/
 	void agrandissementCapacite();
+
+	Memento myMemento;
+
 public:
 	/*!
 	*  \brief Constructeur
@@ -56,4 +98,27 @@ public:
 	*  \param l : pointeur sur la litterale a supprimer
 	*/
 	void removeLitterale(Litterale* const l);
+
+
+	void annuler() {
+		Litterale** temp = new Litterale*[nb];
+		int tempnb = nb;
+		for (int i = 0; i < nb; i++) {
+			temp[i] = lits[i];
+		}
+		for (int i = 0; i < myMemento.nb; i++) {
+			lits[i] = myMemento.lits[i];
+		}
+		/*
+		for (int j = myMemento.nb; j <= nb; j++) {
+			delete lits[j];
+		}
+		*/
+		nb = myMemento.nb;
+		myMemento.save(temp, tempnb);
+	}
+	Memento& getMem() { return myMemento; }
+	Litterale** getLits() { return lits; }
+	int taille() { return nb; }
+
 };

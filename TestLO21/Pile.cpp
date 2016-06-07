@@ -27,7 +27,6 @@ Pile::~Pile() {
 
 void Pile::affiche() const {
 	cout << "*********************************\n";
-	cout << message << "\n";
 	cout << "*********************************\n";
 	for (int i = min(nb, nbAffiche); i > 0; i--) {
 		if (i <= nb) {
