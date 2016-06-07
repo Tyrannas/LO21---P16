@@ -1,0 +1,148 @@
+\hypertarget{class_memento}{
+\section{Référence de la classe Memento}
+\label{class_memento}\index{Memento@{Memento}}
+}
+Classe permettant la sauvegarde de l'etat du \hyperlink{class_litterale_manager}{LitteraleManager}.  
+
+
+{\tt \#include $<$LitteraleManager.h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_memento_3e8200cf33e67852fca5d671eed7f683}{
+\hyperlink{class_memento_3e8200cf33e67852fca5d671eed7f683}{Memento} ()}
+\label{class_memento_3e8200cf33e67852fca5d671eed7f683}
+
+\begin{CompactList}\small\item\em Constructeur. \item\end{CompactList}\item 
+int \hyperlink{class_memento_e45233d8532ac8fbc47ed8b1e5f091f5}{getnb} ()
+\begin{CompactList}\small\item\em Accesseur sur le nombre. \item\end{CompactList}\item 
+void \hyperlink{class_memento_3b5cc6cc4611bb18ea52ef949f7b9430}{save} (\hyperlink{class_litterale}{Litterale} $\ast$$\ast$nlits, int n)
+\begin{CompactList}\small\item\em Sauvegarde de l'etat des litterales. \item\end{CompactList}\item 
+\hyperlink{class_litterale}{Litterale} $\ast$$\ast$ \hyperlink{class_memento_8d8c047f861706c999f8115fa16fd58f}{getLits} ()
+\begin{CompactList}\small\item\em Accesseur sur le tableau de Litterales. \item\end{CompactList}\item 
+void \hyperlink{class_memento_f8f177a9c75011e284897fc5febb14a0}{updateOpe} (\hyperlink{class_litterale}{Litterale} $\ast$l1, \hyperlink{class_litterale}{Litterale} $\ast$l2, string op)
+\begin{CompactList}\small\item\em Mise a jour de la derniere operation effectuee. \item\end{CompactList}\item 
+\hyperlink{class_litterale}{Litterale} $\ast$ \hyperlink{class_memento_a30492b498231a10ba8b546e72ee0540}{getLastArg1} ()
+\begin{CompactList}\small\item\em Accesseur sur le premier des deux arguments enregistres. \item\end{CompactList}\item 
+\hyperlink{class_litterale}{Litterale} $\ast$ \hyperlink{class_memento_3e41b8b940d028d9c35d7f2c26395144}{getLastArg2} ()
+\begin{CompactList}\small\item\em Accesseur sur le deuxieme des deux arguments enregistres. \item\end{CompactList}\item 
+string \hyperlink{class_memento_e0caadaf7cabf3c5904cd8416718c2bb}{getLastOp} ()
+\begin{CompactList}\small\item\em Accesseur sur le dernier operateur utilise. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Attributs publics}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_litterale}{Litterale} $\ast$$\ast$ \hyperlink{class_memento_0294c5bd7e564cd5614911979e65b35d}{lits}
+\end{CompactItemize}
+\subsection*{Amis}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_memento_0aab3199db1ebeb99e33e66b9cf8e975}{
+class \hyperlink{class_memento_0aab3199db1ebeb99e33e66b9cf8e975}{LitteraleManager}}
+\label{class_memento_0aab3199db1ebeb99e33e66b9cf8e975}
+
+\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe permettant la sauvegarde de l'etat du \hyperlink{class_litterale_manager}{LitteraleManager}. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_memento_a30492b498231a10ba8b546e72ee0540}{
+\index{Memento@{Memento}!getLastArg1@{getLastArg1}}
+\index{getLastArg1@{getLastArg1}!Memento@{Memento}}
+\subsubsection[{getLastArg1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale}$\ast$ Memento::getLastArg1 ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_memento_a30492b498231a10ba8b546e72ee0540}
+
+
+Accesseur sur le premier des deux arguments enregistres. 
+
+\begin{Desc}
+\item[Renvoie:]pointeur sur la premiere litterale \end{Desc}
+\hypertarget{class_memento_3e41b8b940d028d9c35d7f2c26395144}{
+\index{Memento@{Memento}!getLastArg2@{getLastArg2}}
+\index{getLastArg2@{getLastArg2}!Memento@{Memento}}
+\subsubsection[{getLastArg2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale}$\ast$ Memento::getLastArg2 ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_memento_3e41b8b940d028d9c35d7f2c26395144}
+
+
+Accesseur sur le deuxieme des deux arguments enregistres. 
+
+\begin{Desc}
+\item[Renvoie:]pointeur sur la deuxieme litterale \end{Desc}
+\hypertarget{class_memento_e0caadaf7cabf3c5904cd8416718c2bb}{
+\index{Memento@{Memento}!getLastOp@{getLastOp}}
+\index{getLastOp@{getLastOp}!Memento@{Memento}}
+\subsubsection[{getLastOp}]{\setlength{\rightskip}{0pt plus 5cm}string Memento::getLastOp ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_memento_e0caadaf7cabf3c5904cd8416718c2bb}
+
+
+Accesseur sur le dernier operateur utilise. 
+
+\begin{Desc}
+\item[Renvoie:]chaine de caractere representant le dernier operateur \end{Desc}
+\hypertarget{class_memento_8d8c047f861706c999f8115fa16fd58f}{
+\index{Memento@{Memento}!getLits@{getLits}}
+\index{getLits@{getLits}!Memento@{Memento}}
+\subsubsection[{getLits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale}$\ast$$\ast$ Memento::getLits ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_memento_8d8c047f861706c999f8115fa16fd58f}
+
+
+Accesseur sur le tableau de Litterales. 
+
+\begin{Desc}
+\item[Renvoie:]tableau de pointeurs de Litterales \end{Desc}
+\hypertarget{class_memento_e45233d8532ac8fbc47ed8b1e5f091f5}{
+\index{Memento@{Memento}!getnb@{getnb}}
+\index{getnb@{getnb}!Memento@{Memento}}
+\subsubsection[{getnb}]{\setlength{\rightskip}{0pt plus 5cm}int Memento::getnb ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_memento_e45233d8532ac8fbc47ed8b1e5f091f5}
+
+
+Accesseur sur le nombre. 
+
+\begin{Desc}
+\item[Renvoie:]entier representant le nombre de litterales actuellement stockees \end{Desc}
+\hypertarget{class_memento_3b5cc6cc4611bb18ea52ef949f7b9430}{
+\index{Memento@{Memento}!save@{save}}
+\index{save@{save}!Memento@{Memento}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void Memento::save ({\bf Litterale} $\ast$$\ast$ {\em nlits}, \/  int {\em n})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_memento_3b5cc6cc4611bb18ea52ef949f7b9430}
+
+
+Sauvegarde de l'etat des litterales. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em nlits}]: tableau de pointeurs de Litterales a sauvegarder \item[{\em n}]: nombre d'elements du tableau a sauvegarder \end{description}
+\end{Desc}
+\hypertarget{class_memento_f8f177a9c75011e284897fc5febb14a0}{
+\index{Memento@{Memento}!updateOpe@{updateOpe}}
+\index{updateOpe@{updateOpe}!Memento@{Memento}}
+\subsubsection[{updateOpe}]{\setlength{\rightskip}{0pt plus 5cm}void Memento::updateOpe ({\bf Litterale} $\ast$ {\em l1}, \/  {\bf Litterale} $\ast$ {\em l2}, \/  string {\em op})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_memento_f8f177a9c75011e284897fc5febb14a0}
+
+
+Mise a jour de la derniere operation effectuee. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em l1}]: premiere des deux litterales utilisees pour le calcul \item[{\em l2}]: deuxieme des deux litterales utilisees pour le calcul \item[{\em op}]: chaine de caracteres representant l'operation effectuee \end{description}
+\end{Desc}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_memento_0294c5bd7e564cd5614911979e65b35d}{
+\index{Memento@{Memento}!lits@{lits}}
+\index{lits@{lits}!Memento@{Memento}}
+\subsubsection[{lits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale}$\ast$$\ast$ {\bf Memento::lits}}}
+\label{class_memento_0294c5bd7e564cd5614911979e65b35d}
+
+
+tableau de pointeurs sur des litterales 
+
+La documentation de cette classe a été générée à partir du fichier suivant :\begin{CompactItemize}
+\item 
+LitteraleManager.h\end{CompactItemize}

@@ -13,38 +13,76 @@
 * \version 1
 */
 
-
+/*! \class Memento
+* \brief Classe permettant la sauvegarde de l'etat du LitteraleManager
+*/
 class Memento {
 	friend class LitteraleManager;
 private:
-	int nb;
-	Litterale* lastArg1;
-	Litterale* lastArg2;
-	string lastOp;
+	int nb; /*!< nombre de litterales actuellement stockees*/
+	Litterale* lastArg1; /*!< pointeur sur la premiere des litterales utilisee lors de la derniere operation*/
+	Litterale* lastArg2; /*!< pointeur sur la deuxieme des litterales utilisee lors de la derniere operation*/
+	string lastOp; /*!< chaine de caractere representant la derniere operation effectuee*/
 public:
-	Litterale** lits;
+	Litterale** lits; /*!< tableau de pointeurs sur des litterales*/
+	/*!
+	*  \brief Constructeur
+	*/
 	Memento() { lits = new Litterale*[10]; nb = 0; lastArg1 = nullptr; lastArg2 = nullptr; lastOp = ""; }
+	/*!
+	*  \brief Accesseur sur le nombre
+	*  \return entier representant le nombre de litterales actuellement stockees
+	*/
 	int getnb() { return nb; }
+	/*!
+	*  \brief Sauvegarde de l'etat des litterales
+	*  \param nlits : tableau de pointeurs de Litterales a sauvegarder
+	*  \param n : nombre d'elements du tableau a sauvegarder
+	*/
 	void save(Litterale** nlits, int n) {
 		for (int i = 0; i < n; i++) {
 			lits[i] = nlits[i]->clone();
 		}
 		nb = n;
 	}
+	/*!
+	*  \brief Accesseur sur le tableau de Litterales
+	*  \return tableau de pointeurs de Litterales
+	*/
 	Litterale** getLits() { return lits; }
+	/*!
+	*  \brief Mise a jour de la derniere operation effectuee
+	*  \param l1 : premiere des deux litterales utilisees pour le calcul
+	*  \param l2 : deuxieme des deux litterales utilisees pour le calcul
+	*  \param op : chaine de caracteres representant l'operation effectuee
+	*/
 	void updateOpe(Litterale* l1, Litterale* l2, string op) {
 		lastArg1 = l1;
 		lastArg2 = l2;
 		lastOp = op;
 	}
+	/*
 	void affiche() {
 		for (int i = 0; i < nb; i++) {
 			lits[i]->affiche();
 			cout << " ";
 		}
 	}
+	*/
+	/*!
+	*  \brief Accesseur sur le premier des deux arguments enregistres
+	*  \return pointeur sur la premiere litterale
+	*/
 	Litterale* getLastArg1() { return lastArg1; }
+	/*!
+	*  \brief Accesseur sur le deuxieme des deux arguments enregistres
+	*  \return pointeur sur la deuxieme litterale
+	*/
 	Litterale* getLastArg2() { return lastArg2; }
+	/*!
+	*  \brief Accesseur sur le dernier operateur utilise
+	*  \return chaine de caractere representant le dernier operateur
+	*/
 	string getLastOp() { return lastOp; }
 };
 
@@ -65,7 +103,7 @@ private:
 	*/
 	void agrandissementCapacite();
 
-	Memento myMemento;
+	Memento myMemento; /*!< sauvegarde de l'etat precedent*/
 
 public:
 	/*!
@@ -99,7 +137,9 @@ public:
 	*/
 	void removeLitterale(Litterale* const l);
 
-
+	/*!
+	*  \brief Retour a l'etat precedent du LitteraleManager
+	*/
 	void annuler() {
 		Litterale** temp = new Litterale*[nb];
 		int tempnb = nb;
@@ -117,8 +157,20 @@ public:
 		nb = myMemento.nb;
 		myMemento.save(temp, tempnb);
 	}
+	/*!
+	*  \brief Accesseur sur le memento
+	*  \return dernier etat sauvegarde
+	*/
 	Memento& getMem() { return myMemento; }
+	/*!
+	*  \brief Accesseur sur le tableau de pointeurs de Litterales
+	*  \return tableau de pointeurs de Litterales
+	*/
 	Litterale** getLits() { return lits; }
+	/*!
+	*  \brief Accesseur sur la taille du tableau
+	*  \return entier representant le nombre de Litterale du LitteraleManager
+	*/
 	int taille() { return nb; }
 
 };

@@ -74,9 +74,12 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pile.html#a3991438f190580607d7bbbd50ecc0c3">clear</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Suppression de l'integralite des elements de la pile. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pile.html#47db93b6d3c9d527e9c4c8afb1565e2b">reconstruire</a> (<a class="el" href="class_memento.html">Memento</a> m)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reconstruction de la pile suite a un REDO.  <a href="#47db93b6d3c9d527e9c4c8afb1565e2b"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Amis</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="15ea7cda491e1c5873aeba1aad9d457a"></a><!-- doxytag: member="Pile::Memento" ref="15ea7cda491e1c5873aeba1aad9d457a" args="" -->
-class&nbsp;</td><td class="memItemRight" valign="bottom"><b>Memento</b></td></tr>
+class&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pile.html#15ea7cda491e1c5873aeba1aad9d457a">Memento</a></td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Description détaillée</h2>
@@ -125,6 +128,33 @@ Insertion d'une litterale dans la pile.
 <dl compact><dt><b>Paramètres:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>l</em>&nbsp;</td><td>: pointeur sur la litterale a inserer </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="47db93b6d3c9d527e9c4c8afb1565e2b"></a><!-- doxytag: member="Pile::reconstruire" ref="47db93b6d3c9d527e9c4c8afb1565e2b" args="(Memento m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pile::reconstruire           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_memento.html">Memento</a>&nbsp;</td>
+          <td class="paramname"> <em>m</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reconstruction de la pile suite a un REDO. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>m</em>&nbsp;</td><td>: memento du LitteralManager </td></tr>
   </table>
 </dl>
 
@@ -222,7 +252,7 @@ Acces au dernier element.
 <hr>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li><a class="el" href="_pile_8h-source.html">Pile.h</a><li>Pile.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 14:57:03 2016 pour LO21 - Calculatrice par&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 19:27:55 2016 pour LO21 - Calculatrice par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

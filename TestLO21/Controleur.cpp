@@ -271,7 +271,7 @@ void Controleur::executer() {
 	try {
 		do {
 			cout << "LitMngMem :";
-			litMng.getMem().affiche();
+			//litMng.getMem().affiche();
 			cout << "\n";
 			stack.affiche();
 			cout << "?- ";
@@ -399,8 +399,10 @@ void Controleur::operationPile(int i)
 	case 5:
 		stack.push(litMng.getMem().getLastArg1());
 		litMng.addLitterale(litMng.getMem().getLastArg1());
-		stack.push(litMng.getMem().getLastArg2());
-		litMng.addLitterale(litMng.getMem().getLastArg2());
+		if (litMng.getMem().getLastArg2() != nullptr) {
+			stack.push(litMng.getMem().getLastArg2());
+			litMng.addLitterale(litMng.getMem().getLastArg2());
+		}
 		break;
 	case 8:
 		stack.clear();

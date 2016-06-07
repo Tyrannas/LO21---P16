@@ -49,6 +49,19 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_litterale_manager.html#53bfb9871eed94f6c3e8f5f1e2a76e29">removeLitterale</a> (<a class="el" href="class_litterale.html">Litterale</a> *const l)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Suppression d'une litterale du Manager.  <a href="#53bfb9871eed94f6c3e8f5f1e2a76e29"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0e8fb794d0df6e0604140e325185e013"></a><!-- doxytag: member="LitteraleManager::annuler" ref="0e8fb794d0df6e0604140e325185e013" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_litterale_manager.html#0e8fb794d0df6e0604140e325185e013">annuler</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retour a l'etat precedent du <a class="el" href="class_litterale_manager.html" title="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</a>. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_memento.html">Memento</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_litterale_manager.html#2dc55ae7c373e339ed59cee0090a781a">getMem</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Accesseur sur le memento.  <a href="#2dc55ae7c373e339ed59cee0090a781a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_litterale.html">Litterale</a> **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_litterale_manager.html#d385d62b811ea974bb98073e5b3ba4b4">getLits</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Accesseur sur le tableau de pointeurs de Litterales.  <a href="#d385d62b811ea974bb98073e5b3ba4b4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_litterale_manager.html#1395437a2113d2dbcfcdd90891af370e">taille</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Accesseur sur la taille du tableau.  <a href="#1395437a2113d2dbcfcdd90891af370e"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Description détaillée</h2>
 Classe permettant de gerer toutes les litterales ajoutees une a une. <hr><h2>Documentation des fonctions membres</h2>
@@ -77,6 +90,50 @@ Ajout d'une litterale dans le Manager.
   </table>
 </dl>
 <dl class="return" compact><dt><b>Renvoie:</b></dt><dd>reference sur la litterale ajoutee </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d385d62b811ea974bb98073e5b3ba4b4"></a><!-- doxytag: member="LitteraleManager::getLits" ref="d385d62b811ea974bb98073e5b3ba4b4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_litterale.html">Litterale</a>** LitteraleManager::getLits           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Accesseur sur le tableau de pointeurs de Litterales. 
+<p>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>tableau de pointeurs de Litterales </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="2dc55ae7c373e339ed59cee0090a781a"></a><!-- doxytag: member="LitteraleManager::getMem" ref="2dc55ae7c373e339ed59cee0090a781a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_memento.html">Memento</a>&amp; LitteraleManager::getMem           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Accesseur sur le memento. 
+<p>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>dernier etat sauvegarde </dd></dl>
 
 </div>
 </div><p>
@@ -173,10 +230,32 @@ Suppression d'une litterale du Manager.
 
 </div>
 </div><p>
+<a class="anchor" name="1395437a2113d2dbcfcdd90891af370e"></a><!-- doxytag: member="LitteraleManager::taille" ref="1395437a2113d2dbcfcdd90891af370e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LitteraleManager::taille           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Accesseur sur la taille du tableau. 
+<p>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>entier representant le nombre de <a class="el" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a> du <a class="el" href="class_litterale_manager.html" title="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</a> </dd></dl>
+
+</div>
+</div><p>
 <hr>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li><a class="el" href="_litterale_manager_8h-source.html">LitteraleManager.h</a><li>LitteraleManager.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 14:57:03 2016 pour LO21 - Calculatrice par&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 19:27:55 2016 pour LO21 - Calculatrice par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -121,7 +121,10 @@ public:
 	*/
 	void clear();
 
-
+	/*!
+	*  \brief Reconstruction de la pile suite a un REDO
+	*  \param m : memento du LitteralManager
+	*/
 	void reconstruire(Memento m) {
 		this->clear();
 		for (int i = 0; i < m.getnb();i++) {

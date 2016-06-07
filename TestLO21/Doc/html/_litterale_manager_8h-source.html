@@ -26,21 +26,85 @@
 <a name="l00006"></a>00006 <span class="preprocessor">#include &lt;iostream&gt;</span>
 <a name="l00007"></a>00007 <span class="preprocessor">#include &lt;sstream&gt;</span>
 <a name="l00008"></a>00008 
-<a name="l00019"></a><a class="code" href="class_litterale_manager.html">00019</a> <span class="keyword">class </span><a class="code" href="class_litterale_manager.html" title="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</a> {
-<a name="l00020"></a>00020 <span class="keyword">private</span>:
-<a name="l00021"></a>00021                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>** lits; 
+<a name="l00019"></a><a class="code" href="class_memento.html">00019</a> <span class="keyword">class </span><a class="code" href="class_memento.html" title="Classe permettant la sauvegarde de l&amp;#39;etat du LitteraleManager.">Memento</a> {
+<a name="l00020"></a>00020                 <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_litterale_manager.html" title="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</a>;
+<a name="l00021"></a>00021 <span class="keyword">private</span>:
 <a name="l00022"></a>00022                 <span class="keywordtype">int</span> nb; 
-<a name="l00023"></a>00023                 <span class="keywordtype">int</span> nbMax; 
-<a name="l00027"></a>00027                 <span class="keywordtype">void</span> agrandissementCapacite();
-<a name="l00028"></a>00028 <span class="keyword">public</span>:
-<a name="l00032"></a>00032                 <a class="code" href="class_litterale_manager.html#daa9e81e06b8001e4cf9e0f5a214b6cd" title="Constructeur.">LitteraleManager</a>();
-<a name="l00036"></a>00036                 <a class="code" href="class_litterale_manager.html#a6f690e84ae96ec3a15f6b629264cc1f" title="Destructeur.">~LitteraleManager</a>();
-<a name="l00042"></a>00042                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>&amp; <a class="code" href="class_litterale_manager.html#bfb29c7c9e5ffdd6904f069def98d2df" title="Ajout d&amp;#39;une litterale dans le Manager.">addLitterale</a>(<a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a> * <span class="keyword">const</span> l);
-<a name="l00053"></a>00053                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* <span class="keyword">const</span> <a class="code" href="class_litterale_manager.html#ac254ffc8158f21899786e2133a6018d" title="Creation de la litterale corespondant a la chaine de caracteres parsee dans le controleur...">littFactory</a>(TypeLitterale type, <span class="keywordtype">int</span> p1, <span class="keywordtype">int</span> p2 = NULL, <span class="keywordtype">double</span> p3 = NULL, <a class="code" href="class_numerique.html" title="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</a>* p4 = <span class="keyword">nullptr</span>, <a class="code" href="class_numerique.html" title="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</a>* p5 = <span class="keyword">nullptr</span>);
-<a name="l00058"></a>00058                 <span class="keywordtype">void</span> <a class="code" href="class_litterale_manager.html#53bfb9871eed94f6c3e8f5f1e2a76e29" title="Suppression d&amp;#39;une litterale du Manager.">removeLitterale</a>(<a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* <span class="keyword">const</span> l);
-<a name="l00059"></a>00059 };
+<a name="l00023"></a>00023                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* lastArg1; 
+<a name="l00024"></a>00024                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* lastArg2; 
+<a name="l00025"></a>00025                 <span class="keywordtype">string</span> lastOp; 
+<a name="l00026"></a>00026 <span class="keyword">public</span>:
+<a name="l00027"></a><a class="code" href="class_memento.html#0294c5bd7e564cd5614911979e65b35d">00027</a>                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>** <a class="code" href="class_memento.html#0294c5bd7e564cd5614911979e65b35d">lits</a>; 
+<a name="l00031"></a><a class="code" href="class_memento.html#3e8200cf33e67852fca5d671eed7f683">00031</a>                 <a class="code" href="class_memento.html#3e8200cf33e67852fca5d671eed7f683" title="Constructeur.">Memento</a>() { <a class="code" href="class_memento.html#0294c5bd7e564cd5614911979e65b35d">lits</a> = <span class="keyword">new</span> <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>*[10]; nb = 0; lastArg1 = <span class="keyword">nullptr</span>; lastArg2 = <span class="keyword">nullptr</span>; lastOp = <span class="stringliteral">""</span>; }
+<a name="l00036"></a><a class="code" href="class_memento.html#e45233d8532ac8fbc47ed8b1e5f091f5">00036</a>                 <span class="keywordtype">int</span> <a class="code" href="class_memento.html#e45233d8532ac8fbc47ed8b1e5f091f5" title="Accesseur sur le nombre.">getnb</a>() { <span class="keywordflow">return</span> nb; }
+<a name="l00042"></a><a class="code" href="class_memento.html#3b5cc6cc4611bb18ea52ef949f7b9430">00042</a>                 <span class="keywordtype">void</span> <a class="code" href="class_memento.html#3b5cc6cc4611bb18ea52ef949f7b9430" title="Sauvegarde de l&amp;#39;etat des litterales.">save</a>(<a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>** nlits, <span class="keywordtype">int</span> n) {
+<a name="l00043"></a>00043                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++) {
+<a name="l00044"></a>00044                                                 <a class="code" href="class_memento.html#0294c5bd7e564cd5614911979e65b35d">lits</a>[i] = nlits[i]-&gt;<a class="code" href="class_litterale.html#aaadc01ca2bb0c9210f9de083130768b" title="Clone : Methode virtuelle pure permettant de dupliquer un pointeur sur litterale...">clone</a>();
+<a name="l00045"></a>00045                                 }
+<a name="l00046"></a>00046                                 nb = n;
+<a name="l00047"></a>00047                 }
+<a name="l00052"></a><a class="code" href="class_memento.html#8d8c047f861706c999f8115fa16fd58f">00052</a>                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>** <a class="code" href="class_memento.html#8d8c047f861706c999f8115fa16fd58f" title="Accesseur sur le tableau de Litterales.">getLits</a>() { <span class="keywordflow">return</span> <a class="code" href="class_memento.html#0294c5bd7e564cd5614911979e65b35d">lits</a>; }
+<a name="l00059"></a><a class="code" href="class_memento.html#f8f177a9c75011e284897fc5febb14a0">00059</a>                 <span class="keywordtype">void</span> <a class="code" href="class_memento.html#f8f177a9c75011e284897fc5febb14a0" title="Mise a jour de la derniere operation effectuee.">updateOpe</a>(<a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* l1, <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* l2, <span class="keywordtype">string</span> op) {
+<a name="l00060"></a>00060                                 lastArg1 = l1;
+<a name="l00061"></a>00061                                 lastArg2 = l2;
+<a name="l00062"></a>00062                                 lastOp = op;
+<a name="l00063"></a>00063                 }
+<a name="l00064"></a>00064                 <span class="comment">/*</span>
+<a name="l00065"></a>00065 <span class="comment">                void affiche() {</span>
+<a name="l00066"></a>00066 <span class="comment">                                for (int i = 0; i &lt; nb; i++) {</span>
+<a name="l00067"></a>00067 <span class="comment">                                                lits[i]-&gt;affiche();</span>
+<a name="l00068"></a>00068 <span class="comment">                                                cout &lt;&lt; " ";</span>
+<a name="l00069"></a>00069 <span class="comment">                                }</span>
+<a name="l00070"></a>00070 <span class="comment">                }</span>
+<a name="l00071"></a>00071 <span class="comment">                */</span>
+<a name="l00076"></a><a class="code" href="class_memento.html#a30492b498231a10ba8b546e72ee0540">00076</a>                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* <a class="code" href="class_memento.html#a30492b498231a10ba8b546e72ee0540" title="Accesseur sur le premier des deux arguments enregistres.">getLastArg1</a>() { <span class="keywordflow">return</span> lastArg1; }
+<a name="l00081"></a><a class="code" href="class_memento.html#3e41b8b940d028d9c35d7f2c26395144">00081</a>                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* <a class="code" href="class_memento.html#3e41b8b940d028d9c35d7f2c26395144" title="Accesseur sur le deuxieme des deux arguments enregistres.">getLastArg2</a>() { <span class="keywordflow">return</span> lastArg2; }
+<a name="l00086"></a><a class="code" href="class_memento.html#e0caadaf7cabf3c5904cd8416718c2bb">00086</a>                 <span class="keywordtype">string</span> <a class="code" href="class_memento.html#e0caadaf7cabf3c5904cd8416718c2bb" title="Accesseur sur le dernier operateur utilise.">getLastOp</a>() { <span class="keywordflow">return</span> lastOp; }
+<a name="l00087"></a>00087 };
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 
+<a name="l00096"></a><a class="code" href="class_litterale_manager.html">00096</a> <span class="keyword">class </span><a class="code" href="class_litterale_manager.html" title="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</a> {
+<a name="l00097"></a>00097 <span class="keyword">private</span>:
+<a name="l00098"></a>00098                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>** lits; 
+<a name="l00099"></a>00099                 <span class="keywordtype">int</span> nb; 
+<a name="l00100"></a>00100                 <span class="keywordtype">int</span> nbMax; 
+<a name="l00104"></a>00104                 <span class="keywordtype">void</span> agrandissementCapacite();
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106                 <a class="code" href="class_memento.html" title="Classe permettant la sauvegarde de l&amp;#39;etat du LitteraleManager.">Memento</a> myMemento; 
+<a name="l00108"></a>00108 <span class="keyword">public</span>:
+<a name="l00112"></a>00112                 <a class="code" href="class_litterale_manager.html#daa9e81e06b8001e4cf9e0f5a214b6cd" title="Constructeur.">LitteraleManager</a>();
+<a name="l00116"></a>00116                 <a class="code" href="class_litterale_manager.html#a6f690e84ae96ec3a15f6b629264cc1f" title="Destructeur.">~LitteraleManager</a>();
+<a name="l00122"></a>00122                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>&amp; <a class="code" href="class_litterale_manager.html#bfb29c7c9e5ffdd6904f069def98d2df" title="Ajout d&amp;#39;une litterale dans le Manager.">addLitterale</a>(<a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a> * <span class="keyword">const</span> l);
+<a name="l00133"></a>00133                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* <span class="keyword">const</span> <a class="code" href="class_litterale_manager.html#ac254ffc8158f21899786e2133a6018d" title="Creation de la litterale corespondant a la chaine de caracteres parsee dans le controleur...">littFactory</a>(TypeLitterale type, <span class="keywordtype">int</span> p1, <span class="keywordtype">int</span> p2 = NULL, <span class="keywordtype">double</span> p3 = NULL, <a class="code" href="class_numerique.html" title="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</a>* p4 = <span class="keyword">nullptr</span>, <a class="code" href="class_numerique.html" title="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</a>* p5 = <span class="keyword">nullptr</span>);
+<a name="l00138"></a>00138                 <span class="keywordtype">void</span> <a class="code" href="class_litterale_manager.html#53bfb9871eed94f6c3e8f5f1e2a76e29" title="Suppression d&amp;#39;une litterale du Manager.">removeLitterale</a>(<a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* <span class="keyword">const</span> l);
+<a name="l00139"></a>00139 
+<a name="l00143"></a><a class="code" href="class_litterale_manager.html#0e8fb794d0df6e0604140e325185e013">00143</a>                 <span class="keywordtype">void</span> <a class="code" href="class_litterale_manager.html#0e8fb794d0df6e0604140e325185e013" title="Retour a l&amp;#39;etat precedent du LitteraleManager.">annuler</a>() {
+<a name="l00144"></a>00144                                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>** temp = <span class="keyword">new</span> <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>*[nb];
+<a name="l00145"></a>00145                                 <span class="keywordtype">int</span> tempnb = nb;
+<a name="l00146"></a>00146                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nb; i++) {
+<a name="l00147"></a>00147                                                 temp[i] = lits[i];
+<a name="l00148"></a>00148                                 }
+<a name="l00149"></a>00149                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; myMemento.<a class="code" href="class_memento.html#8f41b32496e04c007343ea8cced53685">nb</a>; i++) {
+<a name="l00150"></a>00150                                                 lits[i] = myMemento.<a class="code" href="class_memento.html#0294c5bd7e564cd5614911979e65b35d">lits</a>[i];
+<a name="l00151"></a>00151                                 }
+<a name="l00152"></a>00152                                 <span class="comment">/*</span>
+<a name="l00153"></a>00153 <span class="comment">                                for (int j = myMemento.nb; j &lt;= nb; j++) {</span>
+<a name="l00154"></a>00154 <span class="comment">                                                delete lits[j];</span>
+<a name="l00155"></a>00155 <span class="comment">                                }</span>
+<a name="l00156"></a>00156 <span class="comment">                                */</span>
+<a name="l00157"></a>00157                                 nb = myMemento.<a class="code" href="class_memento.html#8f41b32496e04c007343ea8cced53685">nb</a>;
+<a name="l00158"></a>00158                                 myMemento.<a class="code" href="class_memento.html#3b5cc6cc4611bb18ea52ef949f7b9430" title="Sauvegarde de l&amp;#39;etat des litterales.">save</a>(temp, tempnb);
+<a name="l00159"></a>00159                 }
+<a name="l00164"></a><a class="code" href="class_litterale_manager.html#2dc55ae7c373e339ed59cee0090a781a">00164</a>                 <a class="code" href="class_memento.html" title="Classe permettant la sauvegarde de l&amp;#39;etat du LitteraleManager.">Memento</a>&amp; <a class="code" href="class_litterale_manager.html#2dc55ae7c373e339ed59cee0090a781a" title="Accesseur sur le memento.">getMem</a>() { <span class="keywordflow">return</span> myMemento; }
+<a name="l00169"></a><a class="code" href="class_litterale_manager.html#d385d62b811ea974bb98073e5b3ba4b4">00169</a>                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>** <a class="code" href="class_litterale_manager.html#d385d62b811ea974bb98073e5b3ba4b4" title="Accesseur sur le tableau de pointeurs de Litterales.">getLits</a>() { <span class="keywordflow">return</span> lits; }
+<a name="l00174"></a><a class="code" href="class_litterale_manager.html#1395437a2113d2dbcfcdd90891af370e">00174</a>                 <span class="keywordtype">int</span> <a class="code" href="class_litterale_manager.html#1395437a2113d2dbcfcdd90891af370e" title="Accesseur sur la taille du tableau.">taille</a>() { <span class="keywordflow">return</span> nb; }
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176 };
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 14:57:03 2016 pour LO21 - Calculatrice par&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 19:27:55 2016 pour LO21 - Calculatrice par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

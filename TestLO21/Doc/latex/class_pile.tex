@@ -51,12 +51,14 @@ void \hyperlink{class_pile_2c9967dc8f5dcb4372475dee52ed64c6}{swap} ()}
 void \hyperlink{class_pile_a3991438f190580607d7bbbd50ecc0c3}{clear} ()}
 \label{class_pile_a3991438f190580607d7bbbd50ecc0c3}
 
-\begin{CompactList}\small\item\em Suppression de l'integralite des elements de la pile. \item\end{CompactList}\end{CompactItemize}
+\begin{CompactList}\small\item\em Suppression de l'integralite des elements de la pile. \item\end{CompactList}\item 
+void \hyperlink{class_pile_47db93b6d3c9d527e9c4c8afb1565e2b}{reconstruire} (\hyperlink{class_memento}{Memento} m)
+\begin{CompactList}\small\item\em Reconstruction de la pile suite a un REDO. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Amis}
 \begin{CompactItemize}
 \item 
 \hypertarget{class_pile_15ea7cda491e1c5873aeba1aad9d457a}{
-class \textbf{Memento}}
+class \hyperlink{class_pile_15ea7cda491e1c5873aeba1aad9d457a}{Memento}}
 \label{class_pile_15ea7cda491e1c5873aeba1aad9d457a}
 
 \end{CompactItemize}
@@ -90,6 +92,20 @@ Insertion d'une litterale dans la pile.
 \item[Paramètres:]
 \begin{description}
 \item[{\em l}]: pointeur sur la litterale a inserer \end{description}
+\end{Desc}
+\hypertarget{class_pile_47db93b6d3c9d527e9c4c8afb1565e2b}{
+\index{Pile@{Pile}!reconstruire@{reconstruire}}
+\index{reconstruire@{reconstruire}!Pile@{Pile}}
+\subsubsection[{reconstruire}]{\setlength{\rightskip}{0pt plus 5cm}void Pile::reconstruire ({\bf Memento} {\em m})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_pile_47db93b6d3c9d527e9c4c8afb1565e2b}
+
+
+Reconstruction de la pile suite a un REDO. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em m}]: memento du LitteralManager \end{description}
 \end{Desc}
 \hypertarget{class_pile_a61a682bdd3b9dac5d1b25e481c453d1}{
 \index{Pile@{Pile}!setNbItemsToAffiche@{setNbItemsToAffiche}}

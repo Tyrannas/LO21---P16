@@ -25,7 +25,18 @@ Classe permettant de gerer toutes les litterales ajoutees une a une.
 \hyperlink{class_litterale}{Litterale} $\ast$const \hyperlink{class_litterale_manager_ac254ffc8158f21899786e2133a6018d}{littFactory} (TypeLitterale type, int p1, int p2=NULL, double p3=NULL, \hyperlink{class_numerique}{Numerique} $\ast$p4=nullptr, \hyperlink{class_numerique}{Numerique} $\ast$p5=nullptr)
 \begin{CompactList}\small\item\em Creation de la litterale corespondant a la chaine de caracteres parsee dans le controleur. \item\end{CompactList}\item 
 void \hyperlink{class_litterale_manager_53bfb9871eed94f6c3e8f5f1e2a76e29}{removeLitterale} (\hyperlink{class_litterale}{Litterale} $\ast$const l)
-\begin{CompactList}\small\item\em Suppression d'une litterale du Manager. \item\end{CompactList}\end{CompactItemize}
+\begin{CompactList}\small\item\em Suppression d'une litterale du Manager. \item\end{CompactList}\item 
+\hypertarget{class_litterale_manager_0e8fb794d0df6e0604140e325185e013}{
+void \hyperlink{class_litterale_manager_0e8fb794d0df6e0604140e325185e013}{annuler} ()}
+\label{class_litterale_manager_0e8fb794d0df6e0604140e325185e013}
+
+\begin{CompactList}\small\item\em Retour a l'etat precedent du \hyperlink{class_litterale_manager}{LitteraleManager}. \item\end{CompactList}\item 
+\hyperlink{class_memento}{Memento} \& \hyperlink{class_litterale_manager_2dc55ae7c373e339ed59cee0090a781a}{getMem} ()
+\begin{CompactList}\small\item\em Accesseur sur le memento. \item\end{CompactList}\item 
+\hyperlink{class_litterale}{Litterale} $\ast$$\ast$ \hyperlink{class_litterale_manager_d385d62b811ea974bb98073e5b3ba4b4}{getLits} ()
+\begin{CompactList}\small\item\em Accesseur sur le tableau de pointeurs de Litterales. \item\end{CompactList}\item 
+int \hyperlink{class_litterale_manager_1395437a2113d2dbcfcdd90891af370e}{taille} ()
+\begin{CompactList}\small\item\em Accesseur sur la taille du tableau. \item\end{CompactList}\end{CompactItemize}
 
 
 \subsection{Description détaillée}
@@ -48,6 +59,28 @@ Ajout d'une litterale dans le Manager.
 \end{Desc}
 \begin{Desc}
 \item[Renvoie:]reference sur la litterale ajoutee \end{Desc}
+\hypertarget{class_litterale_manager_d385d62b811ea974bb98073e5b3ba4b4}{
+\index{LitteraleManager@{LitteraleManager}!getLits@{getLits}}
+\index{getLits@{getLits}!LitteraleManager@{LitteraleManager}}
+\subsubsection[{getLits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale}$\ast$$\ast$ LitteraleManager::getLits ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_litterale_manager_d385d62b811ea974bb98073e5b3ba4b4}
+
+
+Accesseur sur le tableau de pointeurs de Litterales. 
+
+\begin{Desc}
+\item[Renvoie:]tableau de pointeurs de Litterales \end{Desc}
+\hypertarget{class_litterale_manager_2dc55ae7c373e339ed59cee0090a781a}{
+\index{LitteraleManager@{LitteraleManager}!getMem@{getMem}}
+\index{getMem@{getMem}!LitteraleManager@{LitteraleManager}}
+\subsubsection[{getMem}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Memento}\& LitteraleManager::getMem ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_litterale_manager_2dc55ae7c373e339ed59cee0090a781a}
+
+
+Accesseur sur le memento. 
+
+\begin{Desc}
+\item[Renvoie:]dernier etat sauvegarde \end{Desc}
 \hypertarget{class_litterale_manager_ac254ffc8158f21899786e2133a6018d}{
 \index{LitteraleManager@{LitteraleManager}!littFactory@{littFactory}}
 \index{littFactory@{littFactory}!LitteraleManager@{LitteraleManager}}
@@ -78,6 +111,17 @@ Suppression d'une litterale du Manager.
 \begin{description}
 \item[{\em l}]: pointeur sur la litterale a supprimer \end{description}
 \end{Desc}
+\hypertarget{class_litterale_manager_1395437a2113d2dbcfcdd90891af370e}{
+\index{LitteraleManager@{LitteraleManager}!taille@{taille}}
+\index{taille@{taille}!LitteraleManager@{LitteraleManager}}
+\subsubsection[{taille}]{\setlength{\rightskip}{0pt plus 5cm}int LitteraleManager::taille ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_litterale_manager_1395437a2113d2dbcfcdd90891af370e}
+
+
+Accesseur sur la taille du tableau. 
+
+\begin{Desc}
+\item[Renvoie:]entier representant le nombre de \hyperlink{class_litterale}{Litterale} du \hyperlink{class_litterale_manager}{LitteraleManager} \end{Desc}
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants :\begin{CompactItemize}
