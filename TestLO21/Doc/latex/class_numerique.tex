@@ -1,0 +1,46 @@
+\hypertarget{class_numerique}{
+\section{Référence de la classe Numerique}
+\label{class_numerique}\index{Numerique@{Numerique}}
+}
+Classe abstraite representant un numerique, c'est a dire un nombre autre que complexe (heritage de \hyperlink{class_litterale}{Litterale}).  
+
+
+{\tt \#include $<$Litterale.h$>$}
+
+Graphe d'héritage de Numerique::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{class_numerique}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_numerique_f6d64b345f536d45454ba424d59a8ee4}{
+virtual void \hyperlink{class_numerique_f6d64b345f536d45454ba424d59a8ee4}{affiche} () const =0}
+\label{class_numerique_f6d64b345f536d45454ba424d59a8ee4}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction d'affichage. \item\end{CompactList}\item 
+\hypertarget{class_numerique_5d88a526f166b01e5c116d7342daa7e8}{
+virtual void \hyperlink{class_numerique_5d88a526f166b01e5c116d7342daa7e8}{neg} ()=0}
+\label{class_numerique_5d88a526f166b01e5c116d7342daa7e8}
+
+\begin{CompactList}\small\item\em Methode virtuelle pure permettant l'inversion du signe de la litterale. \item\end{CompactList}\item 
+\hypertarget{class_numerique_facd4108df61baa46c639c8e15b23c7f}{
+virtual \hyperlink{class_numerique}{Numerique} $\ast$ \hyperlink{class_numerique_facd4108df61baa46c639c8e15b23c7f}{clone} ()=0}
+\label{class_numerique_facd4108df61baa46c639c8e15b23c7f}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction de clonage. \item\end{CompactList}\item 
+\hypertarget{class_numerique_d6a208d078f63b62160d255a52c0ab1c}{
+virtual double \hyperlink{class_numerique_d6a208d078f63b62160d255a52c0ab1c}{getComp} ()=0}
+\label{class_numerique_d6a208d078f63b62160d255a52c0ab1c}
+
+\begin{CompactList}\small\item\em Methode virtuelle pure permettant la recuperation de la valeur de la litterale sous forme de double pour comparaison. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe abstraite representant un numerique, c'est a dire un nombre autre que complexe (heritage de \hyperlink{class_litterale}{Litterale}). 
+
+La documentation de cette classe a été générée à partir du fichier suivant :\begin{CompactItemize}
+\item 
+Litterale.h\end{CompactItemize}

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>LO21 - Calculatrice: Référence de la classe Controleur</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Liste&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&nbsp;de&nbsp;classe</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence de la classe Controleur</h1><!-- doxytag: class="Controleur" -->Classe permettant de gerer l'ensemble de la calculatrice.  
+<a href="#_details">Plus de détails...</a>
+<p>
+<code>#include &lt;<a class="el" href="_controleur_8h-source.html">Controleur.h</a>&gt;</code>
+<p>
+
+<p>
+<a href="class_controleur-members.html">Liste de tous les membres</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Fonctions membres publiques</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controleur.html#b5ba4bff7cacbe4aaaa7f926cfb638f0">Controleur</a> (<a class="el" href="class_litterale_manager.html">LitteraleManager</a> &amp;l, <a class="el" href="class_pile.html">Pile</a> &amp;v, <a class="el" href="class_hash_map.html">HashMap</a> &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#b5ba4bff7cacbe4aaaa7f926cfb638f0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controleur.html#3b3ae1907bbec700443d18ebed7c4131">parse</a> (const string &amp;c)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Parseur : permet d'analyser la chaine entree par l'utilisateur.  <a href="#3b3ae1907bbec700443d18ebed7c4131"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="040d1f47fea94b243efc6040b0c105c0"></a><!-- doxytag: member="Controleur::executer" ref="040d1f47fea94b243efc6040b0c105c0" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controleur.html#040d1f47fea94b243efc6040b0c105c0">executer</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lanceur : permet de lancer l'application. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controleur.html#0b31c80009731bc370277e3ce62b6df7">operation</a> (int i)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Operation : permet d'effectuer des operations arithmetiques entre litterales.  <a href="#0b31c80009731bc370277e3ce62b6df7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controleur.html#59c48ea6ab32a447c665ca1b7c220f8f">operationPile</a> (int i)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">OperationPile : permet d'effectuer des operations directement sur la pile (DUP, SWAP, ...).  <a href="#59c48ea6ab32a447c665ca1b7c220f8f"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Attributs publics</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controleur.html#bf929a8bcaec5e62b982c59d0a7f6166">nbOpBin</a> = 8</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+Classe permettant de gerer l'ensemble de la calculatrice. <hr><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" name="b5ba4bff7cacbe4aaaa7f926cfb638f0"></a><!-- doxytag: member="Controleur::Controleur" ref="b5ba4bff7cacbe4aaaa7f926cfb638f0" args="(LitteraleManager &amp;l, Pile &amp;v, HashMap &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Controleur::Controleur           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_litterale_manager.html">LitteraleManager</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_pile.html">Pile</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_hash_map.html">HashMap</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Constructeur. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>l</em>&nbsp;</td><td>: reference sur un litteraleManager </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>v</em>&nbsp;</td><td>: reference sur une pile </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>: reference sur une hashmap </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<hr><h2>Documentation des fonctions membres</h2>
+<a class="anchor" name="0b31c80009731bc370277e3ce62b6df7"></a><!-- doxytag: member="Controleur::operation" ref="0b31c80009731bc370277e3ce62b6df7" args="(int i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controleur::operation           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>i</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Operation : permet d'effectuer des operations arithmetiques entre litterales. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>: un entier representant le type d'operation a realiser </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="59c48ea6ab32a447c665ca1b7c220f8f"></a><!-- doxytag: member="Controleur::operationPile" ref="59c48ea6ab32a447c665ca1b7c220f8f" args="(int i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controleur::operationPile           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>i</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+OperationPile : permet d'effectuer des operations directement sur la pile (DUP, SWAP, ...). 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>: un entier representant le type d'operation a realiser </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="3b3ae1907bbec700443d18ebed7c4131"></a><!-- doxytag: member="Controleur::parse" ref="3b3ae1907bbec700443d18ebed7c4131" args="(const string &amp;c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controleur::parse           </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&nbsp;</td>
+          <td class="paramname"> <em>c</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Parseur : permet d'analyser la chaine entree par l'utilisateur. 
+<p>
+******Controleur******/<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>: chaine de caracteres entree au clavier </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<hr><h2>Documentation des données membres</h2>
+<a class="anchor" name="bf929a8bcaec5e62b982c59d0a7f6166"></a><!-- doxytag: member="Controleur::nbOpBin" ref="bf929a8bcaec5e62b982c59d0a7f6166" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_controleur.html#bf929a8bcaec5e62b982c59d0a7f6166">Controleur::nbOpBin</a> = 8          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Nombre d'operations binaires connues par le controleur 
+</div>
+</div><p>
+<hr>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li><a class="el" href="_controleur_8h-source.html">Controleur.h</a><li>Controleur.cpp</ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 14:57:03 2016 pour LO21 - Calculatrice par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

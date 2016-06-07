@@ -1,0 +1,126 @@
+\hypertarget{class_rationnelle}{
+\section{Référence de la classe Rationnelle}
+\label{class_rationnelle}\index{Rationnelle@{Rationnelle}}
+}
+Classe representant un nombre rationnel (heritage de \hyperlink{class_numerique}{Numerique}).  
+
+
+{\tt \#include $<$Litterale.h$>$}
+
+Graphe d'héritage de Rationnelle::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{class_rationnelle}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_rationnelle_80e2778456d58509340e31e304d77b8f}{Rationnelle} (\hyperlink{class_entiere}{Entiere} e1, \hyperlink{class_entiere}{Entiere} e2)
+\begin{CompactList}\small\item\em Constructeur. \item\end{CompactList}\item 
+\hypertarget{class_rationnelle_a4f581d2864da2bc7437a00b911377d9}{
+void \hyperlink{class_rationnelle_a4f581d2864da2bc7437a00b911377d9}{simplification} ()}
+\label{class_rationnelle_a4f581d2864da2bc7437a00b911377d9}
+
+\begin{CompactList}\small\item\em Simplificateur de la fraction. \item\end{CompactList}\item 
+\hyperlink{class_entiere}{Entiere} \hyperlink{class_rationnelle_a912b36ff009510986a131cf0d9d5c7b}{toEntiere} ()
+\begin{CompactList}\small\item\em Construction d'une litterale entiere a partir d'une litterale rationnelle. \item\end{CompactList}\item 
+\hyperlink{class_reelle}{Reelle} \hyperlink{class_rationnelle_ae003cf8f8f8fd3f8ca25833019293c7}{toReelle} ()
+\begin{CompactList}\small\item\em Construction d'une litterale reelle a partir d'une litterale rationnelle. \item\end{CompactList}\item 
+\hyperlink{class_entiere}{Entiere} \hyperlink{class_rationnelle_7bb78e18fcebedf67e29da7b8da56483}{getNum} () const 
+\begin{CompactList}\small\item\em Accesseur sur le numerateur. \item\end{CompactList}\item 
+\hyperlink{class_entiere}{Entiere} \hyperlink{class_rationnelle_fa5d908b5e2e972af5a431efb6686b52}{getDen} () const 
+\begin{CompactList}\small\item\em Accesseur sur le denominateur. \item\end{CompactList}\item 
+\hypertarget{class_rationnelle_7d5f7cf77d2c916b97f3697a071300df}{
+void \hyperlink{class_rationnelle_7d5f7cf77d2c916b97f3697a071300df}{affiche} () const }
+\label{class_rationnelle_7d5f7cf77d2c916b97f3697a071300df}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction d'affichage. \item\end{CompactList}\item 
+\hypertarget{class_rationnelle_ba6dca31aee851018c69ac3c5b8dd81a}{
+\hyperlink{class_rationnelle}{Rationnelle} $\ast$ \hyperlink{class_rationnelle_ba6dca31aee851018c69ac3c5b8dd81a}{clone} ()}
+\label{class_rationnelle_ba6dca31aee851018c69ac3c5b8dd81a}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction de clonage. \item\end{CompactList}\item 
+\hypertarget{class_rationnelle_1bb63e8e86011146a11507c948ed1410}{
+void \hyperlink{class_rationnelle_1bb63e8e86011146a11507c948ed1410}{neg} ()}
+\label{class_rationnelle_1bb63e8e86011146a11507c948ed1410}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction d'inversion de signe. \item\end{CompactList}\item 
+\hypertarget{class_rationnelle_618f3d0c3b9bdb27bf279b8ecbb5a392}{
+double \hyperlink{class_rationnelle_618f3d0c3b9bdb27bf279b8ecbb5a392}{getComp} ()}
+\label{class_rationnelle_618f3d0c3b9bdb27bf279b8ecbb5a392}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction de clonage. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe representant un nombre rationnel (heritage de \hyperlink{class_numerique}{Numerique}). 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_rationnelle_80e2778456d58509340e31e304d77b8f}{
+\index{Rationnelle@{Rationnelle}!Rationnelle@{Rationnelle}}
+\index{Rationnelle@{Rationnelle}!Rationnelle@{Rationnelle}}
+\subsubsection[{Rationnelle}]{\setlength{\rightskip}{0pt plus 5cm}Rationnelle::Rationnelle ({\bf Entiere} {\em e1}, \/  {\bf Entiere} {\em e2})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_rationnelle_80e2778456d58509340e31e304d77b8f}
+
+
+Constructeur. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em e1}]: entiere representant le numerateur \item[{\em e2}]: entiere representant le denominateur \end{description}
+\end{Desc}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_rationnelle_fa5d908b5e2e972af5a431efb6686b52}{
+\index{Rationnelle@{Rationnelle}!getDen@{getDen}}
+\index{getDen@{getDen}!Rationnelle@{Rationnelle}}
+\subsubsection[{getDen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entiere} Rationnelle::getDen () const\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_rationnelle_fa5d908b5e2e972af5a431efb6686b52}
+
+
+Accesseur sur le denominateur. 
+
+\begin{Desc}
+\item[Renvoie:]valeur du denominateur de la fraction (litterale entiere) \end{Desc}
+\hypertarget{class_rationnelle_7bb78e18fcebedf67e29da7b8da56483}{
+\index{Rationnelle@{Rationnelle}!getNum@{getNum}}
+\index{getNum@{getNum}!Rationnelle@{Rationnelle}}
+\subsubsection[{getNum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entiere} Rationnelle::getNum () const\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_rationnelle_7bb78e18fcebedf67e29da7b8da56483}
+
+
+Accesseur sur le numerateur. 
+
+\begin{Desc}
+\item[Renvoie:]valeur du numerateur de la fraction (litterale entiere) \end{Desc}
+\hypertarget{class_rationnelle_a912b36ff009510986a131cf0d9d5c7b}{
+\index{Rationnelle@{Rationnelle}!toEntiere@{toEntiere}}
+\index{toEntiere@{toEntiere}!Rationnelle@{Rationnelle}}
+\subsubsection[{toEntiere}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entiere} Rationnelle::toEntiere ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_rationnelle_a912b36ff009510986a131cf0d9d5c7b}
+
+
+Construction d'une litterale entiere a partir d'une litterale rationnelle. 
+
+\begin{Desc}
+\item[Renvoie:]litterale entiere \end{Desc}
+\hypertarget{class_rationnelle_ae003cf8f8f8fd3f8ca25833019293c7}{
+\index{Rationnelle@{Rationnelle}!toReelle@{toReelle}}
+\index{toReelle@{toReelle}!Rationnelle@{Rationnelle}}
+\subsubsection[{toReelle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Reelle} Rationnelle::toReelle ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_rationnelle_ae003cf8f8f8fd3f8ca25833019293c7}
+
+
+Construction d'une litterale reelle a partir d'une litterale rationnelle. 
+
+\begin{Desc}
+\item[Renvoie:]litterale reelle \end{Desc}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{CompactItemize}
+\item 
+Litterale.h\item 
+Litterale.cpp\end{CompactItemize}

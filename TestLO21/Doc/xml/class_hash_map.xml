@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_hash_map" kind="class" prot="public">
+    <compoundname>HashMap</compoundname>
+    <includes refid="_hash_map_8h" local="no">HashMap.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hash_map_117f8fbff625a697ac94039b4a1c6cce4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_hash_entry" kindref="compound">HashEntry</ref> **</type>
+        <definition>HashEntry** HashMap::table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tableau de pointeurs de <ref refid="class_hash_entry" kindref="compound">HashEntry</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="58" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hash_map_13ae91705aa3ebfff22ce92e3c7797050" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HashMap::HashMap</definition>
+        <argsstring>()</argsstring>
+        <name>HashMap</name>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="63" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="63" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hash_map_128d6dfc1112eb216a754c07255ce0ba3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *</type>
+        <definition>Litterale* HashMap::get</definition>
+        <argsstring>(string key)</argsstring>
+        <name>get</name>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Accesseur dans la table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: chaine de caracteres servant d&apos;identifiant a la variable ou au programme dont on cherche la valeur </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>pointeur sur la litterale correspondante </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="74" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="74" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hash_map_179196be9d74f1da3c2985e19c50e4790" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void HashMap::put</definition>
+        <argsstring>(string key, Litterale *value)</argsstring>
+        <name>put</name>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Ajout d&apos;une entree dans la table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: chaine de caracteres servant d&apos;identifiant a la variable ou au programme a inserer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: pointeur sur la litterale correspondante a inserer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="90" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="90" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hash_map_132fb1e4adb8f3982861772efa511f7db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void HashMap::forget</definition>
+        <argsstring>(string key)</argsstring>
+        <name>forget</name>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Oubli d&apos;une entree de la table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: chaine de caracteres servant d&apos;identifiant a la variable ou au programme </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="103" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="103" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hash_map_17120321a936e8018fd276bcd4b4da3b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HashMap::~HashMap</definition>
+        <argsstring>()</argsstring>
+        <name>~HashMap</name>
+        <briefdescription>
+<para>Destructeur. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="118" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="118" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe reprentant la table de stockage. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="33">
+        <label>HashMap</label>
+        <link refid="class_hash_map"/>
+        <childnode refid="34" relation="usage">
+          <edgelabel>table</edgelabel>
+        </childnode>
+      </node>
+      <node id="34">
+        <label>HashEntry</label>
+        <link refid="class_hash_entry"/>
+        <childnode refid="35" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="56" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="56" bodyend="136"/>
+    <listofallmembers>
+      <member refid="class_hash_map_132fb1e4adb8f3982861772efa511f7db" prot="public" virt="non-virtual"><scope>HashMap</scope><name>forget</name></member>
+      <member refid="class_hash_map_128d6dfc1112eb216a754c07255ce0ba3" prot="public" virt="non-virtual"><scope>HashMap</scope><name>get</name></member>
+      <member refid="class_hash_map_13ae91705aa3ebfff22ce92e3c7797050" prot="public" virt="non-virtual"><scope>HashMap</scope><name>HashMap</name></member>
+      <member refid="class_hash_map_179196be9d74f1da3c2985e19c50e4790" prot="public" virt="non-virtual"><scope>HashMap</scope><name>put</name></member>
+      <member refid="class_hash_map_117f8fbff625a697ac94039b4a1c6cce4" prot="private" virt="non-virtual"><scope>HashMap</scope><name>table</name></member>
+      <member refid="class_hash_map_17120321a936e8018fd276bcd4b4da3b8" prot="public" virt="non-virtual"><scope>HashMap</scope><name>~HashMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

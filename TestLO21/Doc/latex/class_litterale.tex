@@ -1,0 +1,103 @@
+\hypertarget{class_litterale}{
+\section{Référence de la classe Litterale}
+\label{class_litterale}\index{Litterale@{Litterale}}
+}
+Classe abstraite representant toutes les litterales pouvant etres stockees.  
+
+
+{\tt \#include $<$Litterale.h$>$}
+
+Graphe d'héritage de Litterale::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{class_litterale}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_litterale_a0a02717ec75f502f1afdb6ac597efac}{
+\hyperlink{class_litterale_a0a02717ec75f502f1afdb6ac597efac}{Litterale} ()}
+\label{class_litterale_a0a02717ec75f502f1afdb6ac597efac}
+
+\begin{CompactList}\small\item\em Constructeur. \item\end{CompactList}\item 
+\hypertarget{class_litterale_d67121b10b76b2283940c52cb3b26185}{
+virtual void \hyperlink{class_litterale_d67121b10b76b2283940c52cb3b26185}{affiche} () const =0}
+\label{class_litterale_d67121b10b76b2283940c52cb3b26185}
+
+\begin{CompactList}\small\item\em Affiche : Methode virtuelle pure pour l'affichage d'une litterale. \item\end{CompactList}\item 
+TypeLitterale \hyperlink{class_litterale_a974ab68a06e8a8b15d04ecd4ce8065a}{getType} () const 
+\begin{CompactList}\small\item\em Accesseur. \item\end{CompactList}\item 
+\hypertarget{class_litterale_aaadc01ca2bb0c9210f9de083130768b}{
+virtual \hyperlink{class_litterale}{Litterale} $\ast$ \hyperlink{class_litterale_aaadc01ca2bb0c9210f9de083130768b}{clone} ()=0}
+\label{class_litterale_aaadc01ca2bb0c9210f9de083130768b}
+
+\begin{CompactList}\small\item\em Clone : Methode virtuelle pure permettant de dupliquer un pointeur sur litterale. \item\end{CompactList}\item 
+\hypertarget{class_litterale_257dc6d6f3c4d8458d45be92ceede634}{
+bool \hyperlink{class_litterale_257dc6d6f3c4d8458d45be92ceede634}{operator==} (\hyperlink{class_litterale}{Litterale} $\ast$l)}
+\label{class_litterale_257dc6d6f3c4d8458d45be92ceede634}
+
+\begin{CompactList}\small\item\em Surchage operateur==. \item\end{CompactList}\item 
+\hypertarget{class_litterale_eae743dc3e6055579ec749b708c57bc9}{
+bool \hyperlink{class_litterale_eae743dc3e6055579ec749b708c57bc9}{operator!=} (\hyperlink{class_litterale}{Litterale} $\ast$l)}
+\label{class_litterale_eae743dc3e6055579ec749b708c57bc9}
+
+\begin{CompactList}\small\item\em Surchage operateur!=. \item\end{CompactList}\item 
+\hypertarget{class_litterale_b88999156adbab96ea31e255dd3da85d}{
+bool \hyperlink{class_litterale_b88999156adbab96ea31e255dd3da85d}{operator$<$} (\hyperlink{class_litterale}{Litterale} $\ast$l)}
+\label{class_litterale_b88999156adbab96ea31e255dd3da85d}
+
+\begin{CompactList}\small\item\em Surchage operateur$<$. \item\end{CompactList}\item 
+\hypertarget{class_litterale_3495fcc6429947a6625a11e0afa0b9c6}{
+bool \hyperlink{class_litterale_3495fcc6429947a6625a11e0afa0b9c6}{operator$>$} (\hyperlink{class_litterale}{Litterale} $\ast$l)}
+\label{class_litterale_3495fcc6429947a6625a11e0afa0b9c6}
+
+\begin{CompactList}\small\item\em Surchage operateur$>$. \item\end{CompactList}\item 
+\hypertarget{class_litterale_76f566c89aa02934839f159f8d627021}{
+bool \hyperlink{class_litterale_76f566c89aa02934839f159f8d627021}{operator$<$=} (\hyperlink{class_litterale}{Litterale} $\ast$l)}
+\label{class_litterale_76f566c89aa02934839f159f8d627021}
+
+\begin{CompactList}\small\item\em Surchage operateur$<$=. \item\end{CompactList}\item 
+\hypertarget{class_litterale_4a4dfdd26a03ecd6c38d1f7e6521b549}{
+bool \hyperlink{class_litterale_4a4dfdd26a03ecd6c38d1f7e6521b549}{operator$>$=} (\hyperlink{class_litterale}{Litterale} $\ast$l)}
+\label{class_litterale_4a4dfdd26a03ecd6c38d1f7e6521b549}
+
+\begin{CompactList}\small\item\em Surchage operateur$>$=. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Attributs protégés}
+\begin{CompactItemize}
+\item 
+TypeLitterale \hyperlink{class_litterale_ab5099a9b2acefce3bc3da9487e0ad78}{type}
+\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe abstraite representant toutes les litterales pouvant etres stockees. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_litterale_a974ab68a06e8a8b15d04ecd4ce8065a}{
+\index{Litterale@{Litterale}!getType@{getType}}
+\index{getType@{getType}!Litterale@{Litterale}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}TypeLitterale Litterale::getType () const\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_litterale_a974ab68a06e8a8b15d04ecd4ce8065a}
+
+
+Accesseur. 
+
+\begin{Desc}
+\item[Renvoie:]value : type precis de la litterale correspondant a un element d'une liste enumeree \end{Desc}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_litterale_ab5099a9b2acefce3bc3da9487e0ad78}{
+\index{Litterale@{Litterale}!type@{type}}
+\index{type@{type}!Litterale@{Litterale}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}TypeLitterale {\bf Litterale::type}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_litterale_ab5099a9b2acefce3bc3da9487e0ad78}
+
+
+type precis de la litterale correspondant a un element d'une liste enumeree 
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{CompactItemize}
+\item 
+Litterale.h\item 
+Litterale.cpp\end{CompactItemize}

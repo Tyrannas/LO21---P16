@@ -1,0 +1,83 @@
+\hypertarget{class_hash_map}{
+\section{Référence de la classe HashMap}
+\label{class_hash_map}\index{HashMap@{HashMap}}
+}
+Classe reprentant la table de stockage.  
+
+
+{\tt \#include $<$HashMap.h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_hash_map_3ae91705aa3ebfff22ce92e3c7797050}{
+\hyperlink{class_hash_map_3ae91705aa3ebfff22ce92e3c7797050}{HashMap} ()}
+\label{class_hash_map_3ae91705aa3ebfff22ce92e3c7797050}
+
+\begin{CompactList}\small\item\em Constructeur. \item\end{CompactList}\item 
+\hyperlink{class_litterale}{Litterale} $\ast$ \hyperlink{class_hash_map_28d6dfc1112eb216a754c07255ce0ba3}{get} (string key)
+\begin{CompactList}\small\item\em Accesseur dans la table. \item\end{CompactList}\item 
+void \hyperlink{class_hash_map_79196be9d74f1da3c2985e19c50e4790}{put} (string key, \hyperlink{class_litterale}{Litterale} $\ast$value)
+\begin{CompactList}\small\item\em Ajout d'une entree dans la table. \item\end{CompactList}\item 
+void \hyperlink{class_hash_map_32fb1e4adb8f3982861772efa511f7db}{forget} (string key)
+\begin{CompactList}\small\item\em Oubli d'une entree de la table. \item\end{CompactList}\item 
+\hypertarget{class_hash_map_7120321a936e8018fd276bcd4b4da3b8}{
+\hyperlink{class_hash_map_7120321a936e8018fd276bcd4b4da3b8}{$\sim$HashMap} ()}
+\label{class_hash_map_7120321a936e8018fd276bcd4b4da3b8}
+
+\begin{CompactList}\small\item\em Destructeur. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe reprentant la table de stockage. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_hash_map_32fb1e4adb8f3982861772efa511f7db}{
+\index{HashMap@{HashMap}!forget@{forget}}
+\index{forget@{forget}!HashMap@{HashMap}}
+\subsubsection[{forget}]{\setlength{\rightskip}{0pt plus 5cm}void HashMap::forget (string {\em key})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_hash_map_32fb1e4adb8f3982861772efa511f7db}
+
+
+Oubli d'une entree de la table. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em key}]: chaine de caracteres servant d'identifiant a la variable ou au programme \end{description}
+\end{Desc}
+\hypertarget{class_hash_map_28d6dfc1112eb216a754c07255ce0ba3}{
+\index{HashMap@{HashMap}!get@{get}}
+\index{get@{get}!HashMap@{HashMap}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale}$\ast$ HashMap::get (string {\em key})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_hash_map_28d6dfc1112eb216a754c07255ce0ba3}
+
+
+Accesseur dans la table. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em key}]: chaine de caracteres servant d'identifiant a la variable ou au programme dont on cherche la valeur \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Renvoie:]pointeur sur la litterale correspondante \end{Desc}
+\hypertarget{class_hash_map_79196be9d74f1da3c2985e19c50e4790}{
+\index{HashMap@{HashMap}!put@{put}}
+\index{put@{put}!HashMap@{HashMap}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}void HashMap::put (string {\em key}, \/  {\bf Litterale} $\ast$ {\em value})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_hash_map_79196be9d74f1da3c2985e19c50e4790}
+
+
+Ajout d'une entree dans la table. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em key}]: chaine de caracteres servant d'identifiant a la variable ou au programme a inserer \item[{\em value}]: pointeur sur la litterale correspondante a inserer \end{description}
+\end{Desc}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant :\begin{CompactItemize}
+\item 
+HashMap.h\end{CompactItemize}

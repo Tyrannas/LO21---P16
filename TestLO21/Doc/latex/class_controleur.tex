@@ -1,0 +1,113 @@
+\hypertarget{class_controleur}{
+\section{Référence de la classe Controleur}
+\label{class_controleur}\index{Controleur@{Controleur}}
+}
+Classe permettant de gerer l'ensemble de la calculatrice.  
+
+
+{\tt \#include $<$Controleur.h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_controleur_b5ba4bff7cacbe4aaaa7f926cfb638f0}{Controleur} (\hyperlink{class_litterale_manager}{LitteraleManager} \&l, \hyperlink{class_pile}{Pile} \&v, \hyperlink{class_hash_map}{HashMap} \&t)
+\begin{CompactList}\small\item\em Constructeur. \item\end{CompactList}\item 
+void \hyperlink{class_controleur_3b3ae1907bbec700443d18ebed7c4131}{parse} (const string \&c)
+\begin{CompactList}\small\item\em Parseur : permet d'analyser la chaine entree par l'utilisateur. \item\end{CompactList}\item 
+\hypertarget{class_controleur_040d1f47fea94b243efc6040b0c105c0}{
+void \hyperlink{class_controleur_040d1f47fea94b243efc6040b0c105c0}{executer} ()}
+\label{class_controleur_040d1f47fea94b243efc6040b0c105c0}
+
+\begin{CompactList}\small\item\em Lanceur : permet de lancer l'application. \item\end{CompactList}\item 
+void \hyperlink{class_controleur_0b31c80009731bc370277e3ce62b6df7}{operation} (int i)
+\begin{CompactList}\small\item\em Operation : permet d'effectuer des operations arithmetiques entre litterales. \item\end{CompactList}\item 
+void \hyperlink{class_controleur_59c48ea6ab32a447c665ca1b7c220f8f}{operationPile} (int i)
+\begin{CompactList}\small\item\em OperationPile : permet d'effectuer des operations directement sur la pile (DUP, SWAP, ...). \item\end{CompactList}\end{CompactItemize}
+\subsection*{Attributs publics}
+\begin{CompactItemize}
+\item 
+const int \hyperlink{class_controleur_bf929a8bcaec5e62b982c59d0a7f6166}{nbOpBin} = 8
+\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe permettant de gerer l'ensemble de la calculatrice. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_controleur_b5ba4bff7cacbe4aaaa7f926cfb638f0}{
+\index{Controleur@{Controleur}!Controleur@{Controleur}}
+\index{Controleur@{Controleur}!Controleur@{Controleur}}
+\subsubsection[{Controleur}]{\setlength{\rightskip}{0pt plus 5cm}Controleur::Controleur ({\bf LitteraleManager} \& {\em l}, \/  {\bf Pile} \& {\em v}, \/  {\bf HashMap} \& {\em t})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_controleur_b5ba4bff7cacbe4aaaa7f926cfb638f0}
+
+
+Constructeur. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em l}]: reference sur un litteraleManager \item[{\em v}]: reference sur une pile \item[{\em t}]: reference sur une hashmap \end{description}
+\end{Desc}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_controleur_0b31c80009731bc370277e3ce62b6df7}{
+\index{Controleur@{Controleur}!operation@{operation}}
+\index{operation@{operation}!Controleur@{Controleur}}
+\subsubsection[{operation}]{\setlength{\rightskip}{0pt plus 5cm}void Controleur::operation (int {\em i})}}
+\label{class_controleur_0b31c80009731bc370277e3ce62b6df7}
+
+
+Operation : permet d'effectuer des operations arithmetiques entre litterales. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em i}]: un entier representant le type d'operation a realiser \end{description}
+\end{Desc}
+\hypertarget{class_controleur_59c48ea6ab32a447c665ca1b7c220f8f}{
+\index{Controleur@{Controleur}!operationPile@{operationPile}}
+\index{operationPile@{operationPile}!Controleur@{Controleur}}
+\subsubsection[{operationPile}]{\setlength{\rightskip}{0pt plus 5cm}void Controleur::operationPile (int {\em i})}}
+\label{class_controleur_59c48ea6ab32a447c665ca1b7c220f8f}
+
+
+OperationPile : permet d'effectuer des operations directement sur la pile (DUP, SWAP, ...). 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em i}]: un entier representant le type d'operation a realiser \end{description}
+\end{Desc}
+\hypertarget{class_controleur_3b3ae1907bbec700443d18ebed7c4131}{
+\index{Controleur@{Controleur}!parse@{parse}}
+\index{parse@{parse}!Controleur@{Controleur}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}void Controleur::parse (const string \& {\em c})}}
+\label{class_controleur_3b3ae1907bbec700443d18ebed7c4131}
+
+
+Parseur : permet d'analyser la chaine entree par l'utilisateur. 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$Controleur$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$/
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em c}]: chaine de caracteres entree au clavier \end{description}
+\end{Desc}
+
+
+\subsection{Documentation des données membres}
+\hypertarget{class_controleur_bf929a8bcaec5e62b982c59d0a7f6166}{
+\index{Controleur@{Controleur}!nbOpBin@{nbOpBin}}
+\index{nbOpBin@{nbOpBin}!Controleur@{Controleur}}
+\subsubsection[{nbOpBin}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf Controleur::nbOpBin} = 8}}
+\label{class_controleur_bf929a8bcaec5e62b982c59d0a7f6166}
+
+
+Nombre d'operations binaires connues par le controleur 
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{CompactItemize}
+\item 
+\hyperlink{_controleur_8h}{Controleur.h}\item 
+Controleur.cpp\end{CompactItemize}

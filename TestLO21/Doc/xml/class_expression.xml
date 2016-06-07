@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_expression" kind="class" prot="public">
+    <compoundname>Expression</compoundname>
+    <basecompoundref refid="class_litterale" prot="public" virt="non-virtual">Litterale</basecompoundref>
+    <includes refid="_litterale_8h" local="no">Litterale.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_expression_10be678a7a231b9b38a9461944f23b9ec" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Expression::expr</definition>
+        <argsstring></argsstring>
+        <name>expr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>chaine de caractere representant le contenu de l&apos;expression </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="89" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_expression_163fded6eef43b0507d9d2bd4c7fae0f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Expression::Expression</definition>
+        <argsstring>(string s)</argsstring>
+        <name>Expression</name>
+        <param>
+          <type>string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: chaine de caractere representant le contenu de l&apos;expression </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="95" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_expression_1392af96c64d27d5aa23bc3993fa40a62" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const string</type>
+        <definition>const string Expression::getExpr</definition>
+        <argsstring>() const </argsstring>
+        <name>getExpr</name>
+        <briefdescription>
+<para>Accesseur. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>chaine de caractere representant le contenu de l&apos;expression </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="100" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_expression_1a061cfda7d2152ebb166ec86258dc059" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Expression::affiche</definition>
+        <argsstring>() const </argsstring>
+        <name>affiche</name>
+        <reimplements refid="class_litterale_1d67121b10b76b2283940c52cb3b26185">affiche</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;affichage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="104" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="104" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_expression_15f81067f280c6419d8bd0b117a2d6f13" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_expression" kindref="compound">Expression</ref> *</type>
+        <definition>Expression* Expression::clone</definition>
+        <argsstring>()</argsstring>
+        <name>clone</name>
+        <reimplements refid="class_litterale_1aaadc01ca2bb0c9210f9de083130768b">clone</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction de clonage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="113" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="113" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe representant une expression, c&apos;est a dire une suite d&apos;operations (heritage de <ref refid="class_litterale" kindref="compound">Litterale</ref>). </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="25">
+        <label>Expression</label>
+        <link refid="class_expression"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="27">
+        <label>Expression</label>
+        <link refid="class_expression"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="87" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="87" bodyend="114"/>
+    <listofallmembers>
+      <member refid="class_expression_1a061cfda7d2152ebb166ec86258dc059" prot="public" virt="virtual"><scope>Expression</scope><name>affiche</name></member>
+      <member refid="class_expression_15f81067f280c6419d8bd0b117a2d6f13" prot="public" virt="virtual"><scope>Expression</scope><name>clone</name></member>
+      <member refid="class_expression_10be678a7a231b9b38a9461944f23b9ec" prot="private" virt="non-virtual"><scope>Expression</scope><name>expr</name></member>
+      <member refid="class_expression_163fded6eef43b0507d9d2bd4c7fae0f9" prot="public" virt="non-virtual"><scope>Expression</scope><name>Expression</name></member>
+      <member refid="class_expression_1392af96c64d27d5aa23bc3993fa40a62" prot="public" virt="non-virtual"><scope>Expression</scope><name>getExpr</name></member>
+      <member refid="class_litterale_1a974ab68a06e8a8b15d04ecd4ce8065a" prot="public" virt="non-virtual"><scope>Expression</scope><name>getType</name></member>
+      <member refid="class_litterale_1a0a02717ec75f502f1afdb6ac597efac" prot="public" virt="non-virtual"><scope>Expression</scope><name>Litterale</name></member>
+      <member refid="class_litterale_1eae743dc3e6055579ec749b708c57bc9" prot="public" virt="non-virtual"><scope>Expression</scope><name>operator!=</name></member>
+      <member refid="class_litterale_1b88999156adbab96ea31e255dd3da85d" prot="public" virt="non-virtual"><scope>Expression</scope><name>operator&lt;</name></member>
+      <member refid="class_litterale_176f566c89aa02934839f159f8d627021" prot="public" virt="non-virtual"><scope>Expression</scope><name>operator&lt;=</name></member>
+      <member refid="class_litterale_1257dc6d6f3c4d8458d45be92ceede634" prot="public" virt="non-virtual"><scope>Expression</scope><name>operator==</name></member>
+      <member refid="class_litterale_13495fcc6429947a6625a11e0afa0b9c6" prot="public" virt="non-virtual"><scope>Expression</scope><name>operator&gt;</name></member>
+      <member refid="class_litterale_14a4dfdd26a03ecd6c38d1f7e6521b549" prot="public" virt="non-virtual"><scope>Expression</scope><name>operator&gt;=</name></member>
+      <member refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" prot="protected" virt="non-virtual"><scope>Expression</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

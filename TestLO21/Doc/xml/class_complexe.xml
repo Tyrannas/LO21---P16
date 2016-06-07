@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_complexe" kind="class" prot="public">
+    <compoundname>Complexe</compoundname>
+    <basecompoundref refid="class_litterale" prot="public" virt="non-virtual">Litterale</basecompoundref>
+    <includes refid="_litterale_8h" local="no">Litterale.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_complexe_1498f60c38795a0646227479ae308156e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+        <definition>Numerique* Complexe::re</definition>
+        <argsstring></argsstring>
+        <name>re</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>valeur de la partie reelle du complexe (litterale numerique quelconque) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="350" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="350" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_complexe_161c0bb46f7259cb28b8415e95c5cc2e9" prot="private" static="no" mutable="no">
+        <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+        <definition>Numerique* Complexe::im</definition>
+        <argsstring></argsstring>
+        <name>im</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>valeur de la partie imaginaire du complexe (litterale numerique quelconque) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="351" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_complexe_1bef2deb54a211490612383ce80657cb6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Complexe::Complexe</definition>
+        <argsstring>(Numerique *r, Numerique *i=nullptr)</argsstring>
+        <name>Complexe</name>
+        <param>
+          <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+          <declname>i</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: pointeur sur la litterale nuemerique representant la partie reelle </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: pointeur sur la litterale nuemerique representant la partie imaginaire </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="358" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="358" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="class_complexe_16485653e44cbffd188a219f9eb023311" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+        <definition>Numerique* Complexe::getRe</definition>
+        <argsstring>() const </argsstring>
+        <name>getRe</name>
+        <briefdescription>
+<para>Accesseur sur la partie reelle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>valeur de la partie reelle du complexe (litterale numerique quelconque </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="363" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="363" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="class_complexe_1116626f10f871db6145b197e392f22dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+        <definition>Numerique* Complexe::getIm</definition>
+        <argsstring>() const </argsstring>
+        <name>getIm</name>
+        <briefdescription>
+<para>Accesseur sur la partie imaginaire. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>valeur de la partie imaginaire du complexe (litterale numerique quelconque </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="368" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="368" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="class_complexe_1f55c7616e68169f79c26bf38be0318fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Complexe::affiche</definition>
+        <argsstring>() const </argsstring>
+        <name>affiche</name>
+        <reimplements refid="class_litterale_1d67121b10b76b2283940c52cb3b26185">affiche</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;affichage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="372" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="372" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="class_complexe_11dc5a5bc3559c7531e4c66f427164b71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_complexe" kindref="compound">Complexe</ref> *</type>
+        <definition>Complexe* Complexe::clone</definition>
+        <argsstring>()</argsstring>
+        <name>clone</name>
+        <reimplements refid="class_litterale_1aaadc01ca2bb0c9210f9de083130768b">clone</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction de clonage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="380" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="380" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="class_complexe_17496bd8781c9a32fff3b246bfb24b3c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Complexe::neg</definition>
+        <argsstring>()</argsstring>
+        <name>neg</name>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;inversion de signe. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="384" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="384" bodyend="384"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe representant un nombre complexe (heritage de <ref refid="class_litterale" kindref="compound">Litterale</ref>). </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>Complexe</label>
+        <link refid="class_complexe"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>Complexe</label>
+        <link refid="class_complexe"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>im</edgelabel>
+          <edgelabel>re</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="348" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="348" bodyend="385"/>
+    <listofallmembers>
+      <member refid="class_complexe_1f55c7616e68169f79c26bf38be0318fe" prot="public" virt="virtual"><scope>Complexe</scope><name>affiche</name></member>
+      <member refid="class_complexe_11dc5a5bc3559c7531e4c66f427164b71" prot="public" virt="virtual"><scope>Complexe</scope><name>clone</name></member>
+      <member refid="class_complexe_1bef2deb54a211490612383ce80657cb6" prot="public" virt="non-virtual"><scope>Complexe</scope><name>Complexe</name></member>
+      <member refid="class_complexe_1116626f10f871db6145b197e392f22dd" prot="public" virt="non-virtual"><scope>Complexe</scope><name>getIm</name></member>
+      <member refid="class_complexe_16485653e44cbffd188a219f9eb023311" prot="public" virt="non-virtual"><scope>Complexe</scope><name>getRe</name></member>
+      <member refid="class_litterale_1a974ab68a06e8a8b15d04ecd4ce8065a" prot="public" virt="non-virtual"><scope>Complexe</scope><name>getType</name></member>
+      <member refid="class_complexe_161c0bb46f7259cb28b8415e95c5cc2e9" prot="private" virt="non-virtual"><scope>Complexe</scope><name>im</name></member>
+      <member refid="class_litterale_1a0a02717ec75f502f1afdb6ac597efac" prot="public" virt="non-virtual"><scope>Complexe</scope><name>Litterale</name></member>
+      <member refid="class_complexe_17496bd8781c9a32fff3b246bfb24b3c5" prot="public" virt="non-virtual"><scope>Complexe</scope><name>neg</name></member>
+      <member refid="class_litterale_1eae743dc3e6055579ec749b708c57bc9" prot="public" virt="non-virtual"><scope>Complexe</scope><name>operator!=</name></member>
+      <member refid="class_litterale_1b88999156adbab96ea31e255dd3da85d" prot="public" virt="non-virtual"><scope>Complexe</scope><name>operator&lt;</name></member>
+      <member refid="class_litterale_176f566c89aa02934839f159f8d627021" prot="public" virt="non-virtual"><scope>Complexe</scope><name>operator&lt;=</name></member>
+      <member refid="class_litterale_1257dc6d6f3c4d8458d45be92ceede634" prot="public" virt="non-virtual"><scope>Complexe</scope><name>operator==</name></member>
+      <member refid="class_litterale_13495fcc6429947a6625a11e0afa0b9c6" prot="public" virt="non-virtual"><scope>Complexe</scope><name>operator&gt;</name></member>
+      <member refid="class_litterale_14a4dfdd26a03ecd6c38d1f7e6521b549" prot="public" virt="non-virtual"><scope>Complexe</scope><name>operator&gt;=</name></member>
+      <member refid="class_complexe_1498f60c38795a0646227479ae308156e" prot="private" virt="non-virtual"><scope>Complexe</scope><name>re</name></member>
+      <member refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" prot="protected" virt="non-virtual"><scope>Complexe</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

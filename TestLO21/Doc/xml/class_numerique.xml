@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_numerique" kind="class" prot="public">
+    <compoundname>Numerique</compoundname>
+    <basecompoundref refid="class_litterale" prot="public" virt="non-virtual">Litterale</basecompoundref>
+    <derivedcompoundref refid="class_entiere" prot="public" virt="non-virtual">Entiere</derivedcompoundref>
+    <derivedcompoundref refid="class_rationnelle" prot="public" virt="non-virtual">Rationnelle</derivedcompoundref>
+    <derivedcompoundref refid="class_reelle" prot="public" virt="non-virtual">Reelle</derivedcompoundref>
+    <includes refid="_litterale_8h" local="no">Litterale.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_numerique_1f6d64b345f536d45454ba424d59a8ee4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Numerique::affiche</definition>
+        <argsstring>() const =0</argsstring>
+        <name>affiche</name>
+        <reimplements refid="class_litterale_1d67121b10b76b2283940c52cb3b26185">affiche</reimplements>
+        <reimplementedby refid="class_rationnelle_17d5f7cf77d2c916b97f3697a071300df">affiche</reimplementedby>
+        <reimplementedby refid="class_reelle_1df93b60f8c72687b412e7589a2be114c">affiche</reimplementedby>
+        <reimplementedby refid="class_entiere_158d2569469b5d4765d815be15171a041">affiche</reimplementedby>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;affichage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="188"/>
+      </memberdef>
+      <memberdef kind="function" id="class_numerique_15d88a526f166b01e5c116d7342daa7e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Numerique::neg</definition>
+        <argsstring>()=0</argsstring>
+        <name>neg</name>
+        <reimplementedby refid="class_rationnelle_11bb63e8e86011146a11507c948ed1410">neg</reimplementedby>
+        <reimplementedby refid="class_reelle_1a3b7da9b29f96a45b2064f7918d014c3">neg</reimplementedby>
+        <reimplementedby refid="class_entiere_1bb972ef0ad74814e4abf22c0cd3a2b55">neg</reimplementedby>
+        <briefdescription>
+<para>Methode virtuelle pure permettant l&apos;inversion du signe de la litterale. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_numerique_1facd4108df61baa46c639c8e15b23c7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+        <definition>virtual Numerique* Numerique::clone</definition>
+        <argsstring>()=0</argsstring>
+        <name>clone</name>
+        <reimplements refid="class_litterale_1aaadc01ca2bb0c9210f9de083130768b">clone</reimplements>
+        <reimplementedby refid="class_rationnelle_1ba6dca31aee851018c69ac3c5b8dd81a">clone</reimplementedby>
+        <reimplementedby refid="class_reelle_13141e2961030350942c10de764c13180">clone</reimplementedby>
+        <reimplementedby refid="class_entiere_194592b044a5bee1b5c2ef5e6b3fd8e64">clone</reimplementedby>
+        <briefdescription>
+<para>Redefinition de la fonction de clonage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="196"/>
+      </memberdef>
+      <memberdef kind="function" id="class_numerique_1d6a208d078f63b62160d255a52c0ab1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Numerique::getComp</definition>
+        <argsstring>()=0</argsstring>
+        <name>getComp</name>
+        <reimplementedby refid="class_rationnelle_1618f3d0c3b9bdb27bf279b8ecbb5a392">getComp</reimplementedby>
+        <reimplementedby refid="class_reelle_15a32997cd26bb14a9445e06b0bd94f29">getComp</reimplementedby>
+        <reimplementedby refid="class_entiere_17215a91e24996f79640e766e660907cc">getComp</reimplementedby>
+        <briefdescription>
+<para>Methode virtuelle pure permettant la recuperation de la valeur de la litterale sous forme de double pour comparaison. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="200"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe abstraite representant un numerique, c&apos;est a dire un nombre autre que complexe (heritage de <ref refid="class_litterale" kindref="compound">Litterale</ref>). </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="55">
+        <label>Rationnelle</label>
+        <link refid="class_rationnelle"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>Entiere</label>
+        <link refid="class_entiere"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>Reelle</label>
+        <link refid="class_reelle"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="57">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="58" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="183" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="183" bodyend="201"/>
+    <listofallmembers>
+      <member refid="class_numerique_1f6d64b345f536d45454ba424d59a8ee4" prot="public" virt="pure-virtual"><scope>Numerique</scope><name>affiche</name></member>
+      <member refid="class_numerique_1facd4108df61baa46c639c8e15b23c7f" prot="public" virt="pure-virtual"><scope>Numerique</scope><name>clone</name></member>
+      <member refid="class_numerique_1d6a208d078f63b62160d255a52c0ab1c" prot="public" virt="pure-virtual"><scope>Numerique</scope><name>getComp</name></member>
+      <member refid="class_litterale_1a974ab68a06e8a8b15d04ecd4ce8065a" prot="public" virt="non-virtual"><scope>Numerique</scope><name>getType</name></member>
+      <member refid="class_litterale_1a0a02717ec75f502f1afdb6ac597efac" prot="public" virt="non-virtual"><scope>Numerique</scope><name>Litterale</name></member>
+      <member refid="class_numerique_15d88a526f166b01e5c116d7342daa7e8" prot="public" virt="pure-virtual"><scope>Numerique</scope><name>neg</name></member>
+      <member refid="class_litterale_1eae743dc3e6055579ec749b708c57bc9" prot="public" virt="non-virtual"><scope>Numerique</scope><name>operator!=</name></member>
+      <member refid="class_litterale_1b88999156adbab96ea31e255dd3da85d" prot="public" virt="non-virtual"><scope>Numerique</scope><name>operator&lt;</name></member>
+      <member refid="class_litterale_176f566c89aa02934839f159f8d627021" prot="public" virt="non-virtual"><scope>Numerique</scope><name>operator&lt;=</name></member>
+      <member refid="class_litterale_1257dc6d6f3c4d8458d45be92ceede634" prot="public" virt="non-virtual"><scope>Numerique</scope><name>operator==</name></member>
+      <member refid="class_litterale_13495fcc6429947a6625a11e0afa0b9c6" prot="public" virt="non-virtual"><scope>Numerique</scope><name>operator&gt;</name></member>
+      <member refid="class_litterale_14a4dfdd26a03ecd6c38d1f7e6521b549" prot="public" virt="non-virtual"><scope>Numerique</scope><name>operator&gt;=</name></member>
+      <member refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" prot="protected" virt="non-virtual"><scope>Numerique</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

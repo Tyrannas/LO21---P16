@@ -1,0 +1,86 @@
+\hypertarget{class_litterale_manager}{
+\section{Référence de la classe LitteraleManager}
+\label{class_litterale_manager}\index{LitteraleManager@{LitteraleManager}}
+}
+Classe permettant de gerer toutes les litterales ajoutees une a une.  
+
+
+{\tt \#include $<$LitteraleManager.h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_litterale_manager_daa9e81e06b8001e4cf9e0f5a214b6cd}{
+\hyperlink{class_litterale_manager_daa9e81e06b8001e4cf9e0f5a214b6cd}{LitteraleManager} ()}
+\label{class_litterale_manager_daa9e81e06b8001e4cf9e0f5a214b6cd}
+
+\begin{CompactList}\small\item\em Constructeur. \item\end{CompactList}\item 
+\hypertarget{class_litterale_manager_a6f690e84ae96ec3a15f6b629264cc1f}{
+\hyperlink{class_litterale_manager_a6f690e84ae96ec3a15f6b629264cc1f}{$\sim$LitteraleManager} ()}
+\label{class_litterale_manager_a6f690e84ae96ec3a15f6b629264cc1f}
+
+\begin{CompactList}\small\item\em Destructeur. \item\end{CompactList}\item 
+\hyperlink{class_litterale}{Litterale} \& \hyperlink{class_litterale_manager_bfb29c7c9e5ffdd6904f069def98d2df}{addLitterale} (\hyperlink{class_litterale}{Litterale} $\ast$const l)
+\begin{CompactList}\small\item\em Ajout d'une litterale dans le Manager. \item\end{CompactList}\item 
+\hyperlink{class_litterale}{Litterale} $\ast$const \hyperlink{class_litterale_manager_ac254ffc8158f21899786e2133a6018d}{littFactory} (TypeLitterale type, int p1, int p2=NULL, double p3=NULL, \hyperlink{class_numerique}{Numerique} $\ast$p4=nullptr, \hyperlink{class_numerique}{Numerique} $\ast$p5=nullptr)
+\begin{CompactList}\small\item\em Creation de la litterale corespondant a la chaine de caracteres parsee dans le controleur. \item\end{CompactList}\item 
+void \hyperlink{class_litterale_manager_53bfb9871eed94f6c3e8f5f1e2a76e29}{removeLitterale} (\hyperlink{class_litterale}{Litterale} $\ast$const l)
+\begin{CompactList}\small\item\em Suppression d'une litterale du Manager. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe permettant de gerer toutes les litterales ajoutees une a une. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_litterale_manager_bfb29c7c9e5ffdd6904f069def98d2df}{
+\index{LitteraleManager@{LitteraleManager}!addLitterale@{addLitterale}}
+\index{addLitterale@{addLitterale}!LitteraleManager@{LitteraleManager}}
+\subsubsection[{addLitterale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale} \& LitteraleManager::addLitterale ({\bf Litterale} $\ast$const  {\em l})}}
+\label{class_litterale_manager_bfb29c7c9e5ffdd6904f069def98d2df}
+
+
+Ajout d'une litterale dans le Manager. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em l}]: litterale a ajouter \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Renvoie:]reference sur la litterale ajoutee \end{Desc}
+\hypertarget{class_litterale_manager_ac254ffc8158f21899786e2133a6018d}{
+\index{LitteraleManager@{LitteraleManager}!littFactory@{littFactory}}
+\index{littFactory@{littFactory}!LitteraleManager@{LitteraleManager}}
+\subsubsection[{littFactory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale} $\ast$const LitteraleManager::littFactory (TypeLitterale {\em type}, \/  int {\em p1}, \/  int {\em p2} = {\tt NULL}, \/  double {\em p3} = {\tt NULL}, \/  {\bf Numerique} $\ast$ {\em p4} = {\tt nullptr}, \/  {\bf Numerique} $\ast$ {\em p5} = {\tt nullptr})}}
+\label{class_litterale_manager_ac254ffc8158f21899786e2133a6018d}
+
+
+Creation de la litterale corespondant a la chaine de caracteres parsee dans le controleur. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em type}]: type precis de la litterale a creer \item[{\em p1}]: Felix \item[{\em p2}]: Felix \item[{\em p3}]: Felix \item[{\em p4}]: Felix \item[{\em p5}]: Felix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Renvoie:]reference sur la litterale cree \end{Desc}
+\hypertarget{class_litterale_manager_53bfb9871eed94f6c3e8f5f1e2a76e29}{
+\index{LitteraleManager@{LitteraleManager}!removeLitterale@{removeLitterale}}
+\index{removeLitterale@{removeLitterale}!LitteraleManager@{LitteraleManager}}
+\subsubsection[{removeLitterale}]{\setlength{\rightskip}{0pt plus 5cm}void LitteraleManager::removeLitterale ({\bf Litterale} $\ast$const  {\em l})}}
+\label{class_litterale_manager_53bfb9871eed94f6c3e8f5f1e2a76e29}
+
+
+Suppression d'une litterale du Manager. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em l}]: pointeur sur la litterale a supprimer \end{description}
+\end{Desc}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{CompactItemize}
+\item 
+LitteraleManager.h\item 
+LitteraleManager.cpp\end{CompactItemize}

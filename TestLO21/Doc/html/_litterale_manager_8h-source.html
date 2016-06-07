@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>LO21 - Calculatrice:  Fichier source de LitteraleManager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+    </ul>
+  </div>
+<h1>LitteraleManager.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#include "<a class="code" href="_computer_exception_8h.html" title="Gestion des erreurs.">ComputerException.h</a>"</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include "Litterale.h"</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00008"></a>00008 
+<a name="l00019"></a><a class="code" href="class_litterale_manager.html">00019</a> <span class="keyword">class </span><a class="code" href="class_litterale_manager.html" title="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</a> {
+<a name="l00020"></a>00020 <span class="keyword">private</span>:
+<a name="l00021"></a>00021                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>** lits; 
+<a name="l00022"></a>00022                 <span class="keywordtype">int</span> nb; 
+<a name="l00023"></a>00023                 <span class="keywordtype">int</span> nbMax; 
+<a name="l00027"></a>00027                 <span class="keywordtype">void</span> agrandissementCapacite();
+<a name="l00028"></a>00028 <span class="keyword">public</span>:
+<a name="l00032"></a>00032                 <a class="code" href="class_litterale_manager.html#daa9e81e06b8001e4cf9e0f5a214b6cd" title="Constructeur.">LitteraleManager</a>();
+<a name="l00036"></a>00036                 <a class="code" href="class_litterale_manager.html#a6f690e84ae96ec3a15f6b629264cc1f" title="Destructeur.">~LitteraleManager</a>();
+<a name="l00042"></a>00042                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>&amp; <a class="code" href="class_litterale_manager.html#bfb29c7c9e5ffdd6904f069def98d2df" title="Ajout d&amp;#39;une litterale dans le Manager.">addLitterale</a>(<a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a> * <span class="keyword">const</span> l);
+<a name="l00053"></a>00053                 <a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* <span class="keyword">const</span> <a class="code" href="class_litterale_manager.html#ac254ffc8158f21899786e2133a6018d" title="Creation de la litterale corespondant a la chaine de caracteres parsee dans le controleur...">littFactory</a>(TypeLitterale type, <span class="keywordtype">int</span> p1, <span class="keywordtype">int</span> p2 = NULL, <span class="keywordtype">double</span> p3 = NULL, <a class="code" href="class_numerique.html" title="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</a>* p4 = <span class="keyword">nullptr</span>, <a class="code" href="class_numerique.html" title="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</a>* p5 = <span class="keyword">nullptr</span>);
+<a name="l00058"></a>00058                 <span class="keywordtype">void</span> <a class="code" href="class_litterale_manager.html#53bfb9871eed94f6c3e8f5f1e2a76e29" title="Suppression d&amp;#39;une litterale du Manager.">removeLitterale</a>(<a class="code" href="class_litterale.html" title="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</a>* <span class="keyword">const</span> l);
+<a name="l00059"></a>00059 };
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 14:57:03 2016 pour LO21 - Calculatrice par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_litterale_manager" kind="class" prot="public">
+    <compoundname>LitteraleManager</compoundname>
+    <includes refid="_litterale_manager_8h" local="no">LitteraleManager.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_litterale_manager_1bc9ec0d3d2aa36a9db0b84db0dcb5835" prot="private" static="no" mutable="no">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> **</type>
+        <definition>Litterale** LitteraleManager::lits</definition>
+        <argsstring></argsstring>
+        <name>lits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>tableau de pointeurs sur des litterales </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="21" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_litterale_manager_1cdec5dddd1838c74b0edd176d71420a0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int LitteraleManager::nb</definition>
+        <argsstring></argsstring>
+        <name>nb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>nombre exacte de litterales dans le Manager </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="22" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_litterale_manager_124c9dfbe035586b076f13f6ab87c5941" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int LitteraleManager::nbMax</definition>
+        <argsstring></argsstring>
+        <name>nbMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>nombre maximum de litterales dans le Manager </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="23" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_litterale_manager_18606c9b25d5e2c3ea70b8039208a9715" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LitteraleManager::agrandissementCapacite</definition>
+        <argsstring>()</argsstring>
+        <name>agrandissementCapacite</name>
+        <briefdescription>
+<para>Agrandissement du tableau de pointeurs si la taille maximale est atteinte. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="27" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.cpp" bodystart="6" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_litterale_manager_1daa9e81e06b8001e4cf9e0f5a214b6cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LitteraleManager::LitteraleManager</definition>
+        <argsstring>()</argsstring>
+        <name>LitteraleManager</name>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="32" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.cpp" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_litterale_manager_1a6f690e84ae96ec3a15f6b629264cc1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LitteraleManager::~LitteraleManager</definition>
+        <argsstring>()</argsstring>
+        <name>~LitteraleManager</name>
+        <briefdescription>
+<para>Destructeur. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="36" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.cpp" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_litterale_manager_1bfb29c7c9e5ffdd6904f069def98d2df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+        <definition>Litterale &amp; LitteraleManager::addLitterale</definition>
+        <argsstring>(Litterale *const l)</argsstring>
+        <name>addLitterale</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *const </type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Ajout d&apos;une litterale dans le Manager. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: litterale a ajouter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>reference sur la litterale ajoutee </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="42" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.cpp" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_litterale_manager_1ac254ffc8158f21899786e2133a6018d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *const</type>
+        <definition>Litterale *const LitteraleManager::littFactory</definition>
+        <argsstring>(TypeLitterale type, int p1, int p2=NULL, double p3=NULL, Numerique *p4=nullptr, Numerique *p5=nullptr)</argsstring>
+        <name>littFactory</name>
+        <param>
+          <type>TypeLitterale</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>p2</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>p3</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+          <declname>p4</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="class_numerique" kindref="compound">Numerique</ref> *</type>
+          <declname>p5</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Creation de la litterale corespondant a la chaine de caracteres parsee dans le controleur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: type precis de la litterale a creer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Felix </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Felix </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Felix </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Felix </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p5</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Felix </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>reference sur la litterale cree </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="53" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.cpp" bodystart="32" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_litterale_manager_153bfb9871eed94f6c3e8f5f1e2a76e29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LitteraleManager::removeLitterale</definition>
+        <argsstring>(Litterale *const l)</argsstring>
+        <name>removeLitterale</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *const </type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Suppression d&apos;une litterale du Manager. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: pointeur sur la litterale a supprimer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="58" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.cpp" bodystart="69" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe permettant de gerer toutes les litterales ajoutees une a une. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="50">
+        <label>LitteraleManager</label>
+        <link refid="class_litterale_manager"/>
+        <childnode refid="51" relation="usage">
+          <edgelabel>lits</edgelabel>
+        </childnode>
+      </node>
+      <node id="51">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" line="19" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h" bodystart="19" bodyend="59"/>
+    <listofallmembers>
+      <member refid="class_litterale_manager_1bfb29c7c9e5ffdd6904f069def98d2df" prot="public" virt="non-virtual"><scope>LitteraleManager</scope><name>addLitterale</name></member>
+      <member refid="class_litterale_manager_18606c9b25d5e2c3ea70b8039208a9715" prot="private" virt="non-virtual"><scope>LitteraleManager</scope><name>agrandissementCapacite</name></member>
+      <member refid="class_litterale_manager_1bc9ec0d3d2aa36a9db0b84db0dcb5835" prot="private" virt="non-virtual"><scope>LitteraleManager</scope><name>lits</name></member>
+      <member refid="class_litterale_manager_1daa9e81e06b8001e4cf9e0f5a214b6cd" prot="public" virt="non-virtual"><scope>LitteraleManager</scope><name>LitteraleManager</name></member>
+      <member refid="class_litterale_manager_1ac254ffc8158f21899786e2133a6018d" prot="public" virt="non-virtual"><scope>LitteraleManager</scope><name>littFactory</name></member>
+      <member refid="class_litterale_manager_1cdec5dddd1838c74b0edd176d71420a0" prot="private" virt="non-virtual"><scope>LitteraleManager</scope><name>nb</name></member>
+      <member refid="class_litterale_manager_124c9dfbe035586b076f13f6ab87c5941" prot="private" virt="non-virtual"><scope>LitteraleManager</scope><name>nbMax</name></member>
+      <member refid="class_litterale_manager_153bfb9871eed94f6c3e8f5f1e2a76e29" prot="public" virt="non-virtual"><scope>LitteraleManager</scope><name>removeLitterale</name></member>
+      <member refid="class_litterale_manager_1a6f690e84ae96ec3a15f6b629264cc1f" prot="public" virt="non-virtual"><scope>LitteraleManager</scope><name>~LitteraleManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,903 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="_litterale_8h" kind="file">
+    <compoundname>Litterale.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">algorithm</includes>
+    <includedby refid="_litterale_manager_8h" local="yes">LitteraleManager.h</includedby>
+    <includedby refid="_controleur_8h" local="yes">Controleur.h</includedby>
+    <includedby refid="_pile_8h" local="yes">Pile.h</includedby>
+    <includedby refid="_hash_map_8h" local="yes">HashMap.h</includedby>
+    <includedby refid="_litterale_8cpp" local="yes">Litterale.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="55">
+        <label>string</label>
+      </node>
+      <node id="54">
+        <label>Litterale.h</label>
+        <link refid="Litterale.h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>sstream</label>
+      </node>
+      <node id="56">
+        <label>iostream</label>
+      </node>
+      <node id="58">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="61">
+        <label>Controleur.h</label>
+        <link refid="_controleur_8h"/>
+      </node>
+      <node id="59">
+        <label>Litterale.h</label>
+        <link refid="Litterale.h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>Pile.h</label>
+        <link refid="_pile_8h-source"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>HashMap.h</label>
+        <link refid="_hash_map_8h-source"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>LitteraleManager.h</label>
+        <link refid="_litterale_manager_8h-source"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_litterale" prot="public">Litterale</innerclass>
+    <innerclass refid="class_expression" prot="public">Expression</innerclass>
+    <innerclass refid="class_programme" prot="public">Programme</innerclass>
+    <innerclass refid="class_atome" prot="public">Atome</innerclass>
+    <innerclass refid="class_numerique" prot="public">Numerique</innerclass>
+    <innerclass refid="class_entiere" prot="public">Entiere</innerclass>
+    <innerclass refid="class_reelle" prot="public">Reelle</innerclass>
+    <innerclass refid="class_rationnelle" prot="public">Rationnelle</innerclass>
+    <innerclass refid="class_complexe" prot="public">Complexe</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba6" prot="public" static="no">
+        <name>TypeLitterale</name>
+        <enumvalue id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba693dd8ba9e5e5dacd46c9e1d8487e072f" prot="public">
+          <name>tUndefined</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba61f2a84744bdbb59ca4485916355dabd0" prot="public">
+          <name>tEntiere</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba623164b95afc360281e8cb13b2a176254" prot="public">
+          <name>tReelle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba68f39aa29d49bede9f5b373aae1beaecd" prot="public">
+          <name>tRationnelle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba6d0600d83b95030404052a90316e7f130" prot="public">
+          <name>tComplexe</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba615dd36d5a5bed7bda67d48f254fb532d" prot="public">
+          <name>tAtome</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba63631efd459c6966e94de6e086319aa83" prot="public">
+          <name>tExpression</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_litterale_8h_1c5208d0768f4df7bc0e73f1e4763dba66d1cfa18da4598e19d1b89ac881b85e3" prot="public">
+          <name>tProgramme</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="21" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="20" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_litterale_8h_1f9e6de6036855a245ead058ec24c92f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+        <definition>Entiere operator+</definition>
+        <argsstring>(Entiere e1, Entiere e2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="388" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1a53df20e0161c3f3b962fe7e91e6d580" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+        <definition>Reelle operator+</definition>
+        <argsstring>(Entiere e, Reelle r)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="389" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_17566bbec3f74b46bfdde55af099c3fd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+        <definition>Rationnelle operator+</definition>
+        <argsstring>(Entiere e, Rationnelle r)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="390" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_17eda7c7c67e261fd54e59f85901c5c48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+        <definition>Rationnelle operator+</definition>
+        <argsstring>(Rationnelle r1, Rationnelle r2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="392" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_105fb08881275e8609e22941de59e3895" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+        <definition>Reelle operator+</definition>
+        <argsstring>(Rationnelle ra, Reelle re)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+          <declname>ra</declname>
+        </param>
+        <param>
+          <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+          <declname>re</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="393" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_18c16276c88b3f6d62bbfc24371d06476" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+        <definition>Rationnelle operator+</definition>
+        <argsstring>(Rationnelle r, Entiere e)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="394" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1f86e599bb34034d083cd2ce6d7dd4f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+        <definition>Reelle operator+</definition>
+        <argsstring>(Reelle r1, Reelle r2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="396" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1c564665b5dea59dbf30f594812c68003" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+        <definition>Reelle operator+</definition>
+        <argsstring>(Reelle r, Entiere e)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="397" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1b04aa9bc1555e579681d11a1c5c80087" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+        <definition>Reelle operator+</definition>
+        <argsstring>(Reelle re, Rationnelle ra)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+          <declname>re</declname>
+        </param>
+        <param>
+          <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref></type>
+          <declname>ra</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="398" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1b04d4a78c4f32eb680453181626d374b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_complexe" kindref="compound">Complexe</ref></type>
+        <definition>Complexe operator+</definition>
+        <argsstring>(Complexe &amp;c, Entiere e)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_complexe" kindref="compound">Complexe</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="400" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="88" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1b67c512cd45daa394588f80cac678acd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *</type>
+        <definition>Litterale* operator+</definition>
+        <argsstring>(Litterale &amp;l1, Litterale &amp;l2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l2</declname>
+        </param>
+        <briefdescription>
+<para>Surchage operateur+ sur deux litterales. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur la premiere litterale </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>l2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur la deuxieme litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="408" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="95" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1d970302f7709bfbb0e39082d11f2b702" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref> *</type>
+        <definition>Entiere* div</definition>
+        <argsstring>(Litterale &amp;l1, Litterale &amp;l2)</argsstring>
+        <name>div</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l2</declname>
+        </param>
+        <briefdescription>
+<para>Operateur DIV (division entiere) sur deux litterales. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur la premiere litterale </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>l2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur la deuxieme litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="415" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="273" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1b1b05f17509509e24a52bc6615ecda93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref> *</type>
+        <definition>Entiere* mod</definition>
+        <argsstring>(Litterale &amp;l1, Litterale &amp;l2)</argsstring>
+        <name>mod</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l2</declname>
+        </param>
+        <briefdescription>
+<para>Operateur MOD (reste de la division entiere) sur deux litterales. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur la premiere litterale </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>l2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur la deuxieme litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="422" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="284" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1b998fbebbeb44d50b3babebb08c5d60e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref> *</type>
+        <definition>Entiere* num</definition>
+        <argsstring>(Litterale &amp;l)</argsstring>
+        <name>num</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Operateur NUM (accesseur sur le numerateur). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur une litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="428" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="294" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1b287f23ab9183f65a40f105350327771" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref> *</type>
+        <definition>Entiere* den</definition>
+        <argsstring>(Litterale &amp;l)</argsstring>
+        <name>den</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Operateur DEN (accesseur sur le denominateur). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur une litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="433" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="308" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1a02e3362858f389d50c84e22be158f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_complexe" kindref="compound">Complexe</ref> *</type>
+        <definition>Complexe* dollar</definition>
+        <argsstring>(Litterale &amp;l1, Litterale &amp;l2)</argsstring>
+        <name>dollar</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l2</declname>
+        </param>
+        <briefdescription>
+<para>Operateur $ (constructeur d&apos;un complexe a partir de deux litterales numeriques). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur la premiere litterale </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>l2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur la deuxieme litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="440" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="320" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1b07c68731c7c98f43e30359eb4fe41df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *</type>
+        <definition>Litterale* re</definition>
+        <argsstring>(Litterale &amp;l)</argsstring>
+        <name>re</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Operateur RE (accesseur sur la partie reelle). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur une litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="446" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="330" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1f090401704d8ca62a8704dee2bcb01fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *</type>
+        <definition>Litterale* im</definition>
+        <argsstring>(Litterale &amp;l)</argsstring>
+        <name>im</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> &amp;</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Operateur IM (accesseur sur la partie imaginaire). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur une litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="451" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="341" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_141796481a319254c76dcb71635e69731" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool boolOr</definition>
+        <argsstring>(bool b1, bool b2)</argsstring>
+        <name>boolOr</name>
+        <param>
+          <type>bool</type>
+          <declname>b1</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b2</declname>
+        </param>
+        <briefdescription>
+<para>Operateur OR (test booleen &quot;OU&quot;). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: premiere expression booleenne </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: deuxieme expression booleenne </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="458" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="351" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1a8b1cc6a8e454b0bffa683d93d8f7ffb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool boolAnd</definition>
+        <argsstring>(bool b1, bool b2)</argsstring>
+        <name>boolAnd</name>
+        <param>
+          <type>bool</type>
+          <declname>b1</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>b2</declname>
+        </param>
+        <briefdescription>
+<para>Operateur AND (test booleen &quot;ET&quot;). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: premiere expression booleenne </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: deuxieme expression booleenne </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="464" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="355" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="_litterale_8h_1c719ce173a7f3fcf92644a9a72b70df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool boolNot</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>boolNot</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Operateur NOT (test booleen &quot;NON&quot;). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: expression booleenne </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="469" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="359" bodyend="361"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tUndefined,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tEntiere,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tReelle,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tRationnelle,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tComplexe,<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tAtome,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tExpression,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tProgramme</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}TypeLitterale;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_litterale" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TypeLitterale<sp/><ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref>;<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="class_litterale_1a0a02717ec75f502f1afdb6ac597efac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_litterale_1a0a02717ec75f502f1afdb6ac597efac" kindref="member" tooltip="Constructeur.">Litterale</ref>()<sp/>:<sp/><ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref>(TypeLitterale::tUndefined)<sp/>{};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_litterale_1d67121b10b76b2283940c52cb3b26185" kindref="member" tooltip="Affiche : Methode virtuelle pure pour l&amp;#39;affichage d&amp;#39;une litterale.">affiche</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="52" refid="class_litterale_1a974ab68a06e8a8b15d04ecd4ce8065a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TypeLitterale<sp/><ref refid="class_litterale_1a974ab68a06e8a8b15d04ecd4ce8065a" kindref="member" tooltip="Accesseur.">getType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/><ref refid="class_litterale_1aaadc01ca2bb0c9210f9de083130768b" kindref="member" tooltip="Clone : Methode virtuelle pure permettant de dupliquer un pointeur sur litterale...">clone</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_litterale_1257dc6d6f3c4d8458d45be92ceede634" kindref="member" tooltip="Surchage operateur==.">operator==</ref>(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>l);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_litterale_1eae743dc3e6055579ec749b708c57bc9" kindref="member" tooltip="Surchage operateur!=.">operator!=</ref>(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>l);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_litterale_1b88999156adbab96ea31e255dd3da85d" kindref="member" tooltip="Surchage operateur&amp;lt;.">operator&lt;</ref>(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>l);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_litterale_13495fcc6429947a6625a11e0afa0b9c6" kindref="member" tooltip="Surchage operateur&amp;gt;.">operator&gt;</ref>(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>l);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_litterale_176f566c89aa02934839f159f8d627021" kindref="member" tooltip="Surchage operateur&amp;lt;=.">operator&lt;=</ref>(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>l);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_litterale_14a4dfdd26a03ecd6c38d1f7e6521b549" kindref="member" tooltip="Surchage operateur&amp;gt;=.">operator&gt;=</ref>(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>l);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="class_expression" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_expression" kindref="compound" tooltip="Classe representant une expression, c&amp;#39;est a dire une suite d&amp;#39;operations (heritage...">Expression</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>expr;<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95" refid="class_expression_163fded6eef43b0507d9d2bd4c7fae0f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_expression_163fded6eef43b0507d9d2bd4c7fae0f9" kindref="member" tooltip="Constructeur.">Expression</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>s)<sp/>:<sp/>expr(s)<sp/>{<sp/>this-&gt;<ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref><sp/>=<sp/>TypeLitterale::tExpression;<sp/>}</highlight></codeline>
+<codeline lineno="100" refid="class_expression_1392af96c64d27d5aa23bc3993fa40a62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_expression_1392af96c64d27d5aa23bc3993fa40a62" kindref="member" tooltip="Accesseur.">getExpr</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>expr;<sp/>}</highlight></codeline>
+<codeline lineno="104" refid="class_expression_1a061cfda7d2152ebb166ec86258dc059" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_expression_1a061cfda7d2152ebb166ec86258dc059" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;affichage.">affiche</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(expr.length()<sp/>&gt;<sp/>20)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">(expr.begin(),<sp/>expr.begin()<sp/>+<sp/>16)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;...&apos;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>expr;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113" refid="class_expression_15f81067f280c6419d8bd0b117a2d6f13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_expression" kindref="compound" tooltip="Classe representant une expression, c&amp;#39;est a dire une suite d&amp;#39;operations (heritage...">Expression</ref>*<sp/><ref refid="class_expression_15f81067f280c6419d8bd0b117a2d6f13" kindref="member" tooltip="Redefinition de la fonction de clonage.">clone</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_expression_163fded6eef43b0507d9d2bd4c7fae0f9" kindref="member" tooltip="Constructeur.">Expression</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="class_programme" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_programme" kindref="compound" tooltip="Classe representant un programme, c&amp;#39;est a dire une suite d&amp;#39;instructions (heritage...">Programme</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>prog;<sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="127" refid="class_programme_1714382be5455a92d17099406517df95f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_programme_1714382be5455a92d17099406517df95f" kindref="member" tooltip="Constructeur.">Programme</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>s)<sp/>:<sp/>prog(s)<sp/>{<sp/>this-&gt;<ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref><sp/>=<sp/>TypeLitterale::tProgramme;<sp/>}</highlight></codeline>
+<codeline lineno="131" refid="class_programme_18a4a4047620cf9bf7b6682e4a8c0b850" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_programme_18a4a4047620cf9bf7b6682e4a8c0b850" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;affichage.">affiche</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(prog.length()<sp/>&gt;<sp/>20)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">(prog.begin(),<sp/>prog.begin()<sp/>+<sp/>16)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;...]&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>prog;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141" refid="class_programme_1640770a1987a79ee81c985966254a959" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_programme_1640770a1987a79ee81c985966254a959" kindref="member" tooltip="Accesseur.">getProg</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>prog;<sp/>}</highlight></codeline>
+<codeline lineno="146" refid="class_programme_1db3fc4dc8b2751b3775a53fa245606d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_programme_1db3fc4dc8b2751b3775a53fa245606d2" kindref="member" tooltip="Editeur : permet de modifier le contenu du programme.">edit</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>s)<sp/>{prog<sp/>=<sp/>s;}</highlight></codeline>
+<codeline lineno="150" refid="class_programme_1df42f9872a754beefe020294f585f9a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_programme" kindref="compound" tooltip="Classe representant un programme, c&amp;#39;est a dire une suite d&amp;#39;instructions (heritage...">Programme</ref>*<sp/><ref refid="class_programme_1df42f9872a754beefe020294f585f9a6" kindref="member" tooltip="Redefinition de la fonction de clonage.">clone</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_programme_1714382be5455a92d17099406517df95f" kindref="member" tooltip="Constructeur.">Programme</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="class_atome" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_atome" kindref="compound" tooltip="Classe representant un atome, c&amp;#39;est a dire un identificateur (heritage de Litterale)...">Atome</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>id;<sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="163" refid="class_atome_18dfba20d5fba684abbd6be86d35744d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_atome_18dfba20d5fba684abbd6be86d35744d5" kindref="member" tooltip="Constructeur.">Atome</ref>()<sp/>{<sp/>this-&gt;<ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref><sp/>=<sp/>TypeLitterale::tAtome;<sp/>}</highlight></codeline>
+<codeline lineno="168" refid="class_atome_11ea077587e5f200c22bbec3784110452" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_atome_11ea077587e5f200c22bbec3784110452" kindref="member" tooltip="Accesseur.">getId</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id;<sp/>}</highlight></codeline>
+<codeline lineno="172" refid="class_atome_1232aaac3d37c1d3d4acb6d6031e97e09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_atome_1232aaac3d37c1d3d4acb6d6031e97e09" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;affichage.">affiche</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/>cout<sp/>&lt;&lt;<sp/>id;<sp/>}</highlight></codeline>
+<codeline lineno="176" refid="class_atome_15cc14942990769be4455a1a4c813584d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_atome" kindref="compound" tooltip="Classe representant un atome, c&amp;#39;est a dire un identificateur (heritage de Litterale)...">Atome</ref>*<sp/><ref refid="class_atome_15cc14942990769be4455a1a4c813584d" kindref="member" tooltip="Redefinition de la fonction de clonage.">clone</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_atome_18dfba20d5fba684abbd6be86d35744d5" kindref="member" tooltip="Constructeur.">Atome</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="class_numerique" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref><sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_numerique_1f6d64b345f536d45454ba424d59a8ee4" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;affichage.">affiche</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_numerique_15d88a526f166b01e5c116d7342daa7e8" kindref="member" tooltip="Methode virtuelle pure permettant l&amp;#39;inversion du signe de la litterale.">neg</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/><ref refid="class_numerique_1facd4108df61baa46c639c8e15b23c7f" kindref="member" tooltip="Redefinition de la fonction de clonage.">clone</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_numerique_1d6a208d078f63b62160d255a52c0ab1c" kindref="member" tooltip="Methode virtuelle pure permettant la recuperation de la valeur de la litterale sous...">getComp</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="class_entiere" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref><sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val;<sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="214" refid="class_entiere_1ff8499408d074e26c267c2e1c6e696b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_entiere_1ff8499408d074e26c267c2e1c6e696b8" kindref="member" tooltip="Constructeur.">Entiere</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>v)<sp/>:<sp/>val(v)<sp/>{<sp/>this-&gt;<ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref><sp/>=<sp/>TypeLitterale::tEntiere;<sp/>}</highlight></codeline>
+<codeline lineno="219" refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" kindref="member" tooltip="Accesseur.">getVal</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val;<sp/>}</highlight></codeline>
+<codeline lineno="223" refid="class_entiere_158d2569469b5d4765d815be15171a041" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_entiere_158d2569469b5d4765d815be15171a041" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;affichage.">affiche</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/>cout<sp/>&lt;&lt;<sp/>val;<sp/>}</highlight></codeline>
+<codeline lineno="227" refid="class_entiere_1bb972ef0ad74814e4abf22c0cd3a2b55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_entiere_1bb972ef0ad74814e4abf22c0cd3a2b55" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;inversion de signe.">neg</ref>()<sp/>{<sp/>val<sp/>=<sp/>-val;<sp/>}</highlight></codeline>
+<codeline lineno="232" refid="class_entiere_1c3dae32e641989e217776e93005ec570" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_entiere_1c3dae32e641989e217776e93005ec570" kindref="member" tooltip="Editeur : permet de modifier la valeur de la litterale.">setVal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{<sp/>val<sp/>=<sp/>i;<sp/>}</highlight></codeline>
+<codeline lineno="236" refid="class_entiere_194592b044a5bee1b5c2ef5e6b3fd8e64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref>*<sp/><ref refid="class_entiere_194592b044a5bee1b5c2ef5e6b3fd8e64" kindref="member" tooltip="Redefinition de la fonction de clonage.">clone</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_entiere_1ff8499408d074e26c267c2e1c6e696b8" kindref="member" tooltip="Constructeur.">Entiere</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="240" refid="class_entiere_17215a91e24996f79640e766e660907cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_entiere_17215a91e24996f79640e766e660907cc" kindref="member" tooltip="Redefinition de la fonction de comparaison.">getComp</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)val;<sp/>}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="class_reelle" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref><sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val;<sp/></highlight></codeline>
+<codeline lineno="249"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="254" refid="class_reelle_16fdee6f1628064efbfe4bdcd31a8cfc4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_reelle_16fdee6f1628064efbfe4bdcd31a8cfc4" kindref="member" tooltip="Constructeur.">Reelle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>v)<sp/>:<sp/>val(v)<sp/>{<sp/>this-&gt;<ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref><sp/>=<sp/>TypeLitterale::tReelle;<sp/>};</highlight></codeline>
+<codeline lineno="259" refid="class_reelle_19a9cb01d74565fa4e702044ffc3fceb7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/><ref refid="class_reelle_19a9cb01d74565fa4e702044ffc3fceb7" kindref="member" tooltip="Construction d&amp;#39;une litterale Entiere a partir d&amp;#39;une litterale reelle.">toEntiere</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(val<sp/>-<sp/>floor(val)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref>(floor(val));</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="267" refid="class_reelle_15ebbb4a65a1143c736b8545fc67af281" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_reelle_15ebbb4a65a1143c736b8545fc67af281" kindref="member" tooltip="Accesseur.">getVal</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val;<sp/>}</highlight></codeline>
+<codeline lineno="271" refid="class_reelle_1df93b60f8c72687b412e7589a2be114c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_reelle_1df93b60f8c72687b412e7589a2be114c" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;affichage.">affiche</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/>cout<sp/>&lt;&lt;<sp/>val;<sp/>}</highlight></codeline>
+<codeline lineno="275" refid="class_reelle_13141e2961030350942c10de764c13180" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref>*<sp/><ref refid="class_reelle_13141e2961030350942c10de764c13180" kindref="member" tooltip="Redefinition de la fonction de clonage.">clone</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_reelle_16fdee6f1628064efbfe4bdcd31a8cfc4" kindref="member" tooltip="Constructeur.">Reelle</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="279" refid="class_reelle_1a3b7da9b29f96a45b2064f7918d014c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_reelle_1a3b7da9b29f96a45b2064f7918d014c3" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;inversion de signe.">neg</ref>()<sp/>{<sp/>val<sp/>=<sp/>-val;<sp/>}</highlight></codeline>
+<codeline lineno="283" refid="class_reelle_15a32997cd26bb14a9445e06b0bd94f29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_reelle_15a32997cd26bb14a9445e06b0bd94f29" kindref="member" tooltip="Redefinition de la fonction de comparaison.">getComp</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val;<sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289" refid="class_rationnelle" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref><sp/>{</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>num;<sp/></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>den;<sp/></highlight></codeline>
+<codeline lineno="293"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="299" refid="class_rationnelle_180e2778456d58509340e31e304d77b8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_rationnelle_180e2778456d58509340e31e304d77b8f" kindref="member" tooltip="Constructeur.">Rationnelle</ref>(<ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e1,<sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e2)<sp/>:num(e1),<sp/>den(e2)<sp/>{<sp/>this-&gt;<ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref><sp/>=<sp/>TypeLitterale::tRationnelle;<sp/>};</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_rationnelle_1a4f581d2864da2bc7437a00b911377d9" kindref="member" tooltip="Simplificateur de la fraction.">simplification</ref>();</highlight></codeline>
+<codeline lineno="308" refid="class_rationnelle_1a912b36ff009510986a131cf0d9d5c7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/><ref refid="class_rationnelle_1a912b36ff009510986a131cf0d9d5c7b" kindref="member" tooltip="Construction d&amp;#39;une litterale entiere a partir d&amp;#39;une litterale rationnelle...">toEntiere</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(den.<ref refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" kindref="member" tooltip="Accesseur.">getVal</ref>()<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref>(num.<ref refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" kindref="member" tooltip="Accesseur.">getVal</ref>());</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="316" refid="class_rationnelle_1ae003cf8f8f8fd3f8ca25833019293c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/><ref refid="class_rationnelle_1ae003cf8f8f8fd3f8ca25833019293c7" kindref="member" tooltip="Construction d&amp;#39;une litterale reelle a partir d&amp;#39;une litterale rationnelle...">toReelle</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref>((num.<ref refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" kindref="member" tooltip="Accesseur.">getVal</ref>()<sp/>/<sp/>(double)den.<ref refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" kindref="member" tooltip="Accesseur.">getVal</ref>()));<sp/>}</highlight></codeline>
+<codeline lineno="321" refid="class_rationnelle_17bb78e18fcebedf67e29da7b8da56483" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/><ref refid="class_rationnelle_17bb78e18fcebedf67e29da7b8da56483" kindref="member" tooltip="Accesseur sur le numerateur.">getNum</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>num;<sp/>}</highlight></codeline>
+<codeline lineno="326" refid="class_rationnelle_1fa5d908b5e2e972af5a431efb6686b52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/><ref refid="class_rationnelle_1fa5d908b5e2e972af5a431efb6686b52" kindref="member" tooltip="Accesseur sur le denominateur.">getDen</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>den;<sp/>}</highlight></codeline>
+<codeline lineno="330" refid="class_rationnelle_17d5f7cf77d2c916b97f3697a071300df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_rationnelle_17d5f7cf77d2c916b97f3697a071300df" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;affichage.">affiche</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/>cout<sp/>&lt;&lt;<sp/>num.<ref refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" kindref="member" tooltip="Accesseur.">getVal</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>den.<ref refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" kindref="member" tooltip="Accesseur.">getVal</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="334" refid="class_rationnelle_1ba6dca31aee851018c69ac3c5b8dd81a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref>*<sp/><ref refid="class_rationnelle_1ba6dca31aee851018c69ac3c5b8dd81a" kindref="member" tooltip="Redefinition de la fonction de clonage.">clone</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_rationnelle_180e2778456d58509340e31e304d77b8f" kindref="member" tooltip="Constructeur.">Rationnelle</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="338" refid="class_rationnelle_11bb63e8e86011146a11507c948ed1410" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_rationnelle_11bb63e8e86011146a11507c948ed1410" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;inversion de signe.">neg</ref>()<sp/>{<sp/>num.<ref refid="class_entiere_1bb972ef0ad74814e4abf22c0cd3a2b55" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;inversion de signe.">neg</ref>();<sp/>this-&gt;<ref refid="class_rationnelle_1a4f581d2864da2bc7437a00b911377d9" kindref="member" tooltip="Simplificateur de la fraction.">simplification</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="342" refid="class_rationnelle_1618f3d0c3b9bdb27bf279b8ecbb5a392" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_rationnelle_1618f3d0c3b9bdb27bf279b8ecbb5a392" kindref="member" tooltip="Redefinition de la fonction de clonage.">getComp</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_rationnelle_1ae003cf8f8f8fd3f8ca25833019293c7" kindref="member" tooltip="Construction d&amp;#39;une litterale reelle a partir d&amp;#39;une litterale rationnelle...">toReelle</ref>().<ref refid="class_reelle_15a32997cd26bb14a9445e06b0bd94f29" kindref="member" tooltip="Redefinition de la fonction de comparaison.">getComp</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="343"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348" refid="class_complexe" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_complexe" kindref="compound" tooltip="Classe representant un nombre complexe (heritage de Litterale).">Complexe</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref><sp/>{</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/>re;<sp/></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/>im;<sp/></highlight></codeline>
+<codeline lineno="352"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="358" refid="class_complexe_1bef2deb54a211490612383ce80657cb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_complexe_1bef2deb54a211490612383ce80657cb6" kindref="member" tooltip="Constructeur.">Complexe</ref>(<ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/>r,<sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/>i<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>:<sp/>re(r),<sp/>im(i)<sp/>{<sp/>this-&gt;<ref refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" kindref="member">type</ref><sp/>=<sp/>TypeLitterale::tComplexe;<sp/>};</highlight></codeline>
+<codeline lineno="363" refid="class_complexe_16485653e44cbffd188a219f9eb023311" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/><ref refid="class_complexe_16485653e44cbffd188a219f9eb023311" kindref="member" tooltip="Accesseur sur la partie reelle.">getRe</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>re;<sp/>}</highlight></codeline>
+<codeline lineno="368" refid="class_complexe_1116626f10f871db6145b197e392f22dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/><ref refid="class_complexe_1116626f10f871db6145b197e392f22dd" kindref="member" tooltip="Accesseur sur la partie imaginaire.">getIm</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>im;<sp/>}</highlight></codeline>
+<codeline lineno="372" refid="class_complexe_1f55c7616e68169f79c26bf38be0318fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_complexe_1f55c7616e68169f79c26bf38be0318fe" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;affichage.">affiche</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*re).affiche();</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;$&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(im<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>(*im).affiche();</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="380" refid="class_complexe_11dc5a5bc3559c7531e4c66f427164b71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_complexe" kindref="compound" tooltip="Classe representant un nombre complexe (heritage de Litterale).">Complexe</ref>*<sp/><ref refid="class_complexe_11dc5a5bc3559c7531e4c66f427164b71" kindref="member" tooltip="Redefinition de la fonction de clonage.">clone</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_complexe_1bef2deb54a211490612383ce80657cb6" kindref="member" tooltip="Constructeur.">Complexe</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="384" refid="class_complexe_17496bd8781c9a32fff3b246bfb24b3c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_complexe_17496bd8781c9a32fff3b246bfb24b3c5" kindref="member" tooltip="Redefinition de la fonction d&amp;#39;inversion de signe.">neg</ref>()<sp/>{<sp/>re-&gt;<ref refid="class_numerique_15d88a526f166b01e5c116d7342daa7e8" kindref="member" tooltip="Methode virtuelle pure permettant l&amp;#39;inversion du signe de la litterale.">neg</ref>();<sp/>im-&gt;<ref refid="class_numerique_15d88a526f166b01e5c116d7342daa7e8" kindref="member" tooltip="Methode virtuelle pure permettant l&amp;#39;inversion du signe de la litterale.">neg</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="385"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>operator+(<ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e1,<sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e2);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>operator+(<ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e,<sp/><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>r);</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>operator+(<ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e,<sp/><ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>r);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>operator+(<ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>r1,<sp/><ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>r2);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>operator+(<ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>ra,<sp/><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>re);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>operator+(<ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>r,<sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e);</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>operator+(<ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>r1,<sp/><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>r2);</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>operator+(<ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>r,<sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>operator+(<ref refid="class_reelle" kindref="compound" tooltip="Classe representant un nombre reel (heritage de Numerique).">Reelle</ref><sp/>re,<sp/><ref refid="class_rationnelle" kindref="compound" tooltip="Classe representant un nombre rationnel (heritage de Numerique).">Rationnelle</ref><sp/>ra);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><ref refid="class_complexe" kindref="compound" tooltip="Classe representant un nombre complexe (heritage de Litterale).">Complexe</ref><sp/>operator+(<ref refid="class_complexe" kindref="compound" tooltip="Classe representant un nombre complexe (heritage de Litterale).">Complexe</ref>&amp;<sp/>c,<sp/><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref><sp/>e);</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>operator+(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l1,<sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l2);</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref>*<sp/>div(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l1,<sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l2);</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref>*<sp/>mod(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l1,<sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l2);</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref>*<sp/>num(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l);</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><ref refid="class_entiere" kindref="compound" tooltip="Classe representant un nombre entier (heritage de Numerique).">Entiere</ref>*<sp/>den(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l);</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><ref refid="class_complexe" kindref="compound" tooltip="Classe representant un nombre complexe (heritage de Litterale).">Complexe</ref>*<sp/>dollar(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l1,<sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l2);</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>re(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l);</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/>im(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/>l);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"></highlight></codeline>
+<codeline lineno="458"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>boolOr(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b2);</highlight></codeline>
+<codeline lineno="464"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>boolAnd(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b1,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b2);</highlight></codeline>
+<codeline lineno="469"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>boolNot(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h"/>
+  </compounddef>
+</doxygen>

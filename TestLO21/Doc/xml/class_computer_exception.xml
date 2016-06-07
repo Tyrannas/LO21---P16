@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_computer_exception" kind="class" prot="public">
+    <compoundname>ComputerException</compoundname>
+    <includes refid="_computer_exception_8h" local="no">ComputerException.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_computer_exception_11624226b58274aa3f21d6a124ffefca4" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ComputerException::info</definition>
+        <argsstring></argsstring>
+        <name>info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Chaine de caracteres decrivant l&apos;erreur </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h" line="17" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_computer_exception_199e174aa8c506b2f4d9bc3dc7846cc8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ComputerException::ComputerException</definition>
+        <argsstring>(const string &amp;str)</argsstring>
+        <name>ComputerException</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: chaine de caracteres decrivant l&apos;erreur </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h" line="23" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_computer_exception_1a4c5726f929576598b204e162b6912fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string ComputerException::getInfo</definition>
+        <argsstring>() const </argsstring>
+        <name>getInfo</name>
+        <briefdescription>
+<para>Accesseur. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>chaine de caracteres decrivant l&apos;erreur </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h" line="28" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe permettant la gestion des erreurs. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h" line="16" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h" bodystart="16" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_computer_exception_199e174aa8c506b2f4d9bc3dc7846cc8a" prot="public" virt="non-virtual"><scope>ComputerException</scope><name>ComputerException</name></member>
+      <member refid="class_computer_exception_1a4c5726f929576598b204e162b6912fa" prot="public" virt="non-virtual"><scope>ComputerException</scope><name>getInfo</name></member>
+      <member refid="class_computer_exception_11624226b58274aa3f21d6a124ffefca4" prot="private" virt="non-virtual"><scope>ComputerException</scope><name>info</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

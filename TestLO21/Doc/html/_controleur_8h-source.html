@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>LO21 - Calculatrice:  Fichier source de Controleur.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+    </ul>
+  </div>
+<h1>Controleur.h</h1><a href="_controleur_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#include "LitteraleManager.h"</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include "Litterale.h"</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include"Pile.h"</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include"<a class="code" href="_computer_exception_8h.html" title="Gestion des erreurs.">ComputerException.h</a>"</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include "HashMap.h"</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;regex&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">using namespace </span>std;
+<a name="l00014"></a>00014 
+<a name="l00027"></a><a class="code" href="class_controleur.html">00027</a> <span class="keyword">class </span><a class="code" href="class_controleur.html" title="Classe permettant de gerer l&amp;#39;ensemble de la calculatrice.">Controleur</a> {
+<a name="l00028"></a>00028                 <a class="code" href="class_litterale_manager.html" title="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</a>&amp; litMng; 
+<a name="l00029"></a>00029                 <a class="code" href="class_pile.html" title="Classe permettant de stocker les items sous forme de pile.">Pile</a>&amp; stack; 
+<a name="l00030"></a>00030                 <a class="code" href="class_hash_map.html" title="Classe reprentant la table de stockage.">HashMap</a>&amp; table; 
+<a name="l00031"></a>00031 <span class="keyword">public</span>:
+<a name="l00038"></a><a class="code" href="class_controleur.html#b5ba4bff7cacbe4aaaa7f926cfb638f0">00038</a>                 <a class="code" href="class_controleur.html#b5ba4bff7cacbe4aaaa7f926cfb638f0" title="Constructeur.">Controleur</a>(<a class="code" href="class_litterale_manager.html" title="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</a>&amp; l, <a class="code" href="class_pile.html" title="Classe permettant de stocker les items sous forme de pile.">Pile</a>&amp; v, <a class="code" href="class_hash_map.html" title="Classe reprentant la table de stockage.">HashMap</a>&amp; t) :          litMng(l), stack(v), table(t) {}
+<a name="l00043"></a>00043                 <span class="keywordtype">void</span> <a class="code" href="class_controleur.html#3b3ae1907bbec700443d18ebed7c4131" title="Parseur : permet d&amp;#39;analyser la chaine entree par l&amp;#39;utilisateur.">parse</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; c);
+<a name="l00047"></a>00047                 <span class="keywordtype">void</span> <a class="code" href="class_controleur.html#040d1f47fea94b243efc6040b0c105c0" title="Lanceur : permet de lancer l&amp;#39;application.">executer</a>();
+<a name="l00052"></a>00052                 <span class="keywordtype">void</span> <a class="code" href="class_controleur.html#0b31c80009731bc370277e3ce62b6df7" title="Operation : permet d&amp;#39;effectuer des operations arithmetiques entre litterales...">operation</a>(<span class="keywordtype">int</span> i);
+<a name="l00057"></a>00057                 <span class="keywordtype">void</span> <a class="code" href="class_controleur.html#59c48ea6ab32a447c665ca1b7c220f8f" title="OperationPile : permet d&amp;#39;effectuer des operations directement sur la pile (DUP...">operationPile</a>(<span class="keywordtype">int</span> i);
+<a name="l00058"></a><a class="code" href="class_controleur.html#bf929a8bcaec5e62b982c59d0a7f6166">00058</a>                 <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_controleur.html#bf929a8bcaec5e62b982c59d0a7f6166">nbOpBin</a> = 8; 
+<a name="l00059"></a>00059 };
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Tue Jun 7 14:57:03 2016 pour LO21 - Calculatrice par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

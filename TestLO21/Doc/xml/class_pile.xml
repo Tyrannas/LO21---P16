@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_pile" kind="class" prot="public">
+    <compoundname>Pile</compoundname>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_pile_115ea7cda491e1c5873aeba1aad9d457a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Memento</definition>
+        <argsstring></argsstring>
+        <name>Memento</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="23" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_pile_1c5e56204113682970c1abb0ceb2dcfee" prot="private" static="no" mutable="no">
+        <type>Item *</type>
+        <definition>Item* Pile::items</definition>
+        <argsstring></argsstring>
+        <name>items</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="24" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pile_1533e66ff6f995a0841206eed920a3702" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Pile::nb</definition>
+        <argsstring></argsstring>
+        <name>nb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="25" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pile_19f8cb31fbb847706230840fece6a1b6c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Pile::nbMax</definition>
+        <argsstring></argsstring>
+        <name>nbMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="26" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pile_1183d7787c6e6b9faffdd8560f7915dae" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Pile::nbAffiche</definition>
+        <argsstring></argsstring>
+        <name>nbAffiche</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="27" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pile_1943023595b819dca06f774c271203d03" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Pile::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="28" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_pile_1c920bfc2635778ddfbcab92bbf29c2fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pile::agrandissementCapacite</definition>
+        <argsstring>()</argsstring>
+        <name>agrandissementCapacite</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="29" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="5" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_pile_1b44e927107b28f5f3ac7697d10e0a739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Pile::Pile</definition>
+        <argsstring>()</argsstring>
+        <name>Pile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="32" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="17" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_1b2d1398d675586ff34994e2b109df152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Pile::~Pile</definition>
+        <argsstring>()</argsstring>
+        <name>~Pile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="33" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_1874f209b5333810e6179b0061304b4e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pile::affiche</definition>
+        <argsstring>() const </argsstring>
+        <name>affiche</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="34" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="28" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_1c61f214686f5c75fc71fc86ce8da53e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pile::push</definition>
+        <argsstring>(Litterale *const l)</argsstring>
+        <name>push</name>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *const </type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="35" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="44" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_12ca7edab82a4b7a4305093dd9ab14d71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Pile::estVide</definition>
+        <argsstring>() const </argsstring>
+        <name>estVide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="37" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_15d004688a405e8588c46336aa9cac0d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Pile::taille</definition>
+        <argsstring>() const </argsstring>
+        <name>taille</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="38" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_1b6c6dc3469f0ab644c5813f81f15b6dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Pile::tailleMax</definition>
+        <argsstring>() const </argsstring>
+        <name>tailleMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="39" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_17e00e528aa0f5995a54941351659098f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *const</type>
+        <definition>Litterale *const Pile::top</definition>
+        <argsstring>() const </argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="40" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="72" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_1a61a682bdd3b9dac5d1b25e481c453d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pile::setNbItemsToAffiche</definition>
+        <argsstring>(unsigned int n)</argsstring>
+        <name>setNbItemsToAffiche</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="43" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_17488ed257c6ceb16ed57a9fffb0726d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pile::drop</definition>
+        <argsstring>()</argsstring>
+        <name>drop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="44" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="93" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_12c9967dc8f5dcb4372475dee52ed64c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pile::swap</definition>
+        <argsstring>()</argsstring>
+        <name>swap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="45" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="103" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pile_1a3991438f190580607d7bbbd50ecc0c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pile::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="50" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.cpp" bodystart="113" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="60">
+        <label>Pile</label>
+        <childnode refid="61" relation="usage">
+          <edgelabel>items</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>Item</label>
+        <childnode refid="62" relation="usage">
+          <edgelabel>lit</edgelabel>
+        </childnode>
+      </node>
+      <node id="62">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" line="22" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Pile.h" bodystart="22" bodyend="51"/>
+    <listofallmembers>
+      <member refid="class_pile_1874f209b5333810e6179b0061304b4e5" prot="public" virt="non-virtual"><scope>Pile</scope><name>affiche</name></member>
+      <member refid="class_pile_1c920bfc2635778ddfbcab92bbf29c2fc" prot="private" virt="non-virtual"><scope>Pile</scope><name>agrandissementCapacite</name></member>
+      <member refid="class_pile_1a3991438f190580607d7bbbd50ecc0c3" prot="public" virt="non-virtual"><scope>Pile</scope><name>clear</name></member>
+      <member refid="class_pile_17488ed257c6ceb16ed57a9fffb0726d5" prot="public" virt="non-virtual"><scope>Pile</scope><name>drop</name></member>
+      <member refid="class_pile_12ca7edab82a4b7a4305093dd9ab14d71" prot="public" virt="non-virtual"><scope>Pile</scope><name>estVide</name></member>
+      <member refid="class_pile_1c5e56204113682970c1abb0ceb2dcfee" prot="private" virt="non-virtual"><scope>Pile</scope><name>items</name></member>
+      <member refid="class_pile_115ea7cda491e1c5873aeba1aad9d457a" prot="private" virt="non-virtual"><scope>Pile</scope><name>Memento</name></member>
+      <member refid="class_pile_1943023595b819dca06f774c271203d03" prot="private" virt="non-virtual"><scope>Pile</scope><name>message</name></member>
+      <member refid="class_pile_1533e66ff6f995a0841206eed920a3702" prot="private" virt="non-virtual"><scope>Pile</scope><name>nb</name></member>
+      <member refid="class_pile_1183d7787c6e6b9faffdd8560f7915dae" prot="private" virt="non-virtual"><scope>Pile</scope><name>nbAffiche</name></member>
+      <member refid="class_pile_19f8cb31fbb847706230840fece6a1b6c" prot="private" virt="non-virtual"><scope>Pile</scope><name>nbMax</name></member>
+      <member refid="class_pile_1b44e927107b28f5f3ac7697d10e0a739" prot="public" virt="non-virtual"><scope>Pile</scope><name>Pile</name></member>
+      <member refid="class_pile_1c61f214686f5c75fc71fc86ce8da53e0" prot="public" virt="non-virtual"><scope>Pile</scope><name>push</name></member>
+      <member refid="class_pile_1a61a682bdd3b9dac5d1b25e481c453d1" prot="public" virt="non-virtual"><scope>Pile</scope><name>setNbItemsToAffiche</name></member>
+      <member refid="class_pile_12c9967dc8f5dcb4372475dee52ed64c6" prot="public" virt="non-virtual"><scope>Pile</scope><name>swap</name></member>
+      <member refid="class_pile_15d004688a405e8588c46336aa9cac0d9" prot="public" virt="non-virtual"><scope>Pile</scope><name>taille</name></member>
+      <member refid="class_pile_1b6c6dc3469f0ab644c5813f81f15b6dc" prot="public" virt="non-virtual"><scope>Pile</scope><name>tailleMax</name></member>
+      <member refid="class_pile_17e00e528aa0f5995a54941351659098f" prot="public" virt="non-virtual"><scope>Pile</scope><name>top</name></member>
+      <member refid="class_pile_1b2d1398d675586ff34994e2b109df152" prot="public" virt="non-virtual"><scope>Pile</scope><name>~Pile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

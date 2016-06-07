@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_entiere" kind="class" prot="public">
+    <compoundname>Entiere</compoundname>
+    <basecompoundref refid="class_numerique" prot="public" virt="non-virtual">Numerique</basecompoundref>
+    <includes refid="_litterale_8h" local="no">Litterale.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_entiere_11384183229bf8b5b04e87e2b6fa1898a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Entiere::val</definition>
+        <argsstring></argsstring>
+        <name>val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>valeur de la litterale entiere </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="208" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_entiere_1ff8499408d074e26c267c2e1c6e696b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Entiere::Entiere</definition>
+        <argsstring>(int v)</argsstring>
+        <name>Entiere</name>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: entier representant la valeur de la litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="214" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="214" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Entiere::getVal</definition>
+        <argsstring>() const </argsstring>
+        <name>getVal</name>
+        <briefdescription>
+<para>Accesseur. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>s : entier representant la valeur de la litterale </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="219" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="219" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entiere_158d2569469b5d4765d815be15171a041" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Entiere::affiche</definition>
+        <argsstring>() const </argsstring>
+        <name>affiche</name>
+        <reimplements refid="class_numerique_1f6d64b345f536d45454ba424d59a8ee4">affiche</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;affichage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="223" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="223" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entiere_1bb972ef0ad74814e4abf22c0cd3a2b55" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Entiere::neg</definition>
+        <argsstring>()</argsstring>
+        <name>neg</name>
+        <reimplements refid="class_numerique_15d88a526f166b01e5c116d7342daa7e8">neg</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;inversion de signe. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="227" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="227" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entiere_1c3dae32e641989e217776e93005ec570" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Entiere::setVal</definition>
+        <argsstring>(int i)</argsstring>
+        <name>setVal</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Editeur : permet de modifier la valeur de la litterale. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: entier representant la nouvelle valeur de la litterale </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="232" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="232" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entiere_194592b044a5bee1b5c2ef5e6b3fd8e64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref> *</type>
+        <definition>Entiere* Entiere::clone</definition>
+        <argsstring>()</argsstring>
+        <name>clone</name>
+        <reimplements refid="class_numerique_1facd4108df61baa46c639c8e15b23c7f">clone</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction de clonage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="236" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="236" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="class_entiere_17215a91e24996f79640e766e660907cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Entiere::getComp</definition>
+        <argsstring>()</argsstring>
+        <name>getComp</name>
+        <reimplements refid="class_numerique_1d6a208d078f63b62160d255a52c0ab1c">getComp</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction de comparaison. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="240" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="240" bodyend="240"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe representant un nombre entier (heritage de <ref refid="class_numerique" kindref="compound">Numerique</ref>). </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="19">
+        <label>Entiere</label>
+        <link refid="class_entiere"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="22">
+        <label>Entiere</label>
+        <link refid="class_entiere"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="206" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="206" bodyend="241"/>
+    <listofallmembers>
+      <member refid="class_entiere_158d2569469b5d4765d815be15171a041" prot="public" virt="virtual"><scope>Entiere</scope><name>affiche</name></member>
+      <member refid="class_entiere_194592b044a5bee1b5c2ef5e6b3fd8e64" prot="public" virt="virtual"><scope>Entiere</scope><name>clone</name></member>
+      <member refid="class_entiere_1ff8499408d074e26c267c2e1c6e696b8" prot="public" virt="non-virtual"><scope>Entiere</scope><name>Entiere</name></member>
+      <member refid="class_entiere_17215a91e24996f79640e766e660907cc" prot="public" virt="virtual"><scope>Entiere</scope><name>getComp</name></member>
+      <member refid="class_litterale_1a974ab68a06e8a8b15d04ecd4ce8065a" prot="public" virt="non-virtual"><scope>Entiere</scope><name>getType</name></member>
+      <member refid="class_entiere_1d2517d3ce704cca0b13cfa0ee8c24cfd" prot="public" virt="non-virtual"><scope>Entiere</scope><name>getVal</name></member>
+      <member refid="class_litterale_1a0a02717ec75f502f1afdb6ac597efac" prot="public" virt="non-virtual"><scope>Entiere</scope><name>Litterale</name></member>
+      <member refid="class_entiere_1bb972ef0ad74814e4abf22c0cd3a2b55" prot="public" virt="virtual"><scope>Entiere</scope><name>neg</name></member>
+      <member refid="class_litterale_1eae743dc3e6055579ec749b708c57bc9" prot="public" virt="non-virtual"><scope>Entiere</scope><name>operator!=</name></member>
+      <member refid="class_litterale_1b88999156adbab96ea31e255dd3da85d" prot="public" virt="non-virtual"><scope>Entiere</scope><name>operator&lt;</name></member>
+      <member refid="class_litterale_176f566c89aa02934839f159f8d627021" prot="public" virt="non-virtual"><scope>Entiere</scope><name>operator&lt;=</name></member>
+      <member refid="class_litterale_1257dc6d6f3c4d8458d45be92ceede634" prot="public" virt="non-virtual"><scope>Entiere</scope><name>operator==</name></member>
+      <member refid="class_litterale_13495fcc6429947a6625a11e0afa0b9c6" prot="public" virt="non-virtual"><scope>Entiere</scope><name>operator&gt;</name></member>
+      <member refid="class_litterale_14a4dfdd26a03ecd6c38d1f7e6521b549" prot="public" virt="non-virtual"><scope>Entiere</scope><name>operator&gt;=</name></member>
+      <member refid="class_entiere_1c3dae32e641989e217776e93005ec570" prot="public" virt="non-virtual"><scope>Entiere</scope><name>setVal</name></member>
+      <member refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" prot="protected" virt="non-virtual"><scope>Entiere</scope><name>type</name></member>
+      <member refid="class_entiere_11384183229bf8b5b04e87e2b6fa1898a" prot="private" virt="non-virtual"><scope>Entiere</scope><name>val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

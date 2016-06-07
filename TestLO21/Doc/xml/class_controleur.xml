@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_controleur" kind="class" prot="public">
+    <compoundname>Controleur</compoundname>
+    <includes refid="_controleur_8h" local="no">Controleur.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_controleur_19c262668697ee2546b3e883421fe790d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_litterale_manager" kindref="compound">LitteraleManager</ref> &amp;</type>
+        <definition>LitteraleManager&amp; Controleur::litMng</definition>
+        <argsstring></argsstring>
+        <name>litMng</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gestion des litterales dans le controleur </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="28" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_controleur_1f93282732712b75b6ee2583632008a09" prot="private" static="no" mutable="no">
+        <type>Pile &amp;</type>
+        <definition>Pile&amp; Controleur::stack</definition>
+        <argsstring></argsstring>
+        <name>stack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pile des litterales actuellement stockees </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="29" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_controleur_126dec5c7426e8f4d1edad310754e5227" prot="private" static="no" mutable="no">
+        <type><ref refid="class_hash_map" kindref="compound">HashMap</ref> &amp;</type>
+        <definition>HashMap&amp; Controleur::table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Table de stockage des variables et programmes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="30" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_controleur_1bf929a8bcaec5e62b982c59d0a7f6166" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Controleur::nbOpBin</definition>
+        <argsstring></argsstring>
+        <name>nbOpBin</name>
+        <initializer> 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Nombre d&apos;operations binaires connues par le controleur </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="58" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_controleur_1b5ba4bff7cacbe4aaaa7f926cfb638f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Controleur::Controleur</definition>
+        <argsstring>(LitteraleManager &amp;l, Pile &amp;v, HashMap &amp;t)</argsstring>
+        <name>Controleur</name>
+        <param>
+          <type><ref refid="class_litterale_manager" kindref="compound">LitteraleManager</ref> &amp;</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>Pile &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="class_hash_map" kindref="compound">HashMap</ref> &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur un litteraleManager </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur une pile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: reference sur une hashmap </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="38" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controleur_13b3ae1907bbec700443d18ebed7c4131" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controleur::parse</definition>
+        <argsstring>(const string &amp;c)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Parseur : permet d&apos;analyser la chaine entree par l&apos;utilisateur. </para>        </briefdescription>
+        <detaileddescription>
+<para>******Controleur******/</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: chaine de caracteres entree au clavier </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="43" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.cpp" bodystart="89" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controleur_1040d1f47fea94b243efc6040b0c105c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controleur::executer</definition>
+        <argsstring>()</argsstring>
+        <name>executer</name>
+        <briefdescription>
+<para>Lanceur : permet de lancer l&apos;application. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="47" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.cpp" bodystart="247" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controleur_10b31c80009731bc370277e3ce62b6df7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controleur::operation</definition>
+        <argsstring>(int i)</argsstring>
+        <name>operation</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Operation : permet d&apos;effectuer des operations arithmetiques entre litterales. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: un entier representant le type d&apos;operation a realiser </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="52" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.cpp" bodystart="266" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controleur_159c48ea6ab32a447c665ca1b7c220f8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controleur::operationPile</definition>
+        <argsstring>(int i)</argsstring>
+        <name>operationPile</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>OperationPile : permet d&apos;effectuer des operations directement sur la pile (DUP, SWAP, ...). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: un entier representant le type d&apos;operation a realiser </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="57" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.cpp" bodystart="346" bodyend="380"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe permettant de gerer l&apos;ensemble de la calculatrice. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="17">
+        <label>HashMap</label>
+        <link refid="class_hash_map"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>table</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Pile</label>
+        <childnode refid="14" relation="usage">
+          <edgelabel>items</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Controleur</label>
+        <link refid="class_controleur"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>stack</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>litMng</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>table</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Item</label>
+        <childnode refid="15" relation="usage">
+          <edgelabel>lit</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>LitteraleManager</label>
+        <link refid="class_litterale_manager"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>lits</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>HashEntry</label>
+        <link refid="class_hash_entry"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" line="27" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h" bodystart="27" bodyend="59"/>
+    <listofallmembers>
+      <member refid="class_controleur_1b5ba4bff7cacbe4aaaa7f926cfb638f0" prot="public" virt="non-virtual"><scope>Controleur</scope><name>Controleur</name></member>
+      <member refid="class_controleur_1040d1f47fea94b243efc6040b0c105c0" prot="public" virt="non-virtual"><scope>Controleur</scope><name>executer</name></member>
+      <member refid="class_controleur_19c262668697ee2546b3e883421fe790d" prot="private" virt="non-virtual"><scope>Controleur</scope><name>litMng</name></member>
+      <member refid="class_controleur_1bf929a8bcaec5e62b982c59d0a7f6166" prot="public" virt="non-virtual"><scope>Controleur</scope><name>nbOpBin</name></member>
+      <member refid="class_controleur_10b31c80009731bc370277e3ce62b6df7" prot="public" virt="non-virtual"><scope>Controleur</scope><name>operation</name></member>
+      <member refid="class_controleur_159c48ea6ab32a447c665ca1b7c220f8f" prot="public" virt="non-virtual"><scope>Controleur</scope><name>operationPile</name></member>
+      <member refid="class_controleur_13b3ae1907bbec700443d18ebed7c4131" prot="public" virt="non-virtual"><scope>Controleur</scope><name>parse</name></member>
+      <member refid="class_controleur_1f93282732712b75b6ee2583632008a09" prot="private" virt="non-virtual"><scope>Controleur</scope><name>stack</name></member>
+      <member refid="class_controleur_126dec5c7426e8f4d1edad310754e5227" prot="private" virt="non-virtual"><scope>Controleur</scope><name>table</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

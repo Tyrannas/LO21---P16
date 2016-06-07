@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_rationnelle" kind="class" prot="public">
+    <compoundname>Rationnelle</compoundname>
+    <basecompoundref refid="class_numerique" prot="public" virt="non-virtual">Numerique</basecompoundref>
+    <includes refid="_litterale_8h" local="no">Litterale.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_rationnelle_1ade1ce0e440ad7b6ba118415998f11b3" prot="private" static="no" mutable="no">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+        <definition>Entiere Rationnelle::num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>valeur du numerateur de la fraction (litterale entiere) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="291" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_rationnelle_1286e5545258697131f3bbcaa11d629ab" prot="private" static="no" mutable="no">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+        <definition>Entiere Rationnelle::den</definition>
+        <argsstring></argsstring>
+        <name>den</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>valeur du denominateur de la fraction (litterale entiere) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="292" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="292" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_rationnelle_180e2778456d58509340e31e304d77b8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Rationnelle::Rationnelle</definition>
+        <argsstring>(Entiere e1, Entiere e2)</argsstring>
+        <name>Rationnelle</name>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+          <declname>e2</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: entiere representant le numerateur </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: entiere representant le denominateur </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="299" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="299" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_1a4f581d2864da2bc7437a00b911377d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Rationnelle::simplification</definition>
+        <argsstring>()</argsstring>
+        <name>simplification</name>
+        <briefdescription>
+<para>Simplificateur de la fraction. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="303" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.cpp" bodystart="6" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_1a912b36ff009510986a131cf0d9d5c7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+        <definition>Entiere Rationnelle::toEntiere</definition>
+        <argsstring>()</argsstring>
+        <name>toEntiere</name>
+        <briefdescription>
+<para>Construction d&apos;une litterale entiere a partir d&apos;une litterale rationnelle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>litterale entiere </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="308" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="308" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_1ae003cf8f8f8fd3f8ca25833019293c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_reelle" kindref="compound">Reelle</ref></type>
+        <definition>Reelle Rationnelle::toReelle</definition>
+        <argsstring>()</argsstring>
+        <name>toReelle</name>
+        <briefdescription>
+<para>Construction d&apos;une litterale reelle a partir d&apos;une litterale rationnelle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>litterale reelle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="316" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="316" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_17bb78e18fcebedf67e29da7b8da56483" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+        <definition>Entiere Rationnelle::getNum</definition>
+        <argsstring>() const </argsstring>
+        <name>getNum</name>
+        <briefdescription>
+<para>Accesseur sur le numerateur. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>valeur du numerateur de la fraction (litterale entiere) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="321" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="321" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_1fa5d908b5e2e972af5a431efb6686b52" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+        <definition>Entiere Rationnelle::getDen</definition>
+        <argsstring>() const </argsstring>
+        <name>getDen</name>
+        <briefdescription>
+<para>Accesseur sur le denominateur. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>valeur du denominateur de la fraction (litterale entiere) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="326" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="326" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_17d5f7cf77d2c916b97f3697a071300df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Rationnelle::affiche</definition>
+        <argsstring>() const </argsstring>
+        <name>affiche</name>
+        <reimplements refid="class_numerique_1f6d64b345f536d45454ba424d59a8ee4">affiche</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;affichage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="330" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="330" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_1ba6dca31aee851018c69ac3c5b8dd81a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_rationnelle" kindref="compound">Rationnelle</ref> *</type>
+        <definition>Rationnelle* Rationnelle::clone</definition>
+        <argsstring>()</argsstring>
+        <name>clone</name>
+        <reimplements refid="class_numerique_1facd4108df61baa46c639c8e15b23c7f">clone</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction de clonage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="334" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="334" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_11bb63e8e86011146a11507c948ed1410" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Rationnelle::neg</definition>
+        <argsstring>()</argsstring>
+        <name>neg</name>
+        <reimplements refid="class_numerique_15d88a526f166b01e5c116d7342daa7e8">neg</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;inversion de signe. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="338" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="338" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="class_rationnelle_1618f3d0c3b9bdb27bf279b8ecbb5a392" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Rationnelle::getComp</definition>
+        <argsstring>()</argsstring>
+        <name>getComp</name>
+        <reimplements refid="class_numerique_1d6a208d078f63b62160d255a52c0ab1c">getComp</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction de clonage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="342" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="342" bodyend="342"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe representant un nombre rationnel (heritage de <ref refid="class_numerique" kindref="compound">Numerique</ref>). </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="67">
+        <label>Rationnelle</label>
+        <link refid="class_rationnelle"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="70">
+        <label>Rationnelle</label>
+        <link refid="class_rationnelle"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+        <childnode refid="73" relation="usage">
+          <edgelabel>num</edgelabel>
+          <edgelabel>den</edgelabel>
+        </childnode>
+      </node>
+      <node id="73">
+        <label>Entiere</label>
+        <link refid="class_entiere"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="289" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="289" bodyend="343"/>
+    <listofallmembers>
+      <member refid="class_rationnelle_17d5f7cf77d2c916b97f3697a071300df" prot="public" virt="virtual"><scope>Rationnelle</scope><name>affiche</name></member>
+      <member refid="class_rationnelle_1ba6dca31aee851018c69ac3c5b8dd81a" prot="public" virt="virtual"><scope>Rationnelle</scope><name>clone</name></member>
+      <member refid="class_rationnelle_1286e5545258697131f3bbcaa11d629ab" prot="private" virt="non-virtual"><scope>Rationnelle</scope><name>den</name></member>
+      <member refid="class_rationnelle_1618f3d0c3b9bdb27bf279b8ecbb5a392" prot="public" virt="virtual"><scope>Rationnelle</scope><name>getComp</name></member>
+      <member refid="class_rationnelle_1fa5d908b5e2e972af5a431efb6686b52" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>getDen</name></member>
+      <member refid="class_rationnelle_17bb78e18fcebedf67e29da7b8da56483" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>getNum</name></member>
+      <member refid="class_litterale_1a974ab68a06e8a8b15d04ecd4ce8065a" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>getType</name></member>
+      <member refid="class_litterale_1a0a02717ec75f502f1afdb6ac597efac" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>Litterale</name></member>
+      <member refid="class_rationnelle_11bb63e8e86011146a11507c948ed1410" prot="public" virt="virtual"><scope>Rationnelle</scope><name>neg</name></member>
+      <member refid="class_rationnelle_1ade1ce0e440ad7b6ba118415998f11b3" prot="private" virt="non-virtual"><scope>Rationnelle</scope><name>num</name></member>
+      <member refid="class_litterale_1eae743dc3e6055579ec749b708c57bc9" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>operator!=</name></member>
+      <member refid="class_litterale_1b88999156adbab96ea31e255dd3da85d" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>operator&lt;</name></member>
+      <member refid="class_litterale_176f566c89aa02934839f159f8d627021" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>operator&lt;=</name></member>
+      <member refid="class_litterale_1257dc6d6f3c4d8458d45be92ceede634" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>operator==</name></member>
+      <member refid="class_litterale_13495fcc6429947a6625a11e0afa0b9c6" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>operator&gt;</name></member>
+      <member refid="class_litterale_14a4dfdd26a03ecd6c38d1f7e6521b549" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>operator&gt;=</name></member>
+      <member refid="class_rationnelle_180e2778456d58509340e31e304d77b8f" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>Rationnelle</name></member>
+      <member refid="class_rationnelle_1a4f581d2864da2bc7437a00b911377d9" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>simplification</name></member>
+      <member refid="class_rationnelle_1a912b36ff009510986a131cf0d9d5c7b" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>toEntiere</name></member>
+      <member refid="class_rationnelle_1ae003cf8f8f8fd3f8ca25833019293c7" prot="public" virt="non-virtual"><scope>Rationnelle</scope><name>toReelle</name></member>
+      <member refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" prot="protected" virt="non-virtual"><scope>Rationnelle</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_hash_entry" kind="class" prot="public">
+    <compoundname>HashEntry</compoundname>
+    <includes refid="_hash_map_8h" local="no">HashMap.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hash_entry_19a9e227a6ee6c38c58963a8dc1fbf7f3" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string HashEntry::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Chaine de caracteres servant d&apos;identifiant a la variable ou au programme </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="25" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hash_entry_1e49faab0ab9b0e0b12020d85f49ff528" prot="private" static="no" mutable="no">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *</type>
+        <definition>Litterale* HashEntry::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointeur sur la litterale stockee </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="26" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hash_entry_114144ea0077dd77f83ec2be03c019033" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HashEntry::HashEntry</definition>
+        <argsstring>(string key, Litterale *value)</argsstring>
+        <name>HashEntry</name>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: chaine de caracteres servant d&apos;identifiant a la variable ou au programme </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: pointeur sur la litterale stockee </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="33" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hash_entry_1040b7d2f3147a6944ad8d66301bdf80d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string HashEntry::getKey</definition>
+        <argsstring>()</argsstring>
+        <name>getKey</name>
+        <briefdescription>
+<para>Accesseur. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>chaine caracteres servant d&apos;identifiant a la variable ou au programme </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="39" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hash_entry_10edc1c3f8c73882a6d8a9fec88c45f6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_litterale" kindref="compound">Litterale</ref> *</type>
+        <definition>Litterale* HashEntry::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <briefdescription>
+<para>Accesseur. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>pointeur sur la litterale stockee </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="47" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="47" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe representant une entree de la <ref refid="class_hash_map" kindref="compound">HashMap</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="30">
+        <label>HashEntry</label>
+        <link refid="class_hash_entry"/>
+        <childnode refid="31" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" line="23" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/HashMap.h" bodystart="23" bodyend="50"/>
+    <listofallmembers>
+      <member refid="class_hash_entry_1040b7d2f3147a6944ad8d66301bdf80d" prot="public" virt="non-virtual"><scope>HashEntry</scope><name>getKey</name></member>
+      <member refid="class_hash_entry_10edc1c3f8c73882a6d8a9fec88c45f6b" prot="public" virt="non-virtual"><scope>HashEntry</scope><name>getValue</name></member>
+      <member refid="class_hash_entry_114144ea0077dd77f83ec2be03c019033" prot="public" virt="non-virtual"><scope>HashEntry</scope><name>HashEntry</name></member>
+      <member refid="class_hash_entry_19a9e227a6ee6c38c58963a8dc1fbf7f3" prot="private" virt="non-virtual"><scope>HashEntry</scope><name>key</name></member>
+      <member refid="class_hash_entry_1e49faab0ab9b0e0b12020d85f49ff528" prot="private" virt="non-virtual"><scope>HashEntry</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

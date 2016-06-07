@@ -1,0 +1,89 @@
+\hypertarget{class_complexe}{
+\section{Référence de la classe Complexe}
+\label{class_complexe}\index{Complexe@{Complexe}}
+}
+Classe representant un nombre complexe (heritage de \hyperlink{class_litterale}{Litterale}).  
+
+
+{\tt \#include $<$Litterale.h$>$}
+
+Graphe d'héritage de Complexe::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{class_complexe}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_complexe_bef2deb54a211490612383ce80657cb6}{Complexe} (\hyperlink{class_numerique}{Numerique} $\ast$r, \hyperlink{class_numerique}{Numerique} $\ast$i=nullptr)
+\begin{CompactList}\small\item\em Constructeur. \item\end{CompactList}\item 
+\hyperlink{class_numerique}{Numerique} $\ast$ \hyperlink{class_complexe_6485653e44cbffd188a219f9eb023311}{getRe} () const 
+\begin{CompactList}\small\item\em Accesseur sur la partie reelle. \item\end{CompactList}\item 
+\hyperlink{class_numerique}{Numerique} $\ast$ \hyperlink{class_complexe_116626f10f871db6145b197e392f22dd}{getIm} () const 
+\begin{CompactList}\small\item\em Accesseur sur la partie imaginaire. \item\end{CompactList}\item 
+\hypertarget{class_complexe_f55c7616e68169f79c26bf38be0318fe}{
+void \hyperlink{class_complexe_f55c7616e68169f79c26bf38be0318fe}{affiche} () const }
+\label{class_complexe_f55c7616e68169f79c26bf38be0318fe}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction d'affichage. \item\end{CompactList}\item 
+\hypertarget{class_complexe_1dc5a5bc3559c7531e4c66f427164b71}{
+\hyperlink{class_complexe}{Complexe} $\ast$ \hyperlink{class_complexe_1dc5a5bc3559c7531e4c66f427164b71}{clone} ()}
+\label{class_complexe_1dc5a5bc3559c7531e4c66f427164b71}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction de clonage. \item\end{CompactList}\item 
+\hypertarget{class_complexe_7496bd8781c9a32fff3b246bfb24b3c5}{
+void \hyperlink{class_complexe_7496bd8781c9a32fff3b246bfb24b3c5}{neg} ()}
+\label{class_complexe_7496bd8781c9a32fff3b246bfb24b3c5}
+
+\begin{CompactList}\small\item\em Redefinition de la fonction d'inversion de signe. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe representant un nombre complexe (heritage de \hyperlink{class_litterale}{Litterale}). 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{class_complexe_bef2deb54a211490612383ce80657cb6}{
+\index{Complexe@{Complexe}!Complexe@{Complexe}}
+\index{Complexe@{Complexe}!Complexe@{Complexe}}
+\subsubsection[{Complexe}]{\setlength{\rightskip}{0pt plus 5cm}Complexe::Complexe ({\bf Numerique} $\ast$ {\em r}, \/  {\bf Numerique} $\ast$ {\em i} = {\tt nullptr})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_complexe_bef2deb54a211490612383ce80657cb6}
+
+
+Constructeur. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em r}]: pointeur sur la litterale nuemerique representant la partie reelle \item[{\em i}]: pointeur sur la litterale nuemerique representant la partie imaginaire \end{description}
+\end{Desc}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_complexe_116626f10f871db6145b197e392f22dd}{
+\index{Complexe@{Complexe}!getIm@{getIm}}
+\index{getIm@{getIm}!Complexe@{Complexe}}
+\subsubsection[{getIm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Numerique}$\ast$ Complexe::getIm () const\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_complexe_116626f10f871db6145b197e392f22dd}
+
+
+Accesseur sur la partie imaginaire. 
+
+\begin{Desc}
+\item[Renvoie:]valeur de la partie imaginaire du complexe (litterale numerique quelconque \end{Desc}
+\hypertarget{class_complexe_6485653e44cbffd188a219f9eb023311}{
+\index{Complexe@{Complexe}!getRe@{getRe}}
+\index{getRe@{getRe}!Complexe@{Complexe}}
+\subsubsection[{getRe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Numerique}$\ast$ Complexe::getRe () const\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_complexe_6485653e44cbffd188a219f9eb023311}
+
+
+Accesseur sur la partie reelle. 
+
+\begin{Desc}
+\item[Renvoie:]valeur de la partie reelle du complexe (litterale numerique quelconque \end{Desc}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant :\begin{CompactItemize}
+\item 
+Litterale.h\end{CompactItemize}

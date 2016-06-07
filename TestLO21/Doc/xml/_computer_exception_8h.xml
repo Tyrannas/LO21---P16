@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="_computer_exception_8h" kind="file">
+    <compoundname>ComputerException.h</compoundname>
+    <includes local="no">string</includes>
+    <includedby refid="_computer_exception_8cpp" local="yes">ComputerException.cpp</includedby>
+    <includedby refid="_litterale_manager_8h" local="yes">LitteraleManager.h</includedby>
+    <includedby refid="_pile_8h" local="yes">Pile.h</includedby>
+    <includedby refid="_controleur_8h" local="yes">Controleur.h</includedby>
+    <includedby refid="_hash_map_8h" local="yes">HashMap.h</includedby>
+    <includedby refid="_litterale_8cpp" local="yes">Litterale.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>ComputerException.h</label>
+        <link refid="ComputerException.h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>ComputerException.h</label>
+        <link refid="ComputerException.h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Controleur.h</label>
+        <link refid="_controleur_8h"/>
+      </node>
+      <node id="9">
+        <label>Pile.h</label>
+        <link refid="_pile_8h-source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>HashMap.h</label>
+        <link refid="_hash_map_8h-source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>LitteraleManager.h</label>
+        <link refid="_litterale_manager_8h-source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_computer_exception" prot="public">ComputerException</innerclass>
+    <innernamespace refid="namespacestd">std</innernamespace>
+    <briefdescription>
+<para>Gestion des erreurs. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Felix ALIE &amp; Clement ROUTIER </para></simplesect>
+<simplesect kind="version"><para>1 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_computer_exception" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_computer_exception" kindref="compound" tooltip="Classe permettant la gestion des erreurs.">ComputerException</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>info;<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="class_computer_exception_199e174aa8c506b2f4d9bc3dc7846cc8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_computer_exception_199e174aa8c506b2f4d9bc3dc7846cc8a" kindref="member" tooltip="Constructeur.">ComputerException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>str)<sp/>:info(str)<sp/>{}</highlight></codeline>
+<codeline lineno="28" refid="class_computer_exception_1a4c5726f929576598b204e162b6912fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_computer_exception_1a4c5726f929576598b204e162b6912fa" kindref="member" tooltip="Accesseur.">getInfo</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>info;<sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/ComputerException.h"/>
+  </compounddef>
+</doxygen>

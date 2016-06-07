@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="class_reelle" kind="class" prot="public">
+    <compoundname>Reelle</compoundname>
+    <basecompoundref refid="class_numerique" prot="public" virt="non-virtual">Numerique</basecompoundref>
+    <includes refid="_litterale_8h" local="no">Litterale.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_reelle_1b4484acf4b83cce7eb3a98eb477125a2" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Reelle::val</definition>
+        <argsstring></argsstring>
+        <name>val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>valeur de la litterale <ref refid="class_reelle" kindref="compound">Reelle</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="248" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_reelle_16fdee6f1628064efbfe4bdcd31a8cfc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Reelle::Reelle</definition>
+        <argsstring>(double v)</argsstring>
+        <name>Reelle</name>
+        <param>
+          <type>double</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: valeur de la litterale <ref refid="class_reelle" kindref="compound">Reelle</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="254" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="254" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reelle_19a9cb01d74565fa4e702044ffc3fceb7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_entiere" kindref="compound">Entiere</ref></type>
+        <definition>Entiere Reelle::toEntiere</definition>
+        <argsstring>()</argsstring>
+        <name>toEntiere</name>
+        <briefdescription>
+<para>Construction d&apos;une litterale <ref refid="class_entiere" kindref="compound">Entiere</ref> a partir d&apos;une litterale reelle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>litterale entiere </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="259" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="259" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reelle_15ebbb4a65a1143c736b8545fc67af281" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Reelle::getVal</definition>
+        <argsstring>() const </argsstring>
+        <name>getVal</name>
+        <briefdescription>
+<para>Accesseur. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>v : valeur de la litterale <ref refid="class_reelle" kindref="compound">Reelle</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="267" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="267" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reelle_1df93b60f8c72687b412e7589a2be114c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Reelle::affiche</definition>
+        <argsstring>() const </argsstring>
+        <name>affiche</name>
+        <reimplements refid="class_numerique_1f6d64b345f536d45454ba424d59a8ee4">affiche</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;affichage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="271" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="271" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reelle_13141e2961030350942c10de764c13180" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_reelle" kindref="compound">Reelle</ref> *</type>
+        <definition>Reelle* Reelle::clone</definition>
+        <argsstring>()</argsstring>
+        <name>clone</name>
+        <reimplements refid="class_numerique_1facd4108df61baa46c639c8e15b23c7f">clone</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction de clonage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="275" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="275" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reelle_1a3b7da9b29f96a45b2064f7918d014c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Reelle::neg</definition>
+        <argsstring>()</argsstring>
+        <name>neg</name>
+        <reimplements refid="class_numerique_15d88a526f166b01e5c116d7342daa7e8">neg</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction d&apos;inversion de signe. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="279" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="279" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reelle_15a32997cd26bb14a9445e06b0bd94f29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Reelle::getComp</definition>
+        <argsstring>()</argsstring>
+        <name>getComp</name>
+        <reimplements refid="class_numerique_1d6a208d078f63b62160d255a52c0ab1c">getComp</reimplements>
+        <briefdescription>
+<para>Redefinition de la fonction de comparaison. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="283" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="283" bodyend="283"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe representant un nombre reel (heritage de <ref refid="class_numerique" kindref="compound">Numerique</ref>). </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="74">
+        <label>Reelle</label>
+        <link refid="class_reelle"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="76" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="77">
+        <label>Reelle</label>
+        <link refid="class_reelle"/>
+        <childnode refid="78" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>Numerique</label>
+        <link refid="class_numerique"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>Litterale</label>
+        <link refid="class_litterale"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" line="246" bodyfile="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Litterale.h" bodystart="246" bodyend="284"/>
+    <listofallmembers>
+      <member refid="class_reelle_1df93b60f8c72687b412e7589a2be114c" prot="public" virt="virtual"><scope>Reelle</scope><name>affiche</name></member>
+      <member refid="class_reelle_13141e2961030350942c10de764c13180" prot="public" virt="virtual"><scope>Reelle</scope><name>clone</name></member>
+      <member refid="class_reelle_15a32997cd26bb14a9445e06b0bd94f29" prot="public" virt="virtual"><scope>Reelle</scope><name>getComp</name></member>
+      <member refid="class_litterale_1a974ab68a06e8a8b15d04ecd4ce8065a" prot="public" virt="non-virtual"><scope>Reelle</scope><name>getType</name></member>
+      <member refid="class_reelle_15ebbb4a65a1143c736b8545fc67af281" prot="public" virt="non-virtual"><scope>Reelle</scope><name>getVal</name></member>
+      <member refid="class_litterale_1a0a02717ec75f502f1afdb6ac597efac" prot="public" virt="non-virtual"><scope>Reelle</scope><name>Litterale</name></member>
+      <member refid="class_reelle_1a3b7da9b29f96a45b2064f7918d014c3" prot="public" virt="virtual"><scope>Reelle</scope><name>neg</name></member>
+      <member refid="class_litterale_1eae743dc3e6055579ec749b708c57bc9" prot="public" virt="non-virtual"><scope>Reelle</scope><name>operator!=</name></member>
+      <member refid="class_litterale_1b88999156adbab96ea31e255dd3da85d" prot="public" virt="non-virtual"><scope>Reelle</scope><name>operator&lt;</name></member>
+      <member refid="class_litterale_176f566c89aa02934839f159f8d627021" prot="public" virt="non-virtual"><scope>Reelle</scope><name>operator&lt;=</name></member>
+      <member refid="class_litterale_1257dc6d6f3c4d8458d45be92ceede634" prot="public" virt="non-virtual"><scope>Reelle</scope><name>operator==</name></member>
+      <member refid="class_litterale_13495fcc6429947a6625a11e0afa0b9c6" prot="public" virt="non-virtual"><scope>Reelle</scope><name>operator&gt;</name></member>
+      <member refid="class_litterale_14a4dfdd26a03ecd6c38d1f7e6521b549" prot="public" virt="non-virtual"><scope>Reelle</scope><name>operator&gt;=</name></member>
+      <member refid="class_reelle_16fdee6f1628064efbfe4bdcd31a8cfc4" prot="public" virt="non-virtual"><scope>Reelle</scope><name>Reelle</name></member>
+      <member refid="class_reelle_19a9cb01d74565fa4e702044ffc3fceb7" prot="public" virt="non-virtual"><scope>Reelle</scope><name>toEntiere</name></member>
+      <member refid="class_litterale_1ab5099a9b2acefce3bc3da9487e0ad78" prot="protected" virt="non-virtual"><scope>Reelle</scope><name>type</name></member>
+      <member refid="class_reelle_1b4484acf4b83cce7eb3a98eb477125a2" prot="private" virt="non-virtual"><scope>Reelle</scope><name>val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

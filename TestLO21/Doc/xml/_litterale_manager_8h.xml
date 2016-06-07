@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="_litterale_manager_8h" kind="file">
+    <compoundname>LitteraleManager.h</compoundname>
+    <includes refid="_computer_exception_8h" local="yes">ComputerException.h</includes>
+    <includes refid="_litterale_8h" local="yes">Litterale.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">sstream</includes>
+    <includedby refid="_controleur_8h" local="yes">Controleur.h</includedby>
+    <includedby refid="_litterale_manager_8cpp" local="yes">LitteraleManager.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="74">
+        <label>ComputerException.h</label>
+        <link refid="_computer_exception_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>string</label>
+      </node>
+      <node id="76">
+        <label>Litterale.h</label>
+        <link refid="_litterale_8h-source"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>sstream</label>
+      </node>
+      <node id="77">
+        <label>iostream</label>
+      </node>
+      <node id="79">
+        <label>algorithm</label>
+      </node>
+      <node id="73">
+        <label>LitteraleManager.h</label>
+        <link refid="LitteraleManager.h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="81">
+        <label>Controleur.h</label>
+        <link refid="_controleur_8h"/>
+      </node>
+      <node id="80">
+        <label>LitteraleManager.h</label>
+        <link refid="LitteraleManager.h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_litterale_manager" prot="public">LitteraleManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_computer_exception_8h" kindref="compound" tooltip="Gestion des erreurs.">ComputerException.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Litterale.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_litterale_manager" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_litterale_manager" kindref="compound" tooltip="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>**<sp/>lits;<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nb;<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbMax;<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>agrandissementCapacite();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_litterale_manager_1daa9e81e06b8001e4cf9e0f5a214b6cd" kindref="member" tooltip="Constructeur.">LitteraleManager</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_litterale_manager_1a6f690e84ae96ec3a15f6b629264cc1f" kindref="member" tooltip="Destructeur.">~LitteraleManager</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>&amp;<sp/><ref refid="class_litterale_manager_1bfb29c7c9e5ffdd6904f069def98d2df" kindref="member" tooltip="Ajout d&amp;#39;une litterale dans le Manager.">addLitterale</ref>(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>l);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_litterale_manager_1ac254ffc8158f21899786e2133a6018d" kindref="member" tooltip="Creation de la litterale corespondant a la chaine de caracteres parsee dans le controleur...">littFactory</ref>(TypeLitterale<sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p2<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>p3<sp/>=<sp/>NULL,<sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/>p4<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/><ref refid="class_numerique" kindref="compound" tooltip="Classe abstraite representant un numerique, c&amp;#39;est a dire un nombre autre que...">Numerique</ref>*<sp/>p5<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_litterale_manager_153bfb9871eed94f6c3e8f5f1e2a76e29" kindref="member" tooltip="Suppression d&amp;#39;une litterale du Manager.">removeLitterale</ref>(<ref refid="class_litterale" kindref="compound" tooltip="Classe abstraite representant toutes les litterales pouvant etres stockees.">Litterale</ref>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>l);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/LitteraleManager.h"/>
+  </compounddef>
+</doxygen>

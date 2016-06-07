@@ -1,0 +1,143 @@
+\hypertarget{class_pile}{
+\section{Référence de la classe Pile}
+\label{class_pile}\index{Pile@{Pile}}
+}
+Classe permettant de stocker les items sous forme de pile.  
+
+
+{\tt \#include $<$Pile.h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_pile_b44e927107b28f5f3ac7697d10e0a739}{
+\hyperlink{class_pile_b44e927107b28f5f3ac7697d10e0a739}{Pile} ()}
+\label{class_pile_b44e927107b28f5f3ac7697d10e0a739}
+
+\begin{CompactList}\small\item\em Constructeur. \item\end{CompactList}\item 
+\hypertarget{class_pile_b2d1398d675586ff34994e2b109df152}{
+\hyperlink{class_pile_b2d1398d675586ff34994e2b109df152}{$\sim$Pile} ()}
+\label{class_pile_b2d1398d675586ff34994e2b109df152}
+
+\begin{CompactList}\small\item\em Destructeur. \item\end{CompactList}\item 
+\hypertarget{class_pile_874f209b5333810e6179b0061304b4e5}{
+void \hyperlink{class_pile_874f209b5333810e6179b0061304b4e5}{affiche} () const }
+\label{class_pile_874f209b5333810e6179b0061304b4e5}
+
+\begin{CompactList}\small\item\em Affichage de la pile. \item\end{CompactList}\item 
+void \hyperlink{class_pile_c61f214686f5c75fc71fc86ce8da53e0}{push} (\hyperlink{class_litterale}{Litterale} $\ast$const l)
+\begin{CompactList}\small\item\em Insertion d'une litterale dans la pile. \item\end{CompactList}\item 
+bool \hyperlink{class_pile_2ca7edab82a4b7a4305093dd9ab14d71}{estVide} () const 
+\begin{CompactList}\small\item\em Test sur la capacite de la pile. \item\end{CompactList}\item 
+int \hyperlink{class_pile_5d004688a405e8588c46336aa9cac0d9}{taille} () const 
+\begin{CompactList}\small\item\em Accesseur sur le nombre. \item\end{CompactList}\item 
+int \hyperlink{class_pile_b6c6dc3469f0ab644c5813f81f15b6dc}{tailleMax} () const 
+\begin{CompactList}\small\item\em Accesseur sur le nombre maximum. \item\end{CompactList}\item 
+\hyperlink{class_litterale}{Litterale} $\ast$const \hyperlink{class_pile_7e00e528aa0f5995a54941351659098f}{top} () const 
+\begin{CompactList}\small\item\em Acces au dernier element. \item\end{CompactList}\item 
+void \hyperlink{class_pile_a61a682bdd3b9dac5d1b25e481c453d1}{setNbItemsToAffiche} (unsigned int n)
+\begin{CompactList}\small\item\em Accesseur sur le nombre a afficher. \item\end{CompactList}\item 
+\hypertarget{class_pile_7488ed257c6ceb16ed57a9fffb0726d5}{
+void \hyperlink{class_pile_7488ed257c6ceb16ed57a9fffb0726d5}{drop} ()}
+\label{class_pile_7488ed257c6ceb16ed57a9fffb0726d5}
+
+\begin{CompactList}\small\item\em Suppression du dernier element. \item\end{CompactList}\item 
+\hypertarget{class_pile_2c9967dc8f5dcb4372475dee52ed64c6}{
+void \hyperlink{class_pile_2c9967dc8f5dcb4372475dee52ed64c6}{swap} ()}
+\label{class_pile_2c9967dc8f5dcb4372475dee52ed64c6}
+
+\begin{CompactList}\small\item\em Inversion des deux derniers elements. \item\end{CompactList}\item 
+\hypertarget{class_pile_a3991438f190580607d7bbbd50ecc0c3}{
+void \hyperlink{class_pile_a3991438f190580607d7bbbd50ecc0c3}{clear} ()}
+\label{class_pile_a3991438f190580607d7bbbd50ecc0c3}
+
+\begin{CompactList}\small\item\em Suppression de l'integralite des elements de la pile. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Amis}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_pile_15ea7cda491e1c5873aeba1aad9d457a}{
+class \textbf{Memento}}
+\label{class_pile_15ea7cda491e1c5873aeba1aad9d457a}
+
+\end{CompactItemize}
+
+
+\subsection{Description détaillée}
+Classe permettant de stocker les items sous forme de pile. 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{class_pile_2ca7edab82a4b7a4305093dd9ab14d71}{
+\index{Pile@{Pile}!estVide@{estVide}}
+\index{estVide@{estVide}!Pile@{Pile}}
+\subsubsection[{estVide}]{\setlength{\rightskip}{0pt plus 5cm}bool Pile::estVide () const}}
+\label{class_pile_2ca7edab82a4b7a4305093dd9ab14d71}
+
+
+Test sur la capacite de la pile. 
+
+\begin{Desc}
+\item[Renvoie:]'true' si la pile est vide, 'false' sinon \end{Desc}
+\hypertarget{class_pile_c61f214686f5c75fc71fc86ce8da53e0}{
+\index{Pile@{Pile}!push@{push}}
+\index{push@{push}!Pile@{Pile}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}void Pile::push ({\bf Litterale} $\ast$const  {\em l})}}
+\label{class_pile_c61f214686f5c75fc71fc86ce8da53e0}
+
+
+Insertion d'une litterale dans la pile. 
+
+\begin{Desc}
+\item[Paramètres:]
+\begin{description}
+\item[{\em l}]: pointeur sur la litterale a inserer \end{description}
+\end{Desc}
+\hypertarget{class_pile_a61a682bdd3b9dac5d1b25e481c453d1}{
+\index{Pile@{Pile}!setNbItemsToAffiche@{setNbItemsToAffiche}}
+\index{setNbItemsToAffiche@{setNbItemsToAffiche}!Pile@{Pile}}
+\subsubsection[{setNbItemsToAffiche}]{\setlength{\rightskip}{0pt plus 5cm}void Pile::setNbItemsToAffiche (unsigned int {\em n})}}
+\label{class_pile_a61a682bdd3b9dac5d1b25e481c453d1}
+
+
+Accesseur sur le nombre a afficher. 
+
+\begin{Desc}
+\item[Renvoie:]nombre d'items a afficher \end{Desc}
+\hypertarget{class_pile_5d004688a405e8588c46336aa9cac0d9}{
+\index{Pile@{Pile}!taille@{taille}}
+\index{taille@{taille}!Pile@{Pile}}
+\subsubsection[{taille}]{\setlength{\rightskip}{0pt plus 5cm}int Pile::taille () const}}
+\label{class_pile_5d004688a405e8588c46336aa9cac0d9}
+
+
+Accesseur sur le nombre. 
+
+\begin{Desc}
+\item[Renvoie:]nombre actuel d'items dans la pile \end{Desc}
+\hypertarget{class_pile_b6c6dc3469f0ab644c5813f81f15b6dc}{
+\index{Pile@{Pile}!tailleMax@{tailleMax}}
+\index{tailleMax@{tailleMax}!Pile@{Pile}}
+\subsubsection[{tailleMax}]{\setlength{\rightskip}{0pt plus 5cm}int Pile::tailleMax () const}}
+\label{class_pile_b6c6dc3469f0ab644c5813f81f15b6dc}
+
+
+Accesseur sur le nombre maximum. 
+
+\begin{Desc}
+\item[Renvoie:]nombre maximum d'items dans la pile \end{Desc}
+\hypertarget{class_pile_7e00e528aa0f5995a54941351659098f}{
+\index{Pile@{Pile}!top@{top}}
+\index{top@{top}!Pile@{Pile}}
+\subsubsection[{top}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Litterale} $\ast$const Pile::top () const}}
+\label{class_pile_7e00e528aa0f5995a54941351659098f}
+
+
+Acces au dernier element. 
+
+\begin{Desc}
+\item[Renvoie:]pointeur sur la litterale au sommet de la pile \end{Desc}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{CompactItemize}
+\item 
+Pile.h\item 
+Pile.cpp\end{CompactItemize}

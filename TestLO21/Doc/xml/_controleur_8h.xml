@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.8">
+  <compounddef id="_controleur_8h" kind="file">
+    <compoundname>Controleur.h</compoundname>
+    <includes refid="_litterale_manager_8h" local="yes">LitteraleManager.h</includes>
+    <includes refid="_litterale_8h" local="yes">Litterale.h</includes>
+    <includes refid="_pile_8h" local="yes">Pile.h</includes>
+    <includes refid="_computer_exception_8h" local="yes">ComputerException.h</includes>
+    <includes refid="_hash_map_8h" local="yes">HashMap.h</includes>
+    <includes local="no">regex</includes>
+    <includes local="no">string</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">sstream</includes>
+    <includedby refid="_controleur_8cpp" local="yes">Controleur.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="26">
+        <label>ComputerException.h</label>
+        <link refid="_computer_exception_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>string</label>
+      </node>
+      <node id="34">
+        <label>regex</label>
+      </node>
+      <node id="24">
+        <label>Controleur.h</label>
+        <link refid="Controleur.h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>Litterale.h</label>
+        <link refid="_litterale_8h-source"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>sstream</label>
+      </node>
+      <node id="29">
+        <label>iostream</label>
+      </node>
+      <node id="32">
+        <label>Pile.h</label>
+        <link refid="_pile_8h-source"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>HashMap.h</label>
+        <link refid="_hash_map_8h-source"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>algorithm</label>
+      </node>
+      <node id="25">
+        <label>LitteraleManager.h</label>
+        <link refid="_litterale_manager_8h-source"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_controleur" prot="public">Controleur</innerclass>
+    <briefdescription>
+<para>Base de lancement de l&apos;application. </para>    </briefdescription>
+    <detaileddescription>
+<para>Gestion de l&apos;ensemble des litterales.</para><para>Ensemble des classes litterales.</para><para>Table de stockage et variables et des programmes.</para><para><simplesect kind="author"><para>Felix ALIE &amp; Clement ROUTIER </para></simplesect>
+<simplesect kind="version"><para>1 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;LitteraleManager.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Litterale.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include&quot;Pile.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include&quot;<ref refid="_computer_exception_8h" kindref="compound" tooltip="Gestion des erreurs.">ComputerException.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;HashMap.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;regex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_controleur" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_controleur" kindref="compound" tooltip="Classe permettant de gerer l&amp;#39;ensemble de la calculatrice.">Controleur</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_litterale_manager" kindref="compound" tooltip="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</ref>&amp;<sp/>litMng;<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pile&amp;<sp/>stack;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_hash_map" kindref="compound" tooltip="Classe reprentant la table de stockage.">HashMap</ref>&amp;<sp/>table;<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="class_controleur_1b5ba4bff7cacbe4aaaa7f926cfb638f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_controleur_1b5ba4bff7cacbe4aaaa7f926cfb638f0" kindref="member" tooltip="Constructeur.">Controleur</ref>(<ref refid="class_litterale_manager" kindref="compound" tooltip="Classe permettant de gerer toutes les litterales ajoutees une a une.">LitteraleManager</ref>&amp;<sp/>l,<sp/>Pile&amp;<sp/>v,<sp/><ref refid="class_hash_map" kindref="compound" tooltip="Classe reprentant la table de stockage.">HashMap</ref>&amp;<sp/>t)<sp/>:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>litMng(l),<sp/>stack(v),<sp/>table(t)<sp/>{}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_controleur_13b3ae1907bbec700443d18ebed7c4131" kindref="member" tooltip="Parseur : permet d&amp;#39;analyser la chaine entree par l&amp;#39;utilisateur.">parse</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>c);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_controleur_1040d1f47fea94b243efc6040b0c105c0" kindref="member" tooltip="Lanceur : permet de lancer l&amp;#39;application.">executer</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_controleur_10b31c80009731bc370277e3ce62b6df7" kindref="member" tooltip="Operation : permet d&amp;#39;effectuer des operations arithmetiques entre litterales...">operation</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_controleur_159c48ea6ab32a447c665ca1b7c220f8f" kindref="member" tooltip="OperationPile : permet d&amp;#39;effectuer des operations directement sur la pile (DUP...">operationPile</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
+<codeline lineno="58" refid="class_controleur_1bf929a8bcaec5e62b982c59d0a7f6166" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_controleur_1bf929a8bcaec5e62b982c59d0a7f6166" kindref="member">nbOpBin</ref><sp/>=<sp/>8;<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Clément/LO21/Master/LO21---P16/TestLO21/Controleur.h"/>
+  </compounddef>
+</doxygen>
