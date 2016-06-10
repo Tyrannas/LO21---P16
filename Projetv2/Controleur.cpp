@@ -196,7 +196,7 @@ void Controleur::parse(const string& c) {
             stack.push(c);
         }
 
-        else qWarning("ça deconne");//throw ComputerException("Erreur, commande inconnue");
+        else throw ComputerException("Erreur, commande inconnue");
     }
 
 }

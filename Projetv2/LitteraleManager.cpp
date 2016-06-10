@@ -29,7 +29,7 @@ Litterale& LitteraleManager::addLitterale(Litterale * const l) {
 	return *lits[nb - 1];
 }
 
-Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int p2, double p3, Numerique * p4, Numerique * p5)
+Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int p2, double p3, Numerique * p4, Numerique * p5, string p6)
 {
 	if (type == TypeLitterale::tEntiere) {
 		Entiere * const e = new Entiere(p1);

@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
         return a.exec();
        }
     catch(ComputerException e){
-        string s = e.getInfo();
-        const char * debug = s.c_str();
-        qWarning(debug);
+//        string s = e.getInfo();
+//        const char * debug = s.c_str();
+//        qWarning(debug);
     }
 
 }

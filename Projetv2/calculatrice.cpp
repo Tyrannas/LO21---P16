@@ -131,6 +131,7 @@ void calculatrice::readLitt(QString s){
 }
 
 void calculatrice::execute(QString s){
+    ui->affErreur->clear();
     this->entree += s;
     QStringList sList = this->entree.split(" ");
     for(QStringList::iterator it = sList.begin(); it != sList.end(); ++it){
@@ -138,7 +139,14 @@ void calculatrice::execute(QString s){
         std::string input = current.toLocal8Bit().constData();
         const char * test = input.c_str();
         //qWarning(test);
-        this->c.parse(input);
+        try{
+            this->c.parse(input);
+        }
+        catch(ComputerException e){
+            string s = e.getInfo();
+            QString erreur = QString::fromStdString(s);
+            ui->affErreur->setText(erreur);
+        }
     }
     QStringList items;
     for (Pile::Iterator it = p.rbegin(); it != p.rend(); --it){
