@@ -149,12 +149,11 @@ public:
             Iterator(Item* _items) :items(_items) {}
         };
 
-        //Iterator getIterator() const { return Iterator(exps, nb); } // Implémentation 1
-        const Iterator begin() const { return Iterator(items); } /*!< Iterateur de début de Pile*/
-        const Iterator end() const { return Iterator(items + nb); } /*!< Iterateur de fin de Pile*/
-        const Iterator rbegin() const { return Iterator(items + nb - 1); } /*!< Iterateur inversé de début de Pile*/
-        const Iterator rend() const { return Iterator(items - 1); } /*!< Iterateur inversé de fin de Pile*/
-
+    //Iterator getIterator() const { return Iterator(exps, nb); } // Implémentation 1
+    const Iterator begin() const { return Iterator(items); } /*!< Iterateur de début de Pile*/
+    const Iterator end() const { return Iterator(items + nb); } /*!< Iterateur de fin de Pile*/
+    const Iterator rbegin() const { return Iterator(items + nb - 1); } /*!< Iterateur inversé de début de Pile*/
+    const Iterator rend() const { return Iterator(items - 1); } /*!< Iterateur inversé de fin de Pile*/
 };
 
 

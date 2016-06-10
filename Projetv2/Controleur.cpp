@@ -272,7 +272,7 @@ void Controleur::operationBinaire(int i)
 {
 	Litterale* const v1 = stack.top();
     stack.drop();
-    Litterale* v2 = stack.top();
+    Litterale* const v2 = stack.top();
     stack.drop();
 	Litterale* v3 = nullptr;
 
@@ -317,6 +317,9 @@ void Controleur::operationBinaire(int i)
 	litMng.removeLitterale(v1);
     litMng.removeLitterale(v2);
 	litMng.addLitterale(v3);
+//    const string& s = v3->toString();
+//    const char * debug = s.c_str();
+//    qWarning(debug);
 	stack.push(v3);
 }
 

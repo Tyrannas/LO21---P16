@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
@@ -22,6 +23,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -80,12 +82,16 @@ public:
     QPushButton *pushButton_REDO;
     QPushButton *pushButton_DROP;
     QPushButton *pushButton_SWAP;
-    QPushButton *pushButton_EVAL;
     QListWidget *affPile;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout_4;
-    QPushButton *pushButton_STO;
     QPushButton *pushButton_FORGET;
+    QPushButton *pushButton_STO;
+    QPushButton *pushButton_EVAL;
+    QLabel *label;
+    QLabel *label_2;
+    QTableView *tableView;
+    QLineEdit *affErreur;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QMenu *menuEdition;
@@ -95,7 +101,7 @@ public:
     {
         if (calculatrice->objectName().isEmpty())
             calculatrice->setObjectName(QStringLiteral("calculatrice"));
-        calculatrice->resize(792, 622);
+        calculatrice->resize(999, 671);
         actionQuitter = new QAction(calculatrice);
         actionQuitter->setObjectName(QStringLiteral("actionQuitter"));
         actionAnnuler_Ctrl_Z = new QAction(calculatrice);
@@ -113,7 +119,7 @@ public:
         ligneCommande->setFont(font);
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 60, 295, 291));
+        gridLayoutWidget->setGeometry(QRect(10, 60, 295, 301));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -212,7 +218,7 @@ public:
 
         gridLayoutWidget_2 = new QWidget(centralwidget);
         gridLayoutWidget_2->setObjectName(QStringLiteral("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(310, 60, 241, 281));
+        gridLayoutWidget_2->setGeometry(QRect(310, 60, 231, 288));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setHorizontalSpacing(0);
@@ -290,7 +296,7 @@ public:
 
         gridLayoutWidget_3 = new QWidget(centralwidget);
         gridLayoutWidget_3->setObjectName(QStringLiteral("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(10, 360, 541, 141));
+        gridLayoutWidget_3->setGeometry(QRect(10, 360, 531, 141));
         gridLayout_3 = new QGridLayout(gridLayoutWidget_3);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -334,39 +340,64 @@ public:
 
         gridLayout_3->addWidget(pushButton_SWAP, 2, 0, 1, 1);
 
-        pushButton_EVAL = new QPushButton(centralwidget);
-        pushButton_EVAL->setObjectName(QStringLiteral("pushButton_EVAL"));
-        pushButton_EVAL->setGeometry(QRect(390, 510, 151, 41));
         affPile = new QListWidget(centralwidget);
         affPile->setObjectName(QStringLiteral("affPile"));
-        affPile->setGeometry(QRect(558, 0, 221, 561));
+        affPile->setGeometry(QRect(560, 60, 201, 491));
         QFont font2;
         font2.setFamily(QStringLiteral("Roboto Light"));
         font2.setPointSize(20);
         affPile->setFont(font2);
         gridLayoutWidget_4 = new QWidget(centralwidget);
         gridLayoutWidget_4->setObjectName(QStringLiteral("gridLayoutWidget_4"));
-        gridLayoutWidget_4->setGeometry(QRect(9, 510, 331, 51));
+        gridLayoutWidget_4->setGeometry(QRect(9, 510, 531, 51));
         gridLayout_4 = new QGridLayout(gridLayoutWidget_4);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        pushButton_STO = new QPushButton(gridLayoutWidget_4);
-        pushButton_STO->setObjectName(QStringLiteral("pushButton_STO"));
-
-        gridLayout_4->addWidget(pushButton_STO, 0, 0, 1, 1);
-
         pushButton_FORGET = new QPushButton(gridLayoutWidget_4);
         pushButton_FORGET->setObjectName(QStringLiteral("pushButton_FORGET"));
 
         gridLayout_4->addWidget(pushButton_FORGET, 0, 1, 1, 1);
 
+        pushButton_STO = new QPushButton(gridLayoutWidget_4);
+        pushButton_STO->setObjectName(QStringLiteral("pushButton_STO"));
+
+        gridLayout_4->addWidget(pushButton_STO, 0, 0, 1, 1);
+
+        pushButton_EVAL = new QPushButton(gridLayoutWidget_4);
+        pushButton_EVAL->setObjectName(QStringLiteral("pushButton_EVAL"));
+
+        gridLayout_4->addWidget(pushButton_EVAL, 0, 2, 1, 1);
+
+        label = new QLabel(centralwidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(560, 10, 201, 41));
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(800, 10, 171, 41));
+        tableView = new QTableView(centralwidget);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(780, 60, 201, 491));
+        affErreur = new QLineEdit(centralwidget);
+        affErreur->setObjectName(QStringLiteral("affErreur"));
+        affErreur->setGeometry(QRect(20, 570, 961, 41));
+        QFont font3;
+        font3.setFamily(QStringLiteral("Roboto Light"));
+        font3.setPointSize(11);
+        font3.setBold(true);
+        font3.setItalic(true);
+        font3.setWeight(75);
+        affErreur->setFont(font3);
+        affErreur->setAutoFillBackground(false);
+        affErreur->setStyleSheet(QLatin1String("affErreur{\n"
+"color:rgb(255, 0, 0);\n"
+"}"));
         calculatrice->setCentralWidget(centralwidget);
         menubar = new QMenuBar(calculatrice);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 792, 26));
-        QFont font3;
-        font3.setFamily(QStringLiteral("Rounded Elegance"));
-        menubar->setFont(font3);
+        menubar->setGeometry(QRect(0, 0, 999, 26));
+        QFont font4;
+        font4.setFamily(QStringLiteral("Rounded Elegance"));
+        menubar->setFont(font4);
         menubar->setCursor(QCursor(Qt::ArrowCursor));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
@@ -434,9 +465,11 @@ public:
         pushButton_REDO->setText(QApplication::translate("calculatrice", "REDO", 0));
         pushButton_DROP->setText(QApplication::translate("calculatrice", "DROP", 0));
         pushButton_SWAP->setText(QApplication::translate("calculatrice", "SWAP", 0));
-        pushButton_EVAL->setText(QApplication::translate("calculatrice", "EVAL", 0));
-        pushButton_STO->setText(QApplication::translate("calculatrice", "STO", 0));
         pushButton_FORGET->setText(QApplication::translate("calculatrice", "FORGET", 0));
+        pushButton_STO->setText(QApplication::translate("calculatrice", "STO", 0));
+        pushButton_EVAL->setText(QApplication::translate("calculatrice", "EVAL", 0));
+        label->setText(QApplication::translate("calculatrice", "                M\303\251moire", 0));
+        label_2->setText(QApplication::translate("calculatrice", "           Variables", 0));
         menuMenu->setTitle(QApplication::translate("calculatrice", "Menu", 0));
         menuEdition->setTitle(QApplication::translate("calculatrice", "Edition", 0));
     } // retranslateUi

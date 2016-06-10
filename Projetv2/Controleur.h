@@ -62,5 +62,4 @@ public:
 	*  \param i : un entier representant le type d'operation a realiser
 	*/
 	void operationPile(int i);
-	const int nbOpBin = 8; /*!< Nombre d'operations binaires connues par le controleur*/
 };

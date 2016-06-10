@@ -17,8 +17,8 @@ calculatrice::calculatrice(QWidget *parent) :
     ui->setupUi(this);
     QSignalMapper* mapLitt = new QSignalMapper(this);
     QSignalMapper* mapOp = new QSignalMapper(this);
-    //ui->ligneCommande->setDisabled(1);
-
+    ui->affErreur->setDisabled(1);
+    //ui->affErreur->setText("Erreur: haha bim, une erreur");
 
     connect(ui->pushButton_SPACE,SIGNAL(clicked()), this, SLOT(space()));
     //connect(ui->actionQuitter,SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
@@ -139,13 +139,19 @@ void calculatrice::execute(QString s){
         this->c.parse(input);
     }
     QStringList items;
-    for (Pile::Iterator it = p.rbegin(); it != p.rend(); --it){
-       Item i = *it;
-       Litterale* test = i.getLitterale();
-       const string& test2 = test->toString();
-       QString qstr = QString::fromStdString(test2);
-       items += qstr;
-       // qWarning("Test");
+//    for (Pile::Iterator it = p.rbegin(); it != p.rend(); --it){
+//       Item i = *it;
+//       Litterale* test = i.getLitterale();
+//       const string& test2 = test->toString();
+//       QString qstr = QString::fromStdString(test2);
+//       items += qstr;
+//        qWarning("Test");
+//    }
+    for(LitteraleManager::Iterator it = lm.rbegin();it!=lm.rend();--it){
+        Litterale* l = *it;
+        const string& s = l->toString();
+        QString qstr = QString::fromStdString(s);
+        items += qstr;
     }
     ui->affPile->clear();
     ui->affPile->addItems(items);

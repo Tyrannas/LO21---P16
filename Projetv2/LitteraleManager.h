@@ -172,5 +172,25 @@ public:
 	*  \return entier representant le nombre de Litterale du LitteraleManager
 	*/
 	int taille() { return nb; }
+    /*!
+    *  \brief Classe iterateur permettant de parcourir les litterales stockees dans un LitteraleManager
+    */
+    class Iterator
+        {
+        friend class LitteraleManager;
+        public:
+            Iterator& operator++() { tab++; return *this; }
+            Iterator& operator--() { tab--; return *this; }
+            Litterale* operator*() const { return *tab; }
+            bool operator!=(const Iterator& it) const { return (tab != it.tab); }
+        private:
+            Litterale** tab;
+            Iterator(Litterale** _tab) :tab(_tab) {}
+        };
+
+    const Iterator begin() const { return Iterator(lits); } /*!< Iterateur de début du LitteraleManager*/
+    const Iterator end() const { return Iterator(lits + nb); } /*!< Iterateur de fin du LitteraleManager*/
+    const Iterator rbegin() const { return Iterator(lits + nb - 1); } /*!< Iterateur inversé de début du LitteraleManager*/
+    const Iterator rend() const { return Iterator(lits - 1); } /*!< Iterateur inversé de fin du LitteraleManager*/
 
 };

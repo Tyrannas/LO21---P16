@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>792</width>
-    <height>622</height>
+    <width>999</width>
+    <height>671</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
       <x>10</x>
       <y>60</y>
       <width>295</width>
-      <height>291</height>
+      <height>301</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -178,8 +178,8 @@
      <rect>
       <x>310</x>
       <y>60</y>
-      <width>241</width>
-      <height>281</height>
+      <width>231</width>
+      <height>288</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -294,7 +294,7 @@
      <rect>
       <x>10</x>
       <y>360</y>
-      <width>541</width>
+      <width>531</width>
       <height>141</height>
      </rect>
     </property>
@@ -357,26 +357,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_EVAL">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>510</y>
-      <width>151</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>EVAL</string>
-    </property>
-   </widget>
    <widget class="QListWidget" name="affPile">
     <property name="geometry">
      <rect>
-      <x>558</x>
-      <y>0</y>
-      <width>221</width>
-      <height>561</height>
+      <x>560</x>
+      <y>60</y>
+      <width>201</width>
+      <height>491</height>
      </rect>
     </property>
     <property name="font">
@@ -391,18 +378,11 @@
      <rect>
       <x>9</x>
       <y>510</y>
-      <width>331</width>
+      <width>531</width>
       <height>51</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_4">
-     <item row="0" column="0">
-      <widget class="QPushButton" name="pushButton_STO">
-       <property name="text">
-        <string>STO</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="1">
       <widget class="QPushButton" name="pushButton_FORGET">
        <property name="text">
@@ -410,7 +390,84 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButton_STO">
+       <property name="text">
+        <string>STO</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pushButton_EVAL">
+       <property name="text">
+        <string>EVAL</string>
+       </property>
+      </widget>
+     </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>10</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>                Mémoire</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>10</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>           Variables</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>60</y>
+      <width>201</width>
+      <height>491</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="affErreur">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>570</y>
+      <width>961</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto Light</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">affErreur{
+color:rgb(255, 0, 0);
+}</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -418,7 +475,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>792</width>
+     <width>999</width>
      <height>26</height>
     </rect>
    </property>
