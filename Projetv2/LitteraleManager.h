@@ -128,9 +128,10 @@ public:
     *  \param p3 : double dans le cas de la creation d'une littérale reelle
     *  \param p4 : pointeur sur numerique n°1 dans le cas de la création d'une litterale complexe
     *  \param p5 : second pointeur sur numerique dans le cas de la creation d'une litterale complexe
-	*  \return reference sur la litterale cree
+    *  \param p6 : string dans le cas de la création d'une Litterale atome, expression ou programme
+    *  \return reference sur la litterale cree
 	*/
-    Litterale* const littFactory(TypeLitterale type, int p1, int p2 = NULL, double p3 = NULL, Numerique* p4 = nullptr, Numerique* p5 = nullptr);
+    Litterale* const littFactory(TypeLitterale type, int p1, int p2 = NULL, double p3 = NULL, Numerique* p4 = nullptr, Numerique* p5 = nullptr, string p6 = "");
 	/*!
 	*  \brief Suppression d'une litterale du Manager
 	*  \param l : pointeur sur la litterale a supprimer

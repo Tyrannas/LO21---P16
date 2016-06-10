@@ -40,6 +40,9 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <property name="verticalSpacing">
+      <number>17</number>
+     </property>
      <item row="4" column="1">
       <widget class="QPushButton" name="pushButton_FRAC">
        <property name="text">
@@ -179,7 +182,7 @@
       <x>310</x>
       <y>60</y>
       <width>231</width>
-      <height>288</height>
+      <height>301</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -187,7 +190,7 @@
       <number>0</number>
      </property>
      <property name="verticalSpacing">
-      <number>15</number>
+      <number>7</number>
      </property>
      <item row="2" column="0">
       <widget class="QPushButton" name="pushButton_MUL">
@@ -361,9 +364,9 @@
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>60</y>
+      <y>100</y>
       <width>201</width>
-      <height>491</height>
+      <height>451</height>
      </rect>
     </property>
     <property name="font">
@@ -410,7 +413,7 @@
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>10</y>
+      <y>50</y>
       <width>201</width>
       <height>41</height>
      </rect>
@@ -423,7 +426,7 @@
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>10</y>
+      <y>50</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -436,9 +439,9 @@
     <property name="geometry">
      <rect>
       <x>780</x>
-      <y>60</y>
+      <y>100</y>
       <width>201</width>
-      <height>491</height>
+      <height>451</height>
      </rect>
     </property>
    </widget>
@@ -469,6 +472,19 @@ color:rgb(255, 0, 0);
 }</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_VALIDER">
+    <property name="geometry">
+     <rect>
+      <x>562</x>
+      <y>7</y>
+      <width>421</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>V A L I D E R</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -493,15 +509,7 @@ color:rgb(255, 0, 0);
     </property>
     <addaction name="actionQuitter"/>
    </widget>
-   <widget class="QMenu" name="menuEdition">
-    <property name="title">
-     <string>Edition</string>
-    </property>
-    <addaction name="actionAnnuler_Ctrl_Z"/>
-    <addaction name="actionR_tablie_Ctrl_Y"/>
-   </widget>
    <addaction name="menuMenu"/>
-   <addaction name="menuEdition"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuitter">

@@ -30,7 +30,7 @@ public:
 	*  \param key : chaine de caracteres servant d'identifiant a la variable ou au programme
 	*  \param value : pointeur sur la litterale stockee
 	*/
-	HashEntry(string key, Litterale* value) : key(key), value(value) {};
+    HashEntry(string key, Litterale* value) : key(key), value(value) {}
 
 	/*!
 	*  \brief Accesseur

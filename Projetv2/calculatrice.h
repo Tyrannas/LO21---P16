@@ -21,7 +21,8 @@ class calculatrice : public QMainWindow
 public:
     explicit calculatrice(QWidget *parent = 0);
     ~calculatrice();
-     void keyPressEvent ( QKeyEvent * event );
+    bool eventFilter(QObject *obj, QEvent *event);
+    void keyPressEvent ( QKeyEvent * event );
 
 
 private:

@@ -217,6 +217,7 @@ Makefile: ..\Projetv2\Projetv2.pro C:\Qt\Qt5.6.0\5.6\msvc2015_64\mkspecs\win32-m
 		C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\qtmaind.prl \
 		C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\Qt5Widgets.prl \
 		C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\Qt5Gui.prl \
+		C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\Qt5Xml.prl \
 		C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\Qt5Core.prl
 	$(QMAKE) -spec win32-msvc2015 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile ..\Projetv2\Projetv2.pro
 C:\Qt\Qt5.6.0\5.6\msvc2015_64\mkspecs\features\spec_pre.prf:
@@ -363,6 +364,7 @@ C:\Qt\Qt5.6.0\5.6\msvc2015_64\mkspecs\features\lex.prf:
 C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\qtmaind.prl:
 C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\Qt5Widgets.prl:
 C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\Qt5Gui.prl:
+C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\Qt5Xml.prl:
 C:\Qt\Qt5.6.0\5.6\msvc2015_64\lib\Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-msvc2015 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile ..\Projetv2\Projetv2.pro

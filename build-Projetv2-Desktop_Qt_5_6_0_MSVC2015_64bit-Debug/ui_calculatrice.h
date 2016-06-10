@@ -92,9 +92,9 @@ public:
     QLabel *label_2;
     QTableView *tableView;
     QLineEdit *affErreur;
+    QPushButton *pushButton_VALIDER;
     QMenuBar *menubar;
     QMenu *menuMenu;
-    QMenu *menuEdition;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *calculatrice)
@@ -122,6 +122,7 @@ public:
         gridLayoutWidget->setGeometry(QRect(10, 60, 295, 301));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setVerticalSpacing(17);
         gridLayout->setContentsMargins(0, 0, 0, 0);
         pushButton_FRAC = new QPushButton(gridLayoutWidget);
         pushButton_FRAC->setObjectName(QStringLiteral("pushButton_FRAC"));
@@ -218,11 +219,11 @@ public:
 
         gridLayoutWidget_2 = new QWidget(centralwidget);
         gridLayoutWidget_2->setObjectName(QStringLiteral("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(310, 60, 231, 288));
+        gridLayoutWidget_2->setGeometry(QRect(310, 60, 231, 301));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setHorizontalSpacing(0);
-        gridLayout_2->setVerticalSpacing(15);
+        gridLayout_2->setVerticalSpacing(7);
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         pushButton_MUL = new QPushButton(gridLayoutWidget_2);
         pushButton_MUL->setObjectName(QStringLiteral("pushButton_MUL"));
@@ -342,7 +343,7 @@ public:
 
         affPile = new QListWidget(centralwidget);
         affPile->setObjectName(QStringLiteral("affPile"));
-        affPile->setGeometry(QRect(560, 60, 201, 491));
+        affPile->setGeometry(QRect(560, 100, 201, 451));
         QFont font2;
         font2.setFamily(QStringLiteral("Roboto Light"));
         font2.setPointSize(20);
@@ -370,13 +371,13 @@ public:
 
         label = new QLabel(centralwidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(560, 10, 201, 41));
+        label->setGeometry(QRect(560, 50, 201, 41));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(800, 10, 171, 41));
+        label_2->setGeometry(QRect(800, 50, 171, 41));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(780, 60, 201, 491));
+        tableView->setGeometry(QRect(780, 100, 201, 451));
         affErreur = new QLineEdit(centralwidget);
         affErreur->setObjectName(QStringLiteral("affErreur"));
         affErreur->setGeometry(QRect(20, 570, 961, 41));
@@ -391,6 +392,9 @@ public:
         affErreur->setStyleSheet(QLatin1String("affErreur{\n"
 "color:rgb(255, 0, 0);\n"
 "}"));
+        pushButton_VALIDER = new QPushButton(centralwidget);
+        pushButton_VALIDER->setObjectName(QStringLiteral("pushButton_VALIDER"));
+        pushButton_VALIDER->setGeometry(QRect(562, 7, 421, 41));
         calculatrice->setCentralWidget(centralwidget);
         menubar = new QMenuBar(calculatrice);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -401,18 +405,13 @@ public:
         menubar->setCursor(QCursor(Qt::ArrowCursor));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
-        menuEdition = new QMenu(menubar);
-        menuEdition->setObjectName(QStringLiteral("menuEdition"));
         calculatrice->setMenuBar(menubar);
         statusbar = new QStatusBar(calculatrice);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         calculatrice->setStatusBar(statusbar);
 
         menubar->addAction(menuMenu->menuAction());
-        menubar->addAction(menuEdition->menuAction());
         menuMenu->addAction(actionQuitter);
-        menuEdition->addAction(actionAnnuler_Ctrl_Z);
-        menuEdition->addAction(actionR_tablie_Ctrl_Y);
 
         retranslateUi(calculatrice);
 
@@ -470,8 +469,8 @@ public:
         pushButton_EVAL->setText(QApplication::translate("calculatrice", "EVAL", 0));
         label->setText(QApplication::translate("calculatrice", "                M\303\251moire", 0));
         label_2->setText(QApplication::translate("calculatrice", "           Variables", 0));
+        pushButton_VALIDER->setText(QApplication::translate("calculatrice", "V A L I D E R", 0));
         menuMenu->setTitle(QApplication::translate("calculatrice", "Menu", 0));
-        menuEdition->setTitle(QApplication::translate("calculatrice", "Edition", 0));
     } // retranslateUi
 
 };

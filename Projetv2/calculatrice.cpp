@@ -15,12 +15,14 @@ calculatrice::calculatrice(QWidget *parent) :
     ui(new Ui::calculatrice)
 {
     ui->setupUi(this);
+    ui->ligneCommande->installEventFilter(this);
     QSignalMapper* mapLitt = new QSignalMapper(this);
     QSignalMapper* mapOp = new QSignalMapper(this);
     ui->affErreur->setDisabled(1);
     //ui->affErreur->setText("Erreur: haha bim, une erreur");
 
     connect(ui->pushButton_SPACE,SIGNAL(clicked()), this, SLOT(space()));
+    connect(ui->pushButton_VALIDER,SIGNAL(clicked()), this, SLOT(execute()));
     //connect(ui->actionQuitter,SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
 
     connect(ui->pushButton_0,SIGNAL(clicked()), mapLitt, SLOT(map()));
@@ -139,20 +141,15 @@ void calculatrice::execute(QString s){
         this->c.parse(input);
     }
     QStringList items;
-//    for (Pile::Iterator it = p.rbegin(); it != p.rend(); --it){
-//       Item i = *it;
-//       Litterale* test = i.getLitterale();
-//       const string& test2 = test->toString();
-//       QString qstr = QString::fromStdString(test2);
-//       items += qstr;
-//        qWarning("Test");
-//    }
-    for(LitteraleManager::Iterator it = lm.rbegin();it!=lm.rend();--it){
-        Litterale* l = *it;
-        const string& s = l->toString();
-        QString qstr = QString::fromStdString(s);
-        items += qstr;
+    for (Pile::Iterator it = p.rbegin(); it != p.rend(); --it){
+       Item i = *it;
+       Litterale* test = i.getLitterale();
+       const string& test2 = test->toString();
+       QString qstr = QString::fromStdString(test2);
+       items += qstr;
+        qWarning("Test");
     }
+
     ui->affPile->clear();
     ui->affPile->addItems(items);
 
@@ -168,6 +165,7 @@ void calculatrice::space(){
 
 void calculatrice::keyPressEvent(QKeyEvent *event)
 {
+    QKeySequence(Qt::Key_0,Qt::Key_1);
     if (event->matches(QKeySequence::Undo))
       {
         execute("UNDO");
@@ -180,8 +178,41 @@ void calculatrice::keyPressEvent(QKeyEvent *event)
         case Qt::Key_Return:
             execute("");
             break;
+        case Qt::Key_Space:
+            space();
+            break;
         default: break;
     }
+}
+
+bool calculatrice::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == ui->ligneCommande && event->type() == QEvent::KeyRelease)
+    {
+        QKeyEvent *kEvent = static_cast<QKeyEvent*>(event);
+        if (kEvent->matches(QKeySequence::Undo))
+          {
+            execute("UNDO");
+          }
+        if (kEvent->matches(QKeySequence::Redo))
+          {
+            execute("REDO");
+          }
+        this->entree = ui->ligneCommande->text();
+        switch(kEvent->key()){
+            case Qt::Key_Plus:
+                execute("");
+            case Qt::Key_Minus:
+                execute("");
+            case Qt::Key_multiply:
+                execute("");
+            case Qt::Key_Slash:
+                execute("");
+            case Qt::Key_Dollar:
+                execute("");
+        }
+    }
+    return QObject::eventFilter(obj, event);
 }
 
 

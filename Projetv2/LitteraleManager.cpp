@@ -52,18 +52,16 @@ Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int 
 		return c;
 	}
 
-	/*
 	if (type == TypeLitterale::tExpression) {
-		Expression * const e = new Expression(s);
+        Expression * const e = new Expression(p6);
 		addLitterale(e);
 		return e;
 	}
 	if (type == TypeLitterale::tProgramme) {
-		Programme * const p = new Programme(s);
+        Programme * const p = new Programme(p6);
 		addLitterale(p);
 		return p;
 	}
-	*/
     else throw ComputerException("Erreur Factory: type incorrect.");
 }
 
