@@ -8,6 +8,7 @@
 #include "LitteraleManager.h"
 #include "Pile.h"
 #include "HashMap.h"
+#include <QKeyEvent>
 
 namespace Ui {
 class calculatrice;
@@ -20,18 +21,24 @@ class calculatrice : public QMainWindow
 public:
     explicit calculatrice(QWidget *parent = 0);
     ~calculatrice();
+     void keyPressEvent ( QKeyEvent * event );
+
 
 private:
     Ui::calculatrice *ui;
     QString entree;
-    LitteraleManager& lm;
-    Pile& p;
-    HashMap& hm;
+    LitteraleManager lm;
+    Pile p;
+    HashMap hm;
     Controleur c;
+
+
+
 private slots:
     void readLitt(QString s);
-    void execute(QString s);
+    void execute(QString s = "");
     void space();
+
 };
 
 #endif // CALCULATRICE_H

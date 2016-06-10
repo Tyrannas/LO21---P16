@@ -56,16 +56,16 @@ public:
     QPushButton *pushButton_SPACE;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButton_DEN;
-    QPushButton *pushButton_DOLLAR;
     QPushButton *pushButton_MUL;
     QPushButton *pushButton_DIVIDE;
+    QPushButton *pushButton_DOLLAR;
     QPushButton *pushButton_EQ;
     QPushButton *pushButton_ADD;
+    QPushButton *pushButton_DEN;
     QPushButton *pushButton_SOUS;
     QPushButton *pushButton_MOD;
-    QPushButton *pushButton_DIV;
     QPushButton *pushButton_NEG;
+    QPushButton *pushButton_DIV;
     QPushButton *pushButton_IF;
     QPushButton *pushButton_NUM;
     QPushButton *pushButton_RE;
@@ -81,7 +81,7 @@ public:
     QPushButton *pushButton_DROP;
     QPushButton *pushButton_SWAP;
     QPushButton *pushButton_EVAL;
-    QListWidget *listWidget;
+    QListWidget *affPile;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout_4;
     QPushButton *pushButton_STO;
@@ -95,7 +95,7 @@ public:
     {
         if (calculatrice->objectName().isEmpty())
             calculatrice->setObjectName(QStringLiteral("calculatrice"));
-        calculatrice->resize(842, 622);
+        calculatrice->resize(792, 622);
         actionQuitter = new QAction(calculatrice);
         actionQuitter->setObjectName(QStringLiteral("actionQuitter"));
         actionAnnuler_Ctrl_Z = new QAction(calculatrice);
@@ -212,22 +212,12 @@ public:
 
         gridLayoutWidget_2 = new QWidget(centralwidget);
         gridLayoutWidget_2->setObjectName(QStringLiteral("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(310, 60, 241, 288));
+        gridLayoutWidget_2->setGeometry(QRect(310, 60, 241, 281));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setHorizontalSpacing(0);
         gridLayout_2->setVerticalSpacing(15);
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_DEN = new QPushButton(gridLayoutWidget_2);
-        pushButton_DEN->setObjectName(QStringLiteral("pushButton_DEN"));
-
-        gridLayout_2->addWidget(pushButton_DEN, 4, 1, 1, 1);
-
-        pushButton_DOLLAR = new QPushButton(gridLayoutWidget_2);
-        pushButton_DOLLAR->setObjectName(QStringLiteral("pushButton_DOLLAR"));
-
-        gridLayout_2->addWidget(pushButton_DOLLAR, 5, 0, 1, 1);
-
         pushButton_MUL = new QPushButton(gridLayoutWidget_2);
         pushButton_MUL->setObjectName(QStringLiteral("pushButton_MUL"));
 
@@ -237,6 +227,11 @@ public:
         pushButton_DIVIDE->setObjectName(QStringLiteral("pushButton_DIVIDE"));
 
         gridLayout_2->addWidget(pushButton_DIVIDE, 3, 0, 1, 1);
+
+        pushButton_DOLLAR = new QPushButton(gridLayoutWidget_2);
+        pushButton_DOLLAR->setObjectName(QStringLiteral("pushButton_DOLLAR"));
+
+        gridLayout_2->addWidget(pushButton_DOLLAR, 5, 0, 1, 1);
 
         pushButton_EQ = new QPushButton(gridLayoutWidget_2);
         pushButton_EQ->setObjectName(QStringLiteral("pushButton_EQ"));
@@ -248,6 +243,11 @@ public:
 
         gridLayout_2->addWidget(pushButton_ADD, 0, 0, 1, 1);
 
+        pushButton_DEN = new QPushButton(gridLayoutWidget_2);
+        pushButton_DEN->setObjectName(QStringLiteral("pushButton_DEN"));
+
+        gridLayout_2->addWidget(pushButton_DEN, 4, 1, 1, 1);
+
         pushButton_SOUS = new QPushButton(gridLayoutWidget_2);
         pushButton_SOUS->setObjectName(QStringLiteral("pushButton_SOUS"));
 
@@ -258,15 +258,15 @@ public:
 
         gridLayout_2->addWidget(pushButton_MOD, 0, 1, 1, 1);
 
-        pushButton_DIV = new QPushButton(gridLayoutWidget_2);
-        pushButton_DIV->setObjectName(QStringLiteral("pushButton_DIV"));
-
-        gridLayout_2->addWidget(pushButton_DIV, 1, 1, 1, 1);
-
         pushButton_NEG = new QPushButton(gridLayoutWidget_2);
         pushButton_NEG->setObjectName(QStringLiteral("pushButton_NEG"));
 
         gridLayout_2->addWidget(pushButton_NEG, 2, 1, 1, 1);
+
+        pushButton_DIV = new QPushButton(gridLayoutWidget_2);
+        pushButton_DIV->setObjectName(QStringLiteral("pushButton_DIV"));
+
+        gridLayout_2->addWidget(pushButton_DIV, 1, 1, 1, 1);
 
         pushButton_IF = new QPushButton(gridLayoutWidget_2);
         pushButton_IF->setObjectName(QStringLiteral("pushButton_IF"));
@@ -337,9 +337,13 @@ public:
         pushButton_EVAL = new QPushButton(centralwidget);
         pushButton_EVAL->setObjectName(QStringLiteral("pushButton_EVAL"));
         pushButton_EVAL->setGeometry(QRect(390, 510, 151, 41));
-        listWidget = new QListWidget(centralwidget);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(560, 0, 271, 561));
+        affPile = new QListWidget(centralwidget);
+        affPile->setObjectName(QStringLiteral("affPile"));
+        affPile->setGeometry(QRect(558, 0, 221, 561));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Roboto Light"));
+        font2.setPointSize(20);
+        affPile->setFont(font2);
         gridLayoutWidget_4 = new QWidget(centralwidget);
         gridLayoutWidget_4->setObjectName(QStringLiteral("gridLayoutWidget_4"));
         gridLayoutWidget_4->setGeometry(QRect(9, 510, 331, 51));
@@ -359,10 +363,10 @@ public:
         calculatrice->setCentralWidget(centralwidget);
         menubar = new QMenuBar(calculatrice);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 842, 26));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Rounded Elegance"));
-        menubar->setFont(font2);
+        menubar->setGeometry(QRect(0, 0, 792, 26));
+        QFont font3;
+        font3.setFamily(QStringLiteral("Rounded Elegance"));
+        menubar->setFont(font3);
         menubar->setCursor(QCursor(Qt::ArrowCursor));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
@@ -408,16 +412,16 @@ public:
         pushButton_COMPLEXE->setText(QApplication::translate("calculatrice", "i", 0));
         pushButton_RB->setText(QApplication::translate("calculatrice", "]", 0));
         pushButton_SPACE->setText(QApplication::translate("calculatrice", "ESPACE", 0));
-        pushButton_DEN->setText(QApplication::translate("calculatrice", "DEN", 0));
-        pushButton_DOLLAR->setText(QApplication::translate("calculatrice", "$", 0));
         pushButton_MUL->setText(QApplication::translate("calculatrice", "*", 0));
         pushButton_DIVIDE->setText(QApplication::translate("calculatrice", "\303\267", 0));
+        pushButton_DOLLAR->setText(QApplication::translate("calculatrice", "$", 0));
         pushButton_EQ->setText(QApplication::translate("calculatrice", "=", 0));
         pushButton_ADD->setText(QApplication::translate("calculatrice", "+", 0));
+        pushButton_DEN->setText(QApplication::translate("calculatrice", "DEN", 0));
         pushButton_SOUS->setText(QApplication::translate("calculatrice", "-", 0));
         pushButton_MOD->setText(QApplication::translate("calculatrice", "MOD", 0));
-        pushButton_DIV->setText(QApplication::translate("calculatrice", "DIV", 0));
         pushButton_NEG->setText(QApplication::translate("calculatrice", "NEG", 0));
+        pushButton_DIV->setText(QApplication::translate("calculatrice", "DIV", 0));
         pushButton_IF->setText(QApplication::translate("calculatrice", "IFT", 0));
         pushButton_NUM->setText(QApplication::translate("calculatrice", "NUM", 0));
         pushButton_RE->setText(QApplication::translate("calculatrice", "RE", 0));

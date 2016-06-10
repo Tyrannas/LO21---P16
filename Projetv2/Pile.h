@@ -26,12 +26,12 @@ public:
 	/*!
 	*  \brief Constructeur
 	*/
-	Item() { lit = nullptr; };
+    Item() { lit = nullptr; }
 	/*!
 	*  \brief Editeur : permet de changer la litterale pointee
 	*  \param l : pointeur sur la nouvelle litterale
 	*/
-	inline void setLitterale(Litterale* const l) { lit = l; };
+    inline void setLitterale(Litterale* const l) { lit = l; }
 	/*!
 	*  \brief Accesseur
 	*  \return litterale pointee par l'item
@@ -44,7 +44,7 @@ public:
 	/*!
 	*  \brief Reset de l'item
 	*/
-	void raz() { lit = nullptr; };
+    void raz() { lit = nullptr; }
 };
 
 
@@ -133,6 +133,28 @@ public:
 		nb = m.getnb();
 		
 	}
+    /*!
+    *  \brief Implementation d'un interateur pour la classe pile. Permet de parcourir aisement les items.
+    */
+    class Iterator
+        {
+        friend class Pile;
+        public:
+            Iterator& operator++() { items++; return *this; }
+            Iterator& operator--() { items--; return *this; }
+            Item& operator*() const { return *items; }
+            bool operator!=(const Iterator& it) const { return (items != it.items); }
+        private:
+            Item* items;
+            Iterator(Item* _items) :items(_items) {}
+        };
+
+        //Iterator getIterator() const { return Iterator(exps, nb); } // Implémentation 1
+        const Iterator begin() const { return Iterator(items); } /*!< Iterateur de début de Pile*/
+        const Iterator end() const { return Iterator(items + nb); } /*!< Iterateur de fin de Pile*/
+        const Iterator rbegin() const { return Iterator(items + nb - 1); } /*!< Iterateur inversé de début de Pile*/
+        const Iterator rend() const { return Iterator(items - 1); } /*!< Iterateur inversé de fin de Pile*/
+
 };
 
 

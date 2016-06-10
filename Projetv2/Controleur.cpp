@@ -8,6 +8,7 @@
 
 void Controleur::parse(const string& c) {
     const char * test = c.c_str();
+    qWarning(test);
 	if (c == "UNDO") {
 		if (canRedo)
 			throw ComputerException("Impossible de faire deux Undo d'affile\n");
@@ -28,7 +29,7 @@ void Controleur::parse(const string& c) {
 		return;
 	}
 
-    //litMng.getMem().save(litMng.getLits(), litMng.taille());
+    litMng.getMem().save(litMng.getLits(), litMng.taille());
 
     int operateurUnaire = estUnOperateurUnaire(c);
     int operateurBinaire = estUnOperateurBinaire(c);
@@ -129,8 +130,8 @@ void Controleur::parse(const string& c) {
 		}
 		else if (estUnEntier(c)) {
             try{
-			Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(c)));
-			stack.push(e);
+                Entiere* const e = dynamic_cast<Entiere* const>(litMng.littFactory(tEntiere, stoi(c)));
+                stack.push(e);
             }
             catch(ComputerException e){
                 string s = e.getInfo();
@@ -269,7 +270,6 @@ void Controleur::operationUnaire(int i){
 
 void Controleur::operationBinaire(int i)
 {
-    qWarning("Au moins on entre ici");
 	Litterale* const v1 = stack.top();
     stack.drop();
     Litterale* v2 = stack.top();

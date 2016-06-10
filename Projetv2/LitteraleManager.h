@@ -130,7 +130,7 @@ public:
     *  \param p5 : second pointeur sur numerique dans le cas de la creation d'une litterale complexe
 	*  \return reference sur la litterale cree
 	*/
-    Litterale* const littFactory(TypeLitterale type, int p1=NULL, int p2 = NULL, double p3 = NULL, Numerique* p4 = nullptr, Numerique* p5 = nullptr);
+    Litterale* const littFactory(TypeLitterale type, int p1, int p2 = NULL, double p3 = NULL, Numerique* p4 = nullptr, Numerique* p5 = nullptr);
 	/*!
 	*  \brief Suppression d'une litterale du Manager
 	*  \param l : pointeur sur la litterale a supprimer

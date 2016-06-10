@@ -51,6 +51,7 @@ Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int 
 		addLitterale(c);
 		return c;
 	}
+
 	/*
 	if (type == TypeLitterale::tExpression) {
 		Expression * const e = new Expression(s);
@@ -63,6 +64,7 @@ Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int 
 		return p;
 	}
 	*/
+    else throw ComputerException("Erreur Factory: type incorrect.");
 }
 
 

@@ -3,6 +3,7 @@
 #include <string>
 #include <QStringList>
 #include <iostream>
+using namespace std;
 
 
 calculatrice::calculatrice(QWidget *parent) :
@@ -16,7 +17,7 @@ calculatrice::calculatrice(QWidget *parent) :
     ui->setupUi(this);
     QSignalMapper* mapLitt = new QSignalMapper(this);
     QSignalMapper* mapOp = new QSignalMapper(this);
-
+    //ui->ligneCommande->setDisabled(1);
 
 
     connect(ui->pushButton_SPACE,SIGNAL(clicked()), this, SLOT(space()));
@@ -137,13 +138,44 @@ void calculatrice::execute(QString s){
         //qWarning(test);
         this->c.parse(input);
     }
+    QStringList items;
+    for (Pile::Iterator it = p.rbegin(); it != p.rend(); --it){
+       Item i = *it;
+       Litterale* test = i.getLitterale();
+       const string& test2 = test->toString();
+       QString qstr = QString::fromStdString(test2);
+       items += qstr;
+       // qWarning("Test");
+    }
+    ui->affPile->clear();
+    ui->affPile->addItems(items);
+
     this->entree.clear();
     ui->ligneCommande->clear();
 }
 
+
 void calculatrice::space(){
     this->entree += " ";
     ui->ligneCommande->setText(this->entree);
+}
+
+void calculatrice::keyPressEvent(QKeyEvent *event)
+{
+    if (event->matches(QKeySequence::Undo))
+      {
+        execute("UNDO");
+      }
+    if (event->matches(QKeySequence::Redo))
+      {
+        execute("REDO");
+      }
+    switch(event->key()){
+        case Qt::Key_Return:
+            execute("");
+            break;
+        default: break;
+    }
 }
 
 

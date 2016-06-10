@@ -26,18 +26,18 @@ Pile::~Pile() {
 }
 
 void Pile::affiche() const {
-	cout << "*********************************\n";
-	cout << "*********************************\n";
-	for (int i = min(nb, nbAffiche); i > 0; i--) {
-		if (i <= nb) {
-			cout << "\t";
-			items[i - 1].getLitterale()->affiche();
-			cout << "\n";
-		}
-		else
-			cout << i << "\n";
-	}
-	cout << "*********************************\n";
+    cout << "*********************************\n";
+    cout << "*********************************\n";
+    for (int i = min(nb, nbAffiche); i > 0; i--) {
+        if (i <= nb) {
+            cout << "\t";
+            items[i - 1].getLitterale()->toString();
+            cout << "\n";
+        }
+        else
+            cout << i << "\n";
+    }
+    cout << "*********************************\n";
 }
 
 void Pile::push(Litterale* const l) {
