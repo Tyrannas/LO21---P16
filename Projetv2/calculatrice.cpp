@@ -132,13 +132,26 @@ void calculatrice::readLitt(QString s){
 
 void calculatrice::execute(QString s){
     ui->affErreur->clear();
-    this->entree += s;
-    QStringList sList = this->entree.split(" ");
-    for(QStringList::iterator it = sList.begin(); it != sList.end(); ++it){
-        QString current = *it;
-        std::string input = current.toLocal8Bit().constData();
-        const char * test = input.c_str();
-        //qWarning(test);
+    ui->affErreur->setStyleSheet("");
+    if(this->entree.indexOf("'") == -1){
+        this->entree += s;
+        QStringList sList = this->entree.split(" ");
+        for(QStringList::iterator it = sList.begin(); it != sList.end(); ++it){
+            QString current = *it;
+            std::string input = current.toLocal8Bit().constData();
+            try{
+                this->c.parse(input);
+            }
+            catch(ComputerException e){
+                string s = e.getInfo();
+                QString erreur = QString::fromStdString(s);
+                ui->affErreur->setText(erreur);
+                ui->affErreur->setStyleSheet("QLineEdit{background-color : rgb(222,65,80); color: white}");
+            }
+        }
+   }
+   else{
+        std::string input = this->entree.toLocal8Bit().constData();
         try{
             this->c.parse(input);
         }
@@ -146,8 +159,9 @@ void calculatrice::execute(QString s){
             string s = e.getInfo();
             QString erreur = QString::fromStdString(s);
             ui->affErreur->setText(erreur);
+            ui->affErreur->setStyleSheet("QLineEdit{background-color : rgb(222,65,80); color:white}");
         }
-    }
+   }
     QStringList items;
     for (Pile::Iterator it = p.rbegin(); it != p.rend(); --it){
        Item i = *it;
@@ -207,17 +221,19 @@ bool calculatrice::eventFilter(QObject *obj, QEvent *event)
             execute("REDO");
           }
         this->entree = ui->ligneCommande->text();
-        switch(kEvent->key()){
-            case Qt::Key_Plus:
-                execute("");
-            case Qt::Key_Minus:
-                execute("");
-            case Qt::Key_multiply:
-                execute("");
-            case Qt::Key_Slash:
-                execute("");
-            case Qt::Key_Dollar:
-                execute("");
+        if(this->entree.indexOf("'") == -1){
+            switch(kEvent->key()){
+                case Qt::Key_Plus:
+                    execute("");
+                case Qt::Key_Minus:
+                    execute("");
+                case Qt::Key_multiply:
+                    execute("");
+                case Qt::Key_Slash:
+                    execute("");
+                case Qt::Key_Dollar:
+                    execute("");
+            }
         }
     }
     return QObject::eventFilter(obj, event);
