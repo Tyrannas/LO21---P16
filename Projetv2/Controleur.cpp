@@ -338,13 +338,16 @@ void Controleur::operationBinaire(int i)
             //v2.eval();
         break;
     case 9:
-        if(v2->getType()!=tAtome)
+        if(v2->getType()!=tAtome){
             qWarning("Ce nest pas un atome");
-            //throw ComputerException("Impossible de proceder a l'affectation, la deuxieme litterale doit etre un atome");
-        ident = pt2->getId();
-        ident.erase(remove(ident.begin(), ident.end(), '\''), ident.end());
-        table.put(ident, v1);
-        qWarning("On a insere");
+            throw ComputerException("Impossible de proceder a l'affectation, la deuxieme litterale doit etre un atome");
+        }
+        else{
+            ident = pt2->getId();
+            ident.erase(remove(ident.begin(), ident.end(), '\''), ident.end());
+            table.put(ident, v1);
+            qWarning("On a insere");
+        }
         break;
     default:
         break;

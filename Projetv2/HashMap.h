@@ -55,12 +55,14 @@ public:
 */
 class HashMap {
 private:
+    int nb; /*!< Nombre d'entrée dans la table*/
 	HashEntry **table; /*!< Tableau de pointeurs de HashEntry*/
 public:
 	/*!
 	*  \brief Constructeur
 	*/
 	HashMap() {
+        nb = 0;
 		table = new HashEntry*[TABLE_SIZE];
 		for (int i = 0; i < TABLE_SIZE; i++)
 			table[i] = NULL;
@@ -95,6 +97,7 @@ public:
 		if (table[hash] != NULL)
 			delete table[hash];
 		table[hash] = new HashEntry(key, value);
+        nb++;
 	}
 	
 	/*!
@@ -109,6 +112,7 @@ public:
 		if (table[hash] != NULL) {
 			delete table[hash];
 			table[hash] = nullptr;
+            nb--;
 		}
 		else
             //throw ComputerException("Aucune variable stockee avec ce nom. Suppression impossible\n");
@@ -124,16 +128,25 @@ public:
 				delete table[i];
 		delete[] table;
 	}
-	/*
-	void affiche() {
-		int hash = 0;
-		cout << "|||||||||||||||||||||||||||||||||||\n";
-		while (table[hash] != NULL){
-			cout << table[hash]->getKey() << " ==> ";
-			table[hash]->getValue()->affiche();
-			cout << "\n";
-			hash = (hash + 1);
-		}
-	}
-	*/
+    /*!
+    *  \brief Implementation d'un interateur pour la classe HashMap. Permet de parcourir aisement les entrees de la table.
+    */
+    class Iterator
+        {
+        friend class HashMap;
+        public:
+            Iterator& operator++() { table++; return *this; }
+            Iterator& operator--() { table--; return *this; }
+            HashEntry* operator*() const { return *table; }
+            bool operator!=(const Iterator& it) const { return (table != it.table); }
+        private:
+            HashEntry** table;
+            Iterator(HashEntry** _t) :table(_t) {}
+        };
+
+    //Iterator getIterator() const { return Iterator(exps, nb); } // Implementation 1
+    const Iterator begin() const { return Iterator(table); } /*!< Iterateur de debut de HashMap*/
+    const Iterator end() const { return Iterator(table + nb); } /*!< Iterateur de fin de HashMap*/
+    const Iterator rbegin() const { return Iterator(table + nb - 1); } /*!< Iterateur inverse de debut de HashMap*/
+    const Iterator rend() const { return Iterator(table - 1); } /*!< Iterateur inverse de fin de HashMap*/
 };

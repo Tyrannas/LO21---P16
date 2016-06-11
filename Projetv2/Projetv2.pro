@@ -32,5 +32,5 @@ HEADERS  += \
     Service.h \
     Calculatrice.h
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     calculatrice.ui

@@ -105,7 +105,7 @@ public:
     {
         if (calculatrice->objectName().isEmpty())
             calculatrice->setObjectName(QStringLiteral("calculatrice"));
-        calculatrice->resize(1092, 874);
+        calculatrice->resize(1079, 581);
         QFont font;
         font.setFamily(QStringLiteral("Roboto Light"));
         calculatrice->setFont(font);
@@ -527,7 +527,7 @@ public:
         label_5->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
         valProg_2 = new QPushButton(centralwidget);
         valProg_2->setObjectName(QStringLiteral("valProg_2"));
-        valProg_2->setGeometry(QRect(1040, 360, 51, 41));
+        valProg_2->setGeometry(QRect(1040, 360, 41, 41));
         valProg_2->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white}\n"
 "QPushButton:hover{background:rgb(72, 72, 72);}"));
         nameProg_2 = new QLineEdit(centralwidget);
@@ -543,26 +543,6 @@ public:
         affErreur->setGeometry(QRect(780, 440, 321, 121));
         affErreur->setStyleSheet(QStringLiteral("background:rgb(122, 122, 122);color:white;border:none"));
         calculatrice->setCentralWidget(centralwidget);
-        ligneCommande->raise();
-        gridLayoutWidget->raise();
-        gridLayoutWidget_2->raise();
-        gridLayoutWidget_3->raise();
-        affPile->raise();
-        label->raise();
-        label_2->raise();
-        pushButton_VALIDER->raise();
-        editProg->raise();
-        pushButton_STO->raise();
-        nameProg->raise();
-        label_3->raise();
-        label_4->raise();
-        affVar->raise();
-        affVal->raise();
-        label_5->raise();
-        valProg_2->raise();
-        nameProg_2->raise();
-        label_6->raise();
-        affErreur->raise();
         statusbar = new QStatusBar(calculatrice);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         calculatrice->setStatusBar(statusbar);

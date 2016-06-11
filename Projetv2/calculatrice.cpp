@@ -22,6 +22,7 @@ calculatrice::calculatrice(QWidget *parent) :
     connect(ui->pushButton_SPACE,SIGNAL(clicked()), this, SLOT(space()));
     connect(ui->pushButton_VALIDER,SIGNAL(clicked()), this, SLOT(execute()));
     connect(ui->affPile, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(stackClicked(QListWidgetItem*)));
+    connect(ui->valProg_2, SIGNAL(clicked()), this, SLOT(addProg()));
     //connect(ui->actionQuitter,SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
 
     connect(ui->pushButton_0,SIGNAL(clicked()), mapLitt, SLOT(map()));
@@ -145,7 +146,7 @@ void calculatrice::execute(QString s){
                 string s = e.getInfo();
                 QString erreur = QString::fromStdString(s);
                 ui->affErreur->setText(erreur);
-                ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white");
+                ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white; border:none");
             }
         }
    }
@@ -158,7 +159,7 @@ void calculatrice::execute(QString s){
             string s = e.getInfo();
             QString erreur = QString::fromStdString(s);
             ui->affErreur->setText(erreur);
-            ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white");
+            ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white;border:none;");
         }
    }
     QStringList items;
@@ -174,6 +175,25 @@ void calculatrice::execute(QString s){
     ui->affPile->clear();
     ui->affPile->addItems(items);
 
+    QStringList vars;
+    QStringList vals;
+    for (HashMap::Iterator it = hm.begin(); it != hm.end(); ++it){
+       HashEntry* i = *it;
+       const string& var = i->getKey();
+       Litterale* l = i->getValue();
+       const string& val = l->toString();
+       QString qvar = QString::fromStdString(var);
+       QString qval = QString::fromStdString(val);
+       vars += qvar;
+       vals += qval;
+        qWarning("Test");
+    }
+    ui->affVar->clear();
+    ui->affVar->addItems(vars);
+
+    ui->affVal->clear();
+    ui->affVal->addItems(vals);
+
     this->entree.clear();
     ui->ligneCommande->clear();
 }
@@ -188,6 +208,14 @@ void calculatrice::stackClicked(QListWidgetItem *q)
 {
     this->entree+=q->text();
     ui->ligneCommande->setText(this->entree);
+}
+
+void calculatrice::addProg()
+{
+    if(ui->nameProg_2->text()!=""){
+        QString text = ui->valProg_2->text().remove('\n');
+        this->entree+= ui->nameProg_2->text()+ " " +
+    }
 }
 
 void calculatrice::keyPressEvent(QKeyEvent *event)
@@ -226,20 +254,20 @@ bool calculatrice::eventFilter(QObject *obj, QEvent *event)
             execute("REDO");
           }
         this->entree = ui->ligneCommande->text();
-        if(this->entree.indexOf("'(") == -1){
-            switch(kEvent->key()){
-                case Qt::Key_Plus:
-                    execute("");
-                case Qt::Key_Minus:
-                    execute("");
-                case Qt::Key_multiply:
-                    execute("");
-                case Qt::Key_Slash:
-                    execute("");
-                case Qt::Key_Dollar:
-                    execute("");
-            }
-        }
+//        if(this->entree.indexOf("'(") == -1){
+//            switch(kEvent->key()){
+//                case Qt::Key_Plus:
+//                    execute("");
+//                case Qt::Key_Minus:
+//                    execute("");
+//                case Qt::Key_multiply:
+//                    execute("");
+//                case Qt::Key_Slash:
+//                    execute("");
+//                case Qt::Key_Dollar:
+//                    execute("");
+//            }
+//        }
     }
     return QObject::eventFilter(obj, event);
 }
