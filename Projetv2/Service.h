@@ -90,29 +90,3 @@ bool estUnRationnel(const string& s);
 */
 
 bool estUnComplexe(const string& s);
-
-
-/*!
-*  \brief estUneAssignation: renvoie True si la chaine correspond à une assignation de variable.
-*  \param s, un référence constante sur une string. C'est la chaine à tester.
-*/
-
-//bool estUneAssignation(const string& s);
-
-/*!
-*  \brief estUneAssignationProg: renvoie True si la chaine correspond à une assignation de programme.
-*  \param s, un référence constante sur une string. C'est la chaine à tester.
-*/
-
-//bool estUneAssignationProg(const string& s);
-
-/*!
-*  \brief estUneSuppression: renvoie True si la chaine correspond à une suppression de variable ou de programme
-*  \param s, un référence constante sur une string. C'est la chaine à tester.
-*/
-
-bool estUneSuppression(const string& s);
-
-
-
-
