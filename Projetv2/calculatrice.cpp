@@ -131,7 +131,7 @@ void calculatrice::readLitt(QString s){
 
 void calculatrice::execute(QString s){
     ui->affErreur->clear();
-    ui->affErreur->setStyleSheet("");
+    ui->affErreur->setStyleSheet("background:rgb(122, 122, 122);color:white;border:none");
     if(this->entree.indexOf("'(") == -1){
         this->entree += s;
         QStringList sList = this->entree.split(" ");
@@ -145,7 +145,7 @@ void calculatrice::execute(QString s){
                 string s = e.getInfo();
                 QString erreur = QString::fromStdString(s);
                 ui->affErreur->setText(erreur);
-                ui->affErreur->setStyleSheet("QLineEdit{background-color : rgb(222,65,80); color: white}");
+                ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white");
             }
         }
    }
@@ -158,7 +158,7 @@ void calculatrice::execute(QString s){
             string s = e.getInfo();
             QString erreur = QString::fromStdString(s);
             ui->affErreur->setText(erreur);
-            ui->affErreur->setStyleSheet("QLineEdit{background-color : rgb(222,65,80); color:white}");
+            ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white");
         }
    }
     QStringList items;
