@@ -22,7 +22,7 @@ const int TABLE_SIZE = 128;
 
 class HashEntry {
 private:
-	string key; /*!< Chaine de caracteres servant d'identifiant a la variable ou au programme*/
+    string key; /*!< Chaine de caracteres servant d'identifiant a la variable ou au programme*/
 	Litterale* value; /*!< Pointeur sur la litterale stockee*/
 public:
 	/*!
@@ -37,7 +37,7 @@ public:
 	*  \return chaine caracteres servant d'identifiant a la variable ou au programme
 	*/
 	string getKey() {
-		return key;
+        return key;
 	}
 
 	/*!
@@ -71,12 +71,13 @@ public:
 	*  \param key : chaine de caracteres servant d'identifiant a la variable ou au programme dont on cherche la valeur
 	*  \return pointeur sur la litterale correspondante
 	*/
-	Litterale* get(string key) {
+    Litterale* get(string key) {
 		int hash = 0;
-		while (table[hash] != NULL && table[hash]->getKey() != key)
+        while (table[hash] != NULL && table[hash]->getKey() != key)
 			hash = (hash + 1);
 		if (table[hash] == NULL)
-			throw ComputerException("Aucune valeur trouvee pour cet identifiant\n");
+            //throw ComputerException("Aucune valeur trouvee pour cet identifiant\n");
+            qWarning("pas trouve de valeur correspondante");
 		else {
 			return table[hash]->getValue();
 		}
@@ -87,9 +88,9 @@ public:
 	*  \param key : chaine de caracteres servant d'identifiant a la variable ou au programme a inserer
 	*  \param value : pointeur sur la litterale correspondante a inserer
 	*/
-	void put(string key, Litterale* value) {
+    void put(string key, Litterale* value) {
 		int hash = 0;
-		while (table[hash] != NULL && table[hash]->getKey() != key)
+        while (table[hash] != NULL && table[hash]->getKey() != key)
 			hash = (hash + 1);
 		if (table[hash] != NULL)
 			delete table[hash];
@@ -100,16 +101,18 @@ public:
 	*  \brief Oubli d'une entree de la table
 	*  \param key : chaine de caracteres servant d'identifiant a la variable ou au programme
 	*/
-	void forget(string key) {
+    void forget(string key) {
 		int hash = 0;
-		while (table[hash] != NULL && table[hash]->getKey() != key)
-			hash = (hash + 1);
+        while (table[hash] != NULL && table[hash]->getKey() != key){
+            hash = (hash + 1);
+        }
 		if (table[hash] != NULL) {
 			delete table[hash];
 			table[hash] = nullptr;
 		}
 		else
-			throw ComputerException("Aucune variable stockee avec ce nom. Suppression impossible\n");
+            //throw ComputerException("Aucune variable stockee avec ce nom. Suppression impossible\n");
+            qWarning("Aucune valeur trouver a ce nom pour la suppression");
 	}
 
 	/*!

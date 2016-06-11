@@ -36,6 +36,16 @@ int estUnOperateurUnaire(const string& s);
 */
 
 bool estUneExpression(const string& s);
+
+
+/*!
+*  \brief estUnAtome: renvoie True si la chaine correspond à la création d'un atome
+*  \param s, un référence constante sur une string. C'est la chaine à tester.
+*/
+
+bool estUnAtome(const string& s);
+
+
 /*!
 *  \brief estUnProgramme: renvoie True si la chaine est une littérale programme.
 *  \param s, un référence constante sur une string. C'est la chaine à tester.
@@ -87,14 +97,14 @@ bool estUnComplexe(const string& s);
 *  \param s, un référence constante sur une string. C'est la chaine à tester.
 */
 
-bool estUneAssignation(const string& s);
+//bool estUneAssignation(const string& s);
 
 /*!
 *  \brief estUneAssignationProg: renvoie True si la chaine correspond à une assignation de programme.
 *  \param s, un référence constante sur une string. C'est la chaine à tester.
 */
 
-bool estUneAssignationProg(const string& s);
+//bool estUneAssignationProg(const string& s);
 
 /*!
 *  \brief estUneSuppression: renvoie True si la chaine correspond à une suppression de variable ou de programme
@@ -102,5 +112,7 @@ bool estUneAssignationProg(const string& s);
 */
 
 bool estUneSuppression(const string& s);
+
+
 
 

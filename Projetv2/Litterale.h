@@ -161,7 +161,7 @@ public:
     /*!
     *  \brief Constructeur
     */
-    Atome() { this->type = TypeLitterale::tAtome; }
+    Atome(string s) : id(s) { this->type = TypeLitterale::tAtome; }
     /*!
     *  \brief Accesseur
     *  \return chaine de caractere representant l'identifiant

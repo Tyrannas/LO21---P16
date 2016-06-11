@@ -62,6 +62,12 @@ Litterale * const LitteraleManager::littFactory(TypeLitterale type, int p1, int 
 		addLitterale(p);
 		return p;
 	}
+
+    if (type == TypeLitterale::tAtome) {
+        Atome * const p = new Atome(p6);
+        addLitterale(p);
+        return p;
+    }
     else throw ComputerException("Erreur Factory: type incorrect.");
 }
 

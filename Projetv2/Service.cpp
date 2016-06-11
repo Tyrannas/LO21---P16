@@ -24,6 +24,7 @@ int estUnOperateurBinaire(const string& s) {
     if (s == "MOD") return 6;
     if (s == "$") return 7;
     if (s == "IFT") return 8;
+    if (s == "STO") return 9;
     return -1;
 }
 
@@ -33,7 +34,13 @@ int estUnOperateurUnaire(const string& s){
     if (s == "DEN") return 3;
     if (s == "RE") return 4;
     if (s == "IM") return 5;
+    if (s == "FORGET") return 6;
     return -1;
+}
+
+bool estUnAtome(const string& s) {
+    regex reg("^'[A-Z]([A-Z]|[0-9])*'$");
+    return regex_match(s.cbegin(), s.cend(), reg);
 }
 
 bool estUneExpression(const string& s) {
@@ -71,6 +78,7 @@ bool estUnComplexe(const string& s) {
     return regex_match(s.cbegin(), s.cend(), reg);
 }
 
+/*
 bool estUneAssignation(const string& s) {
     regex reg("^STO\\s\\d+\\s'\\w+'$");
     return regex_match(s.cbegin(), s.cend(), reg);
@@ -80,7 +88,7 @@ bool estUneAssignationProg(const string& s) {
     regex reg("^STO\\s\\[\.+\\]\\s'\\w+'$");
     return regex_match(s.cbegin(), s.cend(), reg);
 }
-
+*/
 bool estUneSuppression(const string& s) {
     regex reg("^FORGET\\s'\\w+'$");
     return regex_match(s.cbegin(), s.cend(), reg);
