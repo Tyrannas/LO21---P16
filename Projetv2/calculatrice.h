@@ -9,6 +9,10 @@
 #include "Pile.h"
 #include "HashMap.h"
 #include <QKeyEvent>
+#include <string>
+#include <QStringList>
+#include <iostream>
+#include <QListWidgetItem>
 
 namespace Ui {
 class calculatrice;
@@ -39,6 +43,7 @@ private slots:
     void readLitt(QString s);
     void execute(QString s = "");
     void space();
+    void stackClicked(QListWidgetItem* q);
 
 };
 

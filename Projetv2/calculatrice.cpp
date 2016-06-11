@@ -1,8 +1,6 @@
 #include "Calculatrice.h"
 #include "ui_calculatrice.h"
-#include <string>
-#include <QStringList>
-#include <iostream>
+
 using namespace std;
 
 
@@ -23,6 +21,7 @@ calculatrice::calculatrice(QWidget *parent) :
 
     connect(ui->pushButton_SPACE,SIGNAL(clicked()), this, SLOT(space()));
     connect(ui->pushButton_VALIDER,SIGNAL(clicked()), this, SLOT(execute()));
+    connect(ui->affPile, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(stackClicked(QListWidgetItem*)));
     //connect(ui->actionQuitter,SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
 
     connect(ui->pushButton_0,SIGNAL(clicked()), mapLitt, SLOT(map()));
@@ -133,7 +132,7 @@ void calculatrice::readLitt(QString s){
 void calculatrice::execute(QString s){
     ui->affErreur->clear();
     ui->affErreur->setStyleSheet("");
-    if(this->entree.indexOf("'") == -1){
+    if(this->entree.indexOf("'(") == -1){
         this->entree += s;
         QStringList sList = this->entree.split(" ");
         for(QStringList::iterator it = sList.begin(); it != sList.end(); ++it){
@@ -185,6 +184,12 @@ void calculatrice::space(){
     ui->ligneCommande->setText(this->entree);
 }
 
+void calculatrice::stackClicked(QListWidgetItem *q)
+{
+    this->entree+=q->text();
+    ui->ligneCommande->setText(this->entree);
+}
+
 void calculatrice::keyPressEvent(QKeyEvent *event)
 {
     QKeySequence(Qt::Key_0,Qt::Key_1);
@@ -221,7 +226,7 @@ bool calculatrice::eventFilter(QObject *obj, QEvent *event)
             execute("REDO");
           }
         this->entree = ui->ligneCommande->text();
-        if(this->entree.indexOf("'") == -1){
+        if(this->entree.indexOf("'(") == -1){
             switch(kEvent->key()){
                 case Qt::Key_Plus:
                     execute("");
