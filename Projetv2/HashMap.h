@@ -93,8 +93,8 @@ public:
 		int hash = 0;
         while (table[hash] != NULL && table[hash]->getKey() != key)
 			hash = (hash + 1);
-		if (table[hash] != NULL)
-			delete table[hash];
+        if (table[hash] != NULL)
+            forget(key);
 		table[hash] = new HashEntry(key, value);
         nb++;
 	}
@@ -116,6 +116,7 @@ public:
 		else
             throw ComputerException("Aucune variable stockee avec ce nom. Suppression impossible\n");
 	}
+
 
 	/*!
 	*  \brief Destructeur

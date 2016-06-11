@@ -49,7 +49,7 @@ bool estUneExpression(const string& s) {
 }
 
 bool estUnProgramme(const string& s) {
-    regex reg("^\[.+\]$");
+    regex reg("^\\[.+\\]$");
     return regex_match(s.cbegin(), s.cend(), reg);
 }
 

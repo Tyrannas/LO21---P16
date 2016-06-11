@@ -72,17 +72,17 @@ public:
     QPushButton *pushButton_IM;
     QWidget *gridLayoutWidget_3;
     QGridLayout *gridLayout_3;
-    QPushButton *pushButton_LASTOP;
     QPushButton *pushButton_DUP;
     QPushButton *pushButton_CLEAR;
     QPushButton *pushButton_REDO;
     QPushButton *pushButton_SWAP;
     QPushButton *pushButton_DROP;
     QPushButton *pushButton_UNDO;
-    QPushButton *pushButton_LASTARG;
-    QPushButton *pushButton_FORGET;
     QPushButton *pushButton_EVAL;
-    QPushButton *pushButton;
+    QPushButton *pushButton_FORGET;
+    QPushButton *pushButton_LASTARG;
+    QPushButton *pushButton_SAVE;
+    QPushButton *pushButton_LASTOP;
     QPushButton *pushButton_STO;
     QListWidget *affPile;
     QTextEdit *editProg;
@@ -102,6 +102,7 @@ public:
     QLabel *label_2;
     QLabel *label_4;
     QLabel *label_3;
+    QPushButton *pushButton_OPEN;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *calculatrice)
@@ -373,13 +374,6 @@ public:
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         gridLayout_3->setHorizontalSpacing(0);
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        pushButton_LASTOP = new QPushButton(gridLayoutWidget_3);
-        pushButton_LASTOP->setObjectName(QStringLiteral("pushButton_LASTOP"));
-        pushButton_LASTOP->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
-"QPushButton:hover{background:rgb(72, 72, 72);}"));
-
-        gridLayout_3->addWidget(pushButton_LASTOP, 0, 1, 1, 1);
-
         pushButton_DUP = new QPushButton(gridLayoutWidget_3);
         pushButton_DUP->setObjectName(QStringLiteral("pushButton_DUP"));
         pushButton_DUP->setMinimumSize(QSize(0, 50));
@@ -423,12 +417,12 @@ public:
 
         gridLayout_3->addWidget(pushButton_UNDO, 2, 1, 1, 1);
 
-        pushButton_LASTARG = new QPushButton(gridLayoutWidget_3);
-        pushButton_LASTARG->setObjectName(QStringLiteral("pushButton_LASTARG"));
-        pushButton_LASTARG->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
+        pushButton_EVAL = new QPushButton(gridLayoutWidget_3);
+        pushButton_EVAL->setObjectName(QStringLiteral("pushButton_EVAL"));
+        pushButton_EVAL->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
 "QPushButton:hover{background:rgb(72, 72, 72);}"));
 
-        gridLayout_3->addWidget(pushButton_LASTARG, 1, 1, 1, 1);
+        gridLayout_3->addWidget(pushButton_EVAL, 2, 2, 1, 1);
 
         pushButton_FORGET = new QPushButton(gridLayoutWidget_3);
         pushButton_FORGET->setObjectName(QStringLiteral("pushButton_FORGET"));
@@ -437,19 +431,26 @@ public:
 
         gridLayout_3->addWidget(pushButton_FORGET, 1, 2, 1, 1);
 
-        pushButton_EVAL = new QPushButton(gridLayoutWidget_3);
-        pushButton_EVAL->setObjectName(QStringLiteral("pushButton_EVAL"));
-        pushButton_EVAL->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
+        pushButton_LASTARG = new QPushButton(gridLayoutWidget_3);
+        pushButton_LASTARG->setObjectName(QStringLiteral("pushButton_LASTARG"));
+        pushButton_LASTARG->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
 "QPushButton:hover{background:rgb(72, 72, 72);}"));
 
-        gridLayout_3->addWidget(pushButton_EVAL, 2, 2, 1, 1);
+        gridLayout_3->addWidget(pushButton_LASTARG, 1, 1, 1, 1);
 
-        pushButton = new QPushButton(gridLayoutWidget_3);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
+        pushButton_SAVE = new QPushButton(gridLayoutWidget_3);
+        pushButton_SAVE->setObjectName(QStringLiteral("pushButton_SAVE"));
+        pushButton_SAVE->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
 "QPushButton:hover{background:rgb(72, 72, 72);}"));
 
-        gridLayout_3->addWidget(pushButton, 3, 2, 1, 1);
+        gridLayout_3->addWidget(pushButton_SAVE, 3, 2, 1, 1);
+
+        pushButton_LASTOP = new QPushButton(gridLayoutWidget_3);
+        pushButton_LASTOP->setObjectName(QStringLiteral("pushButton_LASTOP"));
+        pushButton_LASTOP->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
+"QPushButton:hover{background:rgb(72, 72, 72);}"));
+
+        gridLayout_3->addWidget(pushButton_LASTOP, 0, 1, 1, 1);
 
         pushButton_STO = new QPushButton(gridLayoutWidget_3);
         pushButton_STO->setObjectName(QStringLiteral("pushButton_STO"));
@@ -517,7 +518,7 @@ public:
         label_6->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
         affErreur = new QTextEdit(centralwidget);
         affErreur->setObjectName(QStringLiteral("affErreur"));
-        affErreur->setGeometry(QRect(810, 460, 271, 121));
+        affErreur->setGeometry(QRect(810, 460, 271, 71));
         affErreur->setFont(font3);
         affErreur->setStyleSheet(QStringLiteral("background:rgb(122, 122, 122);color:white;border:none"));
         horizontalLayoutWidget = new QWidget(centralwidget);
@@ -577,6 +578,11 @@ public:
 
         horizontalLayout->addWidget(label_3);
 
+        pushButton_OPEN = new QPushButton(centralwidget);
+        pushButton_OPEN->setObjectName(QStringLiteral("pushButton_OPEN"));
+        pushButton_OPEN->setGeometry(QRect(810, 530, 271, 51));
+        pushButton_OPEN->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
+"QPushButton:hover{background:rgb(72, 72, 72);}"));
         calculatrice->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(calculatrice);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -625,17 +631,17 @@ public:
         pushButton_IF->setText(QApplication::translate("calculatrice", "IFT", 0));
         pushButton_DIV->setText(QApplication::translate("calculatrice", "DIV", 0));
         pushButton_IM->setText(QApplication::translate("calculatrice", "IM", 0));
-        pushButton_LASTOP->setText(QApplication::translate("calculatrice", "LASTOP", 0));
         pushButton_DUP->setText(QApplication::translate("calculatrice", "DUP", 0));
         pushButton_CLEAR->setText(QApplication::translate("calculatrice", "CLEAR", 0));
         pushButton_REDO->setText(QApplication::translate("calculatrice", "REDO", 0));
         pushButton_SWAP->setText(QApplication::translate("calculatrice", "SWAP", 0));
         pushButton_DROP->setText(QApplication::translate("calculatrice", "DROP", 0));
         pushButton_UNDO->setText(QApplication::translate("calculatrice", "UNDO", 0));
-        pushButton_LASTARG->setText(QApplication::translate("calculatrice", "LASTARG", 0));
-        pushButton_FORGET->setText(QApplication::translate("calculatrice", "FORGET", 0));
         pushButton_EVAL->setText(QApplication::translate("calculatrice", "EVAL", 0));
-        pushButton->setText(QString());
+        pushButton_FORGET->setText(QApplication::translate("calculatrice", "FORGET", 0));
+        pushButton_LASTARG->setText(QApplication::translate("calculatrice", "LASTARG", 0));
+        pushButton_SAVE->setText(QApplication::translate("calculatrice", "SAVE", 0));
+        pushButton_LASTOP->setText(QApplication::translate("calculatrice", "LASTOP", 0));
         pushButton_STO->setText(QApplication::translate("calculatrice", "STO", 0));
         label_5->setText(QApplication::translate("calculatrice", "ERREURS", 0));
         valProg_2->setText(QApplication::translate("calculatrice", "OK", 0));
@@ -645,6 +651,7 @@ public:
         label_2->setText(QApplication::translate("calculatrice", "VARIABLES", 0));
         label_4->setText(QApplication::translate("calculatrice", "VALEURS", 0));
         label_3->setText(QApplication::translate("calculatrice", "EDITION PROGRAMME", 0));
+        pushButton_OPEN->setText(QApplication::translate("calculatrice", "RETABLIR SESSION", 0));
     } // retranslateUi
 
 };

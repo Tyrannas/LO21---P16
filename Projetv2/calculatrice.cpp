@@ -1,5 +1,6 @@
 #include "Calculatrice.h"
 #include "ui_calculatrice.h"
+#include<QTextStream>
 
 using namespace std;
 
@@ -10,6 +11,7 @@ calculatrice::calculatrice(QWidget *parent) :
     p(Pile()),
     hm(HashMap()),
     c(Controleur(lm,p,hm)),
+    restored(false),
     ui(new Ui::calculatrice)
 {
     ui->setupUi(this);
@@ -17,12 +19,14 @@ calculatrice::calculatrice(QWidget *parent) :
     QSignalMapper* mapLitt = new QSignalMapper(this);
     QSignalMapper* mapOp = new QSignalMapper(this);
     ui->affErreur->setDisabled(1);
-    //ui->affErreur->setText("Erreur: haha bim, une erreur");
 
     connect(ui->pushButton_SPACE,SIGNAL(clicked()), this, SLOT(space()));
     connect(ui->pushButton_VALIDER,SIGNAL(clicked()), this, SLOT(execute()));
     connect(ui->affPile, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(stackClicked(QListWidgetItem*)));
+    connect(ui->affVar, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(varClicked(QListWidgetItem*)));
     connect(ui->valProg_2, SIGNAL(clicked()), this, SLOT(addProg()));
+    connect(ui->pushButton_SAVE, SIGNAL(clicked()), this, SLOT(save()));
+    connect(ui->pushButton_OPEN, SIGNAL(clicked()), this, SLOT(open()));
     //connect(ui->actionQuitter,SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
 
     connect(ui->pushButton_0,SIGNAL(clicked()), mapLitt, SLOT(map()));
@@ -136,14 +140,21 @@ void calculatrice::execute(QString s){
     if(this->entree.indexOf("[") != -1){
         qWarning("on parse un programme");
          QString programm = this->entree.mid(this->entree.indexOf("["), this->entree.indexOf("]")+1 - this->entree.indexOf("["));
-         QString before = this->entree.left(this->entree.indexOf("[") - 1);
-         QString after = this->entree.right(this->entree.length() - this->entree.indexOf("]") - 2);
+         QString before = "";
+         QString after = "";
+         if(this->entree.indexOf('[') > 1)
+            before = this->entree.left(this->entree.indexOf("[") - 1);
+         if(this->entree.indexOf(']') + 1 < this->entree.length())
+            after = this->entree.right(this->entree.length() - this->entree.indexOf("]") - 2);
          this->entree.clear();
          if(before.length()!=0)
-            execute(before);
+             //qDebug() << before;
+             execute(before);
          std::string input = programm.toLocal8Bit().constData();
+         const char * debug = input.c_str();
+         qWarning(debug);
          try{
-             this->c.parse(input);
+             c.parse(input);
          }
          catch(ComputerException e){
              string s = e.getInfo();
@@ -153,6 +164,7 @@ void calculatrice::execute(QString s){
          }
          this->entree.clear();
          if(after.length()!=0)
+            //qDebug() << after;
             execute(after);
      }
 
@@ -235,11 +247,22 @@ void calculatrice::stackClicked(QListWidgetItem *q)
     ui->ligneCommande->setText(this->entree);
 }
 
+void calculatrice::varClicked(QListWidgetItem *q)
+{
+    const string& str = q->text().toLocal8Bit().constData();
+    Litterale* l = hm.get(str);
+    if(l->getType() != tProgramme)
+        return;
+    const string& val = l->toString();
+    ui->editProg->setText(QString::fromStdString(val));
+    ui->nameProg->setText(q->text());
+}
+
 void calculatrice::addProg()
 {
-    if(ui->nameProg_2->text()!=""){
-        QString text = ui->valProg_2->text().remove('\n');
-        this->entree+= ui-> text + ui->nameProg_2->text() + " " + STO;
+    if(ui->nameProg->text()!=""){
+        QString str = ui->editProg->toPlainText().remove('\n');
+        this->entree+= str + " '" + ui->nameProg->text() + "'" + " " + "STO";
         execute();
     }
     else{
@@ -267,6 +290,56 @@ void calculatrice::keyPressEvent(QKeyEvent *event)
             space();
             break;
         default: break;
+    }
+}
+
+void calculatrice::save()
+{
+    qDebug() << "App path : " << qApp->applicationDirPath();
+    QFile mFile("datas.txt");
+
+    mFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+    QTextStream out(&mFile);
+    for (Pile::Iterator it = p.begin(); it != p.end(); ++it){
+       Item i = *it;
+       Litterale* test = i.getLitterale();
+       const string& test2 = test->toString();
+       out << QString::fromStdString(test2) << " ";
+    }
+
+    QStringList vars;
+    QStringList vals;
+    for (HashMap::Iterator it = hm.begin(); it != hm.end(); ++it){
+       HashEntry* i = *it;
+       const string& var = i->getKey();
+       Litterale* l = i->getValue();
+       const string& val = l->toString();
+       QString qvar = QString::fromStdString(var);
+       QString qval = QString::fromStdString(val);
+       out << qval << " '" << qvar << "' " << "STO ";
+    }
+    ui->affErreur->setText("Données sauvegardées!");
+    ui->affErreur->setStyleSheet("background-color : green; color: white;border:none;");
+    restored = false;
+}
+
+void calculatrice::open()
+{
+    if(restored==false){
+        QFile file("datas.txt");
+            if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+
+            QTextStream in(&file);
+            while (!in.atEnd()) {
+                this->entree += in.readLine();
+            }
+            restored = true;
+            execute();
+   }
+    else{
+        ui->affErreur->setText("Session précédente déjà restaurée");
+        ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white;border:none;");
     }
 }
 

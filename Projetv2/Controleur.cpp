@@ -8,7 +8,8 @@
 
 void Controleur::parse(const string& c) {
     const char * test = c.c_str();
-    //qWarning(test);
+    qWarning(test);
+    if(c =="") return;
     if (c == "UNDO") {
         if (canRedo)
             throw ComputerException("Impossible de faire deux Undo d'affile\n");
@@ -96,6 +97,7 @@ void Controleur::parse(const string& c) {
                 string exec = pt1->getProg();
                 exec.erase(remove(exec.begin(), exec.end(), '\]'), exec.end());
                 exec.erase(remove(exec.begin(), exec.end(), '\['), exec.end());
+                exec.erase(remove(exec.begin(), exec.end(), '\n'), exec.end());
                 stringstream ss(exec);
                 istream_iterator<std::string> begin(ss);
                 istream_iterator<std::string> end;

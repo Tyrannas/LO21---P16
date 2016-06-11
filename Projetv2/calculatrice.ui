@@ -443,17 +443,6 @@ QPushButton:hover{background-color:rgb(101, 161, 198)}</string>
      <property name="horizontalSpacing">
       <number>0</number>
      </property>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="pushButton_LASTOP">
-       <property name="styleSheet">
-        <string notr="true">QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}
-QPushButton:hover{background:rgb(72, 72, 72);}</string>
-       </property>
-       <property name="text">
-        <string>LASTOP</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="pushButton_DUP">
        <property name="minimumSize">
@@ -526,14 +515,14 @@ QPushButton:hover{background:rgb(72, 72, 72);}</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="pushButton_LASTARG">
+     <item row="2" column="2">
+      <widget class="QPushButton" name="pushButton_EVAL">
        <property name="styleSheet">
         <string notr="true">QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}
 QPushButton:hover{background:rgb(72, 72, 72);}</string>
        </property>
        <property name="text">
-        <string>LASTARG</string>
+        <string>EVAL</string>
        </property>
       </widget>
      </item>
@@ -548,25 +537,36 @@ QPushButton:hover{background:rgb(72, 72, 72);}</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="2">
-      <widget class="QPushButton" name="pushButton_EVAL">
+     <item row="1" column="1">
+      <widget class="QPushButton" name="pushButton_LASTARG">
        <property name="styleSheet">
         <string notr="true">QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}
 QPushButton:hover{background:rgb(72, 72, 72);}</string>
        </property>
        <property name="text">
-        <string>EVAL</string>
+        <string>LASTARG</string>
        </property>
       </widget>
      </item>
      <item row="3" column="2">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_SAVE">
        <property name="styleSheet">
         <string notr="true">QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}
 QPushButton:hover{background:rgb(72, 72, 72);}</string>
        </property>
        <property name="text">
-        <string/>
+        <string>SAVE</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="pushButton_LASTOP">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}
+QPushButton:hover{background:rgb(72, 72, 72);}</string>
+       </property>
+       <property name="text">
+        <string>LASTOP</string>
        </property>
       </widget>
      </item>
@@ -759,7 +759,7 @@ QPushButton:hover{background:rgb(72, 72, 72);}</string>
       <x>810</x>
       <y>460</y>
       <width>271</width>
-      <height>121</height>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -903,6 +903,23 @@ QPushButton:hover{background:rgb(72, 72, 72);}</string>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton_OPEN">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>530</y>
+      <width>271</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}
+QPushButton:hover{background:rgb(72, 72, 72);}</string>
+    </property>
+    <property name="text">
+     <string>RETABLIR SESSION</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
