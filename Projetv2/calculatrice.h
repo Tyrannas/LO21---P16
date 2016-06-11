@@ -44,6 +44,7 @@ private slots:
     void execute(QString s = "");
     void space();
     void stackClicked(QListWidgetItem* q);
+    void addProg();
 
 };
 

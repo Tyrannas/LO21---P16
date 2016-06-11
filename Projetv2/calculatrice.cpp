@@ -133,7 +133,30 @@ void calculatrice::readLitt(QString s){
 void calculatrice::execute(QString s){
     ui->affErreur->clear();
     ui->affErreur->setStyleSheet("background:rgb(122, 122, 122);color:white;border:none");
-    if(this->entree.indexOf("'(") == -1){
+    if(this->entree.indexOf("[") != -1){
+        qWarning("on parse un programme");
+         QString programm = this->entree.mid(this->entree.indexOf("["), this->entree.indexOf("]")+1 - this->entree.indexOf("["));
+         QString before = this->entree.left(this->entree.indexOf("[") - 1);
+         QString after = this->entree.right(this->entree.length() - this->entree.indexOf("]") - 2);
+         this->entree.clear();
+         if(before.length()!=0)
+            execute(before);
+         std::string input = programm.toLocal8Bit().constData();
+         try{
+             this->c.parse(input);
+         }
+         catch(ComputerException e){
+             string s = e.getInfo();
+             QString erreur = QString::fromStdString(s);
+             ui->affErreur->setText(erreur);
+             ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white;border:none;");
+         }
+         this->entree.clear();
+         if(after.length()!=0)
+            execute(after);
+     }
+
+    else if(this->entree.indexOf("'(") == -1){
         this->entree += s;
         QStringList sList = this->entree.split(" ");
         for(QStringList::iterator it = sList.begin(); it != sList.end(); ++it){
@@ -150,7 +173,9 @@ void calculatrice::execute(QString s){
             }
         }
    }
+
    else{
+        qWarning("on parse une expression");
         std::string input = this->entree.toLocal8Bit().constData();
         try{
             this->c.parse(input);
@@ -214,7 +239,12 @@ void calculatrice::addProg()
 {
     if(ui->nameProg_2->text()!=""){
         QString text = ui->valProg_2->text().remove('\n');
-        this->entree+= ui->nameProg_2->text()+ " " +
+        this->entree+= ui-> text + ui->nameProg_2->text() + " " + STO;
+        execute();
+    }
+    else{
+        ui->affErreur->setText("Entrez un nom au programme");
+        ui->affErreur->setStyleSheet("background-color : rgb(222,65,80); color: white;border:none;");
     }
 }
 

@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -33,7 +34,6 @@ public:
     QAction *actionAnnuler_Ctrl_Z;
     QAction *actionR_tablie_Ctrl_Y;
     QWidget *centralwidget;
-    QLineEdit *ligneCommande;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QPushButton *pushButton_RP;
@@ -80,18 +80,13 @@ public:
     QPushButton *pushButton_DROP;
     QPushButton *pushButton_UNDO;
     QPushButton *pushButton_LASTARG;
-    QPushButton *pushButton_STO;
     QPushButton *pushButton_FORGET;
     QPushButton *pushButton_EVAL;
     QPushButton *pushButton;
+    QPushButton *pushButton_STO;
     QListWidget *affPile;
-    QLabel *label;
-    QLabel *label_2;
-    QPushButton *pushButton_VALIDER;
     QTextEdit *editProg;
     QLineEdit *nameProg;
-    QLabel *label_3;
-    QLabel *label_4;
     QListWidget *affVar;
     QListWidget *affVal;
     QLabel *label_5;
@@ -99,13 +94,21 @@ public:
     QLineEdit *nameProg_2;
     QLabel *label_6;
     QTextEdit *affErreur;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QLineEdit *ligneCommande;
+    QPushButton *pushButton_VALIDER;
+    QLabel *label;
+    QLabel *label_2;
+    QLabel *label_4;
+    QLabel *label_3;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *calculatrice)
     {
         if (calculatrice->objectName().isEmpty())
             calculatrice->setObjectName(QStringLiteral("calculatrice"));
-        calculatrice->resize(1079, 605);
+        calculatrice->resize(1079, 606);
         QFont font;
         font.setFamily(QStringLiteral("Roboto Light"));
         calculatrice->setFont(font);
@@ -118,17 +121,9 @@ public:
         actionR_tablie_Ctrl_Y->setObjectName(QStringLiteral("actionR_tablie_Ctrl_Y"));
         centralwidget = new QWidget(calculatrice);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        ligneCommande = new QLineEdit(centralwidget);
-        ligneCommande->setObjectName(QStringLiteral("ligneCommande"));
-        ligneCommande->setGeometry(QRect(0, 0, 311, 41));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Roboto Light"));
-        font1.setPointSize(13);
-        ligneCommande->setFont(font1);
-        ligneCommande->setStyleSheet(QStringLiteral("QLineEdit{border:none;background:rgb(122, 122, 122);color:white;}"));
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 40, 231, 362));
+        gridLayoutWidget->setGeometry(QRect(0, 40, 231, 351));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -255,9 +250,9 @@ public:
         pushButton_1 = new QPushButton(gridLayoutWidget);
         pushButton_1->setObjectName(QStringLiteral("pushButton_1"));
         pushButton_1->setMinimumSize(QSize(20, 60));
-        QFont font2;
-        font2.setPointSize(7);
-        pushButton_1->setFont(font2);
+        QFont font1;
+        font1.setPointSize(7);
+        pushButton_1->setFont(font1);
         pushButton_1->setStyleSheet(QLatin1String("QPushButton{border:none; background:orange; color:white; min-width:20; min-height:60}\n"
 "QPushButton:hover{background-color:red;}"));
         pushButton_1->setFlat(false);
@@ -435,13 +430,6 @@ public:
 
         gridLayout_3->addWidget(pushButton_LASTARG, 1, 1, 1, 1);
 
-        pushButton_STO = new QPushButton(gridLayoutWidget_3);
-        pushButton_STO->setObjectName(QStringLiteral("pushButton_STO"));
-        pushButton_STO->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
-"QPushButton:hover{background:rgb(72, 72, 72);}"));
-
-        gridLayout_3->addWidget(pushButton_STO, 0, 2, 1, 1);
-
         pushButton_FORGET = new QPushButton(gridLayoutWidget_3);
         pushButton_FORGET->setObjectName(QStringLiteral("pushButton_FORGET"));
         pushButton_FORGET->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
@@ -463,71 +451,56 @@ public:
 
         gridLayout_3->addWidget(pushButton, 3, 2, 1, 1);
 
+        pushButton_STO = new QPushButton(gridLayoutWidget_3);
+        pushButton_STO->setObjectName(QStringLiteral("pushButton_STO"));
+        pushButton_STO->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white;min-height:50;}\n"
+"QPushButton:hover{background:rgb(72, 72, 72);}"));
+
+        gridLayout_3->addWidget(pushButton_STO, 0, 2, 1, 1);
+
         affPile = new QListWidget(centralwidget);
         affPile->setObjectName(QStringLiteral("affPile"));
         affPile->setGeometry(QRect(360, 40, 201, 541));
-        QFont font3;
-        font3.setFamily(QStringLiteral("Roboto Light"));
-        font3.setPointSize(14);
-        affPile->setFont(font3);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Roboto Light"));
+        font2.setPointSize(14);
+        affPile->setFont(font2);
         affPile->setStyleSheet(QLatin1String("QListWidget{border:none;color:white;background:rgb(44,44,44);qproperty-alignment: AlignCenter;}\n"
 "QListWidget::item{qproperty-alignment: AlignCenter;background:orange;margin-top:4}\n"
 "QListWidget::item::hover{background:red;}"));
-        label = new QLabel(centralwidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(360, 0, 201, 41));
-        label->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(560, 0, 111, 41));
-        label_2->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
-        pushButton_VALIDER = new QPushButton(centralwidget);
-        pushButton_VALIDER->setObjectName(QStringLiteral("pushButton_VALIDER"));
-        pushButton_VALIDER->setGeometry(QRect(310, 0, 51, 41));
-        pushButton_VALIDER->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white}\n"
-"QPushButton:hover{background:rgb(72, 72, 72);}"));
         editProg = new QTextEdit(centralwidget);
         editProg->setObjectName(QStringLiteral("editProg"));
-        editProg->setGeometry(QRect(780, 40, 321, 301));
-        QFont font4;
-        font4.setPointSize(14);
-        editProg->setFont(font4);
+        editProg->setGeometry(QRect(810, 40, 291, 301));
+        QFont font3;
+        font3.setPointSize(14);
+        editProg->setFont(font3);
         editProg->setStyleSheet(QStringLiteral("background:rgb(122, 122, 122);color:white;"));
         nameProg = new QLineEdit(centralwidget);
         nameProg->setObjectName(QStringLiteral("nameProg"));
-        nameProg->setGeometry(QRect(780, 380, 261, 41));
-        nameProg->setFont(font4);
+        nameProg->setGeometry(QRect(810, 380, 231, 41));
+        nameProg->setFont(font3);
         nameProg->setStyleSheet(QStringLiteral("background:rgb(122, 122, 122);color:white;border:none"));
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(780, 0, 321, 41));
-        QFont font5;
-        font5.setBold(false);
-        font5.setWeight(50);
-        label_3->setFont(font5);
-        label_3->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
-        label_4 = new QLabel(centralwidget);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(670, 0, 111, 41));
-        label_4->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
         affVar = new QListWidget(centralwidget);
         affVar->setObjectName(QStringLiteral("affVar"));
         affVar->setGeometry(QRect(560, 40, 111, 541));
-        affVar->setFont(font3);
+        affVar->setFont(font2);
         affVar->setStyleSheet(QLatin1String("QListWidget{border:none;color:white;background:rgb(44,44,44);qproperty-alignment: AlignCenter;}\n"
-"QListWidget::item{qproperty-alignment: AlignCenter;background:orange;margin-top:4}\n"
+"QListWidget::item{qproperty-alignment: AlignCenter;background:orange;margin-top:4;margin-left:4}\n"
 "QListWidget::item::hover{background:red;}"));
         affVal = new QListWidget(centralwidget);
         affVal->setObjectName(QStringLiteral("affVal"));
-        affVal->setGeometry(QRect(670, 40, 111, 541));
-        affVal->setFont(font3);
+        affVal->setGeometry(QRect(670, 40, 141, 541));
+        affVal->setFont(font2);
         affVal->setStyleSheet(QLatin1String("QListWidget{border:none;color:white;background:rgb(44,44,44);qproperty-alignment: AlignCenter;}\n"
-"QListWidget::item{qproperty-alignment: AlignCenter;background:orange;margin-top:4}\n"
+"QListWidget::item{qproperty-alignment: AlignCenter;background:orange;margin-top:4;margin-right:4}\n"
 "QListWidget::item::hover{background:red;}"));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(780, 420, 321, 41));
-        label_5->setFont(font5);
+        label_5->setGeometry(QRect(810, 420, 291, 41));
+        QFont font4;
+        font4.setBold(false);
+        font4.setWeight(50);
+        label_5->setFont(font4);
         label_5->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
         valProg_2 = new QPushButton(centralwidget);
         valProg_2->setObjectName(QStringLiteral("valProg_2"));
@@ -539,14 +512,71 @@ public:
         nameProg_2->setGeometry(QRect(1500, 720, 251, 41));
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(780, 340, 321, 41));
-        label_6->setFont(font5);
+        label_6->setGeometry(QRect(810, 340, 291, 41));
+        label_6->setFont(font4);
         label_6->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
         affErreur = new QTextEdit(centralwidget);
         affErreur->setObjectName(QStringLiteral("affErreur"));
-        affErreur->setGeometry(QRect(780, 460, 321, 121));
-        affErreur->setFont(font4);
+        affErreur->setGeometry(QRect(810, 460, 271, 121));
+        affErreur->setFont(font3);
         affErreur->setStyleSheet(QStringLiteral("background:rgb(122, 122, 122);color:white;border:none"));
+        horizontalLayoutWidget = new QWidget(centralwidget);
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(0, 0, 1081, 41));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setSpacing(0);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        ligneCommande = new QLineEdit(horizontalLayoutWidget);
+        ligneCommande->setObjectName(QStringLiteral("ligneCommande"));
+        ligneCommande->setMinimumSize(QSize(0, 39));
+        ligneCommande->setMaximumSize(QSize(317, 16777215));
+        QFont font5;
+        font5.setFamily(QStringLiteral("Roboto Light"));
+        font5.setPointSize(13);
+        ligneCommande->setFont(font5);
+        ligneCommande->setStyleSheet(QStringLiteral("QLineEdit{border:none;background:rgb(122, 122, 122);color:white;}"));
+
+        horizontalLayout->addWidget(ligneCommande);
+
+        pushButton_VALIDER = new QPushButton(horizontalLayoutWidget);
+        pushButton_VALIDER->setObjectName(QStringLiteral("pushButton_VALIDER"));
+        pushButton_VALIDER->setMinimumSize(QSize(0, 39));
+        pushButton_VALIDER->setMaximumSize(QSize(43, 16777215));
+        pushButton_VALIDER->setStyleSheet(QLatin1String("QPushButton{background:rgb(44,44,44);border:none;color:white}\n"
+"QPushButton:hover{background:rgb(72, 72, 72);}"));
+
+        horizontalLayout->addWidget(pushButton_VALIDER);
+
+        label = new QLabel(horizontalLayoutWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setMinimumSize(QSize(200, 0));
+        label->setMaximumSize(QSize(201, 16777215));
+        label->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
+
+        horizontalLayout->addWidget(label);
+
+        label_2 = new QLabel(horizontalLayoutWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setMaximumSize(QSize(111, 16777215));
+        label_2->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
+
+        horizontalLayout->addWidget(label_2);
+
+        label_4 = new QLabel(horizontalLayoutWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setMaximumSize(QSize(141, 16777215));
+        label_4->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
+
+        horizontalLayout->addWidget(label_4);
+
+        label_3 = new QLabel(horizontalLayoutWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setFont(font4);
+        label_3->setStyleSheet(QStringLiteral("QLabel{color:white;qproperty-alignment: AlignCenter;background:orange}"));
+
+        horizontalLayout->addWidget(label_3);
+
         calculatrice->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(calculatrice);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -603,18 +633,18 @@ public:
         pushButton_DROP->setText(QApplication::translate("calculatrice", "DROP", 0));
         pushButton_UNDO->setText(QApplication::translate("calculatrice", "UNDO", 0));
         pushButton_LASTARG->setText(QApplication::translate("calculatrice", "LASTARG", 0));
-        pushButton_STO->setText(QApplication::translate("calculatrice", "STO", 0));
         pushButton_FORGET->setText(QApplication::translate("calculatrice", "FORGET", 0));
         pushButton_EVAL->setText(QApplication::translate("calculatrice", "EVAL", 0));
         pushButton->setText(QString());
-        label->setText(QApplication::translate("calculatrice", "MEMOIRE", 0));
-        label_2->setText(QApplication::translate("calculatrice", "VARIABLES", 0));
-        pushButton_VALIDER->setText(QApplication::translate("calculatrice", "OK", 0));
-        label_3->setText(QApplication::translate("calculatrice", "EDITION PROGRAMME", 0));
-        label_4->setText(QApplication::translate("calculatrice", "VALEURS", 0));
+        pushButton_STO->setText(QApplication::translate("calculatrice", "STO", 0));
         label_5->setText(QApplication::translate("calculatrice", "ERREURS", 0));
         valProg_2->setText(QApplication::translate("calculatrice", "OK", 0));
         label_6->setText(QApplication::translate("calculatrice", "NOM PROGRAMME", 0));
+        pushButton_VALIDER->setText(QApplication::translate("calculatrice", "OK", 0));
+        label->setText(QApplication::translate("calculatrice", "MEMOIRE", 0));
+        label_2->setText(QApplication::translate("calculatrice", "VARIABLES", 0));
+        label_4->setText(QApplication::translate("calculatrice", "VALEURS", 0));
+        label_3->setText(QApplication::translate("calculatrice", "EDITION PROGRAMME", 0));
     } // retranslateUi
 
 };

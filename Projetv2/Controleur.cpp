@@ -29,6 +29,8 @@ void Controleur::parse(const string& c) {
         return;
     }
 
+    canRedo = false;
+
     litMng.getMem().save(litMng.getLits(), litMng.taille());
 
     int operateurUnaire = estUnOperateurUnaire(c);
@@ -124,16 +126,12 @@ void Controleur::parse(const string& c) {
             stack.push(a);
         }
         else if (estUneExpression(c)) {
-            cout << "C'est une expression\n";
-            //Expression* const e = dynamic_cast<Expression* const>(litMng.littFactory(tExpression, NULL, NULL, NULL, NULL, NULL, c));
-            //stack.push(e);
+            Expression* const e = dynamic_cast<Expression* const>(litMng.littFactory(tExpression, NULL, NULL, NULL, NULL, NULL,c));
+            stack.push(e);
         }
         else if (estUnProgramme(c)) {
-            //cout << "C'est un programme\n";
-            //Programme* const p = dynamic_cast<Programme* const>(litMng.littFactory(tProgramme, NULL, NULL, NULL, NULL, NULL, c));
-            //stack.push(p);
-            Programme* const p = new Programme(c);
-            litMng.addLitterale(p);
+            cout << "C'est un programme\n";
+            Programme* const p = dynamic_cast<Programme* const>(litMng.littFactory(tProgramme, NULL, NULL, NULL, NULL, NULL,c));
             stack.push(p);
         }
         else if (estUnEntier(c)) {
@@ -272,8 +270,8 @@ void Controleur::operationUnaire(int i){
             break;
         case 6:
             if(v1->getType()!=tAtome)
-                qWarning("Ce nest pas un atome");
-                //throw ComputerException("Impossible de proceder la suppression, la deuxieme litterale doit etre un atome");
+                //qWarning("Ce nest pas un atome");
+                throw ComputerException("Impossible de proceder a la suppression, la litterale doit etre une variable");
             ident = pt1->getId();
             ident.erase(remove(ident.begin(), ident.end(), '\''), ident.end());
             table.forget(ident);
@@ -297,7 +295,7 @@ void Controleur::operationBinaire(int i)
     //qWarning(debug);
     stack.drop();
     Litterale* const v2 = stack.top();
-    Atome* pt2 = dynamic_cast<Atome*>(v2);
+    Atome* pt2 = dynamic_cast<Atome*>(v1);
     string ident = "";
     stack.drop();
     Litterale* v3 = nullptr;
@@ -310,17 +308,20 @@ void Controleur::operationBinaire(int i)
         litMng.getMem().updateOpe(v1->clone(), v2->clone(), "+");
         break;
         //soustraction
-        //case 2:
-        //	v3 = *v1 - *v2;
-        //	break;
-        ////multiplication
-        //case 3:
-        //	v3 = *v1 * *v2;
-        //	break;
-        ////division
-        //case 4:
-        //	Litterale& v3 = *v1 / *v2;
-        //	break;
+    case 2:
+        v3 = *v1 - *v2;
+        litMng.getMem().updateOpe(v1->clone(), v2->clone(), "-");
+        break;
+        //multiplication
+    case 3:
+        v3 = *v1 * *v2;
+        litMng.getMem().updateOpe(v1->clone(), v2->clone(), "*");
+        break;
+        //division
+    case 4:
+        v3 = *v1 / *v2;
+        litMng.getMem().updateOpe(v1->clone(), v2->clone(), "/");
+        break;
     case 5:
         v3 = div(*v1, *v2);
         litMng.getMem().updateOpe(v1->clone(), v2->clone(), "DIV");
@@ -338,14 +339,15 @@ void Controleur::operationBinaire(int i)
             //v2.eval();
         break;
     case 9:
-        if(v2->getType()!=tAtome){
+        if(v1->getType()!=tAtome){
             qWarning("Ce nest pas un atome");
-            throw ComputerException("Impossible de proceder a l'affectation, la deuxieme litterale doit etre un atome");
+            throw ComputerException("Impossible de proceder a l'affectation, la premiere litterale doit etre un atome");
         }
         else{
+            qWarning("On entre");
             ident = pt2->getId();
             ident.erase(remove(ident.begin(), ident.end(), '\''), ident.end());
-            table.put(ident, v1);
+            table.put(ident, v2);
             qWarning("On a insere");
         }
         break;
