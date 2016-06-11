@@ -312,17 +312,20 @@ void Controleur::operationBinaire(int i)
         litMng.getMem().updateOpe(v1->clone(), v2->clone(), "+");
         break;
         //soustraction
-        //case 2:
-        //	v3 = *v1 - *v2;
-        //	break;
-        ////multiplication
-        //case 3:
-        //	v3 = *v1 * *v2;
-        //	break;
-        ////division
-        //case 4:
-        //	Litterale& v3 = *v1 / *v2;
-        //	break;
+    case 2:
+        v3 = *v1 - *v2;
+        litMng.getMem().updateOpe(v1->clone(), v2->clone(), "-");
+        break;
+        //multiplication
+    case 3:
+        v3 = *v1 * *v2;
+        litMng.getMem().updateOpe(v1->clone(), v2->clone(), "*");
+        break;
+        //division
+    case 4:
+        v3 = *v1 / *v2;
+        litMng.getMem().updateOpe(v1->clone(), v2->clone(), "/");
+        break;
     case 5:
         v3 = div(*v1, *v2);
         litMng.getMem().updateOpe(v1->clone(), v2->clone(), "DIV");

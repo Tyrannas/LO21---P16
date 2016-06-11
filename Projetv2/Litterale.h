@@ -409,6 +409,27 @@ Complexe operator+(Complexe& c, Entiere e);
 Litterale* operator+(Litterale& l1, Litterale& l2);
 
 /*!
+*  \brief Surchage operateur- sur deux litterales
+*  \param l1 : reference sur la premiere litterale
+*  \param l2 : reference sur la deuxieme litterale
+*/
+Litterale* operator-(Litterale& l1, Litterale& l2);
+
+/*!
+*  \brief Surchage operateur* sur deux litterales
+*  \param l1 : reference sur la premiere litterale
+*  \param l2 : reference sur la deuxieme litterale
+*/
+Litterale* operator*(Litterale& l1, Litterale& l2);
+
+/*!
+*  \brief Surchage operateur/ sur deux litterales
+*  \param l1 : reference sur la premiere litterale
+*  \param l2 : reference sur la deuxieme litterale
+*/
+Litterale* operator/(Litterale& l1, Litterale& l2);
+
+/*!
 *  \brief Operateur DIV (division entiere) sur deux litterales
 *  \param l1 : reference sur la premiere litterale
 *  \param l2 : reference sur la deuxieme litterale
