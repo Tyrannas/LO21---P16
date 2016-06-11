@@ -76,8 +76,7 @@ public:
         while (table[hash] != NULL && table[hash]->getKey() != key)
 			hash = (hash + 1);
 		if (table[hash] == NULL)
-            //throw ComputerException("Aucune valeur trouvee pour cet identifiant\n");
-            qWarning("pas trouve de valeur correspondante");
+            throw ComputerException("Aucune valeur trouvee pour cet identifiant\n");
 		else {
 			return table[hash]->getValue();
 		}
@@ -111,8 +110,7 @@ public:
 			table[hash] = nullptr;
 		}
 		else
-            //throw ComputerException("Aucune variable stockee avec ce nom. Suppression impossible\n");
-            qWarning("Aucune valeur trouver a ce nom pour la suppression");
+            throw ComputerException("Aucune variable stockee avec ce nom. Suppression impossible\n");
 	}
 
 	/*!

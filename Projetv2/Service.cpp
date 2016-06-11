@@ -44,7 +44,7 @@ bool estUnAtome(const string& s) {
 }
 
 bool estUneExpression(const string& s) {
-    regex reg("^'\.+'$");
+    regex reg("^'(\.|\e)+'$");
     return regex_match(s.cbegin(), s.cend(), reg);
 }
 
@@ -75,21 +75,5 @@ bool estUnRationnel(const string& s) {
 
 bool estUnComplexe(const string& s) {
     regex reg(R"(^(-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))\$(-?(?:(?:\d+.\d+)|(?:\d+\/-?\d+)|(?:\d+)))?$)");
-    return regex_match(s.cbegin(), s.cend(), reg);
-}
-
-/*
-bool estUneAssignation(const string& s) {
-    regex reg("^STO\\s\\d+\\s'\\w+'$");
-    return regex_match(s.cbegin(), s.cend(), reg);
-}
-
-bool estUneAssignationProg(const string& s) {
-    regex reg("^STO\\s\\[\.+\\]\\s'\\w+'$");
-    return regex_match(s.cbegin(), s.cend(), reg);
-}
-*/
-bool estUneSuppression(const string& s) {
-    regex reg("^FORGET\\s'\\w+'$");
     return regex_match(s.cbegin(), s.cend(), reg);
 }

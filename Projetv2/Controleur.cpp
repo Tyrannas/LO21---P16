@@ -29,6 +29,8 @@ void Controleur::parse(const string& c) {
         return;
     }
 
+    canRedo = false;
+
     litMng.getMem().save(litMng.getLits(), litMng.taille());
 
     int operateurUnaire = estUnOperateurUnaire(c);
@@ -124,9 +126,9 @@ void Controleur::parse(const string& c) {
             stack.push(a);
         }
         else if (estUneExpression(c)) {
-            cout << "C'est une expression\n";
-            //Expression* const e = dynamic_cast<Expression* const>(litMng.littFactory(tExpression, NULL, NULL, NULL, NULL, NULL, c));
-            //stack.push(e);
+            Expression* const e = new Expression(c);
+            litMng.addLitterale(e);
+            stack.push(e);
         }
         else if (estUnProgramme(c)) {
             //cout << "C'est un programme\n";
@@ -339,19 +341,19 @@ void Controleur::operationBinaire(int i)
         break;
     case 9:
         if(v2->getType()!=tAtome)
-            qWarning("Ce nest pas un atome");
-            //throw ComputerException("Impossible de proceder a l'affectation, la deuxieme litterale doit etre un atome");
+            throw ComputerException("Impossible de proceder a l'affectation, la deuxieme litterale doit etre un atome");
         ident = pt2->getId();
         ident.erase(remove(ident.begin(), ident.end(), '\''), ident.end());
-        table.put(ident, v1);
+        table.put(ident, v1->clone());
         qWarning("On a insere");
         break;
     default:
         break;
     }
+    litMng.removeLitterale(v1);
+    litMng.removeLitterale(v2);
+
     if(i!=9){
-        litMng.removeLitterale(v1);
-        litMng.removeLitterale(v2);
         litMng.addLitterale(v3);
         stack.push(v3);
     }
